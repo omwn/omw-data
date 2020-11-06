@@ -106,7 +106,7 @@ do
     ### validate
     xmlstarlet -q validate -e --dtd scripts/WN-LMF.dtd  ${RESDIR}/${lng}/${lng}wn.xml
     tar -C "${RESDIR}" --exclude=citation.rst --exclude=*~ -cf  "${RESDIR}/${lng}.tar"  "${lng}"
-    xz -z "${RESDIR}/${lng}.tar"
+    xz -z -e "${RESDIR}/${lng}.tar"
     ###
     ### config files
     ###
@@ -130,6 +130,8 @@ EOT
 done	    
 
 ### Second Italian Wordnet
+echo Processing IWN  >&2
+
 mkdir -p ${RESDIR}/iwn
 tsv="$WNS/iwn/wn-data-ita.tab"
 cp "$WNS/iwn/LICENSE" "${RESDIR}/iwn"
@@ -137,4 +139,37 @@ cp "$WNS/iwn/citation.bib"  "${RESDIR}/iwn"
 python3 scripts/tsv2lmf.py iwn "it" scripts/ili-map.tab "$tsv" --version "1.0+omw" >  ${RESDIR}/iwn/iwn.xml
 xmlstarlet -q validate -e --dtd scripts/WN-LMF.dtd  "${RESDIR}/iwn/iwn.xml"
 tar -C "${RESDIR}" --exclude=citation.rst --exclude=*~ -cf  "${RESDIR}/iwn.tar"  "iwn"
-xz -z "${RESDIR}/iwn.tar"
+xz -z -e "${RESDIR}/iwn.tar"
+
+### pwn30 and pwn31
+echo Processing PWN 3.0 and 3.1  >&2 
+
+cp -rp "$WNS/pwn30" "${RESDIR}"
+xz -d  "${RESDIR}/pwn30/wn30.xml.xz"
+tar -C "${RESDIR}"  --exclude=*~ -cf  "${RESDIR}/pwn30.tar"  "pwn30"
+xz -z -e "${RESDIR}/pwn30.tar"
+
+cp -rp "$WNS/pwn31" "${RESDIR}"
+xz -d  "${RESDIR}/pwn31/wn31.xml.xz"
+tar -C "${RESDIR}"  --exclude=*~ -cf  "${RESDIR}/pwn31.tar"  "pwn31"
+xz -z -e "${RESDIR}/pwn31.tar"
+
+echo -e "pwn30\tPrinceton Wordnet 3.0" >> "$IDX"
+echo -e "pwn31\tPrinceton Wordnet 3.1" >> "$IDX" 
+
+cat <<EOT >> wn_config.py
+config.add_project('pwn30', 'Princeton Wordnet 3.0', 'en')
+config.add_project_version(
+    'pwn30', '3.0',
+    'somewhere
+    'https://wordnet.princeton.edu/license-and-commercial-use',
+)
+
+config.add_project('pwn31', 'Princeton Wordnet 3.1', 'en')
+config.add_project_version(
+    'pwn31', '3.1',
+    'somewere',
+    'https://wordnet.princeton.edu/license-and-commercial-use',
+)
+
+EOT
