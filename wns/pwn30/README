@@ -1,0 +1,12 @@
+This is an LMF file for Princeton Wordnet 3.0, made using the new LMF
+file by John MacCrae
+
+$ wget http://john.mccr.ae/wn30.xml
+
+I made some changes to the metadata:
+
+license="https://wordnet.princeton.edu/license-and-commercial-use"
+citation="Christiane Fellbaum. (ed.) (1998) *WordNet: An Electronic Lexical Database*, MIT Press"
+confidenceScore="1.0"
+
+Because the file is so big, we store it compressed.
