@@ -1,0 +1,37 @@
+This directory contains redistributable wordnets in further sub-directories.
+
+Structure is:
+
+lang/wn-data-lang.tab	synset lemma pairs (see below)
+lang/LICENCE		original license file (or equivalent)
+lang/README		Any notes about the conversion
+lang/lang2tab.py	python script to extract the data
+			may rely on wordnet version mappings	
+lang/wn-data-lang.tab.log any notes from the conversion
+lang/citation.bib   the canonical citation reference(s)
+
+Note that a single directory may have wordnets for multiple languages
+
+wn-data is formatted as follows:
+# name<tab>lang<tab>url<tab>license
+offset-pos<tab>type<tab>lemma
+offset-pos<tab>type<tab>lemma
+...
+
+name    is the name of the project
+lang    is the iso 3 letter code for the name
+url     is the url of the project
+license is a short name for the license
+offset  is the Princeton WordNet 3.0 offset 8 digit offset
+pos     is one of [a,s,v,n,r]  
+lemma   is the lemma (word separator normalized to ' ')
+type 	is the language:relationship (e.g. eng:lemma)
+
+Example:
+# Thai	tha	http://th.asianwordnet.org/	wordnet 
+13567960-n	tha:lemma	กระบวนการทรานแอมมิแนชัน
+00155298-n	tha:lemma	การปฏิเสธ
+14369530-n	tha:lemma	ภาวะการหายใจเร็วของทารกแรกเกิด
+10850469-n	tha:lemma	เบธัน
+11268326-n	tha:lemma	เรินต์เกน
+
