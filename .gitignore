@@ -1,3 +1,10 @@
+# files made when preparing a release
+log/
+release/
+
+# Emacs backups
+*~
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
