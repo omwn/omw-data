@@ -14,14 +14,18 @@ jobs:
       with:
         python-version: '3.x'
     - name: Build Assets
-      run: ./make-lmf.bash
+      run: |
+        tag_name="${GITHUB_REF##*/}"
+        sudo apt install xmlstarlet
+        ./make-lmf.bash "${tag_name}"
     - name: Upload
       run: |
         tag_name="${GITHUB_REF##*/}"
         for asset in ./release/*.xz; do
             name=$( basename ${asset%%.tar.xz} )
-            label=$( grep "^${name}" ./release/index.tsv | cut -f2 )
-            gh release upload "${tag_name}" "${asset}#${label}"
+            label=$( grep "^${name}" ./release/index.tsv | cut -f3 )
+            lgcode=$( grep "^${name}" ./release/index.tsv | cut -f2 )
+            gh release upload "${tag_name}" "${asset}#${label} (${lgcode})"
         done
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

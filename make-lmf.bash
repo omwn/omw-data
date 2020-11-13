@@ -7,14 +7,28 @@
 ## Also package up pwn30 and pwn31 in the same way.
 ##
 
+if [ $# -ne 1 ]; then
+    echo "usage: make-lmf.bash VERSION"
+    exit 1
+fi
+
+VERSION="$1"
+VER="${VERSION#[Vv]}"  # e.g., v1.3 -> 1.3
+BASEURL="https://github.com/bond-lab/omw-data/releases/download/${VERSION}" # /xyz.tar.xz
+
+XZOPTS='-e'  # options for xz beyond -z
+
 OMWROOT="$( cd "$( dirname "$0" )"; echo "$PWD" )"
 RESDIR="$OMWROOT/release"
+OMWDIR="$RESDIR/omw"
 WNS="$OMWROOT/wns"
 IDX="$RESDIR/index.tsv"
 CITATIONFILE="$WNS/omw-citations.tab"
 mkdir -p log
-mkdir -p "$RESDIR"
 
+mkdir -p "$OMWDIR"
+cp "${WNS}/README" "${OMWDIR}/"
+cp "${WNS}/citation.bib" "${OMWDIR}/"
 
 
 ###
@@ -65,18 +79,18 @@ declare -A lngs=(\
 cat <<EOT > wn_config.py
 config.add_project('iwn', 'Italian Wordnet', 'it')
 config.add_project_version(
-    'iwn', '1.0+wn',
-    'http://192.168.1.81/~bond/omw1.0/iwn.xml',
+    'iwn', '${VER}+omw',
+    '${BASEURL}/iwn.xml',
     'http://opendefinition.org/licenses/odc-by/',
 )
 EOT
 
-echo -e "iwn\tItalian Wordnet" > "$IDX"
+echo -e "iwn\tit\tItalian Wordnet" > "$IDX"
 
 for lng in "${!lngs[@]}"
 do
-    echo Processing $lng \("${lngs[$lng]}"\) >&2 
-    mkdir -p ${RESDIR}/${lng}
+    echo Processing $lng \("${lngs[$lng]}"\) >&2
+    mkdir -p "${OMWDIR}/${lng}"
     ### extract
     if [ $lng = 'lit' ]  ###
     then
@@ -102,80 +116,111 @@ do
     ### copy miscellaneous files
     for name in LICENSE README citation.bib; do
         if [ -f "${WNS}/${prj}/${name}" ]; then
-            cp "${WNS}/${prj}/${name}" "${RESDIR}/${lng}/"
+            cp "${WNS}/${prj}/${name}" "${OMWDIR}/${lng}/"
         fi
     done
-    
-    grep -P "${lng}\t|${lng}," ${CITATIONFILE} | cut -f2 > ${RESDIR}/${lng}/citation.rst
+
+    grep -P "${lng}\t|${lng}," ${CITATIONFILE} | cut -f2 > ${OMWDIR}/${lng}/citation.rst
     ### convert
-    python3 scripts/tsv2lmf.py ${lng}wn "${lngs[$lng]}" scripts/ili-map.tab "$tsv" --version "1.0+omw" --citation="${RESDIR}/${lng}/citation.rst" >  "${RESDIR}/${lng}/${lng}wn.xml"
+    python3 scripts/tsv2lmf.py \
+        "${lng}wn" \
+        "${lngs[$lng]}" \
+        scripts/ili-map.tab \
+        "$tsv" \
+        --version "${VER}+omw" \
+        --citation="${OMWDIR}/${lng}/citation.rst" \
+        >  "${OMWDIR}/${lng}/${lng}wn.xml"
     ### validate
-    xmlstarlet -q validate -e --dtd scripts/WN-LMF.dtd  ${RESDIR}/${lng}/${lng}wn.xml
-    tar -C "${RESDIR}" --exclude=citation.rst --exclude=*~ -cf  "${RESDIR}/${lng}.tar"  "${lng}"
-    xz -z -e "${RESDIR}/${lng}.tar"
+    xmlstarlet -q validate -e --dtd scripts/WN-LMF.dtd  "${OMWDIR}/${lng}/${lng}wn.xml"
+    tar -C "${OMWDIR}" --exclude=citation.rst --exclude=*~ -cf  "${RESDIR}/${lng}.tar" "${lng}"
+    xz -z $XZOPTS "${RESDIR}/${lng}.tar"
     ###
     ### config files
     ###
-    labelll=`grep "           label=" ${RESDIR}/${lng}/${lng}wn.xml`
-    labell="${labelll#           label=\"}"
-    label="${labell%\" }"
-    licenseee=`grep "           license=" ${RESDIR}/${lng}/${lng}wn.xml`
-    licensee="${licenseee#           license=\"}"
-    license="${licensee%\" }"
+    label=$( xmlstarlet sel -t -v '//Lexicon/@label' "${OMWDIR}/${lng}/${lng}wn.xml" 2>/dev/null )
+    license=$( xmlstarlet sel -t -v '//Lexicon/@license' "${OMWDIR}/${lng}/${lng}wn.xml" 2>/dev/null )
+    lgcode=$( xmlstarlet sel -t -v '//Lexicon/@language' "${OMWDIR}/${lng}/${lng}wn.xml" 2>/dev/null )
     #echo $licenseee $licensee $license
     cat << EOT >>  wn_config.py
 config.add_project('${lng}wn', '${label}',  '${lngs[$lng]}')
 config.add_project_version(
-    '${lng}wn', '1.0+wn',
-    'http://somewhere/~bond/omw1.0/${lang}/${lng}.tar.xz',
+    '${lng}wn', '${VER}+omw',
+    '${BASEURL}/${lng}.tar.xz',
     '${license}'
 )
 
 EOT
-    echo -e "${lng}\t${label}" >> "$IDX" 
-done	    
+    echo -e "${lng}\t${lgcode}\t${label}" >> "$IDX"
+done
 
 ### Second Italian Wordnet
 echo Processing IWN  >&2
 
-mkdir -p ${RESDIR}/iwn
+mkdir -p ${OMWDIR}/iwn
 tsv="$WNS/iwn/wn-data-ita.tab"
-cp "$WNS/iwn/LICENSE" "${RESDIR}/iwn"
-cp "$WNS/iwn/citation.bib"  "${RESDIR}/iwn"
-python3 scripts/tsv2lmf.py iwn "it" scripts/ili-map.tab "$tsv" --version "1.0+omw" >  ${RESDIR}/iwn/iwn.xml
-xmlstarlet -q validate -e --dtd scripts/WN-LMF.dtd  "${RESDIR}/iwn/iwn.xml"
-tar -C "${RESDIR}" --exclude=citation.rst --exclude=*~ -cf  "${RESDIR}/iwn.tar"  "iwn"
-xz -z -w "${RESDIR}/iwn.tar"
+cp "$WNS/iwn/LICENSE" "${OMWDIR}/iwn"
+cp "$WNS/iwn/citation.bib"  "${OMWDIR}/iwn"
+grep -P "iwn\t" ${CITATIONFILE} | cut -f2 > ${OMWDIR}/iwn/citation.rst
+python3 scripts/tsv2lmf.py \
+    iwn \
+    "it" \
+    scripts/ili-map.tab \
+    "$tsv" \
+    --version \
+    "${VER}+omw" \
+    --citation="${OMWDIR}/iwn/citation.rst" \
+    >  ${OMWDIR}/iwn/iwn.xml
+xmlstarlet -q validate -e --dtd scripts/WN-LMF.dtd  "${OMWDIR}/iwn/iwn.xml"
+tar -C "${OMWDIR}" --exclude=citation.rst --exclude=*~ -cf  "${RESDIR}/iwn.tar"  "iwn"
+xz -z $XZOPTS "${RESDIR}/iwn.tar"
 
 ### pwn30 and pwn31
-echo Processing PWN 3.0 and 3.1  >&2 
+echo Processing PWN 3.0 and 3.1  >&2
 
 cp -rp "$WNS/pwn30" "${RESDIR}"
 xz -d  "${RESDIR}/pwn30/wn30.xml.xz"
 tar -C "${RESDIR}"  --exclude=*~ -cf  "${RESDIR}/pwn30.tar"  "pwn30"
-xz -z -e "${RESDIR}/pwn30.tar"
+xz -z $XZOPTS "${RESDIR}/pwn30.tar"
 
 cp -rp "$WNS/pwn31" "${RESDIR}"
 xz -d  "${RESDIR}/pwn31/wn31.xml.xz"
 tar -C "${RESDIR}"  --exclude=*~ -cf  "${RESDIR}/pwn31.tar"  "pwn31"
-xz -z -e "${RESDIR}/pwn31.tar"
+xz -z $XZOPTS "${RESDIR}/pwn31.tar"
 
-echo -e "pwn30\tPrinceton Wordnet 3.0" >> "$IDX"
-echo -e "pwn31\tPrinceton Wordnet 3.1" >> "$IDX" 
+echo -e "pwn30\ten\tPrinceton Wordnet 3.0" >> "$IDX"
+echo -e "pwn31\ten\tPrinceton Wordnet 3.1" >> "$IDX"
 
 cat <<EOT >> wn_config.py
 config.add_project('pwn30', 'Princeton Wordnet 3.0', 'en')
 config.add_project_version(
-    'pwn30', '3.0',
-    'somewhere
+    'pwn', '3.0',
+    '${BASEURL}/pwn30.tar.xz',
     'https://wordnet.princeton.edu/license-and-commercial-use',
 )
 
 config.add_project('pwn31', 'Princeton Wordnet 3.1', 'en')
 config.add_project_version(
-    'pwn31', '3.1',
-    'somewere',
+    'pwn', '3.1',
+    '${BASEURL}/pwn31.tar.xz',
     'https://wordnet.princeton.edu/license-and-commercial-use',
 )
 
 EOT
+
+echo Processing OMW Collection >&2
+
+tar -C "${RESDIR}" --exclude=*~ -cf "${RESDIR}/omw-${VER}.tar" "omw"
+xz -z $XZOPTS "${RESDIR}/omw-${VER}.tar"
+echo -e "omw\tmul\tOpen Multilingual Wordnet ${VERSION}" >> "$IDX"
+
+cat <<EOT >> wn_config.py
+config.add_project('omw', 'Open Multilingual Wordnet ${VERSION}', 'mul')
+config.add_project_version(
+    'omw', '${VER}',
+    '${BASEURL}/omw-${VER}.tar.xz',
+    'Please consult the LICENSE files included with the individual wordnets. Note that all permit redistribution.'
+)
+
+EOT
+
+echo Done >&2
