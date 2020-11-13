@@ -1,6 +1,10 @@
 ##
 ## Convert the OMW 1.0 files into the format for OMW 2.0
 ##
+## make directories for them with their LICENSE, README and citation.bib
+## tar these and compress with xz
+##
+## Also package up pwn30 and pwn31 in the same way.
 ##
 
 OMWROOT="$( cd "$( dirname "$0" )"; echo "$PWD" )"
@@ -139,7 +143,7 @@ cp "$WNS/iwn/citation.bib"  "${RESDIR}/iwn"
 python3 scripts/tsv2lmf.py iwn "it" scripts/ili-map.tab "$tsv" --version "1.0+omw" >  ${RESDIR}/iwn/iwn.xml
 xmlstarlet -q validate -e --dtd scripts/WN-LMF.dtd  "${RESDIR}/iwn/iwn.xml"
 tar -C "${RESDIR}" --exclude=citation.rst --exclude=*~ -cf  "${RESDIR}/iwn.tar"  "iwn"
-xz -z -e "${RESDIR}/iwn.tar"
+xz -z -w "${RESDIR}/iwn.tar"
 
 ### pwn30 and pwn31
 echo Processing PWN 3.0 and 3.1  >&2 

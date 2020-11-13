@@ -2,13 +2,13 @@ This directory contains redistributable wordnets in further sub-directories.
 
 Structure is:
 
-lang/wn-data-lang.tab	synset lemma pairs (see below)
-lang/LICENCE		original license file (or equivalent)
-lang/README		Any notes about the conversion
-lang/lang2tab.py	python script to extract the data
+proj/wn-data-lang.tab	synset lemma pairs (see below)
+proj/LICENCE		original license file (or equivalent)
+proj/README		Any notes about the conversion
+proj/lang2tab.py	python script to extract the data
 			may rely on wordnet version mappings	
-lang/wn-data-lang.tab.log any notes from the conversion
-lang/citation.bib   the canonical citation reference(s)
+proj/wn-data-lang.tab.log any notes from the conversion
+proj/citation.bib   the canonical citation reference(s)
 
 Note that a single directory may have wordnets for multiple languages
 
