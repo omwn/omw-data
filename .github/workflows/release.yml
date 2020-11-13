@@ -14,7 +14,7 @@ jobs:
       with:
         python-version: '3.x'
     - name: Build Assets
-      run: make-lmf.bash
+      run: ./make-lmf.bash
     - name: Upload
       run: |
         tag_name="${GITHUB_REF##*/}"
