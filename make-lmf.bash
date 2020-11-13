@@ -94,11 +94,13 @@ do
 	prj="${lng}"
     fi
     tsv="$WNS/${prj}/wn-data-${lng}.tab"
-    cp "$WNS/${prj}/LICENSE" "${RESDIR}/${lng}"
-    cp "$WNS/${prj}/README"  "${RESDIR}/${lng}"
-    cp "$WNS/${prj}/citation.bib" "${RESDIR}/${lng}"
 
-
+    ### copy miscellaneous files
+    for name in LICENSE README citation.bib; do
+        if [ -f "${WNS}/${prj}/${name}" ]; then
+            cp "${WNS}/${prj}/${name}" "${RESDIR}/${lng}/"
+        fi
+    done
     
     grep -P "${lng}\t|${lng}," ${CITATIONFILE} | cut -f2 > ${RESDIR}/${lng}/citation.rst
     ### convert
