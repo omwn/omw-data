@@ -1,0 +1,27 @@
+name: Upload Assets
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Build Assets
+      run: make-lmf.bash
+    - name: Upload
+      run: |
+        tag_name="${GITHUB_REF##*/}"
+	for asset in ./release/*.xz; do
+	    name=$( basename ${asset%%.tar.xz} )
+	    label=$( grep "^${name}" ./release/index.tsv | cut -f2 )
+            gh release upload "${tag_name}" "${asset}#${label}"
+	done
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
