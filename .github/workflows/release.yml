@@ -18,10 +18,10 @@ jobs:
     - name: Upload
       run: |
         tag_name="${GITHUB_REF##*/}"
-	for asset in ./release/*.xz; do
-	    name=$( basename ${asset%%.tar.xz} )
-	    label=$( grep "^${name}" ./release/index.tsv | cut -f2 )
+        for asset in ./release/*.xz; do
+            name=$( basename ${asset%%.tar.xz} )
+            label=$( grep "^${name}" ./release/index.tsv | cut -f2 )
             gh release upload "${tag_name}" "${asset}#${label}"
-	done
+        done
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
