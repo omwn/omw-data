@@ -80,7 +80,7 @@ cat <<EOT > wn_config.py
 config.add_project('iwn', 'Italian Wordnet', 'it')
 config.add_project_version(
     'iwn', '${VER}+omw',
-    '${BASEURL}/iwn.xml',
+    '${BASEURL}/iwn.tar.xz',
     'http://opendefinition.org/licenses/odc-by/',
 )
 EOT
@@ -211,7 +211,7 @@ echo Processing OMW Collection >&2
 
 tar -C "${RESDIR}" --exclude=*~ -cf "${RESDIR}/omw-${VER}.tar" "omw"
 xz -z $XZOPTS "${RESDIR}/omw-${VER}.tar"
-echo -e "omw\tmul\tOpen Multilingual Wordnet ${VERSION}" >> "$IDX"
+echo -e "omw-${VER}\tmul\tOpen Multilingual Wordnet ${VERSION}" >> "$IDX"
 
 cat <<EOT >> wn_config.py
 config.add_project('omw', 'Open Multilingual Wordnet ${VERSION}', 'mul')

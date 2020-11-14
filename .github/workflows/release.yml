@@ -25,7 +25,7 @@ jobs:
             name=$( basename ${asset%%.tar.xz} )
             label=$( grep "^${name}" ./release/index.tsv | cut -f3 )
             lgcode=$( grep "^${name}" ./release/index.tsv | cut -f2 )
-            gh release upload "${tag_name}" "${asset}#${label} (${lgcode})"
+            gh release upload "${tag_name}" "${asset}#${label} [${lgcode}]"
         done
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
