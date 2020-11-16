@@ -16,7 +16,7 @@ VERSION="$1"
 VER="${VERSION#[Vv]}"  # e.g., v1.3 -> 1.3
 BASEURL="https://github.com/bond-lab/omw-data/releases/download/${VERSION}" # /xyz.tar.xz
 
-XZOPTS='-e'  # options for xz beyond -z
+XZOPTS=''  # '-e'  # options for xz beyond -z
 
 OMWROOT="$( cd "$( dirname "$0" )"; echo "$PWD" )"
 RESDIR="$OMWROOT/release"
