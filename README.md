@@ -2,7 +2,7 @@
 
 This packages up data for the Open Multilingual Wordnet.  It is roughly the version that is described in Bond and Foster (2013).
 
-It includes the data in the original OMW 1.0 format, and in the packaged up in the [GWA format](https://github.com/globalwordnet/schemas/) for OMW 2 in the [release directory](./releases).
+It includes the data in the original OMW 1.0 format, and in the packaged up in the [GWA format](https://github.com/globalwordnet/schemas/) for OMW 2 as a [release](https://github.com/bond-lab/omw-data/releases).
 
 
 The raw data (under *wns*) also has the automatically extracted data
