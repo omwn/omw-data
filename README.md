@@ -12,7 +12,7 @@ The directory *wns* has the wordnet data from OMW 1.2 with some small fixes
  * added human readable citations in ``omw-citations.tab``
 
 
-If you use OMW plesae cite both the citation below, and the individual wordnets (citation data is included in each wordnet):
+If you use OMW please cite both the citation below, and the individual wordnets (citation data is included in each wordnet):
 
 Francis Bond and Ryan Foster (2013)
 [Linking and extending an open multilingual wordnet](http://aclweb.org/anthology/P/P13/P13-1133.pdf)</a>.
