@@ -2,6 +2,9 @@
 
 This packages up data for the Open Multilingual Wordnet.  It is roughly the version that is described in Bond and Foster (2013).
 
+It includes the data in the original OMW 1.0 format, and in the packaged up in the [GWA format](https://github.com/globalwordnet/schemas/) for OMW 2 in the [release directory](./releases).
+
+
 The raw data (under *wns*) also has the automatically extracted data
 for over 150 languages from Wiktionary and the ‎Unicode Common Locale
 Data Repository.
@@ -10,6 +13,7 @@ Data Repository.
 The directory *wns* has the wordnet data from OMW 1.2 with some small fixes
  * added a citation for the Icelandic wordnet
  * added human readable citations in ``omw-citations.tab``
+ * added PWN 3.0 and 3.1 in OMW 2.0 format
 
 
 If you use OMW please cite both the citation below, and the individual wordnets (citation data is included in each wordnet):
