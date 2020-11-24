@@ -76,14 +76,30 @@ declare -A lngs=(\
 #declare -A lngs=( ["als"]="als" )
 
 ### Also make a configuration file
-cat <<EOT > wn_config.py
-config.add_project('iwn', 'Italian Wordnet', 'it')
-config.add_project_version(
-    'iwn', '${VER}+omw',
-    '${BASEURL}/iwn.tar.xz',
-    'http://opendefinition.org/licenses/odc-by/',
-)
+
+# index takes 4 arguments: name label language license
+index() {
+    cat <<EOT >> index.toml
+
+[$1]
+  label = "$2"
+  language = "$3"
+  license = "$4"
 EOT
+}
+
+# index-ver takes 3 arguments: name version basename
+index-ver() {
+    cat <<EOT >> index.toml
+  [$1.versions."$2"]
+    url = "${BASEURL}/$3.tar.xz"
+EOT
+}
+
+echo -n > index.toml
+
+index iwn "Italian Wordnet" "it" "http://opendefinition.org/licenses/odc-by/"
+index-ver iwn "${VER}+omw" "iwn"
 
 echo -e "iwn\tit\tItalian Wordnet" > "$IDX"
 
@@ -141,15 +157,9 @@ do
     license=$( xmlstarlet sel -t -v '//Lexicon/@license' "${OMWDIR}/${lng}/${lng}wn.xml" 2>/dev/null )
     lgcode=$( xmlstarlet sel -t -v '//Lexicon/@language' "${OMWDIR}/${lng}/${lng}wn.xml" 2>/dev/null )
     #echo $licenseee $licensee $license
-    cat << EOT >>  wn_config.py
-config.add_project('${lng}wn', '${label}',  '${lngs[$lng]}')
-config.add_project_version(
-    '${lng}wn', '${VER}+omw',
-    '${BASEURL}/${lng}.tar.xz',
-    '${license}'
-)
+    index "${lng}wn" "${label}" "${lngs[$lng]}" "${license}"    
+    index-ver "${lng}wn" "${VER}+omw" "${lng}"
 
-EOT
     echo -e "${lng}\t${lgcode}\t${label}" >> "$IDX"
 done
 
@@ -190,22 +200,9 @@ xz -z $XZOPTS "${RESDIR}/pwn31.tar"
 echo -e "pwn30\ten\tPrinceton Wordnet 3.0" >> "$IDX"
 echo -e "pwn31\ten\tPrinceton Wordnet 3.1" >> "$IDX"
 
-cat <<EOT >> wn_config.py
-config.add_project('pwn30', 'Princeton Wordnet 3.0', 'en')
-config.add_project_version(
-    'pwn', '3.0',
-    '${BASEURL}/pwn30.tar.xz',
-    'https://wordnet.princeton.edu/license-and-commercial-use',
-)
-
-config.add_project('pwn31', 'Princeton Wordnet 3.1', 'en')
-config.add_project_version(
-    'pwn', '3.1',
-    '${BASEURL}/pwn31.tar.xz',
-    'https://wordnet.princeton.edu/license-and-commercial-use',
-)
-
-EOT
+index "pwn" "Princeton WordNet" "en" "https://wordnet.princeton.edu/license-and-commercial-use"
+index-ver "pwn" "3.0" "pwn30"
+index-ver "pwn" "3.1" "pwn31"
 
 echo Processing OMW Collection >&2
 
@@ -213,14 +210,7 @@ tar -C "${RESDIR}" --exclude=*~ -cf "${RESDIR}/omw-${VER}.tar" "omw"
 xz -z $XZOPTS "${RESDIR}/omw-${VER}.tar"
 echo -e "omw-${VER}\tmul\tOpen Multilingual Wordnet ${VERSION}" >> "$IDX"
 
-cat <<EOT >> wn_config.py
-config.add_project('omw', 'Open Multilingual Wordnet ${VERSION}', 'mul')
-config.add_project_version(
-    'omw', '${VER}',
-    '${BASEURL}/omw-${VER}.tar.xz',
-    'Please consult the LICENSE files included with the individual wordnets. Note that all permit redistribution.'
-)
-
-EOT
+index "omw" "Open Multilingual Wordnet" "mul" "Please consult the LICENSE files included with the individual wordnets. Note that all permit redistribution."
+index-ver "omw" "${VER}" "omw-${VER}"
 
 echo Done >&2
