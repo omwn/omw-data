@@ -27,5 +27,6 @@ jobs:
             lgcode=$( grep "^${name}" ./release/index.tsv | cut -f2 )
             gh release upload "${tag_name}" "${asset}#${label} [${lgcode}]"
         done
+        gh release upload "${tag_name}" "./index.toml#index.toml"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
