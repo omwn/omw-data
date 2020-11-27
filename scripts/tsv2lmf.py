@@ -67,7 +67,7 @@ meta_default = { 'id': args.wnid,
                  'version': args.version,
                  'citation':citation,
                  'url':'...',
-                 'description':"Wordnet made from OMW 1.0 data",
+                 'description':"This is a wordnet converted to the GWA LMF format used by OMW 2.0 from the OMW 1.0 tsv data.",
                  'conf':'1.0' }
 
 
