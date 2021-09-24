@@ -56,12 +56,12 @@ Then run the script as follows (for example):
 ```console
 $ python scripts/wndb2lmf.py \
          WordNet-3.0/dict/ \
-		 wn30.xml \
-		 --id='wn30' \
-		 --version='1.4+omw' \
-		 --label='The OMW English Wordnet based on the Princeton WordNet 3.0' \
-		 --language='en' \
-		 --email='maintainer@example.com' \
-		 --license='https://...' \
-		 --ili-map=cili/ili-map-pwn30.tab
+         wn30.xml \
+         --id='wn30' \
+         --version='1.4+omw' \
+         --label='The OMW English Wordnet based on the Princeton WordNet 3.0' \
+         --language='en' \
+         --email='maintainer@example.com' \
+         --license='https://...' \
+         --ili-map=cili/ili-map-pwn30.tab
 ```

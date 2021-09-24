@@ -122,7 +122,7 @@ _pointer_map = {
     ';u': 'is_exemplified_by',  # was: domain usage
     '-u': 'exemplifies',  # was: in domain usage
     '*': 'entails',
-    '>': 'cause',
+    '>': 'causes',
     '^': 'also',
     '$': 'similar',  # was: verb group
     '&': 'similar',
@@ -147,7 +147,7 @@ def main(args):
     progress.flash('Inspecting sources')
     for filename in ('data.noun', 'data.verb', 'data.adj', 'data.adv',
                      'noun.exc', 'verb.exc', 'adj.exc', 'adv.exc',
-                     'index.sense', 'frames.vrb'):
+                     'index.sense', 'verb.Framestext'):
         if not (source / filename).is_file():
             raise WNDBError(f'file not found or is not a regular file: {filename}')
 
@@ -163,7 +163,7 @@ def main(args):
     senseidx = _load_sense_index(source / 'index.sense')
 
     progress.flash('Loading verb frames')
-    syntactic_behaviours = _load_frames(source / 'frames.vrb')
+    syntactic_behaviours = _load_frames(source / 'verb.Framestext')
 
     progress.flash('Loading exception lists')
     exceptions: _Exceptions = {
@@ -459,8 +459,6 @@ def _parse_data_frames(
     frames = []
     for _, f_num, w_num in zip(xs[::3], xs[1::3], xs[2::3]):
         frames.append(Frame(int(f_num), int(w_num, 16)))
-        # .setdefault(int(w_num, 16), []).append(int(f_num))
-    # assert sum(map(len, frames.values())) == f_cnt
     assert len(frames) == f_cnt
     return frames
 
