@@ -4,7 +4,7 @@
 
 Usage example:
 
-$ python wndb2lmf.py \
+$ python -m scripts.wndb2lmf.py \
          WordNet-3.0/dict/ \
          wn30.xml \
          --id='wn30' \
@@ -20,7 +20,6 @@ Requirements:
 - The Wn Python library: https://github.com/goodmami/wn
 - The Pe Python library: https://github.com/goodmami/pe
 - WNDB source files: https://wordnet.princeton.edu/download/current-version
-- CILI mappings (optional): https://github.com/globalwordnet/cili/
 
 Partially inspired by the gwn-scala-api converter and the NLTK's WNDB
 reader:
@@ -60,6 +59,8 @@ from wn.lmf import (
     Definition,
     SyntacticBehaviour,
 )
+
+from .util import escape_lemma
 
 
 LMF_VERSION = '1.1'
@@ -502,83 +503,6 @@ def _parse_data_gloss(gloss: str) -> Tuple[str, List[str]]:
 
 # Helper functions #####################################################
 
-_char_escapes = {
-    ' ': '_',
-    '-': '--',
-    # HTML entities
-    # https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
-    '!': '-excl-',
-    '"': '-quot-',
-    '#': '-num-',
-    '$': '-dollar-',
-    '%': '-percnt-',
-    '&': '-amp-',
-    "'": '-apos-',
-    '(': '-lpar-',
-    ')': '-rpar-',
-    '*': '-ast-',
-    '+': '-plus-',
-    ',': '-comma-',
-    # '.': '-period-',
-    '/': '-sol-',
-    ':': '-colon-',
-    ';': '-semi-',
-    '<': '-lt-',
-    '=': '-equals-',
-    '>': '-gt-',
-    '?': '-quest-',
-    '@': '-commat-',
-    '[': '-lsqb-',
-    '\\': '-bsol-',
-    ']': '-rsqb-',
-    '^': '-Hat-',
-    # '_': '-lowbar-',
-    '`': '-grave-',
-    '{': '-lbrace-',
-    '|': '-vert-',
-    '}': '-rbrace-',
-    # '\xa0': '-nbsp-',
-    # '¡': '-iexcl-',
-    # '¢': '-cent-',
-    # '£': '-pound-',
-    # '¤': '-curren-',
-    # '¥': '-yen-',
-    # ...
-}
-
-
-def _escape_lemma(lemma: str) -> str:
-    chars = []
-    for c in lemma:
-        codepoint = ord(c)
-        if ('A' <= c <= 'Z'
-                or 'a' <= c <= 'z'
-                or '0' <= c <= '9'  # not in initial position
-                # or c == ':'  # drop this for xsd:id compatibility
-                # or c in '-'  # blocked for special purpose (see below)
-                or c in '_.·'  # _ is special-purpose, but accept
-                or 0xC0 <= codepoint <= 0xD6
-                or 0xD8 <= codepoint <= 0xF6
-                or 0xF8 <= codepoint <= 0x2FF
-                or 0x300 <= codepoint <= 0x36F  # not in initial position
-                or 0x370 <= codepoint <= 0x37D
-                or 0x37F <= codepoint <= 0x1FFF
-                or codepoint in (0x203F, 0x2040,  # these two not in initial position
-                                 0x200C, 0x200D)
-                or 0x2C00 <= codepoint <= 0x2FEF
-                or 0x3001 <= codepoint <= 0xD7FF
-                or 0xF900 <= codepoint <= 0xFDCF
-                or 0xFDF0 <= codepoint <= 0xFFFD
-                or 0x10000 <= codepoint <= 0xEFFFF):
-            # acceptable character
-            chars.append(c)
-        elif c in _char_escapes:
-            chars.append(_char_escapes[c])
-        else:
-            raise WNDBError(f'cannot escape character: {c!r}')
-    return ''.join(chars)
-
-
 # For now we're getting these from index.sense, but this is the code
 # for creating them from the data.
 #
@@ -598,7 +522,7 @@ def _make_frame_id(f_num: int) -> str:
 
 
 def _make_entry_id(id: str, lemma: str, pos: str) -> str:
-    return f'{id}-{_escape_lemma(lemma)}-{pos}'
+    return f'{id}-{escape_lemma(lemma)}-{pos}'
 
 
 def _make_sense_id(
@@ -606,7 +530,7 @@ def _make_sense_id(
     sense_key: str
 ) -> str:
     lemma, _, tail = sense_key.partition('%')
-    return f'{id}-{_escape_lemma(lemma)}__{tail.replace(":", ".")}'
+    return f'{id}-{escape_lemma(lemma)}__{tail.replace(":", ".")}'
 
 
 def _make_nltk_synset_name(lemma: str, ss_type: str, sense_num: int) -> str:

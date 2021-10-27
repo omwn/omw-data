@@ -1,5 +1,6 @@
 # files made when preparing a release
 log/
+build/
 release/
 
 # Emacs backups
