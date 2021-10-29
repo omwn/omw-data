@@ -16,6 +16,10 @@ The directory *wns* has the wordnet data from OMW 1.2 with some small fixes
  * added human readable citations in ``omw-citations.tab``
  * added PWN 3.0 and 3.1 in OMW 2.0 format
 
+By defualt the label is the name of the project.  If the project has multiple wordents, then the language is added in parantheses.  E.g.:
+
+label = "Multilingual Central Repository (Catalan)"
+
 
 If you use OMW please cite both the citation below, and the individual wordnets (citation data is included in each wordnet):
 
