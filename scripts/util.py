@@ -66,7 +66,8 @@ def escape_lemma(lemma: str) -> str:
         elif codepoint in codepoint2name:
             chars.append(codepoint2name[codepoint])
         else:
-            chars.append('\uFFFD')  # replacement character �
-            warnings.warn(f'cannot escape character: {c!r}')
+            warnings.warn(f'no defined escape character for {c!r}; '
+                          f'using {codepoint:04X!r}')
+            chars.append(f'-{codepoint:04X}-')
     return ''.join(chars)
 
