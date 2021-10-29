@@ -136,7 +136,7 @@ _SenseIndex = Dict[str, Dict[int, Tuple[str, int, int]]]
 _Exceptions = Dict[str, Dict[str, Set[str]]]
 
 # see: https://wordnet.princeton.edu/documentation/lexnames5wn
-_lexfile_lookup = {num: lexfile for num, lexfile in LEXICOGRAPHER_FILES.items()}
+_lexfile_lookup = {num: lexfile for lexfile, num in LEXICOGRAPHER_FILES.items()}
 
 
 # Main Function ########################################################
