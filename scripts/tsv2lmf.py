@@ -27,7 +27,7 @@ LMF_VERSION = '1.1'
 # PATHS ################################################################
 
 OMWDATA = Path(__file__).parent.parent
-ILIFILE = OMWDATA / 'etc' / 'ili-map-pwn30.tab'
+ILIFILE = OMWDATA / 'etc' / 'cili' / 'ili-map-pwn30.tab'
 LOGDIR = OMWDATA / 'log'
 LOGDIR.mkdir(exist_ok=True)
 
