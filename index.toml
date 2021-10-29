@@ -57,7 +57,6 @@ label = "BulTreeBank Wordnet (BTB-WN)"
 language = "bg"
 license = "https://creativecommons.org/licenses/by/3.0/"
 source = "wns/bul/wn-data-bul.tab"
-url = "http://bultreebank.org/en/"
 citation = """
 Simov, Kiril and Osenova, Petya. 2010. \
   `Constructing of an Ontology-based Lexicon for Bulgarian, \
