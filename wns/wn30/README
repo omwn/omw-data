@@ -1,0 +1,14 @@
+This is an LMF file for the OMW English Wordnet based on Princeton Wordnet 3.0.
+
+It differs from Princeton Wordnet 3.0 in the following ways:
+
+ * It has a patch applied to stop a hyponym loop in *inhibit*
+   based on a patch from Ben Haskell <ben@clarity.princeton.edu>
+
+ * verb group '$' is mapped to 'similar'
+
+ * multiword entries use ' ' as a word separator rather than '_'
+
+ * glosses are split into definitions and examples
+
+ * information on adjective position is stored as adjposition: ip
