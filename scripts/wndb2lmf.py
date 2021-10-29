@@ -143,7 +143,8 @@ _lexfile_lookup = {num: lexfile for lexfile, num in LEXICOGRAPHER_FILES.items()}
 
 def main(args):
     source = Path(args.SRC).expanduser()
-    progress = ProgressBar(message='Building lexicon', refresh_interval=1000)
+    progress = ProgressBar(message=f'Building {args.id}:{args.version}',
+                           refresh_interval=1000)
 
     progress.flash('Inspecting sources')
     for filename in ('data.noun', 'data.verb', 'data.adj', 'data.adv',
@@ -196,6 +197,7 @@ def main(args):
     progress.flash(f'Writing to WN-LMF {LMF_VERSION}')
     dump([lexicon], args.DEST, version=LMF_VERSION)
 
+    progress.flash(f'Built {args.id}:{args.version}')
     progress.close()
 
 
