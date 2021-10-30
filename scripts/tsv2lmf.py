@@ -34,7 +34,7 @@ LOGDIR.mkdir(exist_ok=True)
 # CONSTANTS ############################################################
 
 bcp47 = {
-    "als": "als",       # Albanian (Tosk)
+    "als": "sq",        # Albanian
     "arb": "arb",       # Arabic
     "bul": "bg",        # Bulgarian
     "cmn": "cmn-Hans",  # Mandarin Chinese (Simplified)

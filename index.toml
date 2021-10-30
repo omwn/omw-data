@@ -28,7 +28,7 @@ requires = { id = "wn30", version = "1.4", url = "https://github.com/bond-lab/om
 [packages.alswn]
 
 label = "Albanet"
-language = "als"
+language = "sq"
 license = "https://creativecommons.org/licenses/by/3.0/"
 source = "wns/als/wn-data-als.tab"
 citation = """
