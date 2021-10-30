@@ -21,11 +21,11 @@ Francis Bond and Ryan Foster. 2013. \
 email = "bond@ieee.org"
 url = "https://github.com/bond-lab/omw-data"
 # to unset requires use: requires = {}
-requires = { id = "wn30", version = "1.4", url = "https://github.com/bond-lab/omw-data" }
+requires = { id = "omw-en", version = "1.4", url = "https://github.com/bond-lab/omw-data" }
 
 [packages]
 
-[packages.alswn]
+[packages.omw-sq]
 
 label = "Albanet"
 language = "sq"
@@ -36,7 +36,7 @@ Ervin Ruci. 2008. \
   *On the current state of Albanet and related applications*. \
   Technical Report, University of Vlora."""
 
-[packages.arbwn]
+[packages.omw-arb]
 
 label = "Arabic WordNet (AWN v2)"
 language = "arb"
@@ -51,7 +51,7 @@ Lahsen Abouenour, Karim Bouzoubaa, Paolo Rosso. 2013. \
   *Language Resources and Evaluation*, **47(3)** pp 891–917."""
 url = "http://globalwordnet.org/resources/arabic-wordnet/"
 
-[packages.bulwn]
+[packages.omw-bg]
 
 label = "BulTreeBank Wordnet (BTB-WN)"
 language = "bg"
@@ -63,7 +63,7 @@ Simov, Kiril and Osenova, Petya. 2010. \
   Proceedings of LREC 2010 <http://www.lrec-conf.org/proceedings/lrec2010/summaries/848.html>`_."""
 url = "http://bultreebank.org/en/"
 
-[packages.catwn]
+[packages.omw-ca]
 
 label = "Multilingual Central Repository (Catalan)"
 language = "ca"
@@ -76,7 +76,7 @@ Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. \
 url = "https://adimen.si.ehu.es/web/MCR/"
 
 
-[packages.cmnwn]
+[packages.omw-cmn]
 
 label = "Chinese Open Wordnet"
 language = "cmn-Hans"
@@ -89,7 +89,7 @@ Shan Wang and Francis Bond. 2013. \
   Nagoya, Japan. pp 10–18."""
 url = "https://bond-lab.github.io/cow/"
 
-[packages.danwn]
+[packages.omw-da]
 
 label = "DanNet"
 language = "da"
@@ -101,7 +101,7 @@ Pedersen, B. S., Nimb, S., Asmussen, J., Sørensen, N. H., Trap-Jensen, L. and L
   *Language Resources and Evaluation*, Volume 43:3 pp 269-299."""
 url = "https://cst.ku.dk/projekter/dannet/"
 
-[packages.ellwn]
+[packages.omw-el]
 
 label = "Greek Wordnet"
 language = "el"
@@ -113,7 +113,7 @@ Sofia Stamou, Goran Nenadic and Dimitris Christodoulakis. 2004. \
   *Proceedings of LREC 2004*."""
 url = "https://github.com/okfngr/wordnet"
 
-[packages.euswn]
+[packages.omw-eu]
 
 label = "Multilingual Central Repository (Basque)"
 language = "eu"
@@ -126,7 +126,7 @@ Elisabete Pociello, Eneko Agirre and Izaskun ldezabal. 2010. \
    Springer Netherlands, **45(2)** pp 121–142."""
 url = "https://adimen.si.ehu.es/web/MCR/" 
 
-[packages.finwn]
+[packages.omw-fi]
 
 label = "FinnWordNet"
 language = "fi"
@@ -139,7 +139,7 @@ Lindén K., Carlson. L. 2010. \
   **17** pp 119–140."""
 url = "http://www.ling.helsinki.fi/en/lt/research/finnwordnet/"
 
-[packages.frawn]
+[packages.omw-fr]
 
 label = "WOLF (Wordnet Libre du Français)"
 language = "fr"
@@ -153,7 +153,7 @@ Benoit Sagot and Darla Fišer. 2008. \
   Marrakech, Morocco."""
 url="http://pauillac.inria.fr/~sagot/index.html#wolf"
 
-[packages.glgwn]
+[packages.omw-gl]
 
 label = "Multilingual Central Repository (Galician)"
 language = "gl"
@@ -165,7 +165,7 @@ Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. \
   In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan."""
 url = "https://adimen.si.ehu.es/web/MCR/"
 
-[packages.hebwn]
+[packages.omw-he]
 
 label = "Hebrew Wordnet"
 language = "he"
@@ -178,7 +178,7 @@ Noam Ordan and Shuly Wintner. 2007. \
   **19(1)**:39–58, 2007."""
 url = "http://cl.haifa.ac.il/projects/mwn/index.shtml"
 
-[packages.hrvwn]
+[packages.omw-hr]
 
 label = "Croatian Wordnet"
 language = "hr"
@@ -194,7 +194,7 @@ Raffaelli, Ida; Bekavac, Božo; Agić, Željko; Tadić, Marko. 2008. \
   In *Proceedings of the Fourth Global WordNet Conference*. \
   pp 349-359."""
 
-[packages.indwn]
+[packages.omw-id]
 
 label = "Wordnet Bahasa (Indonesian)"
 language = "id"
@@ -207,7 +207,7 @@ Nurril Hirfana Mohamed Noor, Suerya Sapuan and Francis Bond. 2011. \
   pp 258–267. Singapore."""
 url = "http://wn-msa.sourceforge.net/"
 
-[packages.itawn]
+[packages.omw-it]
 
 label = "MultiWordNet (Italian)"
 language = "it"
@@ -220,7 +220,7 @@ Emanuele Pianta, Luisa Bentivogli and Christian Girardi. 2002. \
   Mysore, India. January 21-25, 2002. pp 293-302."""
 url = "https://multiwordnet.fbk.eu/english/home.php"
 
-[packages.islwn]
+[packages.omw-is]
 
 label = "IceWordNet"
 language = "is"
@@ -232,8 +232,7 @@ citation = """
   Háskóli Íslands, Reykjavík."""
 url = "http://www.malfong.is/index.php?lang=en&pg=icewordnet"
 
-[packages.iwn]
-
+[packages.omw-iwn]
 label = "ItalWordNet"
 language = "it"
 license = "http://opendefinition.org/licenses/odc-by/"
@@ -245,7 +244,7 @@ citation = """\
     Mumbai."""
 url = "http://www.ilc.cnr.it/en/content/italwordnet"
 
-[packages.litwn]
+[packages.omw-lt]
 
 label = "Lithuanian  WordNet"
 language = "lt"
@@ -258,7 +257,7 @@ Garabík, Radovan and Pileckytė, Indrė. 2013. \
   Ed. Katarína Gajdošová — Adriána Žáková. Lüdenscheid: RAM-Verlag, pp 74–80."""
 url = "https://korpus.sk/ltskwn_en.html"
 
-[packages.jpnwn]
+[packages.omw-ja]
 
 label = "Japanese Wordnet"
 language = "ja"
@@ -270,7 +269,7 @@ Hitoshi Isahara, Francis Bond, Kiyotaka Uchimoto, Masao Utiyama and Kyoko Kanzak
   In *LREC-2008*, Marrakech."""
 url = "https://bond-lab.github.io/wnja/"
 
-[packages.nldwn]
+[packages.omw-nl]
 
 label = "Open Dutch WordNet"
 language = "nl"
@@ -283,7 +282,7 @@ Marten Postma, Emiel van Miltenburg, Roxane Segers, Anneleen Schoen and Piek Vos
   Bucharest, Romania."""
 url = "http://wordpress.let.vupr.nl/odwn/"
 
-[packages.nnown]
+[packages.omw-nn]
 
 label = "Norwegian Wordnet (Nynorsk)"
 language = "nn"
@@ -295,7 +294,7 @@ Fjeld, Ruth Vatvedt and Nygaard, Lars. 2009. \
   In *Proceedings of the NODALIDA 2009 workshop WordNets and other Lexical Semantic Resources — between Lexical Semantics, Lexicography, Terminology and Formal Ontologies.* \
   pp 13–16. Estonia."""
 
-[packages.nobwn]
+[packages.omw-nb]
 
 label = "Norwegian Wordnet (Bokmål)"
 language = "nb"
@@ -307,7 +306,7 @@ Fjeld, Ruth Vatvedt and Nygaard, Lars. 2009. \
   In *Proceedings of the NODALIDA 2009 workshop WordNets and other Lexical Semantic Resources — between Lexical Semantics, Lexicography, Terminology and Formal Ontologies.* \
   pp 13–16. Estonia."""
 
-[packages.polwn]
+[packages.omw-pl]
 
 label = "plWordNet"
 language = "pl"
@@ -319,7 +318,7 @@ Maciej Piasecki, Stanisław Szpakowicz and Bartosz Broda. 2009. \
   Wroclaw: Oficyna Wydawnicza Politechniki Wroclawskiej, Poland."""
 url = "http://plwordnet.pwr.wroc.pl/wordnet/wordnet"
 
-[packages.porwn]
+[packages.omw-pt]
 
 label = "OpenWN-PT"
 language = "pt"
@@ -332,7 +331,7 @@ Valeria de Paiva and Alexandre Rademaker. 2012. \
   Global Wordnet Association. (also with Gerard de Melo's contribution)"""
 url = "http://wn.mybluemix.net/"
 
-[packages.ronwn]
+[packages.omw-ro]
 
 label = "Romanian Wordnet"
 language = "ro"
@@ -346,7 +345,7 @@ citation = """\
     Szeged, Hungary, pp 441–452."""
 url = "https://www.racai.ro/tools/text/rowordnet/"
 
-[packages.slkwn]
+[packages.omw-sk]
 
 label = "Slovak WordNet"
 language = "sk"
@@ -354,7 +353,7 @@ license = "https://creativecommons.org/licenses/by-sa/3.0/"
 source = "wns/slk/wn-data-slk.tab"
 url = "https://korpus.sk/WordNet_en.html"
 
-[packages.slvwn]
+[packages.omw-sl]
 
 label = "sloWNet"
 language = "sl"
@@ -367,7 +366,7 @@ Fišer, Darja, and Novak, Jernej, and Eejavec, Tomaž. 2012. \
   The Global WordNet Association, pp 113-117."""
 url = "http://lojze.lugos.si/darja/research/slownet/"
 
-[packages.spawn]
+[packages.omw-es]
 
 label = "Multilingual Central Repository (Spanish)"
 language = "es"
@@ -380,7 +379,7 @@ Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. \
 url = "https://adimen.si.ehu.es/web/MCR/"
 
 
-[packages.swewn]
+[packages.omw-sv]
 
 label = "WordNet-SALDO"
 language = "sv"
@@ -393,7 +392,7 @@ Borin, Lars and Forsberg, Markus and Lönngren, Lennart. 2013. \
   **47(4)** pp 1191–1211."""
 url = "https://spraakbanken.gu.se/en/resources/wordnet-saldo"
 
-[packages.thawn]
+[packages.omw-th]
 
 label = "Thai Wordnet"
 language = "th"
@@ -406,7 +405,7 @@ Thoongsup S., Charoenporn T., Robkop K., Sinthurahat T., Mokarat C., Sornlertlam
   Joint conference of the 47th Annual Meeting of the Association for Computational Linguistics (ACL) and the 4th International Joint Conference on Natural Language Processing (IJCNLP)*. \
   Suntec, Singapore."""
 
-[packages.zsmwn]
+[packages.omw-zsm]
 
 label = "Wordnet Bahasa (Malaysian)"
 language = "zsm"
@@ -422,18 +421,18 @@ url = "http://wn-msa.sourceforge.net/"
 [extra]
 # The following are not currently being built due to licensing or other issues
 
-[extra.wn30]
+[extra.omw-en]
 
-label = "OMW English Wordnet derived from the Princeton WordNet 3.0"
+label = "OMW English Wordnet based on WordNet 3.0"
 language = "en"
 license = "https://wordnet.princeton.edu/license-and-commercial-use"
 citation = """
 Christiane Fellbaum. (ed.). 1998. \
   *WordNet: An Electronic Lexical Database*, MIT Press."""
 
-[extra.wn31]
+[extra.omw-en31]
 
-label = "OMW English Wordnet derived from the Princeton WordNet 3.1"
+label = "OMW English Wordnet based on WordNet 3.1"
 language = "en"
 license = "https://wordnet.princeton.edu/license-and-commercial-use"
 citation = """

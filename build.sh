@@ -49,12 +49,12 @@ if [ ! -d etc/WordNet-3.0 ]; then
 fi
 
 ## make the lexicon
-mkdir -p "${BUILD}/wn30"
+mkdir -p "${BUILD}/en30"
 python -m scripts.wndb2lmf \
        etc/WordNet-3.0/dict/ \
-       "${BUILD}/wn30/wn30.xml" \
-       --id='wn30' \
-       --version="${VER}+omw" \
+       "${BUILD}/en30/omw-en.xml" \
+       --id='omw-en' \
+       --version="${VER}" \
        --label="${WN30_LABEL}" \
        --language='en' \
        --email="${WN_EMAIL}" \
@@ -70,12 +70,12 @@ if [ ! -d etc/WordNet-3.1 ]; then
     wget http://wordnetcode.princeton.edu/wn3.1.dict.tar.gz -O - | tar -C etc/WordNet-3.1 -xz
 fi
 
-mkdir -p "${BUILD}/wn31"
+mkdir -p "${BUILD}/en31"
 python -m scripts.wndb2lmf \
        etc/WordNet-3.1/dict/ \
-       "${BUILD}/wn31/wn31.xml" \
-       --id='wn31' \
-       --version="${VER}+omw" \
+       "${BUILD}/en31/omw-en31.xml" \
+       --id='omw-en31' \
+       --version="${VER}" \
        --label="${WN31_LABEL}" \
        --language='en' \
        --email="${WN_EMAIL}" \
@@ -86,7 +86,7 @@ python -m scripts.wndb2lmf \
 
 # Other OMW Lexicons ###################################################
 
-python -m scripts.build --version="${VER}+omw"
+python -m scripts.build --version="${VER}"
 
 
 # Validate #############################################################
