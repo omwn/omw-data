@@ -20,7 +20,7 @@ The directory *wns* has the wordnet data from OMW 1.2 with some small fixes
 If you use OMW please cite both the citation below, and the individual wordnets (citation data is included in each wordnet):
 
 Francis Bond and Ryan Foster (2013)
-[Linking and extending an open multilingual wordnet](http://aclweb.org/anthology/P/P13/P13-1133.pdf)</a>.
+[Linking and extending an open multilingual wordnet](https://aclanthology.org/P13-1133/)</a>.
 In *51st Annual Meeting of the Association for Computational Linguistics:  ACL-2013*.
 Sofia. 1352–1362
       
