@@ -124,7 +124,7 @@ Elisabete Pociello, Eneko Agirre and Izaskun ldezabal. 2010. \
   `Methodology and construction of the Basque WordNet <http://www.springerlink.com/content/40n24044u3k2k277/>`_. \
    *Language Resources and Evaluation*. \
    Springer Netherlands, **45(2)** pp 121–142."""
-url = "https://adimen.si.ehu.es/web/MCR/" 
+url = "https://adimen.si.ehu.es/web/MCR/"
 
 [packages.omw-fi]
 
@@ -419,7 +419,8 @@ Nurril Hirfana Mohamed Noor, Suerya Sapuan and Francis Bond. 2011. \
 url = "http://wn-msa.sourceforge.net/"
 
 [extra]
-# The following are not currently being built due to licensing or other issues
+# The following are not currently built due to licensing or other
+# issues or are built separately
 
 [extra.omw-en]
 

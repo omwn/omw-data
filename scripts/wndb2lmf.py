@@ -147,19 +147,10 @@ def main(args):
                            refresh_interval=1000)
 
     progress.flash('Inspecting sources')
-    for filename in ('data.noun', 'data.verb', 'data.adj', 'data.adv',
-                     'noun.exc', 'verb.exc', 'adj.exc', 'adv.exc',
-                     'index.sense', 'verb.Framestext'):
-        if not (source / filename).is_file():
-            raise WNDBError(f'file not found or is not a regular file: {filename}')
+    _inspect(source)
 
     progress.flash('Loading WNDB data')
-    data: _Data = {
-        'n': _load_data_file(source / 'data.noun'),
-        'v': _load_data_file(source / 'data.verb'),
-        'a': _load_data_file(source / 'data.adj'),
-        'r': _load_data_file(source / 'data.adv'),
-    }
+    data = _load_data(source)
 
     progress.flash('Loading sense index')
     senseidx = _load_sense_index(source / 'index.sense')
@@ -168,12 +159,7 @@ def main(args):
     syntactic_behaviours = _load_frames(source / 'verb.Framestext')
 
     progress.flash('Loading exception lists')
-    exceptions: _Exceptions = {
-        'n': _load_exceptions(source / 'noun.exc'),
-        'v': _load_exceptions(source / 'verb.exc'),
-        'a': _load_exceptions(source / 'adj.exc'),
-        'r': _load_exceptions(source / 'adv.exc'),
-    }
+    exceptions = _load_exceptions(source)
 
     progress.flash('Loading ILI map')
     ilimap = _load_ili_map(args.ili_map) if args.ili_map else {}
@@ -201,6 +187,14 @@ def main(args):
     progress.close()
 
 
+def _inspect(source: Path) -> None:
+    for filename in ('data.noun', 'data.verb', 'data.adj', 'data.adv',
+                     'noun.exc', 'verb.exc', 'adj.exc', 'adv.exc',
+                     'index.sense', 'verb.Framestext'):
+        if not (source / filename).is_file():
+            raise WNDBError(f'file not found or is not a regular file: {filename}')
+
+
 # LMF Building Functions ###############################################
 
 def _build_lexicon(
@@ -217,8 +211,8 @@ def _build_lexicon(
     for pos in 'nvar':
         progress.set(status=pos)
 
-        entries: Dict[str, LexicalEntry] = {}
-        sense_rank: Dict[str, int] = {}
+        entries: Dict[str, LexicalEntry] = {}  # for random access to entries
+        sense_rank: Dict[str, int] = {}  # for sorting senses afterwards
 
         for offset, d in data[pos].items():
 
@@ -227,7 +221,7 @@ def _build_lexicon(
             synset = _build_synset(d, ssid, ilimap, senseidx)
             lex.synsets.append(synset)
 
-            # Then create each entry (it not done yet) and sense for the synset
+            # Then create each entry (if not done yet) and sense for the synset
             w_num_sense_map: Dict[int, Sense] = {}
             for w_num, w in enumerate(d.words, 1):
                 lemma = w.word
@@ -347,6 +341,16 @@ def _build_sense(
 
 # File loading #########################################################
 
+
+def _load_data(source: Path) -> _Data:
+    return {
+        'n': _load_data_file(source / 'data.noun'),
+        'v': _load_data_file(source / 'data.verb'),
+        'a': _load_data_file(source / 'data.adj'),
+        'r': _load_data_file(source / 'data.adv'),
+    }
+
+
 def _load_data_file(path: Path) -> Dict[int, DataRecord]:
     subdata: Dict[int, DataRecord] = {}
     with path.open('rt') as datafile:
@@ -382,7 +386,16 @@ def _load_frames(path: Path) -> List[SyntacticBehaviour]:
     return frames
 
 
-def _load_exceptions(path: Path) -> Dict[str, Set[str]]:
+def _load_exceptions(source: Path) -> _Exceptions:
+    return {
+        'n': _load_exceptions_file(source / 'noun.exc'),
+        'v': _load_exceptions_file(source / 'verb.exc'),
+        'a': _load_exceptions_file(source / 'adj.exc'),
+        'r': _load_exceptions_file(source / 'adv.exc'),
+    }
+
+
+def _load_exceptions_file(path: Path) -> Dict[str, Set[str]]:
     exceptions: Dict[str, Set[str]] = {}
     with path.open('rt') as exceptionfile:
         for line in exceptionfile:

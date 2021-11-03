@@ -10,7 +10,7 @@ from collections import Counter
 from wn.lmf import (
     dump,
     Lexicon,
-    Metadata,
+    # Metadata,
     LexicalEntry,
     Lemma,
     Form,
@@ -70,19 +70,19 @@ bcp47 = {
 }
 
 open_license = {
-    'CC BY 3.0':'https://creativecommons.org/licenses/by/3.0/',
-    'CC-BY 3.0':'https://creativecommons.org/licenses/by/3.0/',
-    'CC BY 4.0':'https://creativecommons.org/licenses/by/4.0/',
-    'CC BY SA 3.0':'https://creativecommons.org/licenses/by-sa/3.0/',
-    'CC BY-SA':'https://creativecommons.org/licenses/by-sa/',
-    'CC BY SA':'https://creativecommons.org/licenses/by-sa/',
-    'CC BY SA 4.0':'https://creativecommons.org/licenses/by-sa/4.0/',
-    'Apache 2.0':'https://opensource.org/licenses/Apache-2.0',
-    'CeCILL-C':'http://www.cecill.info/licenses/Licence_CeCILL-C_V1-en.html',
-    'MIT':'https://opensource.org/licenses/MIT/',
-    'wordnet':'wordnet',
-    'unicode':'https://www.unicode.org/license.html',
-    'ODC-BY 1.0':'http://opendefinition.org/licenses/odc-by/'
+    'CC BY 3.0': 'https://creativecommons.org/licenses/by/3.0/',
+    'CC-BY 3.0': 'https://creativecommons.org/licenses/by/3.0/',
+    'CC BY 4.0': 'https://creativecommons.org/licenses/by/4.0/',
+    'CC BY SA 3.0': 'https://creativecommons.org/licenses/by-sa/3.0/',
+    'CC BY-SA': 'https://creativecommons.org/licenses/by-sa/',
+    'CC BY SA': 'https://creativecommons.org/licenses/by-sa/',
+    'CC BY SA 4.0': 'https://creativecommons.org/licenses/by-sa/4.0/',
+    'Apache 2.0': 'https://opensource.org/licenses/Apache-2.0',
+    'CeCILL-C': 'http://www.cecill.info/licenses/Licence_CeCILL-C_V1-en.html',
+    'MIT': 'https://opensource.org/licenses/MIT/',
+    'wordnet': 'wordnet',
+    'unicode': 'https://www.unicode.org/license.html',
+    'ODC-BY 1.0': 'http://opendefinition.org/licenses/odc-by/'
 }
 
 

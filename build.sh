@@ -42,10 +42,13 @@ fi
 
 if [ ! -d etc/WordNet-3.0 ]; then
     wget http://wordnetcode.princeton.edu/3.0/WordNet-3.0.tar.bz2 -O - | tar -C etc/ -xj
-    # Patch a simple loop between inhibit and suppress. The original line,
+    # Patch a simple loop between inhibit and restrain. The original line,
     # abbreviated, has this:
     #   02423762 41 v 03 inhibit ... @ 02422663 v 0000 ... ~ 02422663 v 0000 ...
     sed -i '/^02423762 /{s/@ 02422663 /@ 00612841 /}' etc/WordNet-3.0/dict/data.verb
+    # NOTE: The above fix is also applied to the NLTK's distribution
+    # of the Princeton WordNet 3.0, so there is precedent. Please
+    # refrain from making any further changes to the data.
 fi
 
 ## make the lexicon
@@ -68,6 +71,9 @@ python -m scripts.wndb2lmf \
 if [ ! -d etc/WordNet-3.1 ]; then
     mkdir etc/WordNet-3.1  # WN3.1 is only distributed with the dict/ subdirectory
     wget http://wordnetcode.princeton.edu/wn3.1.dict.tar.gz -O - | tar -C etc/WordNet-3.1 -xz
+    # NOTE: Do not make changes to the data unless necessary for a
+    # well-formed and loadable WN-LMF document. Errors are meant to be
+    # fixed in later versions.
 fi
 
 mkdir -p "${BUILD}/omw-en31"
