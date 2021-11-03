@@ -21,7 +21,7 @@ Francis Bond and Ryan Foster. 2013. \
 email = "bond@ieee.org"
 url = "https://github.com/bond-lab/omw-data"
 # to unset requires use: requires = {}
-requires = { id = "omw-en", version = "1.4", url = "https://github.com/bond-lab/omw-data" }
+requires = { id = "omw-en", version = "1.4" }
 
 [packages]
 
