@@ -49,10 +49,10 @@ if [ ! -d etc/WordNet-3.0 ]; then
 fi
 
 ## make the lexicon
-mkdir -p "${BUILD}/en30"
+mkdir -p "${BUILD}/omw-en30"
 python -m scripts.wndb2lmf \
        etc/WordNet-3.0/dict/ \
-       "${BUILD}/en30/omw-en.xml" \
+       "${BUILD}/omw-en30/omw-en.xml" \
        --id='omw-en' \
        --version="${VER}" \
        --label="${WN30_LABEL}" \
@@ -70,10 +70,10 @@ if [ ! -d etc/WordNet-3.1 ]; then
     wget http://wordnetcode.princeton.edu/wn3.1.dict.tar.gz -O - | tar -C etc/WordNet-3.1 -xz
 fi
 
-mkdir -p "${BUILD}/en31"
+mkdir -p "${BUILD}/omw-en31"
 python -m scripts.wndb2lmf \
        etc/WordNet-3.1/dict/ \
-       "${BUILD}/en31/omw-en31.xml" \
+       "${BUILD}/omw-en31/omw-en31.xml" \
        --id='omw-en31' \
        --version="${VER}" \
        --label="${WN31_LABEL}" \
