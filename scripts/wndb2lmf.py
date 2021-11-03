@@ -205,7 +205,7 @@ def _build_lexicon(
     ilimap: Dict[str, str],
     progress: ProgressHandler,
 ) -> None:
-    _make_synset_id = synset_id_formatter(prefix=lex.id)
+    _make_synset_id = synset_id_formatter(fmt=f'{lex.id}-{{offset:08}}-{{pos}}')
     frame_sense_map = {sb.id: sb.senses for sb in lex.syntactic_behaviours}
 
     for pos in 'nvar':
@@ -233,8 +233,8 @@ def _build_lexicon(
                     lex.lexical_entries.append(entry)
 
                 sense_key, sense_num, count = senseidx[lemma.lower()][offset]
-                sense_id = _make_sense_id(lex.id, sense_key)
-                sense = _build_sense(d, sense_id, ssid, count, w.adjposition)
+                sense_id = _make_sense_id(lex.id, lemma, offset, d.ss_type)
+                sense = _build_sense(d, sense_id, ssid, count, w.adjposition, sense_key)
 
                 synset.members.append(sense.id)
                 entries[entry_id].senses.append(sense)
@@ -248,8 +248,7 @@ def _build_lexicon(
                 if p.source_w_num or p.target_w_num:
                     src_sense = w_num_sense_map[p.source_w_num]
                     lemma = tgt.words[p.target_w_num - 1].word  # 1-based indexing
-                    sense_key = senseidx[lemma.lower()][tgt_offset][0]
-                    target_id = _make_sense_id(lex.id, sense_key)
+                    target_id = _make_sense_id(lex.id, lemma, tgt_offset, tgt.ss_type)
                     src_sense.relations.append(SenseRelation(target_id, relname))
                 else:
                     target_id = _make_synset_id(offset=tgt_offset, pos=tgt.ss_type)
@@ -326,6 +325,7 @@ def _build_sense(
     ssid: str,
     count: int,
     adjposition: Optional[str],
+    sense_key: str,
 ) -> Sense:
     return Sense(
         sense_id,
@@ -335,7 +335,7 @@ def _build_sense(
         counts=[Count(count)] if count else None,
         lexicalized=True,
         adjposition=adjposition,
-        meta=None
+        meta=Metadata(identifier=sense_key)
     )
 
 
@@ -542,10 +542,11 @@ def _make_entry_id(id: str, lemma: str, pos: str) -> str:
 
 def _make_sense_id(
     id: str,
-    sense_key: str
+    lemma: str,
+    offset: int,
+    pos: str,
 ) -> str:
-    lemma, _, tail = sense_key.partition('%')
-    return f'{id}-{escape_lemma(lemma)}__{tail.replace(":", ".")}'
+    return f'{id}-{escape_lemma(lemma)}-{offset:08}-{pos}'
 
 
 def _make_nltk_synset_name(lemma: str, ss_type: str, sense_num: int) -> str:
