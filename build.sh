@@ -8,9 +8,14 @@
 ### The build wordnets should not be tracked by Git.
 ###
 
-# Configuration ########################################################
+if [ $# -ne 1 ]; then
+    echo "usage: build.sh VERSION"
+    exit 1
+fi
 
-VER=1.4  # local (OMW) version to use for the WN-LMF lexicon
+VER=$1
+
+# Configuration ########################################################
 
 BUILD="build/omw-${VER}"
 DTD="WN-LMF-1.1.dtd"
@@ -106,8 +111,3 @@ echo "$WN_BIBTEX" > "${BUILD}/omw-en31/citation.bib"
 # Other OMW Lexicons ###################################################
 
 python -m scripts.build --version="${VER}"
-
-
-# Validate #############################################################
-
-find "${BUILD}" -name \*.xml | sort | xargs xmlstarlet val -d "etc/$DTD"

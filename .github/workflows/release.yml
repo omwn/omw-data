@@ -3,30 +3,85 @@ name: Upload Assets
 on:
   release:
     types: [created]
+  workflow_dispatch:
+    inputs:
+      tagname:
+        description: Git tag or release name (e.g., `v1.4`)
+        required: true
 
 jobs:
   run:
     runs-on: ubuntu-latest
+    env:
+      DTD: etc/WN-LMF-1.1.dtd
+
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout release
+      if: ${{ github.event_name == "release" }}
+      uses: actions/checkout@v2
+      run: |
+        tagname=${GITHUB_REF##*/}
+        echo "TAGNAME=$tagname" >> $GITHUB_ENV
+        echo "VERSION=${tagname#v}" >> $GITHUB_ENV
+
+    - name: Checkout tag
+      if: ${{ github.event_name == "workflow_dispatch" }}
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.inputs.tagname }}
+      run: |
+        tagname="${{ github.event.inputs.tagname }}
+        echo "TAGNAME=$tagname" >> $GITHUB_ENV
+        echo "VERSION=${tagname#v}" >> $GITHUB_ENV
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
-    - name: Build Assets
+        python-version: '3.8'
+
+    - name: Install dependencies
       run: |
-        tag_name="${GITHUB_REF##*/}"
         sudo apt install xmlstarlet
-        ./make-lmf.bash "${tag_name}"
-    - name: Upload
+        python3.8 -m pip install -r requirements.txt
+
+    - name: Build
       run: |
-        tag_name="${GITHUB_REF##*/}"
-        for asset in ./release/*.xz; do
-            name=$( basename ${asset%%.tar.xz} )
-            label=$( grep "^${name}" ./release/index.tsv | cut -f3 )
-            lgcode=$( grep "^${name}" ./release/index.tsv | cut -f2 )
-            gh release upload "${tag_name}" "${asset}#${label} [${lgcode}]"
+        ./build.sh "$VERSION"
+
+    - name: Validate
+      run: |
+        find "build/omw-$VERSION" -name \*.xml \
+        | sort \
+        | xargs xmlstarlet val -d "$DTD"
+        # python -m pip install wn>=0.9.0
+        # find "build/omw-$VERSION" -name \*.xml \
+        # | sort \
+        # | xargspython -m wn validate
+
+    - name: Package
+      env:
+        TAROPTS: --checkpoint=.100 -c -J
+        BUILD: build/omw-${VERSION}
+      run: |
+        mkdir -p release
+        for pkg in "${BUILD}"/*; do
+            name=$( basename $pkg )
+            echo -n "$name"
+            tar -C "${BUILD}" $TAROPTS -f "release/${name}-${VERSION}.tar.xz" "$name"
+            echo
         done
-        gh release upload "${tag_name}" "./index.toml#index.toml"
+        tar -C build/ $TAROPTS -f "release/omw-${VERSION}.tar.xz" "omw-$VERSION"
+
+    - name: Upload
+      env:
+        BUILD: build/omw-${VERSION}
+      run: |
+        for asset in ./release/*.xz; do
+            name=$( basename ${asset%-$VERSION.tar.xz} )
+            label=$( xmlstarlet sel -t -v '//Lexicon[1]/@label' "${BUILD}/${name}/${name}.xml" )
+            lang=$( xmlstarlet sel -t -v '//Lexicon[1]/@language' "${BUILD}/${name}/${name}.xml" )
+            gh release upload "${TAGNAME}" "${asset}#${label} [${lang}]"
+        done
+        # gh release upload "${TAGNAME}" "./index.toml#index.toml"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
