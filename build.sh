@@ -52,10 +52,10 @@ if [ ! -d etc/WordNet-3.0 ]; then
 fi
 
 ## make the lexicon
-mkdir -p "${BUILD}/omw-en30"
+mkdir -p "${BUILD}/omw-en"
 python -m scripts.wndb2lmf \
        etc/WordNet-3.0/dict/ \
-       "${BUILD}/omw-en30/omw-en.xml" \
+       "${BUILD}/omw-en/omw-en.xml" \
        --id='omw-en' \
        --version="${VER}" \
        --label="${WN30_LABEL}" \
