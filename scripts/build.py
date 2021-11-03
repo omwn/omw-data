@@ -15,6 +15,7 @@ parser.add_argument('LEXID', nargs='*',
                     help='which wordnet to build (default: all)')
 args = parser.parse_args()
 
+# The index must specify these on an entry or as a default.
 REQUIRED_ATTRIBUTES = {
     'label',
     'language',
@@ -22,6 +23,14 @@ REQUIRED_ATTRIBUTES = {
     'license',
     'source',
 }
+
+# If the following filenames are present in the source directory, they
+# will be copied into the LMF package.
+LMF_PACKAGE_FILENAMES = [
+    'README',  # 'README.txt', 'README.md', 'README.rst',
+    'LICENSE',  # 'LICENSE.txt', 'LICENSE.md', 'LICENSE.rst',
+    'citation.bib',
+]
 
 OMWDATA = Path(__file__).parent.parent
 INDEXPATH = OMWDATA / 'index.toml'
@@ -66,3 +75,10 @@ for lexid, project in packages.items():
             logo=get('logo'),
             requires=get('requires'),
         )
+
+    # copy extra files if available
+    sourcedir = Path(project['source']).parent
+    for filename in LMF_PACKAGE_FILENAMES:
+        path = (sourcedir / filename)
+        if path.is_file():
+            (packagedir / filename).write_bytes(path.read_bytes())  # copy
