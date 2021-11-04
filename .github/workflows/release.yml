@@ -51,38 +51,10 @@ jobs:
 
     - name: Validate
       run: |
-        find "build/omw-$VERSION" -name \*.xml \
-        | sort \
-        | xargs xmlstarlet val -d "$DTD"
-        # python -m pip install wn>=0.9.0
-        # find "build/omw-$VERSION" -name \*.xml \
-        # | sort \
-        # | xargspython -m wn validate
+        ./validate.sh "$VERSION"
 
-    - name: Package
-      env:
-        TAROPTS: --checkpoint=.100 -c -J
-        BUILD: build/omw-${VERSION}
-      run: |
-        mkdir -p release
-        for pkg in "${BUILD}"/*; do
-            name=$( basename $pkg )
-            echo -n "$name"
-            tar -C "${BUILD}" $TAROPTS -f "release/${name}-${VERSION}.tar.xz" "$name"
-            echo
-        done
-        tar -C build/ $TAROPTS -f "release/omw-${VERSION}.tar.xz" "omw-$VERSION"
-
-    - name: Upload
-      env:
-        BUILD: build/omw-${VERSION}
-      run: |
-        for asset in ./release/*.xz; do
-            name=$( basename ${asset%-$VERSION.tar.xz} )
-            label=$( xmlstarlet sel -t -v '//Lexicon[1]/@label' "${BUILD}/${name}/${name}.xml" )
-            lang=$( xmlstarlet sel -t -v '//Lexicon[1]/@language' "${BUILD}/${name}/${name}.xml" )
-            gh release upload "${TAGNAME}" "${asset}#${label} [${lang}]"
-        done
-        # gh release upload "${TAGNAME}" "./index.toml#index.toml"
+    - name: Package and Publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        ./package.sh --publish "$VERSION" "$TAGNAME"

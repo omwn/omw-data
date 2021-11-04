@@ -18,7 +18,6 @@ VER=$1
 # Configuration ########################################################
 
 BUILD="build/omw-${VER}"
-DTD="WN-LMF-1.1.dtd"
 
 WN30_LABEL="OMW English Wordnet based on WordNet 3.0"
 WN31_LABEL="OMW English Wordnet based on WordNet 3.1"
@@ -37,11 +36,6 @@ echo "Checking auxiliary files in etc/"
 if [ ! -d etc/cili ]; then
     git clone https://github.com/globalwordnet/cili.git etc/cili
 fi
-
-if [ ! -f etc/"${DTD}" ]; then
-    wget "https://globalwordnet.github.io/schemas/${DTD}" -O etc/"$DTD"
-fi
-
 
 # WordNet 3.0: retrieve, unpack, patch, and build ######################
 
