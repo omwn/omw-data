@@ -42,4 +42,7 @@ with the following exceptions:
 We thanks the developers of all of the wordnets!  More recent versions
 are available for many of these.
 
-      
+Francis Bond and Ryan Foster (2013)
+[Linking and extending an open multilingual wordnet](https://aclanthology.org/P13-1133/)</a>.
+In *51st Annual Meeting of the Association for Computational Linguistics:  ACL-2013*.
+Sofia. 1352–1362
