@@ -16,23 +16,24 @@ jobs:
       DTD: etc/WN-LMF-1.1.dtd
 
     steps:
-    - name: Checkout release
+    - name: Get release tag
       if: ${{ github.event_name == "release" }}
-      uses: actions/checkout@v2
       run: |
         tagname=${GITHUB_REF##*/}
         echo "TAGNAME=$tagname" >> $GITHUB_ENV
         echo "VERSION=${tagname#v}" >> $GITHUB_ENV
 
-    - name: Checkout tag
+    - name: Get tag
       if: ${{ github.event_name == "workflow_dispatch" }}
-      uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.inputs.tagname }}
       run: |
         tagname="${{ github.event.inputs.tagname }}
         echo "TAGNAME=$tagname" >> $GITHUB_ENV
         echo "VERSION=${tagname#v}" >> $GITHUB_ENV
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ env.TAGNAME }}
 
     - name: Set up Python
       uses: actions/setup-python@v2
