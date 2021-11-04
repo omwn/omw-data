@@ -25,14 +25,6 @@ WN31_LABEL="OMW English Wordnet based on WordNet 3.1"
 WN_CITATION="Christiane Fellbaum (1998, ed.) *WordNet: An Electronic Lexical Database*. MIT Press."
 WN_LICENSE="https://wordnet.princeton.edu/license-and-commercial-use"
 WN_EMAIL="bond@ieee.org"
-WN_BIBTEX='@book{_Fellbaum:1998,
-  booktitle =	 "{WordNet}: An Electronic Lexical Database",
-  address =	 "Cambridge, MA",
-  editor =	 "Fellbaum, Christiane",
-  publisher =	 "MIT Press",
-  year =	 1998,
-}
-'
 
 mkdir -p "${BUILD}"
 mkdir -p etc
@@ -79,7 +71,8 @@ python -m scripts.wndb2lmf \
        --ili-map=etc/cili/ili-map-pwn30.tab
 # below: cat instead of cp to reset permissions
 cat etc/WordNet-3.0/LICENSE > "${BUILD}/omw-en/LICENSE"
-echo "$WN_BIBTEX" > "${BUILD}/omw-en/citation.bib"
+cat wns/en30/README.md > "${BUILD}/omw-en/README.md"
+cat wns/en30/citation.bib > "${BUILD}/omw-en/citation.bib"
 
 
 # WordNet 3.1: retrieve, unpack, and build #############################
@@ -104,8 +97,9 @@ python -m scripts.wndb2lmf \
        --license="${WN_LICENSE}" \
        --citation="${WN_CITATION}" \
        --ili-map=etc/cili/ili-map-pwn31.tab
-cat etc/WordNet-3.0/LICENSE > "${BUILD}/omw-en31/LICENSE"  # same as WN 3.0?
-echo "$WN_BIBTEX" > "${BUILD}/omw-en31/citation.bib"
+cat wns/en31/LICENSE > "${BUILD}/omw-en31/LICENSE"
+cat wns/en31/README.md > "${BUILD}/omw-en31/README.md"
+cat wns/en31/citation.bib > "${BUILD}/omw-en31/citation.bib"
 
 
 # Other OMW Lexicons ###################################################
