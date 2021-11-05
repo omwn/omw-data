@@ -25,12 +25,12 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: '3.9'
 
     - name: Install dependencies
       run: |
         sudo apt install xmlstarlet
-        python3.8 -m pip install -r requirements.txt
+        python -m pip install -r requirements.txt
 
     - name: Build
       run: |
