@@ -1,0 +1,37 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: OMW Data
+message: >-
+  Please cite this dataset using the metadata from
+  'preferred-citation'.
+type: dataset
+authors:
+  - given-names: Francis
+    family-names: Bond
+    email: bond@ieee.org
+    orcid: 'https://orcid.org/0000-0003-4973-8068'
+    affiliation: Nanyang Technological University
+  - given-names: Michael Wayne
+    family-names: Goodman
+    email: goodman.m.w@gmail.com
+    orcid: 'https://orcid.org/0000-0002-2896-5141'
+repository-code: 'https://github.com/bond-lab/omw-data/'
+preferred-citation:
+  type: conference-paper
+  authors:
+  - given-names: Francis
+    family-names: Bond
+    email: bond@ieee.org
+    orcid: 'https://orcid.org/0000-0003-4973-8068'
+    affiliation: Nanyang Technological University
+  - family-names: Foster
+    given-names: Ryan
+  start: 1352 # First page number
+  end: 1362 # Last page number
+  conference:
+      name: "51st Annual Meeting of the Association for Computational Linguistics: ACL-2013"
+  title: "Linking and extending an open multilingual wordnet"
+  year: 2013
+  url: 'https://aclanthology.org/P13-1133/'

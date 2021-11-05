@@ -7,26 +7,41 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    env:
+      DTD: etc/WN-LMF-1.1.dtd
+
     steps:
-    - uses: actions/checkout@v2
+    - name: Get release tag
+      run: |
+        tagname=${GITHUB_REF##*/}
+        echo "TAGNAME=$tagname" >> $GITHUB_ENV
+        echo "VERSION=${tagname#v}" >> $GITHUB_ENV
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ env.TAGNAME }}
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
-    - name: Build Assets
+        python-version: '3.8'
+
+    - name: Install dependencies
       run: |
-        tag_name="${GITHUB_REF##*/}"
         sudo apt install xmlstarlet
-        ./make-lmf.bash "${tag_name}"
-    - name: Upload
+        python3.8 -m pip install -r requirements.txt
+
+    - name: Build
       run: |
-        tag_name="${GITHUB_REF##*/}"
-        for asset in ./release/*.xz; do
-            name=$( basename ${asset%%.tar.xz} )
-            label=$( grep "^${name}" ./release/index.tsv | cut -f3 )
-            lgcode=$( grep "^${name}" ./release/index.tsv | cut -f2 )
-            gh release upload "${tag_name}" "${asset}#${label} [${lgcode}]"
-        done
-        gh release upload "${tag_name}" "./index.toml#index.toml"
+        ./build.sh "$VERSION"
+
+    - name: Validate
+      run: |
+        ./validate.sh "$VERSION"
+
+    - name: Package and Publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        ./package.sh --publish "$VERSION" "$TAGNAME"

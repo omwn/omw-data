@@ -1,0 +1,465 @@
+
+label = "Open Multilingual Wordnet"
+language = "mul"
+email = "bond@ieee.org"
+license = """\
+  Please consult the LICENSE files included with the individual wordnets. \
+  Note that all permit redistribution."""
+url = "https://github.com/bond-lab/omw-data"
+citation = """
+Francis Bond and Kyonghee Paik. 2012. \
+  `A survey of wordnets and their licenses <http://web.mysites.ntu.edu.sg/fcbond/open/pubs/2012-gwc-wn-license.pdf>`_. \
+  In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. \
+  Matsue, Japan. 64–71.
+Francis Bond and Ryan Foster. 2013. \
+  `Linking and extending an open multilingual wordnet <http://aclweb.org/anthology/P/P13/P13-1133.pdf>`_. \
+  In *51st Annual Meeting of the Association for Computational Linguistics: ACL-2013*. \
+  Sofia. 1352–1362."""
+
+[package-defaults]
+
+email = "bond@ieee.org"
+url = "https://github.com/bond-lab/omw-data"
+# to unset requires use: requires = {}
+requires = { id = "omw-en", version = "1.4" }
+
+[packages]
+
+[packages.omw-sq]
+
+label = "Albanet"
+language = "sq"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/als/wn-data-als.tab"
+citation = """
+Ervin Ruci. 2008. \
+  *On the current state of Albanet and related applications*. \
+  Technical Report, University of Vlora."""
+
+[packages.omw-arb]
+
+label = "Arabic WordNet (AWN v2)"
+language = "arb"
+license = "https://creativecommons.org/licenses/by-sa/3.0/"
+source = "wns/arb/wn-data-arb.tab"
+citation = """
+Black W., Elkateb S., Rodriguez H., Alkhalifa M., Vossen P., Pease A., Bertran M., Fellbaum C.,. 2006. \
+  *The Arabic WordNet Project*. \
+  In *Proceedings of LREC 2006*.
+Lahsen Abouenour, Karim Bouzoubaa, Paolo Rosso. 2013. \
+  *On the evaluation and improvement of {Arabic} WordNet coverage and usability*. \
+  *Language Resources and Evaluation*, **47(3)** pp 891–917."""
+url = "http://globalwordnet.org/resources/arabic-wordnet/"
+
+[packages.omw-bg]
+
+label = "BulTreeBank Wordnet (BTB-WN)"
+language = "bg"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/bul/wn-data-bul.tab"
+citation = """
+Simov, Kiril and Osenova, Petya. 2010. \
+  `Constructing of an Ontology-based Lexicon for Bulgarian, \
+  Proceedings of LREC 2010 <http://www.lrec-conf.org/proceedings/lrec2010/summaries/848.html>`_."""
+url = "http://bultreebank.org/en/"
+
+[packages.omw-ca]
+
+label = "Multilingual Central Repository (Catalan)"
+language = "ca"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/mcr/wn-data-cat.tab"
+citation = """
+Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. \
+  `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base <http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&nid=18>`_. \
+  In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan."""
+url = "https://adimen.si.ehu.es/web/MCR/"
+
+
+[packages.omw-cmn]
+
+label = "Chinese Open Wordnet"
+language = "cmn-Hans"
+license = "wordnet"
+source = "wns/cow/wn-data-cmn.tab"
+citation = """
+Shan Wang and Francis Bond. 2013. \
+  `Building the Chinese Open Wordnet (COW): Starting from Core Synsets <https://aclweb.org/anthology/W/W13/W13-4302.pdf>`_. \
+  In *Proceedings of the 11th Workshop on Asian Language Resources, a Workshop of The 6th International Joint Conference on Natural Language Processing (IJCNLP-6)*. \
+  Nagoya, Japan. pp 10–18."""
+url = "https://bond-lab.github.io/cow/"
+
+[packages.omw-da]
+
+label = "DanNet"
+language = "da"
+license = "wordnet"
+source = "wns/dan/wn-data-dan.tab"
+citation = """
+Pedersen, B. S., Nimb, S., Asmussen, J., Sørensen, N. H., Trap-Jensen, L. and Lorentzen, H.. 2009. \
+  *DanNet -- the challenge of compiling a WordNet for Danish by reusing a monolingual dictionary*. \
+  *Language Resources and Evaluation*, Volume 43:3 pp 269-299."""
+url = "https://cst.ku.dk/projekter/dannet/"
+
+[packages.omw-el]
+
+label = "Greek Wordnet"
+language = "el"
+license = "https://opensource.org/licenses/Apache-2.0"
+source = "wns/ell/wn-data-ell.tab"
+citation = """
+Sofia Stamou, Goran Nenadic and Dimitris Christodoulakis. 2004. \
+  `Exploring Balkanet Shared Ontology for Multilingual Conceptual Indexing <http://www.lrec-conf.org/proceedings/lrec2004/summaries/113.htm>`_. \
+  *Proceedings of LREC 2004*."""
+url = "https://github.com/okfngr/wordnet"
+
+[packages.omw-eu]
+
+label = "Multilingual Central Repository (Basque)"
+language = "eu"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/mcr/wn-data-eus.tab"
+citation = """
+Elisabete Pociello, Eneko Agirre and Izaskun ldezabal. 2010. \
+  `Methodology and construction of the Basque WordNet <http://www.springerlink.com/content/40n24044u3k2k277/>`_. \
+   *Language Resources and Evaluation*. \
+   Springer Netherlands, **45(2)** pp 121–142."""
+url = "https://adimen.si.ehu.es/web/MCR/"
+
+[packages.omw-fi]
+
+label = "FinnWordNet"
+language = "fi"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/fin/wn-data-fin.tab"
+citation = """
+Lindén K., Carlson. L. 2010. \
+  *FinnWordNet — WordNet påfinska via översättning*. \
+  *LexicoNordica — Nordic Journal of Lexicography*, \
+  **17** pp 119–140."""
+url = "http://www.ling.helsinki.fi/en/lt/research/finnwordnet/"
+
+[packages.omw-fr]
+
+label = "WOLF (Wordnet Libre du Français)"
+language = "fr"
+license = "http://www.cecill.info/licenses/Licence_CeCILL-C_V1-en.html"
+source = "wns/fra/wn-data-fra.tab"
+citation = """
+Benoit Sagot and Darla Fišer. 2008. \
+  Building a free French wordnet from multilingual resources, \
+  *E.L.R.A. (ELRA) (ed.), \
+  Proceedings of the Sixth International Language Resources and Evaluation (LREC 2008)*. \
+  Marrakech, Morocco."""
+url="http://pauillac.inria.fr/~sagot/index.html#wolf"
+
+[packages.omw-gl]
+
+label = "Multilingual Central Repository (Galician)"
+language = "gl"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/mcr/wn-data-glg.tab"
+citation = """
+Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. \
+  `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base <http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&nid=18>`_. \
+  In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan."""
+url = "https://adimen.si.ehu.es/web/MCR/"
+
+[packages.omw-he]
+
+label = "Hebrew Wordnet"
+language = "he"
+license = "wordnet"
+source = "wns/heb/wn-data-heb.tab"
+citation = """
+Noam Ordan and Shuly Wintner. 2007. \
+  Hebrew WordNet: a test case of aligning lexical databases across languages. \
+  *International Journal of Translation*, \
+  **19(1)**:39–58, 2007."""
+url = "http://cl.haifa.ac.il/projects/mwn/index.shtml"
+
+[packages.omw-hr]
+
+label = "Croatian Wordnet"
+language = "hr"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/hrv/wn-data-hrv.tab"
+citation = """
+Oliver A., Šojat, K., Srebačić, M.. 2015. \
+  *Automatic Expansion of Croatian Wordnet*. \
+  In *Proceedings of the 29th CALS international conference: Applied Linguistic Research and Methodology*. \
+  Zadar, Croatia.
+Raffaelli, Ida; Bekavac, Božo; Agić, Željko; Tadić, Marko. 2008. \
+  *Building Croatian WordNet*. \
+  In *Proceedings of the Fourth Global WordNet Conference*. \
+  pp 349-359."""
+
+[packages.omw-id]
+
+label = "Wordnet Bahasa (Indonesian)"
+language = "id"
+license = "https://opensource.org/licenses/MIT/"
+source = "wns/msa/wn-data-ind.tab"
+citation = """
+Nurril Hirfana Mohamed Noor, Suerya Sapuan and Francis Bond. 2011. \
+  `Creating the open Wordnet Bahasa <http://web.mysites.ntu.edu.sg/fcbond/open/pubs/2011-wn-bahasa.pdf>`_. \
+  In *Proceedings of the 25th Pacific Asia Conference on Language, Information and Computation (PACLIC 25)*. \
+  pp 258–267. Singapore."""
+url = "http://wn-msa.sourceforge.net/"
+
+[packages.omw-it]
+
+label = "MultiWordNet (Italian)"
+language = "it"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/ita/wn-data-ita.tab"
+citation = """
+Emanuele Pianta, Luisa Bentivogli and Christian Girardi. 2002. \
+  *MultiWordNet: Developing an Aligned Multilingual Database*. \
+  In *Proceedings of the First International Conference on Global WordNet*. \
+  Mysore, India. January 21-25, 2002. pp 293-302."""
+url = "https://multiwordnet.fbk.eu/english/home.php"
+
+[packages.omw-is]
+
+label = "IceWordNet"
+language = "is"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/isl/wn-data-isl.tab"
+citation = """
+Íslensk samheitaorðabók. 1985. \
+  Ed. Svavar Sigmundsson. Styrktarsjóður Þórbergs Þórðarsonar og Margrétar Jónsdóttur. \
+  Háskóli Íslands, Reykjavík."""
+url = "http://www.malfong.is/index.php?lang=en&pg=icewordnet"
+
+[packages.omw-iwn]
+label = "ItalWordNet"
+language = "it"
+license = "http://opendefinition.org/licenses/odc-by/"
+source = "wns/iwn/wn-data-ita.tab"
+citation = """\
+    Antonio Toral, Stefania Bracal, Monica Monachini and Claudia Soria. 2010. \
+    *Rejuvenating the Italian WordNet: upgrading, standardising, extending*. \
+    In *Proceedings of the 5th International Conference of the Global WordNet Association (GWC-2010)*. \
+    Mumbai."""
+url = "http://www.ilc.cnr.it/en/content/italwordnet"
+
+[packages.omw-lt]
+
+label = "Lithuanian  WordNet"
+language = "lt"
+license = "https://creativecommons.org/licenses/by-sa/3.0/"
+source = "wns/slk/wn-data-lit.tab"
+citation = """
+Garabík, Radovan and Pileckytė, Indrė. 2013. \
+  `From Multilingual Dictionary to Lithuanian WordNet <http://korpus.juls.savba.sk/attachments/publications/lithuanian_wordnet_2013.pdf>`_. \
+  In *Natural Language Processing, Corpus Linguistics, E-Learning*. \
+  Ed. Katarína Gajdošová — Adriána Žáková. Lüdenscheid: RAM-Verlag, pp 74–80."""
+url = "https://korpus.sk/ltskwn_en.html"
+
+[packages.omw-ja]
+
+label = "Japanese Wordnet"
+language = "ja"
+license = "wordnet"
+source = "wns/jpn/wn-data-jpn.tab"
+citation = """
+Hitoshi Isahara, Francis Bond, Kiyotaka Uchimoto, Masao Utiyama and Kyoko Kanzaki. 2008. \
+  *Development of Japanese WordNet*. \
+  In *LREC-2008*, Marrakech."""
+url = "https://bond-lab.github.io/wnja/"
+
+[packages.omw-nl]
+
+label = "Open Dutch WordNet"
+language = "nl"
+license = "https://creativecommons.org/licenses/by-sa/4.0/"
+source = "wns/nld/wn-data-nld.tab"
+citation = """
+Marten Postma, Emiel van Miltenburg, Roxane Segers, Anneleen Schoen and Piek Vossen. 2016. \
+  *Open Dutch WordNet*, \
+  In *Proceedings of the Eight Global Wordnet Conference*. \
+  Bucharest, Romania."""
+url = "http://wordpress.let.vupr.nl/odwn/"
+
+[packages.omw-nn]
+
+label = "Norwegian Wordnet (Nynorsk)"
+language = "nn"
+license = "wordnet"
+source = "wns/nor/wn-data-nno.tab"
+citation = """
+Fjeld, Ruth Vatvedt and Nygaard, Lars. 2009. \
+  `NorNet - a monolingual wordnet of modern Norwegian <http://dspace.utlib.ee/dspace/handle/10062/9837>`_. \
+  In *Proceedings of the NODALIDA 2009 workshop WordNets and other Lexical Semantic Resources — between Lexical Semantics, Lexicography, Terminology and Formal Ontologies.* \
+  pp 13–16. Estonia."""
+
+[packages.omw-nb]
+
+label = "Norwegian Wordnet (Bokmål)"
+language = "nb"
+license = "wordnet"
+source = "wns/nor/wn-data-nob.tab"
+citation = """
+Fjeld, Ruth Vatvedt and Nygaard, Lars. 2009. \
+  `NorNet - a monolingual wordnet of modern Norwegian <http://dspace.utlib.ee/dspace/handle/10062/9837>`_. \
+  In *Proceedings of the NODALIDA 2009 workshop WordNets and other Lexical Semantic Resources — between Lexical Semantics, Lexicography, Terminology and Formal Ontologies.* \
+  pp 13–16. Estonia."""
+
+[packages.omw-pl]
+
+label = "plWordNet"
+language = "pl"
+license = "wordnet"
+source = "wns/pol/wn-data-pol.tab"
+citation = """
+Maciej Piasecki, Stanisław Szpakowicz and Bartosz Broda. 2009. \
+  `A Wordnet from the Ground Up <http://www.plwordnet.pwr.wroc.pl/main/content/files/publications/A_Wordnet_from_the_Ground_Up.pdf>`_. \
+  Wroclaw: Oficyna Wydawnicza Politechniki Wroclawskiej, Poland."""
+url = "http://plwordnet.pwr.wroc.pl/wordnet/wordnet"
+
+[packages.omw-pt]
+
+label = "OpenWN-PT"
+language = "pt"
+license = "https://creativecommons.org/licenses/by-sa/"
+source = "wns/por/wn-data-por.tab"
+citation = """
+Valeria de Paiva and Alexandre Rademaker. 2012. \
+  Revisiting a Brazilian wordnet. \
+  In *Proceedings of Global Wordnet Conference*, Matsue. \
+  Global Wordnet Association. (also with Gerard de Melo's contribution)"""
+url = "http://wn.mybluemix.net/"
+
+[packages.omw-ro]
+
+label = "Romanian Wordnet"
+language = "ro"
+license = "https://creativecommons.org/licenses/by-sa/"
+source = "wns/ron/wn-data-ron.tab"
+citation = """\
+    Tufiș, Dan, Ion, Radu, Bozianu, Luigi, Ceaușu, Alexandru and Ștefănescu, Dan. 2008. \
+    *Romanian Wordnet: Current State, New Applications and Prospects*. \
+    In *Proceedings of the 4th Global WordNet Conference, GWC-2008* \
+    Eds. Tanacs, Attila, Csendes, Dora, Vincze, Veronika, Fellbaum, Christiane and Vossen, Piek. \
+    Szeged, Hungary, pp 441–452."""
+url = "https://www.racai.ro/tools/text/rowordnet/"
+
+[packages.omw-sk]
+
+label = "Slovak WordNet"
+language = "sk"
+license = "https://creativecommons.org/licenses/by-sa/3.0/"
+source = "wns/slk/wn-data-slk.tab"
+url = "https://korpus.sk/WordNet_en.html"
+
+[packages.omw-sl]
+
+label = "sloWNet"
+language = "sl"
+license = "https://creativecommons.org/licenses/by-sa/3.0/"
+source = "wns/slv/wn-data-slv.tab"
+citation = """
+Fišer, Darja, and Novak, Jernej, and Eejavec, Tomaž. 2012. \
+  *sloWNet 3.0: development, extension and cleaning*. \
+  In *Proceedings of the 6th International Global Wordnet Conference (GWC 2012).*. \
+  The Global WordNet Association, pp 113-117."""
+url = "http://lojze.lugos.si/darja/research/slownet/"
+
+[packages.omw-es]
+
+label = "Multilingual Central Repository (Spanish)"
+language = "es"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/mcr/wn-data-spa.tab"
+citation = """
+Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. \
+  `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base <http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&nid=18>`_. \
+  In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan."""
+url = "https://adimen.si.ehu.es/web/MCR/"
+
+
+[packages.omw-sv]
+
+label = "WordNet-SALDO"
+language = "sv"
+license = "https://creativecommons.org/licenses/by/3.0/"
+source = "wns/swe/wn-data-swe.tab"
+citation = """
+Borin, Lars and Forsberg, Markus and Lönngren, Lennart. 2013. \
+  `SALDO: a touch of yin to WordNet's yang <http://dx.doi.org/10.1007/s10579-013-9233-4>`_. \
+  *Language Resources and Evaluation*, \
+  **47(4)** pp 1191–1211."""
+url = "https://spraakbanken.gu.se/en/resources/wordnet-saldo"
+
+[packages.omw-th]
+
+label = "Thai Wordnet"
+language = "th"
+license = "wordnet"
+source = "wns/tha/wn-data-tha.tab"
+citation = """
+Thoongsup S., Charoenporn T., Robkop K., Sinthurahat T., Mokarat C., Sornlertlamvanich V., Isahara H. 2009. \
+  *Thai Wordnet Construction*. \
+  In *Proceedings of The 7th Workshop on Asian Language Resources (ALR7), \
+  Joint conference of the 47th Annual Meeting of the Association for Computational Linguistics (ACL) and the 4th International Joint Conference on Natural Language Processing (IJCNLP)*. \
+  Suntec, Singapore."""
+
+[packages.omw-zsm]
+
+label = "Wordnet Bahasa (Malaysian)"
+language = "zsm"
+license = "https://opensource.org/licenses/MIT/"
+source = "wns/msa/wn-data-zsm.tab"
+citation = """
+Nurril Hirfana Mohamed Noor, Suerya Sapuan and Francis Bond. 2011. \
+  `Creating the open Wordnet Bahasa <http://web.mysites.ntu.edu.sg/fcbond/open/pubs/2011-wn-bahasa.pdf>`_. \
+  In *Proceedings of the 25th Pacific Asia Conference on Language, Information and Computation (PACLIC 25)*. \
+  pp 258–267. Singapore."""
+url = "http://wn-msa.sourceforge.net/"
+
+[extra]
+# The following are not currently built due to licensing or other
+# issues or are built separately
+
+[extra.omw-en]
+
+label = "OMW English Wordnet based on WordNet 3.0"
+language = "en"
+license = "https://wordnet.princeton.edu/license-and-commercial-use"
+citation = """
+Christiane Fellbaum. (ed.). 1998. \
+  *WordNet: An Electronic Lexical Database*, MIT Press."""
+
+[extra.omw-en31]
+
+label = "OMW English Wordnet based on WordNet 3.1"
+language = "en"
+license = "https://wordnet.princeton.edu/license-and-commercial-use"
+citation = """
+Christiane Fellbaum. (ed.). 1998. \
+  *WordNet: An Electronic Lexical Database*, MIT Press."""
+
+[extra.fas]
+
+label = "Persian Wordnet"
+language = "fa"
+license = "free to use"
+source = "wns/fas/wn-data-fas.tab"
+citation = """
+Montazery, Mortaza and Heshaam Faili. 2010. \
+  *Automatic Persian WordNet Construction*. \
+  In *the 23rd International Conference on Computational Linguistics*. \
+  pp 846–850."""
+
+[extra.qcnwn]
+
+label = "Chinese Wordnet (Taiwan)"
+language = "cmn-Hant"
+license = "wordnet"
+source = "wns/cwn/wn-data-qcn.tab"
+citation = """
+Huang, C.-R., Hsieh, S.-K., Hong, J.-F., Chen, Y.-Z., Su, I.-L., Chen, Y.-X., and Huang, S.-W. 2010. \
+  *Chinese wordnet: Design and implementation of a cross-lingual knowledge processing infrastructure*. \
+  In *Journal of Chinese Information Processing*. \
+  **24(2)** pp 14–23. (in Chinese)"""

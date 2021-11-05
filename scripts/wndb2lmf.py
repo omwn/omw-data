@@ -4,7 +4,7 @@
 
 Usage example:
 
-$ python wndb2lmf.py \
+$ python -m scripts.wndb2lmf.py \
          WordNet-3.0/dict/ \
          wn30.xml \
          --id='wn30' \
@@ -20,7 +20,6 @@ Requirements:
 - The Wn Python library: https://github.com/goodmami/wn
 - The Pe Python library: https://github.com/goodmami/pe
 - WNDB source files: https://wordnet.princeton.edu/download/current-version
-- CILI mappings (optional): https://github.com/globalwordnet/cili/
 
 Partially inspired by the gwn-scala-api converter and the NLTK's WNDB
 reader:
@@ -60,6 +59,8 @@ from wn.lmf import (
     Definition,
     SyntacticBehaviour,
 )
+
+from .util import escape_lemma
 
 
 LMF_VERSION = '1.1'
@@ -135,29 +136,21 @@ _SenseIndex = Dict[str, Dict[int, Tuple[str, int, int]]]
 _Exceptions = Dict[str, Dict[str, Set[str]]]
 
 # see: https://wordnet.princeton.edu/documentation/lexnames5wn
-_lexfile_lookup = {num: lexfile for num, lexfile in LEXICOGRAPHER_FILES.items()}
+_lexfile_lookup = {num: lexfile for lexfile, num in LEXICOGRAPHER_FILES.items()}
 
 
 # Main Function ########################################################
 
 def main(args):
     source = Path(args.SRC).expanduser()
-    progress = ProgressBar(message='Building lexicon', refresh_interval=1000)
+    progress = ProgressBar(message=f'Building {args.id}:{args.version}',
+                           refresh_interval=1000)
 
     progress.flash('Inspecting sources')
-    for filename in ('data.noun', 'data.verb', 'data.adj', 'data.adv',
-                     'noun.exc', 'verb.exc', 'adj.exc', 'adv.exc',
-                     'index.sense', 'verb.Framestext'):
-        if not (source / filename).is_file():
-            raise WNDBError(f'file not found or is not a regular file: {filename}')
+    _inspect(source)
 
     progress.flash('Loading WNDB data')
-    data: _Data = {
-        'n': _load_data_file(source / 'data.noun'),
-        'v': _load_data_file(source / 'data.verb'),
-        'a': _load_data_file(source / 'data.adj'),
-        'r': _load_data_file(source / 'data.adv'),
-    }
+    data = _load_data(source)
 
     progress.flash('Loading sense index')
     senseidx = _load_sense_index(source / 'index.sense')
@@ -166,12 +159,7 @@ def main(args):
     syntactic_behaviours = _load_frames(source / 'verb.Framestext')
 
     progress.flash('Loading exception lists')
-    exceptions: _Exceptions = {
-        'n': _load_exceptions(source / 'noun.exc'),
-        'v': _load_exceptions(source / 'verb.exc'),
-        'a': _load_exceptions(source / 'adj.exc'),
-        'r': _load_exceptions(source / 'adv.exc'),
-    }
+    exceptions = _load_exceptions(source)
 
     progress.flash('Loading ILI map')
     ilimap = _load_ili_map(args.ili_map) if args.ili_map else {}
@@ -195,7 +183,16 @@ def main(args):
     progress.flash(f'Writing to WN-LMF {LMF_VERSION}')
     dump([lexicon], args.DEST, version=LMF_VERSION)
 
+    progress.flash(f'Built {args.id}:{args.version}')
     progress.close()
+
+
+def _inspect(source: Path) -> None:
+    for filename in ('data.noun', 'data.verb', 'data.adj', 'data.adv',
+                     'noun.exc', 'verb.exc', 'adj.exc', 'adv.exc',
+                     'index.sense', 'verb.Framestext'):
+        if not (source / filename).is_file():
+            raise WNDBError(f'file not found or is not a regular file: {filename}')
 
 
 # LMF Building Functions ###############################################
@@ -208,14 +205,14 @@ def _build_lexicon(
     ilimap: Dict[str, str],
     progress: ProgressHandler,
 ) -> None:
-    _make_synset_id = synset_id_formatter(prefix=lex.id)
+    _make_synset_id = synset_id_formatter(fmt=f'{lex.id}-{{offset:08}}-{{pos}}')
     frame_sense_map = {sb.id: sb.senses for sb in lex.syntactic_behaviours}
 
     for pos in 'nvar':
         progress.set(status=pos)
 
-        entries: Dict[str, LexicalEntry] = {}
-        sense_rank: Dict[str, int] = {}
+        entries: Dict[str, LexicalEntry] = {}  # for random access to entries
+        sense_rank: Dict[str, int] = {}  # for sorting senses afterwards
 
         for offset, d in data[pos].items():
 
@@ -224,7 +221,7 @@ def _build_lexicon(
             synset = _build_synset(d, ssid, ilimap, senseidx)
             lex.synsets.append(synset)
 
-            # Then create each entry (it not done yet) and sense for the synset
+            # Then create each entry (if not done yet) and sense for the synset
             w_num_sense_map: Dict[int, Sense] = {}
             for w_num, w in enumerate(d.words, 1):
                 lemma = w.word
@@ -236,8 +233,8 @@ def _build_lexicon(
                     lex.lexical_entries.append(entry)
 
                 sense_key, sense_num, count = senseidx[lemma.lower()][offset]
-                sense_id = _make_sense_id(lex.id, sense_key)
-                sense = _build_sense(d, sense_id, ssid, count, w.adjposition)
+                sense_id = _make_sense_id(lex.id, lemma, offset, d.ss_type)
+                sense = _build_sense(d, sense_id, ssid, count, w.adjposition, sense_key)
 
                 synset.members.append(sense.id)
                 entries[entry_id].senses.append(sense)
@@ -251,8 +248,7 @@ def _build_lexicon(
                 if p.source_w_num or p.target_w_num:
                     src_sense = w_num_sense_map[p.source_w_num]
                     lemma = tgt.words[p.target_w_num - 1].word  # 1-based indexing
-                    sense_key = senseidx[lemma.lower()][tgt_offset][0]
-                    target_id = _make_sense_id(lex.id, sense_key)
+                    target_id = _make_sense_id(lex.id, lemma, tgt_offset, tgt.ss_type)
                     src_sense.relations.append(SenseRelation(target_id, relname))
                 else:
                     target_id = _make_synset_id(offset=tgt_offset, pos=tgt.ss_type)
@@ -329,6 +325,7 @@ def _build_sense(
     ssid: str,
     count: int,
     adjposition: Optional[str],
+    sense_key: str,
 ) -> Sense:
     return Sense(
         sense_id,
@@ -338,11 +335,21 @@ def _build_sense(
         counts=[Count(count)] if count else None,
         lexicalized=True,
         adjposition=adjposition,
-        meta=None
+        meta=Metadata(identifier=sense_key)
     )
 
 
 # File loading #########################################################
+
+
+def _load_data(source: Path) -> _Data:
+    return {
+        'n': _load_data_file(source / 'data.noun'),
+        'v': _load_data_file(source / 'data.verb'),
+        'a': _load_data_file(source / 'data.adj'),
+        'r': _load_data_file(source / 'data.adv'),
+    }
+
 
 def _load_data_file(path: Path) -> Dict[int, DataRecord]:
     subdata: Dict[int, DataRecord] = {}
@@ -379,7 +386,16 @@ def _load_frames(path: Path) -> List[SyntacticBehaviour]:
     return frames
 
 
-def _load_exceptions(path: Path) -> Dict[str, Set[str]]:
+def _load_exceptions(source: Path) -> _Exceptions:
+    return {
+        'n': _load_exceptions_file(source / 'noun.exc'),
+        'v': _load_exceptions_file(source / 'verb.exc'),
+        'a': _load_exceptions_file(source / 'adj.exc'),
+        'r': _load_exceptions_file(source / 'adv.exc'),
+    }
+
+
+def _load_exceptions_file(path: Path) -> Dict[str, Set[str]]:
     exceptions: Dict[str, Set[str]] = {}
     with path.open('rt') as exceptionfile:
         for line in exceptionfile:
@@ -502,83 +518,6 @@ def _parse_data_gloss(gloss: str) -> Tuple[str, List[str]]:
 
 # Helper functions #####################################################
 
-_char_escapes = {
-    ' ': '_',
-    '-': '--',
-    # HTML entities
-    # https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
-    '!': '-excl-',
-    '"': '-quot-',
-    '#': '-num-',
-    '$': '-dollar-',
-    '%': '-percnt-',
-    '&': '-amp-',
-    "'": '-apos-',
-    '(': '-lpar-',
-    ')': '-rpar-',
-    '*': '-ast-',
-    '+': '-plus-',
-    ',': '-comma-',
-    # '.': '-period-',
-    '/': '-sol-',
-    ':': '-colon-',
-    ';': '-semi-',
-    '<': '-lt-',
-    '=': '-equals-',
-    '>': '-gt-',
-    '?': '-quest-',
-    '@': '-commat-',
-    '[': '-lsqb-',
-    '\\': '-bsol-',
-    ']': '-rsqb-',
-    '^': '-Hat-',
-    # '_': '-lowbar-',
-    '`': '-grave-',
-    '{': '-lbrace-',
-    '|': '-vert-',
-    '}': '-rbrace-',
-    # '\xa0': '-nbsp-',
-    # '¡': '-iexcl-',
-    # '¢': '-cent-',
-    # '£': '-pound-',
-    # '¤': '-curren-',
-    # '¥': '-yen-',
-    # ...
-}
-
-
-def _escape_lemma(lemma: str) -> str:
-    chars = []
-    for c in lemma:
-        codepoint = ord(c)
-        if ('A' <= c <= 'Z'
-                or 'a' <= c <= 'z'
-                or '0' <= c <= '9'  # not in initial position
-                # or c == ':'  # drop this for xsd:id compatibility
-                # or c in '-'  # blocked for special purpose (see below)
-                or c in '_.·'  # _ is special-purpose, but accept
-                or 0xC0 <= codepoint <= 0xD6
-                or 0xD8 <= codepoint <= 0xF6
-                or 0xF8 <= codepoint <= 0x2FF
-                or 0x300 <= codepoint <= 0x36F  # not in initial position
-                or 0x370 <= codepoint <= 0x37D
-                or 0x37F <= codepoint <= 0x1FFF
-                or codepoint in (0x203F, 0x2040,  # these two not in initial position
-                                 0x200C, 0x200D)
-                or 0x2C00 <= codepoint <= 0x2FEF
-                or 0x3001 <= codepoint <= 0xD7FF
-                or 0xF900 <= codepoint <= 0xFDCF
-                or 0xFDF0 <= codepoint <= 0xFFFD
-                or 0x10000 <= codepoint <= 0xEFFFF):
-            # acceptable character
-            chars.append(c)
-        elif c in _char_escapes:
-            chars.append(_char_escapes[c])
-        else:
-            raise WNDBError(f'cannot escape character: {c!r}')
-    return ''.join(chars)
-
-
 # For now we're getting these from index.sense, but this is the code
 # for creating them from the data.
 #
@@ -598,15 +537,16 @@ def _make_frame_id(f_num: int) -> str:
 
 
 def _make_entry_id(id: str, lemma: str, pos: str) -> str:
-    return f'{id}-{_escape_lemma(lemma)}-{pos}'
+    return f'{id}-{escape_lemma(lemma)}-{pos}'
 
 
 def _make_sense_id(
     id: str,
-    sense_key: str
+    lemma: str,
+    offset: int,
+    pos: str,
 ) -> str:
-    lemma, _, tail = sense_key.partition('%')
-    return f'{id}-{_escape_lemma(lemma)}__{tail.replace(":", ".")}'
+    return f'{id}-{escape_lemma(lemma)}-{offset:08}-{pos}'
 
 
 def _make_nltk_synset_name(lemma: str, ss_type: str, sense_num: int) -> str:
