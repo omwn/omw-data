@@ -3,11 +3,6 @@ name: Upload Assets
 on:
   release:
     types: [created]
-  workflow_dispatch:
-    inputs:
-      tagname:
-        description: Git tag or release name (e.g., `v1.4`)
-        required: true
 
 jobs:
   run:
@@ -17,16 +12,8 @@ jobs:
 
     steps:
     - name: Get release tag
-      if: ${{ github.event_name == "release" }}
       run: |
         tagname=${GITHUB_REF##*/}
-        echo "TAGNAME=$tagname" >> $GITHUB_ENV
-        echo "VERSION=${tagname#v}" >> $GITHUB_ENV
-
-    - name: Get tag
-      if: ${{ github.event_name == "workflow_dispatch" }}
-      run: |
-        tagname="${{ github.event.inputs.tagname }}
         echo "TAGNAME=$tagname" >> $GITHUB_ENV
         echo "VERSION=${tagname#v}" >> $GITHUB_ENV
 
