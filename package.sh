@@ -5,10 +5,14 @@
 ###
 ### Usage: package.sh [--publish] VERSION TAGNAME
 ###
+### e.g.  package.sh 1.4 v1.4
+###
+###
 ### If the --publish option is used before the other two arguments,
 ### the packages will be uploaded to the GitHub release given by
 ### TAGNAME.
 ###
+
 
 if [ $1 == --publish ]; then
     shift
@@ -22,7 +26,7 @@ fi
 VER=$1
 TAG=$2
 BUILD="build/omw-${VER}"
-BASEURL="https://github.com/bond-lab/omw-data/releases/download/${TAG}"
+BASEURL="https://github.com/omwn/omw-data/releases/download/${TAG}"
 TAROPTS="--checkpoint=.100 -c -J"
 
 if [ ! -d "$BUILD" ]; then
@@ -74,7 +78,7 @@ label="Open Multilingual Wordnet"
 lang=mul
 license="Please consult the LICENSE files included with the individual wordnets. Note that all permit redistribution."
 upload "release/omw-${VER}.tar.xz#${label} [${lang}]"
-index "omw-$VER" "$label" "$lang" "$license"
+index "omw" "$label" "$lang" "$license"
 
 # also upload the index file we've built for the release
 upload "./release/index.toml#index.toml"
