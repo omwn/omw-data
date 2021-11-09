@@ -5,7 +5,7 @@ email = "bond@ieee.org"
 license = """\
   Please consult the LICENSE files included with the individual wordnets. \
   Note that all permit redistribution."""
-url = "https://github.com/bond-lab/omw-data"
+url = "https://github.com/omwn/omw-data"
 citation = """
 Francis Bond and Kyonghee Paik. 2012. \
   `A survey of wordnets and their licenses <http://web.mysites.ntu.edu.sg/fcbond/open/pubs/2012-gwc-wn-license.pdf>`_. \
@@ -19,7 +19,7 @@ Francis Bond and Ryan Foster. 2013. \
 [package-defaults]
 
 email = "bond@ieee.org"
-url = "https://github.com/bond-lab/omw-data"
+url = "https://github.com/omwn/omw-data"
 # to unset requires use: requires = {}
 requires = { id = "omw-en", version = "1.4" }
 

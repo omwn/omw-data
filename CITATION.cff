@@ -17,7 +17,7 @@ authors:
     family-names: Goodman
     email: goodman.m.w@gmail.com
     orcid: 'https://orcid.org/0000-0002-2896-5141'
-repository-code: 'https://github.com/bond-lab/omw-data/'
+repository-code: 'https://github.com/omwn/omw-data/'
 preferred-citation:
   type: conference-paper
   authors:

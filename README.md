@@ -2,13 +2,11 @@
 
 This packages up data for the Open Multilingual Wordnet.  It is roughly the version that is described in Bond and Foster (2013).
 
-It includes the data in the original OMW 1.0 format, and in the packaged up in the [GWA format](https://github.com/globalwordnet/schemas/) for OMW 2 as a [release](https://github.com/bond-lab/omw-data/releases).
+It includes the data in the original OMW 1.0 format, and in the packaged up in the [GWA format](https://github.com/globalwordnet/schemas/) for OMW 2 as a [release](https://github.com/omwn/omw-data/releases).
 
-It can be used by the Python library [wn](https://github.com/goodmami/wn).
+It can be used by the Python library [Wn](https://github.com/goodmami/wn).
 
-The raw data (under *wns*) also has the automatically extracted data
-for over 150 languages from Wiktionary and the ‎Unicode Common Locale
-Data Repository.
+The raw data (under *wns*) also has the automatically extracted data for over 150 languages from [Wiktionary](https://www.wiktionary.org/) and the Unicode [Common Locale Data Repository (CLDR)](https://cldr.unicode.org/).
 
 ## Citation
 
@@ -24,10 +22,9 @@ Sofia. 1352–1362
 
 The directory *wns* has the wordnet data from OMW 1.2 with some small fixes
  * added a citation for the Icelandic wordnet
- * added human readable citations in ``omw-citations.tab``
- * added PWN 3.0 and 3.1 in OMW 2.0 format
+ * added human readable citations in [index.toml](index.toml)
 
-By default the label is the name of the project.  If the project has multiple wordnets, then the language is added in parantheses.  E.g.:
+By default the label is the name of the project.  If the project has multiple wordnets, then the language is added in parentheses.  E.g.:
 
 `label = "Multilingual Central Repository (Catalan)"`
 
