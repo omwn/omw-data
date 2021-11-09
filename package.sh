@@ -50,7 +50,7 @@ index() {
   license = "$4"
 
   [${1}.versions."$VER"]
-    url = "${BASEURL}/${1}.tar.xz"
+    url = "${BASEURL}/${1}-${VER}.tar.xz"
 
 EOF
 }
