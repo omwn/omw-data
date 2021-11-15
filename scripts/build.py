@@ -6,6 +6,7 @@ import argparse
 import tomli
 
 from . import tsv2lmf
+from .util import load_ili_map
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--version', required=True, help='the version to build')
@@ -34,15 +35,22 @@ LMF_PACKAGE_FILENAMES = [
 
 OMWDATA = Path(__file__).parent.parent
 INDEXPATH = OMWDATA / 'index.toml'
-BUILD = OMWDATA / 'build' / f'omw-{args.version}'
 
+ILIFILE = OMWDATA / 'etc' / 'cili' / 'ili-map-pwn30.tab'
+ilimap = load_ili_map(ILIFILE)
+
+BUILD = OMWDATA / 'build' / f'omw-{args.version}'
 BUILD.mkdir(parents=True, exist_ok=True)
+
+LOGDIR = OMWDATA / 'log'
+LOGDIR.mkdir(exist_ok=True)
 
 index = tomli.load(INDEXPATH.open('rb'))
 defaults = index.get('package-defaults', {})
 packages = index.get('packages', {})
 
 LEXIDS = set(args.LEXID) or set(packages)
+VERSION = args.version
 
 for lexid, project in packages.items():
     if lexid not in LEXIDS or not isinstance(project, dict):
@@ -61,20 +69,23 @@ for lexid, project in packages.items():
         continue
     print(f'{lexid}: converting')
     if not args.dry_run:
-        tsv2lmf.convert(
-            project['source'],
-            str(outfile),
-            lexid,
-            get('label'),
-            get('language'),
-            get('email'),
-            get('license'),
-            args.version,
-            url=get('url'),
-            citation=get('citation'),
-            logo=get('logo'),
-            requires=get('requires'),
-        )
+        with (LOGDIR / f'tsv2lmf_{lexid}-{VERSION}.log').open('w') as logfile:
+            tsv2lmf.convert(
+                project['source'],
+                str(outfile),
+                lexid,
+                get('label'),
+                get('language'),
+                get('email'),
+                get('license'),
+                VERSION,
+                url=get('url'),
+                citation=get('citation'),
+                logo=get('logo'),
+                requires=get('requires'),
+                ilimap=ilimap,
+                logfile=logfile,
+            )
 
     # copy extra files if available
     sourcedir = Path(project['source']).parent

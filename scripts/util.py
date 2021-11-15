@@ -1,4 +1,5 @@
 
+from typing import Dict
 import warnings
 from html.entities import codepoint2name
 
@@ -71,3 +72,13 @@ def escape_lemma(lemma: str) -> str:
             chars.append(esc)
     return ''.join(chars)
 
+
+def load_ili_map(path) -> Dict[str, str]:
+    ilimap = {}
+    with open(path, 'rt') as ilifile:
+        for line in ilifile:
+            ili, ssid = line.strip().split('\t')
+            ilimap[ssid] = ili
+            if ssid.endswith('-s'):
+                ilimap[ssid[:-2] + '-a'] = ili  # map as either -s or -a
+    return ilimap

@@ -2,7 +2,7 @@
 # Take an OMW 1.0 wordnet TSV and convert to WN-LMF 1.1
 #
 
-from typing import Optional, Tuple, TextIO
+from typing import Optional, Tuple, Dict, TextIO
 import sys
 from pathlib import Path
 from collections import Counter
@@ -10,7 +10,7 @@ from collections import Counter
 from wn.lmf import (
     dump,
     Lexicon,
-    # Metadata,
+    Metadata,
     LexicalEntry,
     Lemma,
     Form,
@@ -20,16 +20,10 @@ from wn.lmf import (
     Definition,
 )
 
-from .util import escape_lemma
+from .util import escape_lemma, load_ili_map
 
 LMF_VERSION = '1.1'
 
-# PATHS ################################################################
-
-OMWDATA = Path(__file__).parent.parent
-ILIFILE = OMWDATA / 'etc' / 'cili' / 'ili-map-pwn30.tab'
-LOGDIR = OMWDATA / 'log'
-LOGDIR.mkdir(exist_ok=True)
 
 # CONSTANTS ############################################################
 
@@ -102,43 +96,42 @@ def convert(
     logo: Optional[str] = None,
     requires: Optional[dict] = None,
     meta: Optional[dict] = None,
+    ilimap: Optional[Dict[str, str]] = None,
+    logfile: Optional[TextIO] = None,
 ):
-    logpath = LOGDIR / f'tsv2lmf_{lexid}-{version}.log'
-    with logpath.open('w') as logfile:
-        lex = Lexicon(
-            lexid,
-            label,
-            bcp47.get(language, language),
-            email,
-            license,
-            version,
-            url=url,
-            citation=citation,
-            logo=logo,
-            meta=meta,
-            # meta=Metadata(
-            #     publisher=PUBLISHER,
-            #     description=DESCRIPTION,
-            #     confidence=CONFIDENCE_SCORE,
-            # )
-        )
-        if requires:
-            lex.requires.append(requires)
+    if logfile is None:
+        logfile = sys.stderr
 
-        entries, senses, synsets = load(source, lex, logfile)
-        build(lex, entries, senses, synsets, logfile)
+    lex = Lexicon(
+        lexid,
+        label,
+        bcp47.get(language, language),
+        email,
+        license,
+        version,
+        url=url,
+        citation=citation,
+        logo=logo,
+        meta=meta,
+    )
+    if requires:
+        lex.requires.append(requires)
+
+    if ilimap is None:
+        ilimap = {}
+
+    entries, senses, synsets = load(source, lex, ilimap, logfile)
+    build(lex, entries, senses, synsets, logfile)
 
     dump([lex], outfile, version=LMF_VERSION)
 
 
 # DATA LOADING AND VALIDATION ##########################################
 
-def load(source: str, lex: Lexicon, logfile: TextIO):
+def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
     entries = {}
     senses = {}
     synsets = {}
-
-    ilimap = _load_ili()
 
     with open(source, 'rt') as tabfile:
         label, lang, url, license = _check_header(tabfile, lex, logfile)
@@ -179,41 +172,29 @@ def load(source: str, lex: Lexicon, logfile: TextIO):
     return entries, senses, synsets
 
 
-def _load_ili():
-    ilimap = {}
-    with ILIFILE.open('rt') as ilifile:
-        for line in ilifile:
-            ili, ssid = line.strip().split('\t')
-            ilimap[ssid] = ili
-            if ssid.endswith('-s'):
-                ilimap[ssid[:-2] + '-a'] = ili  # map as either -s or -a
-    return ilimap
-
-
 def _check_header(
     tabfile: TextIO,
     lex: Lexicon,
     logfile: TextIO
 ) -> Tuple[str, str, str, str]:
     if not tabfile.buffer.peek(1).startswith(b'#'):
-        print('NO META DATA', file=sys.stderr)
         print('NO META DATA', file=logfile)
         label = lang = url = license = 'n/a'
     else:
         header = next(tabfile).lstrip('#').strip()
         label, lang, url, license = header.split('\t')
         if lang not in bcp47:
-            print(f'UNKNOWN LANGUAGE: {lang}', file=sys.stderr)
             print(f'UNKNOWN LANGUAGE: {lang}', file=logfile)
         elif bcp47[lang] != lex.language:
             print('INDEX INCONSISTENT WITH SOURCE: '
-                  f'{bcp47[lang]} != {lex.language}')
+                  f'{bcp47[lang]} != {lex.language}',
+                  file=logfile)
         if license not in open_license:
-            print(f'UNKNOWN LICENSE: {license}', file=sys.stderr)
             print(f'UNKNOWN LICENSE: {license}', file=logfile)
         elif open_license[license] != lex.license:
             print('INDEX INCONSISTENT WITH SOURCE: '
-                  f'{open_license[license]} != {lex.license}')
+                  f'{open_license[license]} != {lex.license}',
+                  file=logfile)
     return label, lang, url, license
 
 
@@ -288,3 +269,68 @@ def entry_id(lexid: str, lemma: str, pos: str) -> str:
 
 def sense_id(lexid: str, lemma: str, ssid: str, pos: str) -> str:
     return f'{lexid}-{escape_lemma(lemma)}-{ssid}-{pos}'
+
+
+# COMMAND-LINE INTERFACE ###############################################
+
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('SOURCE', help='source TSV file')
+    parser.add_argument('DESTINATION', help='output XML file path')
+    parser.add_argument('--id', required=True, help='lexicon ID')
+    parser.add_argument('--label', required=True, help='name or description')
+    parser.add_argument('--language', required=True, help='language (BCP-47)')
+    parser.add_argument('--email', required=True, help='project email address')
+    parser.add_argument('--license', required=True, help='license name or URL')
+    parser.add_argument('--version', required=True, help='lexicon version')
+    parser.add_argument('--url', help='project url')
+    parser.add_argument('--citation', help='readable citation')
+    parser.add_argument('--logo', help='url of project logo')
+    parser.add_argument('--requires', metavar='ID:VERSION',
+                        help='lexicon dependency')
+    parser.add_argument('--meta', action='append', metavar='KEY=VALUE',
+                        help='lexicon metadata; may be repeated')
+    parser.add_argument('--ili-map', metavar='PATH',
+                        help='synset to ILI mapping file')
+    parser.add_argument('--log', type=argparse.FileType('w'),
+                        default=sys.stderr, metavar='PATH',
+                        help='file for logging output (default: stderr)')
+    args = parser.parse_args()
+
+    source = Path(args.SOURCE)
+    if not source.is_file():
+        raise ValueError('source file not found')
+    destination = Path(args.DESTINATION)
+
+    if args.requires:
+        id, _, ver = args.requires.partition(':')
+        requires = {'id': id, 'version': ver}
+    else:
+        requires = None
+
+    if args.meta:
+        meta = Metadata(**dict(kv.split('=', 1) for kv in args.meta))
+    else:
+        meta = None
+
+    if args.ili_map:
+        ilimap = load_ili_map(args.ili_map)
+    else:
+        ilimap = None
+
+    convert(source,
+            destination,
+            args.id,
+            args.label,
+            args.language,
+            args.email,
+            args.license,
+            args.version,
+            url=args.url,
+            citation=args.citation,
+            logo=args.logo,
+            requires=requires,
+            meta=meta,
+            ilimap=ilimap,
+            logfile=args.log)
