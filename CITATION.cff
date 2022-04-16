@@ -12,7 +12,7 @@ authors:
     family-names: Bond
     email: bond@ieee.org
     orcid: 'https://orcid.org/0000-0003-4973-8068'
-    affiliation: Nanyang Technological University
+    affiliation: Palacký University Olomouc
   - given-names: Michael Wayne
     family-names: Goodman
     email: goodman.m.w@gmail.com
@@ -25,7 +25,7 @@ preferred-citation:
     family-names: Bond
     email: bond@ieee.org
     orcid: 'https://orcid.org/0000-0003-4973-8068'
-    affiliation: Nanyang Technological University
+    affiliation: Palacký University Olomouc
   - family-names: Foster
     given-names: Ryan
   start: 1352 # First page number
