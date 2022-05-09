@@ -1,0 +1,3 @@
+cat-30-04020744-n: truncating lemma ' es paga un dipòsit, i la tenda reserva l'article, fins que es pagui'
+spa-30-00827158-v: truncating lemma 'criticar, censurar'
+spa-30-00696335-a: truncating lemma 'recalcitrante, contumaz'
