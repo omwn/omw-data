@@ -14,7 +14,8 @@ import sys
 import codecs
 import re
 
-wndata= "/home/bond/svn/wn-msa/tab/"
+#wndata= "/home/bond/svn/wn-msa/tab/"
+wndata = 'mcr'
 
 wnname = "Multilingual Central Repository" 
 wnurl = "http://adimen.si.ehu.es/web/MCR/"
@@ -26,8 +27,14 @@ wnlicense = "CC BY 3.0"
 wns_dir = "/tmp/wns"
 mcr_version = "mcr30-2016"
 
-#Some locales use comma as float separator:
-commafloat=re.compile("\d,\d")
+# Some locales use comma as float separator:
+commafloat = re.compile("\d,\d")
+
+# Recognize space before punctuation:
+spacepunct = re.compile(" [,.:;!?]")
+
+# Space at the end of string:
+endspace = re.compile(" $")
 
 logf = codecs.open("MCR-log.txt", "w", "utf-8" )
 
@@ -70,7 +77,18 @@ for wnlang in ["cat", "glg", "spa", "eus"]:
             offset = attrs[0]
             synset = offset[-10:]
             if int(synset[0]) < 8:  ### ignore new synsets
-                om.write("%s\t%s:def\t0\t%s\n" % (synset, wnlang, attrs[6]))
+                text = text0 = attrs[6]
+                text = text.replace('??', ' ').replace('_', ' ')
+                while spacepunct.search(text):
+                    i = spacepunct.search(text).start()
+                    text = text[:i] + text[i+1] + ' ' + text[i+2:]
+                text = text.replace('  ', ' ')
+                e = endspace.search(text)
+                if e:
+                    text = text[:e.start()]
+                if text != text0:
+                    logf.write(f"{offset}: normalize definition '{text0}'\n -> '{text}'\n")
+                om.write("%s\t%s:def\t0\t%s\n" % (synset, wnlang, text))
     f.close()
 
 
@@ -86,7 +104,18 @@ for wnlang in ["cat", "glg", "spa", "eus"]:
             offset = attrs[4]
             synset = offset[-10:]
             if int(synset[0]) < 8:  ### ignore new synsets
-                om.write("%s\t%s:exe\t0\t%s\n" % (synset, wnlang, attrs[2]))
+                text = text0 = attrs[2]
+                text = text.replace('??', ' ').replace('_', ' ')
+                while spacepunct.search(text):
+                    i = spacepunct.search(text).start()
+                    text = text[:i] + text[i+1] + ' ' + text[i+2:]
+                text = text.replace('  ', ' ')
+                e = endspace.search(text)
+                if e:
+                    text = text[:e.start()]
+                if text != text0:
+                    logf.write(f"{offset}: normalize example '{text0}'\n -> '{text}'\n")
+                om.write("%s\t%s:exe\t0\t%s\n" % (synset, wnlang, text))
     f.close()
 
     om.close()
