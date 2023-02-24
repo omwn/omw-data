@@ -38,6 +38,21 @@ endspace = re.compile(" $")
 
 logf = codecs.open("MCR-log.txt", "w", "utf-8" )
 
+def normalize(offset, att, text0):
+    """Normalize space around punctuation and at end of string"""
+    text = text0.replace('??', ' ').replace('_', ' ')
+    while spacepunct.search(text):
+        i = spacepunct.search(text).start()
+        text = text[:i] + text[i+1] + ' ' + text[i+2:]
+    text = text.replace('  ', ' ')
+    e = endspace.search(text)
+    if e:
+        text = text[:e.start()]
+    if text != text0:
+        logf.write(f"{offset}, normalize space in {att}: '{text0}'\n -> '{text}'\n")
+    return text
+
+
 for wnlang in ["cat", "glg", "spa", "eus"]:
     #
     # header
@@ -77,18 +92,7 @@ for wnlang in ["cat", "glg", "spa", "eus"]:
             offset = attrs[0]
             synset = offset[-10:]
             if int(synset[0]) < 8:  ### ignore new synsets
-                text = text0 = attrs[6]
-                text = text.replace('??', ' ').replace('_', ' ')
-                while spacepunct.search(text):
-                    i = spacepunct.search(text).start()
-                    text = text[:i] + text[i+1] + ' ' + text[i+2:]
-                text = text.replace('  ', ' ')
-                e = endspace.search(text)
-                if e:
-                    text = text[:e.start()]
-                if text != text0:
-                    logf.write(f"{offset}: normalize definition '{text0}'\n -> '{text}'\n")
-                om.write("%s\t%s:def\t0\t%s\n" % (synset, wnlang, text))
+                om.write("%s\t%s:def\t0\t%s\n" % (synset, wnlang, normalize(offset, 'definition', attrs[6])))
     f.close()
 
 
@@ -104,18 +108,7 @@ for wnlang in ["cat", "glg", "spa", "eus"]:
             offset = attrs[4]
             synset = offset[-10:]
             if int(synset[0]) < 8:  ### ignore new synsets
-                text = text0 = attrs[2]
-                text = text.replace('??', ' ').replace('_', ' ')
-                while spacepunct.search(text):
-                    i = spacepunct.search(text).start()
-                    text = text[:i] + text[i+1] + ' ' + text[i+2:]
-                text = text.replace('  ', ' ')
-                e = endspace.search(text)
-                if e:
-                    text = text[:e.start()]
-                if text != text0:
-                    logf.write(f"{offset}: normalize example '{text0}'\n -> '{text}'\n")
-                om.write("%s\t%s:exe\t0\t%s\n" % (synset, wnlang, text))
+                om.write("%s\t%s:exe\t0\t%s\n" % (synset, wnlang, normalize(offset, 'example', attrs[2])))
     f.close()
 
     om.close()
