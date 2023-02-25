@@ -16,8 +16,7 @@ import re
 
 from collections import defaultdict
 
-#wndata= "/home/bond/svn/wn-msa/tab/"
-wndata = 'mcr'
+wndata= "/home/bond/svn/wn-msa/tab/"
 
 wnname = "Multilingual Central Repository" 
 wnurl = "http://adimen.si.ehu.es/web/MCR/"
@@ -84,7 +83,7 @@ for wnlang in ["cat", "glg", "spa", "eus"]:
     f.close()
 
     for synset in sorted(tmpdict.keys()):
-        for lemma in tmpdict[synset]:
+        for lemma in sorted(list(tmpdict[synset])):
             om.write("%s\t%s:lemma\t%s\n" % (synset, wnlang, lemma))
 
 
@@ -105,7 +104,7 @@ for wnlang in ["cat", "glg", "spa", "eus"]:
     f.close()
 
     for synset in sorted(tmpdict.keys()):
-        for definition in tmpdict[synset]:
+        for definition in sorted(list(tmpdict[synset])):
             om.write("%s\t%s:def\t0\t%s\n" % (synset, wnlang, definition))
 
 
@@ -127,7 +126,7 @@ for wnlang in ["cat", "glg", "spa", "eus"]:
     f.close()
 
     for synset in sorted(tmpdict.keys()):
-        for example in tmpdict[synset]:
+        for example in sorted(list(tmpdict[synset])):
             om.write("%s\t%s:exe\t0\t%s\n" % (synset, wnlang, example))
 
 
