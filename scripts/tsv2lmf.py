@@ -20,7 +20,11 @@ from wn.lmf import (
     Definition,
 )
 
-from .util import escape_lemma, load_ili_map
+if __name__ == '__main__':
+    from util import escape_lemma, load_ili_map
+else:
+    from .util import escape_lemma, load_ili_map
+
 
 LMF_VERSION = '1.1'
 
@@ -61,6 +65,7 @@ bcp47 = {
     "slv": "sl",        # Slovene
     "swe": "sv",        # Swedish
     "tha": "th",        # Thai
+    "vie": "vi",        # Vietnamese
 }
 
 open_license = {
