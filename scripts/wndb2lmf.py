@@ -212,8 +212,10 @@ def main(args):
     progress.flash("Loading exception lists")
     exceptions = _load_exceptions(source)
 
-    ilimap = _load_ili_map(args.ili_map) if args.ili_map else {}
     progress.flash("Loading ILI map")
+    ilimap = {}
+    if args.ili_map:
+        ilimap = _load_ili_map(args.ili_map, args.ili_confidence_threshold)
 
     lexicon = Lexicon(
         args.id,
@@ -451,12 +453,14 @@ def _load_exceptions_file(path: Path) -> Dict[str, Set[str]]:
     return exceptions
 
 
-def _load_ili_map(path: AnyPath) -> Dict[str, str]:
+def _load_ili_map(path: AnyPath, threshold: float) -> Dict[str, str]:
     path = Path(path).expanduser()
     ili_map = {}
     with path.open(newline="") as csvfile:
         reader = csv.reader(csvfile, dialect="excel-tab")
         for ili, ssid, *extra in reader:
+            if extra and float(extra[0]) < threshold:
+                continue
             ili_map[ssid] = ili
     return ili_map
 
@@ -631,5 +635,12 @@ if __name__ == "__main__":
     parser.add_argument("--citation", help="a citation for the project")
     parser.add_argument("--logo", help="a URL for a logo for the project")
     parser.add_argument("--ili-map", help="a file mapping ILI IDs to synset IDs")
+    parser.add_argument(
+        "--ili-confidence-threshold",
+        type=float,
+        metavar="THRESHOLD",
+        help="ignore ILI mappings below the confidence threshold (default: 0.0)",
+        default=0.0,
+    )
     args = parser.parse_args()
     main(args)
