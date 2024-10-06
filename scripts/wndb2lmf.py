@@ -64,6 +64,54 @@ from .util import escape_lemma
 
 
 LMF_VERSION = '1.1'
+REQUIRED_FILES = [
+    "data.noun",
+    "data.verb",
+    "data.adj",
+    "data.adv",
+    "noun.exc",
+    "verb.exc",
+    "adj.exc",
+    "adv.exc",
+    "index.sense",
+]
+VERB_FRAMES = [
+    (1, "Something ----s"),
+    (2, "Somebody ----s"),
+    (3, "It is ----ing"),
+    (4, "Something is ----ing PP"),
+    (5, "Something ----s something Adjective/Noun"),
+    (6, "Something ----s Adjective/Noun"),
+    (7, "Somebody ----s Adjective"),
+    (8, "Somebody ----s something"),
+    (9, "Somebody ----s somebody"),
+    (10, "Something ----s somebody"),
+    (11, "Something ----s something"),
+    (12, "Something ----s to somebody"),
+    (13, "Somebody ----s on something"),
+    (14, "Somebody ----s somebody something"),
+    (15, "Somebody ----s something to somebody"),
+    (16, "Somebody ----s something from somebody"),
+    (17, "Somebody ----s somebody with something"),
+    (18, "Somebody ----s somebody of something"),
+    (19, "Somebody ----s something on somebody"),
+    (20, "Somebody ----s somebody PP"),
+    (21, "Somebody ----s something PP"),
+    (22, "Somebody ----s PP"),
+    (23, "Somebody's (body part) ----s"),
+    (24, "Somebody ----s somebody to INFINITIVE"),
+    (25, "Somebody ----s somebody INFINITIVE"),
+    (26, "Somebody ----s that CLAUSE"),
+    (27, "Somebody ----s to somebody"),
+    (28, "Somebody ----s to INFINITIVE"),
+    (29, "Somebody ----s whether INFINITIVE"),
+    (30, "Somebody ----s somebody into V-ing something"),
+    (31, "Somebody ----s something with something"),
+    (32, "Somebody ----s INFINITIVE"),
+    (33, "Somebody ----s VERB-ing"),
+    (34, "It ----s that CLAUSE"),
+    (35, "Something ----s INFINITIVE"),
+]
 
 
 # Data and Data Types ##################################################
@@ -156,7 +204,7 @@ def main(args):
     senseidx = _load_sense_index(source / 'index.sense')
 
     progress.flash('Loading verb frames')
-    syntactic_behaviours = _load_frames(source / 'verb.Framestext')
+    syntactic_behaviours = _load_frames()
 
     progress.flash('Loading exception lists')
     exceptions = _load_exceptions(source)
@@ -188,9 +236,7 @@ def main(args):
 
 
 def _inspect(source: Path) -> None:
-    for filename in ('data.noun', 'data.verb', 'data.adj', 'data.adv',
-                     'noun.exc', 'verb.exc', 'adj.exc', 'adv.exc',
-                     'index.sense', 'verb.Framestext'):
+    for filename in REQUIRED_FILES:
         if not (source / filename).is_file():
             raise WNDBError(f'file not found or is not a regular file: {filename}')
 
@@ -374,15 +420,11 @@ def _load_sense_index(path: Path) -> _SenseIndex:
     return senseidx
 
 
-def _load_frames(path: Path) -> List[SyntacticBehaviour]:
-    frames = []
-    with path.open('rt') as framefile:
-        for line in framefile:
-            f_num, subcat = line.strip().split(maxsplit=1)
-            frames.append(SyntacticBehaviour(
-                id=_make_frame_id(int(f_num)),
-                frame=subcat.strip()
-            ))
+def _load_frames() -> List[SyntacticBehaviour]:
+    frames = [
+        SyntacticBehaviour(id=_make_frame_id(f_num), frame=subcat)
+        for f_num, subcat in VERB_FRAMES
+    ]
     return frames
 
 
