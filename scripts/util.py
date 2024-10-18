@@ -29,7 +29,7 @@ _custom_char_escapes = {
     '\\': '-bsol-',
     ']': '-rsqb-',
     '^': '-Hat-',
-    '_': '_',            # keep, even though it's conflated with ' ' -> '_'
+    '_': '-lowbar-',
     '`': '-grave-',
     '{': '-lbrace-',
     '|': '-vert-',
@@ -46,7 +46,7 @@ def escape_lemma(lemma: str) -> str:
                 or '0' <= c <= '9'  # not in initial position
                 # or c == ':'  # drop this for xsd:id compatibility
                 # or c in '-'  # blocked for special purpose (see below)
-                or c in '_.·'  # _ is special-purpose, but accept
+                or c in '.·'
                 or 0xC0 <= codepoint <= 0xD6
                 or 0xD8 <= codepoint <= 0xF6
                 or 0xF8 <= codepoint <= 0x2FF
