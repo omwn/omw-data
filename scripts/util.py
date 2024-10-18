@@ -65,7 +65,7 @@ def escape_lemma(lemma: str) -> str:
         elif c in _custom_char_escapes:
             chars.append(_custom_char_escapes[c])
         elif codepoint in codepoint2name:
-            chars.append(codepoint2name[codepoint])
+            chars.append(f"-{codepoint2name[codepoint]}-")
         else:
             esc = f'-{codepoint:04X}-'
             warnings.warn(f'no escape character defined for {c!r}; using {esc}')
