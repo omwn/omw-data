@@ -46,16 +46,16 @@ from wn.util import ProgressHandler, ProgressBar, synset_id_formatter
 from wn.lmf import (
     dump,
     Lexicon,
+    LexicalResource,
     Metadata,
     LexicalEntry,
     Lemma,
     Form,
     Sense,
     Count,
-    SenseRelation,
+    Relation,
     Example,
     Synset,
-    SynsetRelation,
     Definition,
     SyntacticBehaviour,
 )
@@ -165,23 +165,28 @@ def main(args):
     ilimap = _load_ili_map(args.ili_map) if args.ili_map else {}
 
     lexicon = Lexicon(
-        args.id,
-        args.label,
-        args.language,
-        args.email,
-        args.license,
-        args.version,
+        id=args.id,
+        label=args.label,
+        language=args.language,
+        email=args.email,
+        license=args.license,
+        version=args.version,
         url=args.url or '',
         citation=args.citation or '',
         logo=args.logo or '',
-        syntactic_behaviours=syntactic_behaviours
+        syntactic_behaviours=syntactic_behaviours,
+        entries = [],
+        synsets = []
     )
 
     progress.set(total=sum(map(len, data.values())))
     _build_lexicon(lexicon, data, senseidx, exceptions, ilimap, progress)
 
     progress.flash(f'Writing to WN-LMF {LMF_VERSION}')
-    dump([lexicon], args.DEST, version=LMF_VERSION)
+    
+    lre = LexicalResource(lmf_version = LMF_VERSION,
+                          lexicons = [lexicon])
+    dump(lre, args.DEST)
 
     progress.flash(f'Built {args.id}:{args.version}')
     progress.close()
@@ -205,8 +210,8 @@ def _build_lexicon(
     ilimap: Dict[str, str],
     progress: ProgressHandler,
 ) -> None:
-    _make_synset_id = synset_id_formatter(fmt=f'{lex.id}-{{offset:08}}-{{pos}}')
-    frame_sense_map = {sb.id: sb.senses for sb in lex.syntactic_behaviours}
+    _make_synset_id = synset_id_formatter(fmt=f"{lex['id']}-{{offset:08}}-{{pos}}")
+    frame_sense_map = {sb['id']: sb['frame'] for sb in lex['syntactic_behaviours']}
 
     for pos in 'nvar':
         progress.set(status=pos)
@@ -219,27 +224,27 @@ def _build_lexicon(
             # First create the synset
             ssid = _make_synset_id(offset=offset, pos=d.ss_type)
             synset = _build_synset(d, ssid, ilimap, senseidx)
-            lex.synsets.append(synset)
+            lex['synsets'].append(synset)
 
             # Then create each entry (if not done yet) and sense for the synset
             w_num_sense_map: Dict[int, Sense] = {}
             for w_num, w in enumerate(d.words, 1):
                 lemma = w.word
 
-                entry_id = _make_entry_id(lex.id, lemma, pos)
+                entry_id = _make_entry_id(lex['id'], lemma, pos)
                 if entry_id not in entries:
                     entry = _build_entry(d, entry_id, lemma, pos, exceptions)
                     entries[entry_id] = entry
-                    lex.lexical_entries.append(entry)
+                    lex['entries'].append(entry)
 
                 sense_key, sense_num, count = senseidx[lemma.lower()][offset]
-                sense_id = _make_sense_id(lex.id, lemma, offset, d.ss_type)
+                sense_id = _make_sense_id(lex['id'], lemma, offset, d.ss_type)
                 sense = _build_sense(d, sense_id, ssid, count, w.adjposition, sense_key)
 
-                synset.members.append(sense.id)
-                entries[entry_id].senses.append(sense)
+                synset['members'].append(sense['id'])
+                entries[entry_id]['senses'].append(sense)
                 w_num_sense_map[w_num] = sense
-                sense_rank[sense.id] = sense_num
+                sense_rank[sense['id']] = sense_num
 
             for p in d.pointers:
                 relname = _pointer_map[p.pointer_symbol]
@@ -248,31 +253,36 @@ def _build_lexicon(
                 if p.source_w_num or p.target_w_num:
                     src_sense = w_num_sense_map[p.source_w_num]
                     lemma = tgt.words[p.target_w_num - 1].word  # 1-based indexing
-                    target_id = _make_sense_id(lex.id, lemma, tgt_offset, tgt.ss_type)
-                    src_sense.relations.append(SenseRelation(target_id, relname))
+                    target_id = _make_sense_id(lex['id'], lemma, tgt_offset, tgt.ss_type)
+                    src_sense['relations'].append(Relation(target=target_id,
+                                                           relType=relname))
                 else:
                     target_id = _make_synset_id(offset=tgt_offset, pos=tgt.ss_type)
-                    synset.relations.append(SynsetRelation(target_id, relname))
+                    synset['relations'].append(Relation(target=target_id,
+                                                        relType=relname))
 
-            for f in d.frames:
-                f_id = _make_frame_id(f.f_num)
-                if f.w_num == 0:
-                    sense_ids = [s.id for s in w_num_sense_map.values()]
-                    frame_sense_map[f_id].extend(sense_ids)
-                elif f.w_num in w_num_sense_map:
-                    frame_sense_map[f_id].append(w_num_sense_map[f.w_num].id)
+            # FCB not sure if I am doing the right thing with frames
+            # for f in d.frames:
+            #    f_id = _make_frame_id(f.f_num)
+                # if f.w_num == 0:
+                #     sense_ids = [s['id'] for s in w_num_sense_map.values()]
+                #     frame_sense_map[f_id].extend(sense_ids)
+                # elif f.w_num in w_num_sense_map:
+                #     frame_sense_map[f_id].append(w_num_sense_map[f.w_num]['id'])
 
             progress.update()
 
         # sort senses when done with a data file
         progress.set(status='sorting senses')
         for entry in entries.values():
-            entry.senses.sort(key=lambda s: sense_rank[s.id])
+            entry['senses'].sort(key=lambda s: sense_rank[s['id']])
 
     # sort lexical entries when done with all
-    lex.lexical_entries.sort(key=lambda e: e.id)
+    lex['entries'].sort(key=lambda e: e['id'])
 
 
+
+    
 def _build_synset(
     d: DataRecord,
     ssid: str,
@@ -283,13 +293,14 @@ def _build_synset(
     definition, examples = _parse_data_gloss(d.gloss)
     first_word = d.words[0].word
     return Synset(
-        ssid,
+        id=ssid,
         ili=ili,
         pos=d.ss_type,
-        definitions=[Definition(definition)],
-        examples=[Example(ex) for ex in examples],
+        definitions=[Definition(text=definition)],
+        examples=[Example(text=ex) for ex in examples],
         lexicalized=True,
         members=[],
+        relations=[],
         lexfile=_lexfile_lookup.get(d.lex_filenum),
         meta=Metadata(
             identifier=_make_nltk_synset_name(
@@ -300,7 +311,6 @@ def _build_synset(
         )
     )
 
-
 def _build_entry(
     d: DataRecord,
     entry_id: str,
@@ -310,9 +320,10 @@ def _build_entry(
 ) -> LexicalEntry:
     exceptional_forms = sorted(exceptions[pos].get(lemma.lower(), set()))
     return LexicalEntry(
-        entry_id,
-        Lemma(_normalize_form(lemma), pos),
-        forms=[Form(None, _normalize_form(form), None)
+        id=entry_id,
+        lemma = Lemma(writtenForm = _normalize_form(lemma),
+                      partOfSpeech = pos),
+        forms=[Form(writtenForm = _normalize_form(form))
                for form in exceptional_forms],
         senses=[],
         meta=None
@@ -328,11 +339,11 @@ def _build_sense(
     sense_key: str,
 ) -> Sense:
     return Sense(
-        sense_id,
-        ssid,
-        relations=None,  # done later
-        examples=None,
-        counts=[Count(count)] if count else None,
+        id=sense_id,
+        synset=ssid,
+        relations= [],  # done later
+        examples= [],
+        counts=[Count(value = count)] if count else [],
         lexicalized=True,
         adjposition=adjposition,
         meta=Metadata(identifier=sense_key)
