@@ -52,12 +52,66 @@ packages = index.get('packages', {})
 LEXIDS = set(args.LEXID) or set(packages)
 VERSION = args.version
 
+_QUOTES = [ ('"', '"'), ("'", "'"),  ("`", "'"),  ("``", "''"), 
+            ("„", "“"),  ("„", "”"), ("‚", "’"),  ("‚", "‘"),
+            ("»", "«"), ("«", "»"),  ("’", "’"),  ("‚", "‚"),
+            ('“', '”'), ("‘", "’"), ("”", "”"), ("»", "«"),
+            ("‹", "›"), ("《", "》"), ("【", "】"),  #("<", ">"), 
+            ("「", "」"), ("『", "』"), ("〈", "〉"), ("〖", "〗"),
+]
+
+
+def clean_lemma(lemma):
+    """
+    clean a lemma
+    """
+    lemma = lemma.replace('_', ' ')
+    for quote_pair in _QUOTES:
+        start, end = quote_pair
+        if lemma.startswith(start) and lemma.endswith(end):
+            lemma = lemma[len(start):-len(end)].strip()
+    return lemma
+    
+def clean_tsv(tabfile, cleanfile):
+    """
+    clean an OMW 1.0 tsv file
+    """
+    header = ''
+    rows = set()
+    with open(tabfile) as tsv:
+        for l in tsv:
+            if not header:  ### first line
+                header = l
+                continue
+            if l.startswith('#') or l.strip() == '':  ### lose comments and empty lines
+                continue
+            row = l.strip().split('\t')
+            #print(row)
+            if row[1].endswith('lemma'):
+                lemmas = []
+                for l in row[2:]:
+                    clean = clean_lemma(l)
+                    if clean:
+                        lemmas.append(clean)
+                if lemmas: ## there must be a lemma
+                    row = [row[0], row[1]] + lemmas
+                else:
+                    continue
+            rows.add('\t'.join(row))
+    with open(cleanfile, 'w') as out:
+        out.write(header)
+        for row in sorted(rows):
+            out.write(row + '\n')
+
 for lexid, project in packages.items():
     if lexid not in LEXIDS or not isinstance(project, dict):
         continue
-
     packagedir = BUILD / lexid
     packagedir.mkdir(exist_ok=True)
+    cleanfile = packagedir / f"wn-clean-{project['language']}.tab"
+
+    clean_tsv(project['source'], cleanfile)
+
     outfile = packagedir / f'{lexid}.xml'
 
     def get(key: str) -> Optional[str]:
@@ -71,7 +125,7 @@ for lexid, project in packages.items():
     if not args.dry_run:
         with (LOGDIR / f'tsv2lmf_{lexid}-{VERSION}.log').open('w') as logfile:
             tsv2lmf.convert(
-                project['source'],
+                cleanfile,
                 str(outfile),
                 lexid,
                 get('label'),
