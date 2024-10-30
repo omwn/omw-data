@@ -35,7 +35,6 @@ License: MIT
 import argparse
 import csv
 from pathlib import Path
-from typing import Optional, Tuple, Dict, Set, List, NamedTuple
 
 import pe
 
@@ -52,14 +51,14 @@ from wn.lmf import (
     Form,
     Sense,
     Count,
-    SenseRelation,
+    Relation,
     Example,
     Synset,
-    SynsetRelation,
     Definition,
     SyntacticBehaviour,
 )
 
+from . import wndb
 from .util import escape_lemma
 
 
@@ -74,114 +73,13 @@ REQUIRED_FILES = [
     "adj.exc",
     "adv.exc",
     "index.sense",
-]
-# see: https://wordnet.princeton.edu/documentation/wninput5wn
-POINTER_MAP = {
-    "!": "antonym",
-    "@": "hypernym",
-    "@i": "instance_hypernym",
-    "~": "hyponym",
-    "~i": "instance_hyponym",
-    "#m": "holo_member",
-    "#s": "holo_substance",
-    "#p": "holo_part",
-    "%m": "mero_member",
-    "%s": "mero_substance",
-    "%p": "mero_part",
-    "=": "attribute",
-    "+": "derivation",
-    ";c": "domain_topic",
-    "-c": "has_domain_topic",
-    ";r": "domain_region",
-    "-r": "has_domain_region",
-    ";u": "is_exemplified_by",  # was: domain usage
-    "-u": "exemplifies",  # was: in domain usage
-    "*": "entails",
-    ">": "causes",
-    "^": "also",
-    "$": "similar",  # was: verb group
-    "&": "similar",
-    "<": "participle",
-    "\\": "pertainym",
-}
-VERB_FRAMES = [
-    (1, "Something ----s"),
-    (2, "Somebody ----s"),
-    (3, "It is ----ing"),
-    (4, "Something is ----ing PP"),
-    (5, "Something ----s something Adjective/Noun"),
-    (6, "Something ----s Adjective/Noun"),
-    (7, "Somebody ----s Adjective"),
-    (8, "Somebody ----s something"),
-    (9, "Somebody ----s somebody"),
-    (10, "Something ----s somebody"),
-    (11, "Something ----s something"),
-    (12, "Something ----s to somebody"),
-    (13, "Somebody ----s on something"),
-    (14, "Somebody ----s somebody something"),
-    (15, "Somebody ----s something to somebody"),
-    (16, "Somebody ----s something from somebody"),
-    (17, "Somebody ----s somebody with something"),
-    (18, "Somebody ----s somebody of something"),
-    (19, "Somebody ----s something on somebody"),
-    (20, "Somebody ----s somebody PP"),
-    (21, "Somebody ----s something PP"),
-    (22, "Somebody ----s PP"),
-    (23, "Somebody's (body part) ----s"),
-    (24, "Somebody ----s somebody to INFINITIVE"),
-    (25, "Somebody ----s somebody INFINITIVE"),
-    (26, "Somebody ----s that CLAUSE"),
-    (27, "Somebody ----s to somebody"),
-    (28, "Somebody ----s to INFINITIVE"),
-    (29, "Somebody ----s whether INFINITIVE"),
-    (30, "Somebody ----s somebody into V-ing something"),
-    (31, "Somebody ----s something with something"),
-    (32, "Somebody ----s INFINITIVE"),
-    (33, "Somebody ----s VERB-ing"),
-    (34, "It ----s that CLAUSE"),
-    (35, "Something ----s INFINITIVE"),
+    "cntlist",
 ]
 
 
-# Data and Data Types ##################################################
-
-
-class WNDBError(Exception):
-    """Raised on invalid WNDB databases."""
-
-
-class Word(NamedTuple):
-    word: str
-    # lex_id: int
-    adjposition: Optional[str]
-
-
-class Pointer(NamedTuple):
-    pointer_symbol: str
-    synset_offset: int
-    pos: str
-    source_w_num: int
-    target_w_num: int
-
-
-class Frame(NamedTuple):
-    f_num: int
-    w_num: int
-
-
-class DataRecord(NamedTuple):
-    synset_offset: int
-    lex_filenum: int
-    ss_type: str
-    words: List[Word]
-    pointers: List[Pointer]
-    frames: List[Frame]
-    gloss: str
-
-
-_Data = Dict[str, Dict[int, DataRecord]]
-_SenseIndex = Dict[str, Dict[int, Tuple[str, int, int]]]
-_Exceptions = Dict[str, Dict[str, Set[str]]]
+_Data = dict[str, dict[int, wndb.DataRecord]]
+_SenseIndex = dict[str, dict[int, wndb.SenseInfo]]
+_Exceptions = dict[str, dict[str, set[str]]]
 
 # see: https://wordnet.princeton.edu/documentation/lexnames5wn
 _lexfile_lookup = {num: lexfile for lexfile, num in LEXICOGRAPHER_FILES.items()}
@@ -218,23 +116,29 @@ def main(args):
         ilimap = _load_ili_map(args.ili_map, args.ili_confidence_threshold)
 
     lexicon = Lexicon(
-        args.id,
-        args.label,
-        args.language,
-        args.email,
-        args.license,
-        args.version,
+        id=args.id,
+        version=args.version,
+        label=args.label,
+        language=args.language,
+        email=args.email,
+        license=args.license,
         url=args.url or "",
         citation=args.citation or "",
         logo=args.logo or "",
-        syntactic_behaviours=syntactic_behaviours,
+        requires=[],
+        entries=[],
+        synsets=[],
+        frames=syntactic_behaviours,
     )
 
     progress.set(total=sum(map(len, data.values())))
     _build_lexicon(lexicon, data, senseidx, exceptions, ilimap, progress)
 
     progress.flash(f"Writing to WN-LMF {LMF_VERSION}")
-    dump([lexicon], args.DEST, version=LMF_VERSION)
+    dump(
+        {"lmf_version": LMF_VERSION, "lexicons": [lexicon]},
+        args.DEST,
+    )
 
     progress.flash(f"Built {args.id}:{args.version}")
     progress.close()
@@ -243,7 +147,7 @@ def main(args):
 def _inspect(source: Path) -> None:
     for filename in REQUIRED_FILES:
         if not (source / filename).is_file():
-            raise WNDBError(f"file not found or is not a regular file: {filename}")
+            raise wndb.WNDBError(f"file not found or is not a regular file: {filename}")
 
 
 # LMF Building Functions ###############################################
@@ -254,91 +158,99 @@ def _build_lexicon(
     data: _Data,
     senseidx: _SenseIndex,
     exceptions: _Exceptions,
-    ilimap: Dict[str, str],
+    ilimap: dict[str, str],
     progress: ProgressHandler,
 ) -> None:
-    _make_synset_id = synset_id_formatter(fmt=f"{lex.id}-{{offset:08}}-{{pos}}")
-    frame_sense_map = {sb.id: sb.senses for sb in lex.syntactic_behaviours}
+    lex_id = lex["id"]
+    _make_synset_id = synset_id_formatter(fmt=f"{lex_id}-{{offset:08}}-{{pos}}")
+    frame_sense_map = {sb["id"]: sb.get("senses", []) for sb in lex["frames"]}
 
     for pos in "nvar":
         progress.set(status=pos)
 
-        entries: Dict[str, LexicalEntry] = {}  # for random access to entries
-        sense_rank: Dict[str, int] = {}  # for sorting senses afterwards
+        subdata = data[pos]
 
-        for offset, d in data[pos].items():
+        entries: dict[str, LexicalEntry] = {}  # for random access to entries
+        sense_rank: dict[str, int] = {}  # for sorting senses afterwards
+
+        for offset, d in subdata.items():
             # First create the synset
             ssid = _make_synset_id(offset=offset, pos=d.ss_type)
             synset = _build_synset(d, ssid, ilimap, senseidx)
-            lex.synsets.append(synset)
+            lex["synsets"].append(synset)
 
             # Then create each entry (if not done yet) and sense for the synset
-            w_num_sense_map: Dict[int, Sense] = {}
+            w_num_sense_map: dict[int, Sense] = {}
             for w_num, w in enumerate(d.words, 1):
                 lemma = w.word
 
-                entry_id = _make_entry_id(lex.id, lemma, pos)
+                entry_id = _make_entry_id(lex_id, lemma, pos)
                 if entry_id not in entries:
                     entry = _build_entry(d, entry_id, lemma, pos, exceptions)
                     entries[entry_id] = entry
-                    lex.lexical_entries.append(entry)
+                    lex["entries"].append(entry)
 
-                sense_key, sense_num, count = senseidx[lemma.lower()][offset]
-                sense_id = _make_sense_id(lex.id, lemma, offset, d.ss_type)
+                sense_key, _, sense_num, count = senseidx[lemma.lower()][offset]
+                sense_id = _make_sense_id(lex_id, lemma, offset, d.ss_type)
                 sense = _build_sense(d, sense_id, ssid, count, w.adjposition, sense_key)
 
-                synset.members.append(sense.id)
-                entries[entry_id].senses.append(sense)
+                synset["members"].append(sense_id)
+                entries[entry_id]["senses"].append(sense)
                 w_num_sense_map[w_num] = sense
-                sense_rank[sense.id] = sense_num
+                sense_rank[sense_id] = sense_num
 
             for p in d.pointers:
-                relname = POINTER_MAP[p.pointer_symbol]
+                relname = wndb.POINTER_MAP[p.pointer_symbol]
                 tgt_offset = p.synset_offset
                 tgt = data[p.pos][tgt_offset]
                 if p.source_w_num or p.target_w_num:
                     src_sense = w_num_sense_map[p.source_w_num]
                     lemma = tgt.words[p.target_w_num - 1].word  # 1-based indexing
-                    target_id = _make_sense_id(lex.id, lemma, tgt_offset, tgt.ss_type)
-                    src_sense.relations.append(SenseRelation(target_id, relname))
+                    target_id = _make_sense_id(lex_id, lemma, tgt_offset, tgt.ss_type)
+                    src_sense["relations"].append(
+                        Relation(target=target_id, relType=relname)
+                    )
                 else:
                     target_id = _make_synset_id(offset=tgt_offset, pos=tgt.ss_type)
-                    synset.relations.append(SynsetRelation(target_id, relname))
+                    synset["relations"].append(
+                        Relation(target=target_id, relType=relname)
+                    )
 
             for f in d.frames:
                 f_id = _make_frame_id(f.f_num)
                 if f.w_num == 0:
-                    sense_ids = [s.id for s in w_num_sense_map.values()]
+                    sense_ids = [s["id"] for s in w_num_sense_map.values()]
                     frame_sense_map[f_id].extend(sense_ids)
                 elif f.w_num in w_num_sense_map:
-                    frame_sense_map[f_id].append(w_num_sense_map[f.w_num].id)
+                    frame_sense_map[f_id].append(w_num_sense_map[f.w_num]["id"])
 
             progress.update()
 
         # sort senses when done with a data file
         progress.set(status="sorting senses")
         for entry in entries.values():
-            entry.senses.sort(key=lambda s: sense_rank[s.id])
+            entry["senses"].sort(key=lambda s: sense_rank[s["id"]])
 
     # sort lexical entries when done with all
-    lex.lexical_entries.sort(key=lambda e: e.id)
+    lex["entries"].sort(key=lambda e: e["id"])
 
 
 def _build_synset(
-    d: DataRecord,
+    d: wndb.DataRecord,
     ssid: str,
-    ilimap: Dict[str, str],
+    ilimap: dict[str, str],
     senseidx: _SenseIndex,
 ) -> Synset:
-    ili = ilimap.get(f"{d.synset_offset:08}-{d.ss_type}")
+    ili = ilimap.get(f"{d.synset_offset:08}-{d.ss_type}", "")
     definition, examples = _parse_data_gloss(d.gloss)
     first_word = d.words[0].word
     return Synset(
-        ssid,
+        id=ssid,
         ili=ili,
         pos=d.ss_type,
-        definitions=[Definition(definition)],
-        examples=[Example(ex) for ex in examples],
+        definitions=[Definition(text=definition)],
+        relations=[],  # done later
+        examples=[Example(text=ex) for ex in examples],
         lexicalized=True,
         members=[],
         lexfile=_lexfile_lookup.get(d.lex_filenum),
@@ -346,14 +258,14 @@ def _build_synset(
             identifier=_make_nltk_synset_name(
                 first_word,
                 d.ss_type,
-                senseidx[first_word.lower()][d.synset_offset][1],
+                senseidx[first_word.lower()][d.synset_offset].sense_number,
             )
         ),
     )
 
 
 def _build_entry(
-    d: DataRecord,
+    d: wndb.DataRecord,
     entry_id: str,
     lemma: str,
     pos: str,
@@ -361,30 +273,30 @@ def _build_entry(
 ) -> LexicalEntry:
     exceptional_forms = sorted(exceptions[pos].get(lemma.lower(), set()))
     return LexicalEntry(
-        entry_id,
-        Lemma(_normalize_form(lemma), pos),
-        forms=[Form(None, _normalize_form(form), None) for form in exceptional_forms],
+        id=entry_id,
+        lemma=Lemma(writtenForm=_normalize_form(lemma), partOfSpeech=pos),
+        forms=[Form(writtenForm=_normalize_form(form)) for form in exceptional_forms],
         senses=[],
         meta=None,
     )
 
 
 def _build_sense(
-    d: DataRecord,
+    d: wndb.DataRecord,
     sense_id: str,
     ssid: str,
     count: int,
-    adjposition: Optional[str],
+    adjposition: str,
     sense_key: str,
 ) -> Sense:
     return Sense(
-        sense_id,
-        ssid,
-        relations=None,  # done later
-        examples=None,
-        counts=[Count(count)] if count else None,
+        id=sense_id,
+        synset=ssid,
+        relations=[],  # done later
+        examples=[],
+        counts=[Count(value=count)] if count else [],
         lexicalized=True,
-        adjposition=adjposition,
+        adjposition=adjposition if adjposition else "",
         meta=Metadata(identifier=sense_key),
     )
 
@@ -401,33 +313,24 @@ def _load_data(source: Path) -> _Data:
     }
 
 
-def _load_data_file(path: Path) -> Dict[int, DataRecord]:
-    subdata: Dict[int, DataRecord] = {}
-    with path.open("rt") as datafile:
-        for line in datafile:
-            if line.startswith("  "):
-                continue  # skip header
-            record = _parse_data_line(line)
-            subdata[record.synset_offset] = record
-    return subdata
+def _load_data_file(path: Path) -> dict[int, wndb.DataRecord]:
+    return {record.synset_offset: record for record in wndb.read_data_file(path)}
 
 
 def _load_sense_index(path: Path) -> _SenseIndex:
     senseidx: _SenseIndex = {}
-    with path.open("rt") as indexfile:
-        for line in indexfile:
-            sense_key, offset, sense_number, tag_cnt = line.split()
-            lemma = sense_key[: sense_key.index("%")].lower()
-            if lemma not in senseidx:
-                senseidx[lemma] = {}
-            senseidx[lemma][int(offset)] = (sense_key, int(sense_number), int(tag_cnt))
+    for senseinfo in wndb.read_sense_index(path):
+        lemma = senseinfo.sense_key.partition("%")[0]
+        if lemma not in senseidx:
+            senseidx[lemma] = {}
+        senseidx[lemma][senseinfo.synset_offset] = senseinfo
     return senseidx
 
 
-def _load_frames() -> List[SyntacticBehaviour]:
+def _load_frames() -> list[SyntacticBehaviour]:
     frames = [
-        SyntacticBehaviour(id=_make_frame_id(f_num), frame=subcat)
-        for f_num, subcat in VERB_FRAMES
+        SyntacticBehaviour(id=_make_frame_id(f_num), subcategorizationFrame=subcat)
+        for f_num, subcat in wndb.VERB_FRAMES
     ]
     return frames
 
@@ -441,19 +344,17 @@ def _load_exceptions(source: Path) -> _Exceptions:
     }
 
 
-def _load_exceptions_file(path: Path) -> Dict[str, Set[str]]:
-    exceptions: Dict[str, Set[str]] = {}
-    with path.open("rt") as exceptionfile:
-        for line in exceptionfile:
-            form, *roots = line.split()
-            for root in roots:
-                if root not in exceptions:
-                    exceptions[root] = set()
-                exceptions[root].add(form)
+def _load_exceptions_file(path: Path) -> dict[str, set[str]]:
+    exceptions: dict[str, set[str]] = {}
+    for exc in wndb.read_exceptions_file(path):
+        for base_form in exc.base_forms:
+            if base_form not in exceptions:
+                exceptions[base_form] = set()
+            exceptions[base_form].add(exc.form)
     return exceptions
 
 
-def _load_ili_map(path: AnyPath, threshold: float) -> Dict[str, str]:
+def _load_ili_map(path: AnyPath, threshold: float) -> dict[str, str]:
     path = Path(path).expanduser()
     ili_map = {}
     with path.open(newline="") as csvfile:
@@ -465,62 +366,7 @@ def _load_ili_map(path: AnyPath, threshold: float) -> Dict[str, str]:
     return ili_map
 
 
-# Field parsing ########################################################
-
-
-def _parse_data_line(line: str) -> DataRecord:
-    nongloss, _, gloss = line.partition("|")
-    synset_offset, lex_filenum, ss_type, _w_cnt, *rest = nongloss.split(" ")
-
-    w_cnt = int(_w_cnt, 16)  # word count is hexadecimal
-    w_idx = w_cnt * 2  # each w is 2 columns: word, lex_id
-    p_cnt = int(rest[w_idx])  # pointer count is decimal
-    p_idx = w_idx + 1 + (p_cnt * 4)  # 4 cols: sym, offset, pos, src_tgt
-    if len(rest) > p_idx and rest[p_idx]:
-        f_cnt = int(rest[p_idx])  # frame count is decimal
-    else:
-        f_cnt = 0
-
-    return DataRecord(
-        int(synset_offset),
-        int(lex_filenum),
-        ss_type,
-        _parse_data_words(ss_type, rest[:w_idx], w_cnt),
-        _parse_data_pointers(rest[w_idx + 1 : p_idx], p_cnt),
-        _parse_data_frames(rest[p_idx + 1 :], f_cnt),
-        gloss,
-    )
-
-
-def _parse_data_words(
-    ss_type: str,
-    xs: List[str],
-    w_cnt: int,
-) -> List[Word]:
-    words = []
-    for lemma, _ in zip(xs[::2], xs[1::2]):  # _ is lex_id, ignored for now
-        lemma, adjposition = _split_adjposition(lemma, ss_type)
-        words.append(Word(lemma, adjposition))
-    assert len(words) == w_cnt, f"{len(words)=} {w_cnt=}"
-    return words
-
-
-def _parse_data_pointers(xs: List[str], p_cnt: int) -> List[Pointer]:
-    pointers = []
-    for sym, offset, pos, src_tgt in zip(xs[::4], xs[1::4], xs[2::4], xs[3::4]):
-        src, tgt = src_tgt[:2], src_tgt[2:]
-        pointers.append(Pointer(sym, int(offset), pos, int(src, 16), int(tgt, 16)))
-    assert len(pointers) == p_cnt, f"{len(pointers)=} {p_cnt=}"
-    return pointers
-
-
-def _parse_data_frames(xs: List[str], f_cnt: int) -> List[Frame]:
-    frames = []
-    for _, f_num, w_num in zip(xs[::3], xs[1::3], xs[2::3]):
-        frames.append(Frame(int(f_num), int(w_num, 16)))
-    assert len(frames) == f_cnt
-    return frames
-
+# Helper functions #####################################################
 
 # This grammar may be fragile against non PWN-3.0 versions of wordnet!
 _gloss_pe = pe.compile(
@@ -543,36 +389,20 @@ _gloss_pe = pe.compile(
 )
 
 
-def _parse_data_gloss(gloss: str) -> Tuple[str, List[str]]:
+def _parse_data_gloss(gloss: str) -> tuple[str, list[str]]:
     clean_gloss = gloss.strip().strip("; ")
     match = _gloss_pe.match(clean_gloss)
     if not match:
         return clean_gloss, []
     else:
         definition, *raw_examples = match.groups()
-        examples: List[str] = []
+        examples: list[str] = []
         for ex in raw_examples:
             ex = ex.strip()
             if ex.count('"') == 2 and ex.startswith('"') and ex.endswith('"'):
                 ex = ex[1:-1]
             examples.append(ex)
         return definition.strip(), examples
-
-
-# Helper functions #####################################################
-
-# For now we're getting these from index.sense, but this is the code
-# for creating them from the data.
-#
-# def _make_sense_key(
-#     lemma: str,
-#     lex_filenum: int,
-#     lex_id: int,
-#     head_word: str = '',
-#     head_id: int = 0,
-# ) -> str:
-#     h_id = f'{head_id:02}' if head_word else ''
-#     return f'{lemma}%{lex_filenum:02}:{lex_id:02}:{head_word}:{h_id}'
 
 
 def _make_frame_id(f_num: int) -> str:
@@ -594,17 +424,6 @@ def _make_sense_id(
 
 def _make_nltk_synset_name(lemma: str, ss_type: str, sense_num: int) -> str:
     return f"{lemma.lower()}.{ss_type}.{sense_num:02}"
-
-
-def _split_adjposition(lemma: str, ss_type: str) -> Tuple[str, Optional[str]]:
-    if ss_type in "as" and lemma.endswith(")"):
-        if lemma.endswith("(a)"):
-            return lemma[:-3], "a"
-        elif lemma.endswith("(p)"):
-            return lemma[:-3], "p"
-        elif lemma.endswith("(ip)"):
-            return lemma[:-4], "ip"
-    return lemma, None
 
 
 def _normalize_form(form: str) -> str:
