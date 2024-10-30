@@ -271,7 +271,7 @@ def _build_entry(
     pos: str,
     exceptions: _Exceptions,
 ) -> LexicalEntry:
-    exceptional_forms = sorted(exceptions[pos].get(lemma.lower(), set()))
+    exceptional_forms = sorted(exceptions[pos].get(lemma, set()))
     return LexicalEntry(
         id=entry_id,
         lemma=Lemma(writtenForm=_normalize_form(lemma), partOfSpeech=pos),
