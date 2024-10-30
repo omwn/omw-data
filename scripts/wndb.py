@@ -6,8 +6,6 @@ from collections.abc import Iterator
 from pathlib import Path
 from typing import NamedTuple, TextIO
 
-import pe
-
 
 # see: https://wordnet.princeton.edu/documentation/wninput5wn
 POINTER_MAP = {
@@ -356,43 +354,6 @@ def _parse_data_frames(xs: list[str], f_cnt: int) -> list[Frame]:
         frames.append(Frame(int(f_num), int(w_num, 16)))
     assert len(frames) == f_cnt
     return frames
-
-
-# This grammar may be fragile against non PWN-3.0 versions of wordnet!
-_gloss_pe = pe.compile(
-    """
-    Start      <- ~Definition (DELIM Example)* EOS
-    Definition <- ( !DELIM (![(] . / Paren) )+
-    Paren      <- '(' (![)] .)* ')'    # assume parentheticals are closed
-    Example    <- ~(Quote (NonQuote Quote?)*) SPACE*
-    Quote      <- ["] InQuote* ["]     # regular string
-                / ["] InQuote* EOS     # missing end-quote
-                / !DELIM InQuote* ["]  # missing start-quote
-    InQuote    <- !["] .               # non-quote chars
-                / ["] [A-Za-z]         # correcting for typos (e.g., 'I"m')
-    NonQuote   <- (!DELIM . (',' SPACE* &["])?)+
-    DELIM      <- [;:,] SPACE* &["]
-    SPACE      <- ' '
-    EOS        <- !.
-    """,
-    flags=(pe.MEMOIZE | pe.STRICT | pe.OPTIMIZE),
-)
-
-
-def _parse_data_gloss(gloss: str) -> tuple[str, list[str]]:
-    clean_gloss = gloss.strip().strip("; ")
-    match = _gloss_pe.match(clean_gloss)
-    if not match:
-        return clean_gloss, []
-    else:
-        definition, *raw_examples = match.groups()
-        examples: list[str] = []
-        for ex in raw_examples:
-            ex = ex.strip()
-            if ex.count('"') == 2 and ex.startswith('"') and ex.endswith('"'):
-                ex = ex[1:-1]
-            examples.append(ex)
-        return definition.strip(), examples
 
 
 # Helper functions #####################################################
