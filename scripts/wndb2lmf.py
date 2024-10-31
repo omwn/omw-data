@@ -59,7 +59,7 @@ from wn.lmf import (
 )
 
 from . import wndb
-from .util import escape_lemma
+from .util import escape_lemma, respace_word
 
 
 LMF_VERSION = "1.1"
@@ -182,16 +182,14 @@ def _build_lexicon(
             # Then create each entry (if not done yet) and sense for the synset
             w_num_sense_map: dict[int, Sense] = {}
             for w_num, w in enumerate(d.words, 1):
-                lemma = w.word
-
-                entry_id = _make_entry_id(lex_id, lemma, pos)
+                entry_id = _make_entry_id(lex_id, w.respaced, pos)
                 if entry_id not in entries:
-                    entry = _build_entry(d, entry_id, lemma, pos, exceptions)
+                    entry = _build_entry(d, entry_id, w, pos, exceptions)
                     entries[entry_id] = entry
                     lex["entries"].append(entry)
 
-                sense_key, _, sense_num, count = senseidx[lemma.lower()][offset]
-                sense_id = _make_sense_id(lex_id, lemma, offset, d.ss_type)
+                sense_key, _, sense_num, count = senseidx[w.lemma][offset]
+                sense_id = _make_sense_id(lex_id, w.respaced, offset, d.ss_type)
                 sense = _build_sense(d, sense_id, ssid, count, w.adjposition, sense_key)
 
                 synset["members"].append(sense_id)
@@ -205,8 +203,10 @@ def _build_lexicon(
                 tgt = data[p.pos][tgt_offset]
                 if p.source_w_num or p.target_w_num:
                     src_sense = w_num_sense_map[p.source_w_num]
-                    lemma = tgt.words[p.target_w_num - 1].word  # 1-based indexing
-                    target_id = _make_sense_id(lex_id, lemma, tgt_offset, tgt.ss_type)
+                    word = tgt.words[p.target_w_num - 1]  # 1-based indexing
+                    target_id = _make_sense_id(
+                        lex_id, word.respaced, tgt_offset, tgt.ss_type
+                    )
                     src_sense["relations"].append(
                         Relation(target=target_id, relType=relname)
                     )
@@ -243,7 +243,7 @@ def _build_synset(
 ) -> Synset:
     ili = ilimap.get(f"{d.synset_offset:08}-{d.ss_type}", "")
     definition, examples = _parse_data_gloss(d.gloss)
-    first_word = d.words[0].word
+    lemma = d.words[0].lemma
     return Synset(
         id=ssid,
         ili=ili,
@@ -256,9 +256,9 @@ def _build_synset(
         lexfile=_lexfile_lookup.get(d.lex_filenum),
         meta=Metadata(
             identifier=_make_nltk_synset_name(
-                first_word,
+                lemma,
                 d.ss_type,
-                senseidx[first_word.lower()][d.synset_offset].sense_number,
+                senseidx[lemma][d.synset_offset].sense_number,
             )
         ),
     )
@@ -267,15 +267,15 @@ def _build_synset(
 def _build_entry(
     d: wndb.DataRecord,
     entry_id: str,
-    lemma: str,
+    w: wndb.Word,
     pos: str,
     exceptions: _Exceptions,
 ) -> LexicalEntry:
-    exceptional_forms = sorted(exceptions[pos].get(lemma, set()))
+    exceptional_forms = sorted(exceptions[pos].get(w.word, set()))
     return LexicalEntry(
         id=entry_id,
-        lemma=Lemma(writtenForm=_normalize_form(lemma), partOfSpeech=pos),
-        forms=[Form(writtenForm=_normalize_form(form)) for form in exceptional_forms],
+        lemma=Lemma(writtenForm=w.respaced, partOfSpeech=pos),
+        forms=[Form(writtenForm=respace_word(form)) for form in exceptional_forms],
         senses=[],
         meta=None,
     )
@@ -409,25 +409,21 @@ def _make_frame_id(f_num: int) -> str:
     return f"frame-{f_num}"
 
 
-def _make_entry_id(id: str, lemma: str, pos: str) -> str:
-    return f"{id}-{escape_lemma(lemma)}-{pos}"
+def _make_entry_id(id: str, word: str, pos: str) -> str:
+    return f"{id}-{escape_lemma(word)}-{pos}"
 
 
 def _make_sense_id(
     id: str,
-    lemma: str,
+    word: str,
     offset: int,
     pos: str,
 ) -> str:
-    return f"{id}-{escape_lemma(lemma)}-{offset:08}-{pos}"
+    return f"{id}-{escape_lemma(word)}-{offset:08}-{pos}"
 
 
 def _make_nltk_synset_name(lemma: str, ss_type: str, sense_num: int) -> str:
-    return f"{lemma.lower()}.{ss_type}.{sense_num:02}"
-
-
-def _normalize_form(form: str) -> str:
-    return form.replace("_", " ")
+    return f"{lemma}.{ss_type}.{sense_num:02}"
 
 
 # Command usage

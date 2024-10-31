@@ -99,8 +99,8 @@ def prepare_raw_senseinfo(path: Path, suffix: str) -> Iterator[RawSenseInfo]:
         head_word = find_adj_satellite_head(dr, data_map)
 
         for word in dr.words:
-            sense_number = sensenum_map[(normalize_lemma(word), dr.synset_offset)]
-            lemma = normalize_lemma(word)
+            lemma = word.lemma
+            sense_number = sensenum_map[(lemma, dr.synset_offset)]
 
             if lemma in members:  # ignore small differences like "A.M." vs "a.m."
                 continue
@@ -111,7 +111,7 @@ def prepare_raw_senseinfo(path: Path, suffix: str) -> Iterator[RawSenseInfo]:
                 ss_type=dr.ss_type,
                 lex_filenum=dr.lex_filenum,
                 lex_id=word.lex_id,
-                head_lemma=normalize_lemma(head_word),
+                head_lemma=head_word.lemma,
                 head_adjposition=head_word.adjposition,
                 head_lex_id=head_word.lex_id,
                 synset_offset=dr.synset_offset,
@@ -163,10 +163,6 @@ def find_adj_satellite_head(record, data_map) -> Word:
     assert similar_to.target_w_num == 0  # semantic relation only
     head_record = data_map[similar_to.synset_offset]
     return head_record.words[0]  # first word of the satellite's head
-
-
-def normalize_lemma(word: Word) -> str:  #, with_adjposition: bool = False) -> str:
-    return word.word.lower()
 
 
 def normalize_sense_key(sense_key: str) -> str:

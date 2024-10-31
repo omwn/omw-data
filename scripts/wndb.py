@@ -142,6 +142,14 @@ class Word(NamedTuple):
     lex_id: int
     adjposition: str = ''
 
+    @property
+    def respaced(self) -> str:
+        return self.word.replace("_", " ")
+
+    @property
+    def lemma(self) -> str:
+        return self.word.lower()
+
 
 class Pointer(NamedTuple):
     pointer_symbol: str
