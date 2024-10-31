@@ -163,7 +163,6 @@ def _build_lexicon(
 ) -> None:
     lex_id = lex["id"]
     _make_synset_id = synset_id_formatter(fmt=f"{lex_id}-{{offset:08}}-{{pos}}")
-    frame_sense_map = {sb["id"]: sb.get("senses", []) for sb in lex["frames"]}
 
     for pos in "nvar":
         progress.set(status=pos)
@@ -219,10 +218,12 @@ def _build_lexicon(
             for f in d.frames:
                 f_id = _make_frame_id(f.f_num)
                 if f.w_num == 0:
-                    sense_ids = [s["id"] for s in w_num_sense_map.values()]
-                    frame_sense_map[f_id].extend(sense_ids)
+                    for sense in w_num_sense_map.values():
+                        sense.setdefault("subcat", []).append(f_id)
                 elif f.w_num in w_num_sense_map:
-                    frame_sense_map[f_id].append(w_num_sense_map[f.w_num]["id"])
+                    w_num_sense_map[f.w_num].setdefault("subcat", []).append(f_id)
+                else:
+                    raise wndb.WNDBError("Frame {f.f_num} matches no sense: {f.w_num}")
 
             progress.update()
 
@@ -320,7 +321,7 @@ def _load_data_file(path: Path) -> dict[int, wndb.DataRecord]:
 def _load_sense_index(path: Path) -> _SenseIndex:
     senseidx: _SenseIndex = {}
     for senseinfo in wndb.read_sense_index(path):
-        lemma = senseinfo.sense_key.partition("%")[0]
+        lemma = wndb.sense_key_lemma(senseinfo.sense_key)
         if lemma not in senseidx:
             senseidx[lemma] = {}
         senseidx[lemma][senseinfo.synset_offset] = senseinfo

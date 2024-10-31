@@ -130,6 +130,14 @@ POS_MAP = {
     "r": "adv",
 }
 
+SS_TYPE_MAP = {
+    1: "n",
+    2: "v",
+    3: "a",
+    4: "r",
+    5: "s",
+}
+
 # Data and Data Types ##################################################
 
 
@@ -193,6 +201,19 @@ class SenseInfo(NamedTuple):
     synset_offset: int
     sense_number: int
     tag_cnt: int
+
+
+class SenseKeyComponents(NamedTuple):
+    lemma: str
+    ss_type_idx: int
+    lex_filenum: int
+    lex_id: int
+    head_word: str
+    head_id: int
+
+    @property
+    def ss_type(self) -> str:
+        return SS_TYPE_MAP[self.ss_type_idx]
 
 
 class ExceptionalForm(NamedTuple):
@@ -362,6 +383,25 @@ def _parse_data_frames(xs: list[str], f_cnt: int) -> list[Frame]:
         frames.append(Frame(int(f_num), int(w_num, 16)))
     assert len(frames) == f_cnt
     return frames
+
+
+# Sense Keys ###########################################################
+
+def sense_key_lemma(sense_key: str) -> str:
+    return sense_key.rpartition("%")[0]
+
+
+def split_sense_key(sense_key: str) -> SenseKeyComponents:
+    lemma, _, rest = sense_key.rpartition("%")
+    ss_type_idx, lex_filenum, lex_id, head_word, head_id = rest.split(":")
+    return SenseKeyComponents(
+        lemma,
+        int(ss_type_idx),
+        int(lex_filenum),
+        int(lex_id),
+        head_word,
+        int(head_id) if head_id else 0,
+    )
 
 
 # Helper functions #####################################################
