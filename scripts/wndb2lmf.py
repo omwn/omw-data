@@ -247,7 +247,7 @@ def _build_synset(
     return Synset(
         id=ssid,
         ili=ili,
-        pos=d.ss_type,
+        partOfSpeech=d.ss_type,
         definitions=[Definition(text=definition)],
         relations=[],  # done later
         examples=[Example(text=ex) for ex in examples],
