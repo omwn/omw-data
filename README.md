@@ -8,6 +8,8 @@ It can be used by the Python library [Wn](https://github.com/goodmami/wn).
 
 The raw data (under *wns*) also has the automatically extracted data for over 150 languages from [Wiktionary](https://www.wiktionary.org/) and the Unicode [Common Locale Data Repository (CLDR)](https://cldr.unicode.org/).
 
+<a href='https://omwn.org/'>More information about the Open Multilingual Wordnet</a>
+
 ## Citation
 
 If you use OMW please cite both the citation below, and the individual wordnets (citation data is included in each wordnet):
