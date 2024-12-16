@@ -73,6 +73,21 @@ def escape_lemma(lemma: str) -> str:
     return ''.join(chars)
 
 
+def despace_word(word: str) -> str:
+    """Replace spaces with _ as in WNDB data files."""
+    return word.replace(" ", "_")
+
+
+def respace_word(word: str) -> str:
+    """Replace _ with spaces."""
+    return word.replace("_", " ")
+
+
+def format_lemma(word: str) -> str:
+    """Format a word as a lemma in a WNDB index file."""
+    return despace_word(word).lower()
+
+
 def load_ili_map(path) -> Dict[str, str]:
     ilimap = {}
     with open(path, 'rt') as ilifile:
