@@ -36,8 +36,6 @@ import argparse
 import csv
 from pathlib import Path
 
-import pe
-
 # import wn
 from wn._types import AnyPath
 from wn.constants import LEXICOGRAPHER_FILES
@@ -59,6 +57,7 @@ from wn.lmf import (
 )
 
 from . import wndb
+from .glossparser import gloss_parser
 from .util import escape_lemma, respace_word
 
 
@@ -243,13 +242,13 @@ def _build_synset(
     senseidx: _SenseIndex,
 ) -> Synset:
     ili = ilimap.get(f"{d.synset_offset:08}-{d.ss_type}", "")
-    definition, examples = _parse_data_gloss(d.gloss)
+    definitions, examples = _parse_data_gloss(d.gloss)
     lemma = d.words[0].lemma
     return Synset(
         id=ssid,
         ili=ili,
         partOfSpeech=d.ss_type,
-        definitions=[Definition(text=definition)],
+        definitions=[Definition(text=dfn) for dfn in definitions],
         relations=[],  # done later
         examples=[Example(text=ex) for ex in examples],
         lexicalized=True,
@@ -369,41 +368,24 @@ def _load_ili_map(path: AnyPath, threshold: float) -> dict[str, str]:
 
 # Helper functions #####################################################
 
-# This grammar may be fragile against non PWN-3.0 versions of wordnet!
-_gloss_pe = pe.compile(
-    """
-    Start      <- ~Definition (DELIM Example)* EOS
-    Definition <- ( !DELIM (![(] . / Paren) )+
-    Paren      <- '(' (![)] .)* ')'    # assume parentheticals are closed
-    Example    <- ~(Quote (NonQuote Quote?)*) SPACE*
-    Quote      <- ["] InQuote* ["]     # regular string
-                / ["] InQuote* EOS     # missing end-quote
-                / !DELIM InQuote* ["]  # missing start-quote
-    InQuote    <- !["] .               # non-quote chars
-                / ["] [A-Za-z]         # correcting for typos (e.g., 'I"m')
-    NonQuote   <- (!DELIM . (',' SPACE* &["])?)+
-    DELIM      <- [;:,] SPACE* &["]
-    SPACE      <- ' '
-    EOS        <- !.
-    """,
-    flags=(pe.MEMOIZE | pe.STRICT | pe.OPTIMIZE),
-)
-
-
-def _parse_data_gloss(gloss: str) -> tuple[str, list[str]]:
+def _parse_data_gloss(gloss: str) -> tuple[list[str], list[str]]:
     clean_gloss = gloss.strip().strip("; ")
-    match = _gloss_pe.match(clean_gloss)
+    if not clean_gloss.strip():
+        return [], []
+    match = gloss_parser.match(clean_gloss)
     if not match:
-        return clean_gloss, []
+        return [clean_gloss], []
     else:
-        definition, *raw_examples = match.groups()
+        definition, raw_examples = match.groups()
         examples: list[str] = []
         for ex in raw_examples:
             ex = ex.strip()
-            if ex.count('"') == 2 and ex.startswith('"') and ex.endswith('"'):
+            if ex == '"':
+                continue
+            elif ex.count('"') == 2 and ex.startswith('"') and ex.endswith('"'):
                 ex = ex[1:-1]
             examples.append(ex)
-        return definition.strip(), examples
+        return [definition.strip()], examples
 
 
 def _make_frame_id(f_num: int) -> str:
