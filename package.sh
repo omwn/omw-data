@@ -72,7 +72,9 @@ for pkg in "${BUILD}"/*; do
 done
 
 echo -n "omw-$VER"
-tar -C build/ $TAROPTS --exclude="omw-en31" -f "release/omw-${VER}.tar.xz" "omw-$VER"
+tar -C build/ $TAROPTS \
+    --exclude="omw-en1*" --exclude="omw-en2*" --exclude="omw-en31" \
+    -f "release/omw-${VER}.tar.xz" "omw-$VER"
 echo
 label="Open Multilingual Wordnet"
 lang=mul
