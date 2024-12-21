@@ -37,14 +37,14 @@ gloss_parser = pe.compile(
     Definition  <- !["] ~( ( !DELIM DefContent )+ ["]? ) SPACE*
     DefContent  <- [Ee] '.'? [Gg] '.'? DELIM?  # e.g., eg: E.g.; etc.
                  / '(' (![)] .)* ')'    # assume parentheticals are closed
-                 / &( ["] ALPHANUM ) Quote
+                 / &( ["] ( ALPHANUM / [`'] ) ) Quote
                  / ALPHANUM ["] &( ( SPACE+ / DELIM / EOS ) !["] )  # things like '13" cards'
                  / !["] .
 
     # Examples can be delimited with various punctuation or 'or'. Other
     # non-quoted content between quoted segments is often things like
     # "they said". Occasionally examples are missing the final quote.
-    Examples    <- Example ( ( EXDELIM / SPACE* &["] ) Example )*
+    Examples    <- Example ( ( DELIM / SPACE* &["] ) Example )*
                  / ''
     Example     <- ~( Quote ( NonQuote Quote? )* ( ["] &( DELIM / SPACE* EOS) )? )
                  / ~( ["] .* )
@@ -53,10 +53,9 @@ gloss_parser = pe.compile(
     Quote       <- ["] ["]? InQuote* ["] (["] !ALPHANUM)?
     InQuote     <- !["] .               # non-quote chars
                  / ["] ALPHANUM         # correcting for typos (e.g., 'I"m')
-    NonQuote    <- SPACE* (!(EXDELIM / ["]) . )+ [,]? SPACE*
+    NonQuote    <- SPACE* (!(DELIM / ["]) . )+ [,]? SPACE*
 
-    DELIM       <- [;:,] SPACE* &["]
-    EXDELIM     <- SPACE* ([;:,] / 'or') SPACE* &["]
+    DELIM       <- SPACE* [;:,] SPACE* &["]
     ALPHANUM    <- [0-9A-Za-z]
     SPACE       <- ' '
     EOS         <- !.
