@@ -32,8 +32,6 @@ from pathlib import Path
 from typing import NamedTuple, TextIO
 
 from .wndb import (
-    Count,
-    DataRecord,
     SenseInfo,
     Word,
     read_count_list,
@@ -56,6 +54,7 @@ SensenumMap = dict[tuple[str, int], int]  # maps (lemma, synset_offset) to a sen
 
 class RawSenseInfo(NamedTuple):
     """Raw data used to construct SenseInfo object."""
+
     lemma: str
     ss_type: str
     lex_filenum: int

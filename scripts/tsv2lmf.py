@@ -13,7 +13,6 @@ from wn.lmf import (
     Metadata,
     LexicalEntry,
     Lemma,
-    Form,
     Sense,
     Example,
     Synset,

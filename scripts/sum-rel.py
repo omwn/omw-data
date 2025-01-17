@@ -1,6 +1,5 @@
 ### summarize the release
 import wn
-from tabulate import tabulate
 
 wn.config.data_directory = '/tmp'
 #wn.download('omw:1.3')
@@ -23,27 +22,27 @@ licenses = {'wordnet':'wordnet',
 
 
 core = []
-for l in open('wn-core-ili.tab'):
-    core.append(l.strip())
+for line in open('wn-core-ili.tab'):
+    core.append(line.strip())
 #print(core)
 
 def link(text, url):
     return (f"<a href='{url}'>{text}</a>")
 
 stats = list()
-for l in wn.lexicons():
+for lex in wn.lexicons():
     ### Fixme  link for wordnet license
-    incore = len([s for s in wn.synsets(lexicon=l.id) if s.ili and (s.ili.id in core)])
-    synsets = len(wn.synsets(lexicon=l.id))
+    incore = len([s for s in wn.synsets(lexicon=lex.id) if s.ili and (s.ili.id in core)])
+    synsets = len(wn.synsets(lexicon=lex.id))
     data = f"""  <tr>
-    <th>{l.specifier()}</th>
-    <td>{l.language}</td>
-    <td>{link(l.label, l.url)}</td>
+    <th>{lex.specifier()}</th>
+    <td>{lex.language}</td>
+    <td>{link(lex.label, lex.url)}</td>
     <td align='right'>{synsets:,d}</td>
-    <td align='right'>{len(wn.senses(lexicon=l.id)):,d}</td>
-    <td align='right'>{len(wn.words(lexicon=l.id)):,d}</td>
+    <td align='right'>{len(wn.senses(lexicon=lex.id)):,d}</td>
+    <td align='right'>{len(wn.words(lexicon=lex.id)):,d}</td>
     <td align='right'>{incore/len(core):.1%}</td>
-    <td>{link(licenses[l.license], l.license)}</td> 
+    <td>{link(licenses[lex.license], lex.license)}</td> 
     </tr>"""
     stats.append(data)
 
