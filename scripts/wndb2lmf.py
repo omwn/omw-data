@@ -61,7 +61,7 @@ from .glossparser import gloss_parser
 from .util import escape_lemma, respace_word
 
 
-LMF_VERSION = "1.1"
+LMF_VERSION = "1.3"
 REQUIRED_FILES = [
     "data.noun",
     "data.verb",
@@ -325,10 +325,8 @@ def _load_sense_index(path: Path) -> _SenseIndex:
         lemma = wndb.sense_key_lemma(sense_key)
         if lemma not in senseidx:
             senseidx[lemma] = {}
-        if senseinfo.tag_cnt == -1:
-            senseinfo = senseinfo._replace(tag_cnt=cntmap.get(sense_key, 0))
-        elif sense_key in cntmap:
-            assert cntmap[sense_key] == senseinfo.tag_cnt, f"{sense_key} counts differ"
+        # use cntlist count instead of index.sense count
+        senseinfo = senseinfo._replace(tag_cnt=cntmap.get(sense_key, 0))
         senseidx[lemma][senseinfo.synset_offset] = senseinfo
     return senseidx
 

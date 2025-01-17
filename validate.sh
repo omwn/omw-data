@@ -17,7 +17,7 @@ if [ ! -d "$BUILD" ]; then
     exit 1
 fi
 
-DTD="WN-LMF-1.1.dtd"
+DTD="WN-LMF-1.3.dtd"
 mkdir -p etc
 if [ ! -f etc/"${DTD}" ]; then
     wget "https://globalwordnet.github.io/schemas/${DTD}" -O etc/"$DTD"
