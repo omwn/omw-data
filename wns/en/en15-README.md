@@ -1,27 +1,41 @@
+# OMW English Wordnet based on WordNet 1.5
 
+This is an export of the Princeton WordNet 1.5 into the WN-LMF
+format. It is highly compatible with the original WordNet, but there
+are some differences:
 
-## Sense Index
+* Multiword entries use ' ' as a word separator rather than '_'.
 
-WordNet 1.5 was the first release with a [Sense Index], but the file
-is not distributed with the Windows [wn15.zip] package. It exists as a
-separate download ([wn15si.zip]), but for the OMW version of the
-lexicon, we recreate the sense index. The resulting sense index is
-identical to the original except for two entries:
+* Glosses are split into definitions and examples as WN-LMF encodes
+  them as separate XML elements. This splitting process is
+  sophisticated but imprecise, so there are some less-than-ideal
+  definitions and examples.
 
-    create%2:36:16:: 00926188 5
-    make%2:36:16:: 00952386 24
+* Information on adjective position is stored in the `adjposition`
+  attribute instead of as part of the lemma: `a`, `p`, and `ip`
 
-The `16` in these entries is the `lex_id` field, which originally is a
-1-digit hexadecimal number with a maximum value of `15`, so this
-appears to be due to some bug in the original WordNet code. The
-entries we use instead are:
+* Exceptional forms are only stored for words present in the
+  lexicon. This should only affect the lemmatization of words not
+  included in WordNet.
 
-    create%2:36:00:: 00926188 5
-    make%2:36:00:: 00952386 24
+* The *lex_id* field used in WordNet's data files is not encoded
+  directly. This field was used internally for constructing
+  *sense_key* identifiers. In the WN-LMF lexicon, sense keys are
+  stored on the `dc:identifier` attribute on `<Sense>` elements.
 
-The `lex_id` of `00` follows the hexadecimal value of `0` from the
-data files.
+* Two sense keys in the distributed sense index appear to be
+  incongruous with the database: `create%2:36:16::` and
+  `make%2:36:16::`. The `16` is the *lex_id*, but in the data files
+  this field is expressed with a single hexadecimal digit (i.e., with
+  a maximum value of `f`, or `15` in decimal), which for these senses
+  is given as `0`. WordNet 1.5 is the only version of the lexicon with
+  this issue.
 
-[Sense Index]: https://wordnet.princeton.edu/documentation/senseidx5wn
-[wn15.zip]: https://wordnetcode.princeton.edu/1.5/wn15.zip
-[wn15si.zip]: https://wordnetcode.princeton.edu/1.5/wn15si.zip
+* NLTK-style synset identifiers (e.g., `entity.n.01`) are stored on
+  the `dc:identifier` attribute on `<Synset>` elements.
+
+* ILI identifiers from the [CILI][] project are stored on the `ili`
+  attribute on `<Synset>` elements. In WN-LMF lexicons, this is the
+  mechanism by which interlingual queries can be performed.
+
+[CILI]: https://github.com/globalwordnet/cili/

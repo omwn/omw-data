@@ -101,7 +101,7 @@ def main(args):
     data = _load_data(source)
 
     progress.flash("Loading sense index")
-    senseidx = _load_sense_index(source / "index.sense")
+    senseidx = _load_sense_index(source)
 
     progress.flash("Loading verb frames")
     syntactic_behaviours = _load_frames()
@@ -318,11 +318,17 @@ def _load_data_file(path: Path) -> dict[int, wndb.DataRecord]:
 
 
 def _load_sense_index(path: Path) -> _SenseIndex:
+    cntmap = {c.sense_key: c.tag_cnt for c in wndb.read_count_list(path / "cntlist")}
     senseidx: _SenseIndex = {}
-    for senseinfo in wndb.read_sense_index(path):
-        lemma = wndb.sense_key_lemma(senseinfo.sense_key)
+    for senseinfo in wndb.read_sense_index(path / "index.sense"):
+        sense_key = senseinfo.sense_key
+        lemma = wndb.sense_key_lemma(sense_key)
         if lemma not in senseidx:
             senseidx[lemma] = {}
+        if senseinfo.tag_cnt == -1:
+            senseinfo = senseinfo._replace(tag_cnt=cntmap.get(sense_key, 0))
+        elif sense_key in cntmap:
+            assert cntmap[sense_key] == senseinfo.tag_cnt, f"{sense_key} counts differ"
         senseidx[lemma][senseinfo.synset_offset] = senseinfo
     return senseidx
 

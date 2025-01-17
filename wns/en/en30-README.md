@@ -17,9 +17,10 @@ are some differences:
 
 * Multiword entries use ' ' as a word separator rather than '_'.
 
-* Glosses are split into definitions and examples. In the original
-  data, there is a convention for delimiting definitions and glosses
-  with semicolons, but WN-LMF encodes them as separate XML elements.
+* Glosses are split into definitions and examples as WN-LMF encodes
+  them as separate XML elements. This splitting process is
+  sophisticated but imprecise, so there are some less-than-ideal
+  definitions and examples.
 
 * Information on adjective position is stored in the `adjposition`
   attribute instead of as part of the lemma: `a`, `p`, and `ip`

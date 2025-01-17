@@ -319,12 +319,14 @@ def read_sense_index(path: Path) -> Iterator[SenseInfo]:
     """
     with path.open("rt") as senseindexfile:
         for line in _non_header_lines(senseindexfile):
-            sense_key, offset, sense_number, tag_cnt = line.split()
+            sense_key, offset, sense_number, *extra = line.split()
+            # 0 is a valid count, so use -1 if the count field is missing
+            tag_cnt = int(extra[0]) if extra else -1
             yield SenseInfo(
                 sense_key,
                 int(offset),
                 int(sense_number),
-                int(tag_cnt),
+                tag_cnt,
             )
 
 

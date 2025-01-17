@@ -53,9 +53,13 @@ if [ "$VER" = "1.5" ]; then
     LICENSE="${WN} License"
     if [ ! -d "${WNDIR}" ]; then
         wget -P "${TMPDIR}" https://wordnetcode.princeton.edu/1.5/wn15.zip
+        wget -P "${TMPDIR}" https://wordnetcode.princeton.edu/1.5/wn15si.zip
         unzip "${TMPDIR}/wn15.zip" -d "${WNDIR}"
+        unzip "${TMPDIR}/wn15si.zip" "SENSE.IDX" -d "${WNDIR}"
+	wget -O "${WNDIR}/README" https://wordnetcode.princeton.edu/1.5/README
         # Need to rename files to be compatible with scripts
         mv "${WNDIR}/DICT" "${WNDIR}/dict"
+	mv "${WNDIR}/SENSE.IDX" "${WNDIR}/dict/index.sense"
         pushd "${WNDIR}/dict"
         for POS in ADJ ADV NOUN VERB; do
         pos=$( tr A-Z a-z <<< "${POS}" )
@@ -65,11 +69,11 @@ if [ "$VER" = "1.5" ]; then
         done
         mv "CNTLIST" "cntlist"
         popd
-        # Rebuild the sense index
-        python -m scripts.build_senseidx \
-           --use-adjposition \
-           "${WNDIR}/dict" \
-           -o "${WNDIR}/dict/index.sense"
+        # # Rebuild the sense index
+        # python -m scripts.build_senseidx \
+        #    --use-adjposition \
+        #    "${WNDIR}/dict" \
+        #    -o "${WNDIR}/dict/index.sense"
         cp "${METADIR}/en15-LICENSE" "${WNDIR}/LICENSE"
     fi
 
@@ -190,3 +194,21 @@ python -m scripts.wndb2lmf \
 cat "${WNDIR}/LICENSE" > "${BLDDIR}/${WNID}/LICENSE"
 cat "${METADIR}/${LGVER}-README.md" > "${BLDDIR}/${WNID}/README.md"
 cat "${METADIR}/fellbaum-1998.bib" > "${BLDDIR}/${WNID}/citation.bib"
+
+# append original readme if available
+
+if [ -f "${WNDIR}/README" ]; then
+
+cat <<EOF >> "${BLDDIR}/${WNID}/README.md"
+
+## Original README
+
+The following is the text of the original \`README\` file that came with
+WordNet ${VER}.
+
+\`\`\`
+$( cat "${WNDIR}/README" )
+\`\`\`
+EOF
+
+fi
