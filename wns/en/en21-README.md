@@ -6,8 +6,7 @@ are some differences.
 
 ## Summary of Changes
 
-* The following redundant `derivation` sense relations have been
-  suppressed:
+* Redundant `derivation` sense relations have been suppressed:
   - *strictness* (`04584528-n`) to *strict* (`02519208-s`)
   - *singularity* (`04707918-n`) to *singular* (`00519685-s`)
   - *repulsiveness* (`04725799-n`) to *repulsive* (`01683681-s`)

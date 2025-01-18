@@ -10,8 +10,7 @@ are some differences:
   'similar'. These were merged in the WN-LMF format and are
   completely distinguishable by looking at the part-of-speech.
 
-* The following redundant `derivation` sense relations have been
-  suppressed:
+* Redundant `derivation` sense relations have been suppressed:
   - *strictness* (`04646728-n`) to *strict* (`02446199-s`)
   - *sombreness* (`04654835-n`) to *sombre* (`00366341-s`)
   - *somberness* (`04654835-n`) to *somber* (`00366341-s`)

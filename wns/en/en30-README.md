@@ -13,8 +13,7 @@ are some differences:
   distribution of the WordNet data, so we think we are justified in
   applying it.
 
-* The following redundant `derivation` sense relations have been
-  suppressed:
+* Redundant `derivation` sense relations have been suppressed:
   - *strictness* (`04639371-n`) to *strict* (`02436995-s`)
   - *sombreness* (`04647478-n`) to *sombre* (`00365261-s`)
   - *somberness* (`04647478-n`) to *somber* (`00365261-s`)
