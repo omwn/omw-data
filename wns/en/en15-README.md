@@ -2,7 +2,13 @@
 
 This is an export of the Princeton WordNet 1.5 into the WN-LMF
 format. It is highly compatible with the original WordNet, but there
-are some differences:
+are some differences.
+
+## Summary of Changes
+
+* Redundant senses for the following have been suppressed:
+  - *Andaman marble* (`07704901-n`)
+  - *Siamese* (`02219260-a`)
 
 * Multiword entries use ' ' as a word separator rather than '_'.
 

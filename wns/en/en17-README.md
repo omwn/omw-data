@@ -6,6 +6,13 @@ are some differences.
 
 ## Summary of Changes
 
+* Redundant senses for the following have been suppressed:
+  - *Caucasian* (`02704763-a`), including the
+    redundant sense relation to *Caucasus* (`06856621-n`)
+  - *Masonic* (`02747293-a`)
+  - *Serbian* (`02804157-a`)
+  - *Siamese* (`02932037-a`)
+
 * The 'verb group' relation (`$` pointer) is mapped to
   'similar'. These were merged in the WN-LMF format and are
   completely distinguishable by looking at the part-of-speech.

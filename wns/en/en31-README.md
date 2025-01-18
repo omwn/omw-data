@@ -4,9 +4,24 @@ This is an export of the Princeton WordNet 3.1 into the WN-LMF
 format. It is highly compatible with the original WordNet, but there
 are some differences:
 
+## Summary of Changes
+
 * The 'verb group' relation (`$` pointer) is mapped to
   'similar'. These were merged in the WN-LMF format and are
   completely distinguishable by looking at the part-of-speech.
+
+* The following redundant `derivation` sense relations have been
+  suppressed:
+  - *strictness* (`04646728-n`) to *strict* (`02446199-s`)
+  - *sombreness* (`04654835-n`) to *sombre* (`00366341-s`)
+  - *somberness* (`04654835-n`) to *somber* (`00366341-s`)
+  - *singularity* (`04770905-n`) to *singular* (`00496667-s`)
+  - *repulsiveness* (`04788613-n`) to *repulsive* (`01629244-s`)
+  - *benignancy* (`04848212-n`) to *benign* (`01375700-s`)
+  - *dreariness* (`05213274-n`) to *dreary* (`00365961-s`)
+  - *sombreness* (`07548645-n`) to *sombre* (`00366341-s`)
+  - *somberness* (`07548645-n`) to *somber* (`00366341-s`)
+  - *perceive* (`02110960-v`) to *perceptible* (`01290284-s`)
 
 * Multiword entries use ' ' as a word separator rather than '_'.
 

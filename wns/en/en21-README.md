@@ -6,6 +6,14 @@ are some differences.
 
 ## Summary of Changes
 
+* The following redundant `derivation` sense relations have been
+  suppressed:
+  - *strictness* (`04584528-n`) to *strict* (`02519208-s`)
+  - *singularity* (`04707918-n`) to *singular* (`00519685-s`)
+  - *repulsiveness* (`04725799-n`) to *repulsive* (`01683681-s`)
+  - *benignancy* (`04785593-n`) to *benign* (`01423853-s`)
+  - *morality* (`09051955-n`) to *moral* (`02157421-s`)
+
 * The 'verb group' relation (`$` pointer) is mapped to
   'similar'. These were merged in the WN-LMF format and are
   completely distinguishable by looking at the part-of-speech.

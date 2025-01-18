@@ -34,6 +34,7 @@ License: MIT
 
 import argparse
 import csv
+import logging
 from pathlib import Path
 
 # import wn
@@ -60,6 +61,7 @@ from . import wndb
 from .glossparser import gloss_parser
 from .util import escape_lemma, respace_word
 
+log = logging.getLogger('wndb2lmf')
 
 LMF_VERSION = "1.3"
 REQUIRED_FILES = [
@@ -178,8 +180,19 @@ def _build_lexicon(
             lex["synsets"].append(synset)
 
             # Then create each entry (if not done yet) and sense for the synset
+            word_w_num_map: dict[str, int] = {}
             w_num_sense_map: dict[int, Sense] = {}
             for w_num, w in enumerate(d.words, 1):
+                if original_w_num := word_w_num_map.get(w):
+                    log.warning(
+                        "Suppressing redundant word %d (%s) for synset %s",
+                        w_num,
+                        w,
+                        ssid
+                    )
+                    w_num_sense_map[w_num] = w_num_sense_map[original_w_num]
+                    continue
+                word_w_num_map[w] = w_num
                 entry_id = _make_entry_id(lex_id, w.respaced, pos)
                 if entry_id not in entries:
                     entry = _build_entry(d, entry_id, w, pos, exceptions)
@@ -195,6 +208,7 @@ def _build_lexicon(
                 w_num_sense_map[w_num] = sense
                 sense_rank[sense_id] = sense_num
 
+            used_senserels: set[tuple[str, str, str]] = set()
             for p in d.pointers:
                 relname = wndb.POINTER_MAP[p.pointer_symbol]
                 tgt_offset = p.synset_offset
@@ -205,9 +219,17 @@ def _build_lexicon(
                     target_id = _make_sense_id(
                         lex_id, word.respaced, tgt_offset, tgt.ss_type
                     )
-                    src_sense["relations"].append(
-                        Relation(target=target_id, relType=relname)
-                    )
+                    used_key = (relname, src_sense["id"], target_id)
+                    if used_key in used_senserels:
+                        log.warning(
+                            "Suppressing redundant sense relation: %s from %s to %s",
+                            *used_key,
+                        )
+                    else:
+                        src_sense["relations"].append(
+                            Relation(target=target_id, relType=relname)
+                        )
+                        used_senserels.add(used_key)
                 else:
                     target_id = _make_synset_id(offset=tgt_offset, pos=tgt.ss_type)
                     synset["relations"].append(
@@ -325,6 +347,8 @@ def _load_sense_index(path: Path) -> _SenseIndex:
         lemma = wndb.sense_key_lemma(sense_key)
         if lemma not in senseidx:
             senseidx[lemma] = {}
+        if senseinfo.tag_cnt not in (-1, cntmap.get(sense_key, 0)):
+            log.info("Tag count in sense index differs for %s", sense_key)
         # use cntlist count instead of index.sense count
         senseinfo = senseinfo._replace(tag_cnt=cntmap.get(sense_key, 0))
         senseidx[lemma][senseinfo.synset_offset] = senseinfo
@@ -365,6 +389,11 @@ def _load_ili_map(path: AnyPath, threshold: float) -> dict[str, str]:
         reader = csv.reader(csvfile, dialect="excel-tab")
         for ili, ssid, *extra in reader:
             if extra and float(extra[0]) < threshold:
+                log.info(
+                    "ILI map confidence doesn't meet the threshold: %s < %g",
+                    extra[0],
+                    threshold
+                )
                 continue
             ili_map[ssid] = ili
     return ili_map
@@ -445,4 +474,7 @@ if __name__ == "__main__":
         default=0.0,
     )
     args = parser.parse_args()
+
+    logging.basicConfig(level=logging.INFO)
+
     main(args)

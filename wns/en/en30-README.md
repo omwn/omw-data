@@ -5,11 +5,25 @@ format. It is used as the taxonomic scaffolding for the other OMW
 wordnets. It is highly compatible with the original WordNet, but there
 are some differences:
 
+## Summary of Changes
+
 * It has a patch applied to stop a hyponym loop in *inhibit* (synset
   offset `02423762`) based on a patch from Ben Haskell
   <ben@clarity.princeton.edu>. This patch is also applied to the NLTK
   distribution of the WordNet data, so we think we are justified in
   applying it.
+
+* The following redundant `derivation` sense relations have been
+  suppressed:
+  - *strictness* (`04639371-n`) to *strict* (`02436995-s`)
+  - *sombreness* (`04647478-n`) to *sombre* (`00365261-s`)
+  - *somberness* (`04647478-n`) to *somber* (`00365261-s`)
+  - *singularity* (`04763650-n`) to *singular* (`00494622-s`)
+  - *repulsiveness* (`04781349-n`) to *repulsive* (`01625063-s`)
+  - *benignancy* (`04840981-n`) to *benign* (`01372773-s`)
+  - *dreariness* (`05206006-n`) to *dreary* (`00364881-s`)
+  - *sombreness* (`07533257-n`) to *sombre* (`00365261-s`)
+  - *somberness* (`07533257-n`) to *somber* (`00365261-s`)
 
 * The 'verb group' relation (`$` pointer) is mapped to
   'similar'. These were merged in the WN-LMF format and are
