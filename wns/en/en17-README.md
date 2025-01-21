@@ -13,6 +13,10 @@ are some differences.
   - *Serbian* (`02804157-a`)
   - *Siamese* (`02932037-a`)
 
+* A `pertainym` relation on *animatedly* (`00260778-r`) is corrected
+  to target a sense instead of a synset. This patch is required to
+  ensure the WN-LMF file is valid.
+
 * The 'verb group' relation (`$` pointer) is mapped to
   'similar'. These were merged in the WN-LMF format and are
   completely distinguishable by looking at the part-of-speech.

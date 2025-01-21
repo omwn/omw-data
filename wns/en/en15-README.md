@@ -10,6 +10,10 @@ are some differences.
   - *Andaman marble* (`07704901-n`)
   - *Siamese* (`02219260-a`)
 
+* A `pertainym` relation on *animatedly* (`00175161-r`) is corrected
+  to target a sense instead of a synset. This patch is required to
+  ensure the WN-LMF file is valid.
+
 * Multiword entries use ' ' as a word separator rather than '_'.
 
 * Glosses are split into definitions and examples as WN-LMF encodes

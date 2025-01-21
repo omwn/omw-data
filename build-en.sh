@@ -56,19 +56,27 @@ if [ "$VER" = "1.5" ]; then
         wget -P "${TMPDIR}" https://wordnetcode.princeton.edu/1.5/wn15si.zip
         unzip "${TMPDIR}/wn15.zip" -d "${WNDIR}"
         unzip "${TMPDIR}/wn15si.zip" "SENSE.IDX" -d "${WNDIR}"
-	wget -O "${WNDIR}/README" https://wordnetcode.princeton.edu/1.5/README
+        wget -O "${WNDIR}/README" https://wordnetcode.princeton.edu/1.5/README
         # Need to rename files to be compatible with scripts
         mv "${WNDIR}/DICT" "${WNDIR}/dict"
-	mv "${WNDIR}/SENSE.IDX" "${WNDIR}/dict/index.sense"
+        mv "${WNDIR}/SENSE.IDX" "${WNDIR}/dict/index.sense"
         pushd "${WNDIR}/dict"
         for POS in ADJ ADV NOUN VERB; do
-        pos=$( tr A-Z a-z <<< "${POS}" )
-        mv "${POS}.DAT" "data.${pos}"
-        mv "${POS}.IDX" "index.${pos}"
-        mv "${POS}.EXC" "${pos}.exc"
+            pos=$( tr A-Z a-z <<< "${POS}" )
+            mv "${POS}.DAT" "data.${pos}"
+            mv "${POS}.IDX" "index.${pos}"
+            mv "${POS}.EXC" "${pos}.exc"
         done
         mv "CNTLIST" "cntlist"
         popd
+        # Patch a relation issue on 'animatedly'. The original line,
+        # abbreviated, has this:
+        #   00175161 02 r 01 animatedly 0 001 \ 00600880 a 0000 | ...
+        sed -i '/^00175161 /{s/\\ 00600880 a 0000 /\\ 00600880 a 0102 /}' \
+            "${WNDIR}/dict/data.adv"
+        # The above issue is fixed from WN 1.7.1, but it would cause a
+        # validation error in the WN-LMF XML, so we fix it here.
+
         # # Rebuild the sense index
         # python -m scripts.build_senseidx \
         #    --use-adjposition \
@@ -88,6 +96,13 @@ elif [ "$VER" = "1.6" ]; then
         mv wordnet-1.6 WordNet-1.6  # rename for consistency
         chmod -R u+w WordNet-1.6  # cannot delete files otherwise
         popd
+        # Patch a relation issue on 'animatedly'. The original line,
+        # abbreviated, has this:
+        #   00258752 02 r 01 animatedly 0 001 \ 00121842 a 0000 | ...
+        sed -i '/^00258752 /{s/\\ 00121842 a 0000 /\\ 00121842 a 0101 /}' \
+            "${WNDIR}/dict/data.adv"
+        # The above issue is fixed from WN 1.7.1, but it would cause a
+        # validation error in the WN-LMF XML, so we fix it here.
     fi
 
 elif [ "$VER" = "1.7" ]; then
@@ -98,6 +113,13 @@ elif [ "$VER" = "1.7" ]; then
         mkdir -p "${WN}" && tar -C "${WN}" -xf wn17.unix.tar.gz
         chmod -R u+w WordNet-1.7  # cannot delete files otherwise
         popd
+        # Patch a relation issue on 'animatedly'. The original line,
+        # abbreviated, has this:
+        #   00260778 02 r 01 animatedly 0 001 \ 00123463 a 0000 | ...
+        sed -i '/^00260778 /{s/\\ 00123463 a 0000 /\\ 00123463 a 0101 /}' \
+            "${WNDIR}/dict/data.adv"
+        # The above issue is fixed from WN 1.7.1, but it would cause a
+        # validation error in the WN-LMF XML, so we fix it here.
     fi
 
 elif [ "$VER" = "1.7.1" ]; then
