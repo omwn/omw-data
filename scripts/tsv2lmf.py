@@ -254,7 +254,7 @@ def build(
             Synset(
                 id=ssid,
                 ili=synset['ili'],
-                pos=synset['pos'],
+                partOfSpeech=synset['pos'],
                 definitions=[Definition(text=text)
                              for _, text in sorted(synset['def'])],
                 examples=[Example(text=text)
