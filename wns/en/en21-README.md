@@ -1,8 +1,17 @@
-# OMW English Wordnet based on WordNet 3.1
+# OMW English Wordnet based on WordNet 2.1
 
-This is an export of the Princeton WordNet 3.1 into the WN-LMF
+This is an export of the Princeton WordNet 2.1 into the WN-LMF
 format. It is highly compatible with the original WordNet, but there
-are some differences:
+are some differences.
+
+## Summary of Changes
+
+* Redundant `derivation` sense relations have been suppressed:
+  - *strictness* (`04584528-n`) to *strict* (`02519208-s`)
+  - *singularity* (`04707918-n`) to *singular* (`00519685-s`)
+  - *repulsiveness* (`04725799-n`) to *repulsive* (`01683681-s`)
+  - *benignancy* (`04785593-n`) to *benign* (`01423853-s`)
+  - *morality* (`09051955-n`) to *moral* (`02157421-s`)
 
 * The 'verb group' relation (`$` pointer) is mapped to
   'similar'. These were merged in the WN-LMF format and are
@@ -10,9 +19,10 @@ are some differences:
 
 * Multiword entries use ' ' as a word separator rather than '_'.
 
-* Glosses are split into definitions and examples. In the original
-  data, there is a convention for delimiting definitions and glosses
-  with semicolons, but WN-LMF encodes them as separate XML elements.
+* Glosses are split into definitions and examples as WN-LMF encodes
+  them as separate XML elements. This splitting process is
+  sophisticated but imprecise, so there are some less-than-ideal
+  definitions and examples.
 
 * Information on adjective position is stored in the `adjposition`
   attribute instead of as part of the lemma: `a`, `p`, and `ip`

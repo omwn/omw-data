@@ -1,15 +1,10 @@
-# OMW English Wordnet based on WordNet 3.0
+# OMW English Wordnet based on WordNet 1.7.1
 
-This is an export of the Princeton WordNet 3.0 into the WN-LMF
-format. It is used as the taxonomic scaffolding for the other OMW
-wordnets. It is highly compatible with the original WordNet, but there
-are some differences:
+This is an export of the Princeton WordNet 1.7.1 into the WN-LMF
+format. It is highly compatible with the original WordNet, but there
+are some differences.
 
-* It has a patch applied to stop a hyponym loop in *inhibit* (synset
-  offset `02423762`) based on a patch from Ben Haskell
-  <ben@clarity.princeton.edu>. This patch is also applied to the NLTK
-  distribution of the WordNet data, so we think we are justified in
-  applying it.
+## Summary of Changes
 
 * The 'verb group' relation (`$` pointer) is mapped to
   'similar'. These were merged in the WN-LMF format and are
@@ -17,9 +12,10 @@ are some differences:
 
 * Multiword entries use ' ' as a word separator rather than '_'.
 
-* Glosses are split into definitions and examples. In the original
-  data, there is a convention for delimiting definitions and glosses
-  with semicolons, but WN-LMF encodes them as separate XML elements.
+* Glosses are split into definitions and examples as WN-LMF encodes
+  them as separate XML elements. This splitting process is
+  sophisticated but imprecise, so there are some less-than-ideal
+  definitions and examples.
 
 * Information on adjective position is stored in the `adjposition`
   attribute instead of as part of the lemma: `a`, `p`, and `ip`

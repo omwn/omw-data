@@ -1,5 +1,5 @@
 #
-# Take an OMW 1.0 wordnet TSV and convert to WN-LMF 1.1
+# Take an OMW 1.0 wordnet TSV and convert to WN-LMF 1.3
 #
 
 from typing import Optional, Tuple, Dict, TextIO
@@ -9,11 +9,11 @@ from collections import Counter
 
 from wn.lmf import (
     dump,
+    LexicalResource,
     Lexicon,
     Metadata,
     LexicalEntry,
     Lemma,
-    Form,
     Sense,
     Example,
     Synset,
@@ -26,7 +26,7 @@ else:
     from .util import escape_lemma, load_ili_map
 
 
-LMF_VERSION = '1.1'
+LMF_VERSION = '1.3'
 
 
 # CONSTANTS ############################################################
@@ -108,19 +108,22 @@ def convert(
         logfile = sys.stderr
 
     lex = Lexicon(
-        lexid,
-        label,
-        bcp47.get(language, language),
-        email,
-        license,
-        version,
+        id=lexid,
+        label=label,
+        language=bcp47.get(language, language),
+        email=email,
+        license=license,
+        version=version,
         url=url,
         citation=citation,
         logo=logo,
+        requires=[],
+        entries=[],
+        synsets=[],
         meta=meta,
     )
     if requires:
-        lex.requires.append(requires)
+        lex['requires'].append(requires)
 
     if ilimap is None:
         ilimap = {}
@@ -128,7 +131,8 @@ def convert(
     entries, senses, synsets = load(source, lex, ilimap, logfile)
     build(lex, entries, senses, synsets, logfile)
 
-    dump([lex], outfile, version=LMF_VERSION)
+    resource = LexicalResource(lmf_version=LMF_VERSION, lexicons=[lex])
+    dump(resource, outfile)
 
 
 # DATA LOADING AND VALIDATION ##########################################
@@ -147,9 +151,9 @@ def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
             offset_pos, type_, *content = line.split('\t')
             offset_pos = offset_pos.strip()
 
-            ili = ilimap.get(offset_pos)
+            ili = ilimap.get(offset_pos, '')
 
-            ssid = synset_id(lex.id, offset_pos)
+            ssid = synset_id(lex['id'], offset_pos)
             pos = ssid[-1]
             if ssid not in synsets:
                 synsets[ssid] = {'pos': pos, 'ili': ili,
@@ -159,10 +163,10 @@ def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
             type_ = type_.removeprefix(prefix)  # only match for current language
             if type_ == 'lemma':
                 lemma = _clean_lemma(content[0], logfile)
-                eid = entry_id(lex.id, lemma, pos)
+                eid = entry_id(lex['id'], lemma, pos)
                 if eid not in entries:
                     entries[eid] = {'lemma': lemma, 'pos': pos, 'senses': []}
-                sid = sense_id(lex.id, lemma, offset_pos[:-2], pos)
+                sid = sense_id(lex['id'], lemma, offset_pos[:-2], pos)
                 entries[eid]['senses'].append(sid)
                 senses[sid] = ssid
                 ss['members'].append(sid)
@@ -190,15 +194,15 @@ def _check_header(
         label, lang, url, license = header.split('\t')
         if lang not in bcp47:
             print(f'UNKNOWN LANGUAGE: {lang}', file=logfile)
-        elif bcp47[lang] != lex.language:
+        elif bcp47[lang] != lex['language']:
             print('INDEX INCONSISTENT WITH SOURCE: '
-                  f'{bcp47[lang]} != {lex.language}',
+                  f'{bcp47[lang]} != {lex['language']}',
                   file=logfile)
         if license not in open_license:
             print(f'UNKNOWN LICENSE: {license}', file=logfile)
-        elif open_license[license] != lex.license:
+        elif open_license[license] != lex['license']:
             print('INDEX INCONSISTENT WITH SOURCE: '
-                  f'{open_license[license]} != {lex.license}',
+                  f'{open_license[license]} != {lex['license']}',
                   file=logfile)
     return label, lang, url, license
 
@@ -233,11 +237,11 @@ def build(
             print(f'REDUNDANT SENSE: {sid} ({count + 1} occurrences)',
                   file=logfile)
 
-        lex.lexical_entries.append(
+        lex['entries'].append(
             LexicalEntry(
-                eid,
-                Lemma(entry['lemma'], entry['pos']),
-                senses=[Sense(sid, senses[sid]) for sid in sids]
+                id=eid,
+                lemma=Lemma(writtenForm=entry['lemma'], partOfSpeech=entry['pos']),
+                senses=[Sense(id=sid, synset=senses[sid]) for sid in sids]
             )
         )
 
@@ -246,14 +250,14 @@ def build(
             print(f'EMPTY SYNSET: {ssid}', file=logfile)
             continue
 
-        lex.synsets.append(
+        lex['synsets'].append(
             Synset(
-                ssid,
+                id=ssid,
                 ili=synset['ili'],
-                pos=synset['pos'],
-                definitions=[Definition(text)
+                partOfSpeech=synset['pos'],
+                definitions=[Definition(text=text)
                              for _, text in sorted(synset['def'])],
-                examples=[Example(text)
+                examples=[Example(text=text)
                           for _, text in sorted(synset['exe'])],
                 members=synset['members'],
             )

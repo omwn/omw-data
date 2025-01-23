@@ -8,7 +8,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     env:
-      DTD: etc/WN-LMF-1.1.dtd
+      DTD: etc/WN-LMF-1.3.dtd
 
     steps:
     - name: Get release tag

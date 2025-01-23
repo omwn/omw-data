@@ -21,7 +21,7 @@ Francis Bond and Ryan Foster. 2013. \
 email = "bond@ieee.org"
 url = "https://github.com/omwn/omw-data"
 # to unset requires use: requires = {}
-requires = { id = "omw-en", version = "1.4" }
+requires = { id = "omw-en30", version = "1.5" }
 
 [packages]
 
@@ -422,13 +422,69 @@ url = "http://wn-msa.sourceforge.net/"
 # The following are not currently built due to licensing or other
 # issues or are built separately
 
-[extra.omw-en]
+[extra.omw-en15]
+
+label = "OMW English Wordnet based on WordNet 1.5"
+language = "en"
+license = "WordNet 1.5 License"
+citation = """
+George A. Miller (1995).\
+  WordNet: A Lexical Database for English.\
+  Communications of the ACM Vol. 38, No. 11: 39-41."""
+
+[extra.omw-en16]
+
+label = "OMW English Wordnet based on WordNet 1.6"
+language = "en"
+license = "WordNet 1.6 License"
+citation = """
+George A. Miller (1995).\
+  WordNet: A Lexical Database for English.\
+  Communications of the ACM Vol. 38, No. 11: 39-41."""
+
+[extra.omw-en17]
+
+label = "OMW English Wordnet based on WordNet 1.7"
+language = "en"
+license = "https://wordnetcode.princeton.edu/1.7/LICENSE"
+citation = """
+Christiane Fellbaum. (ed.). 1998.\
+  *WordNet: An Electronic Lexical Database*, MIT Press."""
+
+[extra.omw-en171]
+
+label = "OMW English Wordnet based on WordNet 1.7.1"
+language = "en"
+license = "https://wordnetcode.princeton.edu/1.7.1/LICENSE"
+citation = """
+Christiane Fellbaum. (ed.). 1998.\
+  *WordNet: An Electronic Lexical Database*, MIT Press."""
+
+[extra.omw-en20]
+
+label = "OMW English Wordnet based on WordNet 2.0"
+language = "en"
+license = "https://wordnetcode.princeton.edu/2.0/LICENSE"
+citation = """
+Christiane Fellbaum. (ed.). 1998.\
+  *WordNet: An Electronic Lexical Database*, MIT Press."""
+
+[extra.omw-en21]
+
+label = "OMW English Wordnet based on WordNet 2.1"
+language = "en"
+license = "https://wordnetcode.princeton.edu/2.1/LICENSE"
+citation = """
+Christiane Fellbaum. (ed.). 1998.\
+  *WordNet: An Electronic Lexical Database*, MIT Press."""
+
+[extra.omw-en30]
 
 label = "OMW English Wordnet based on WordNet 3.0"
 language = "en"
 license = "https://wordnet.princeton.edu/license-and-commercial-use"
 citation = """
-Christiane Fellbaum. (ed.). 1998. \
+Christiane Fellbaum. (ed.). 1998.\
   *WordNet: An Electronic Lexical Database*, MIT Press."""
 
 [extra.omw-en31]
@@ -437,7 +493,7 @@ label = "OMW English Wordnet based on WordNet 3.1"
 language = "en"
 license = "https://wordnet.princeton.edu/license-and-commercial-use"
 citation = """
-Christiane Fellbaum. (ed.). 1998. \
+Christiane Fellbaum. (ed.). 1998.\
   *WordNet: An Electronic Lexical Database*, MIT Press."""
 
 [extra.fas]

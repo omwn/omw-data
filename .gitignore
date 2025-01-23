@@ -2,6 +2,10 @@
 log/
 build/
 release/
+etc/*.gz
+etc/*.zip
+etc/WordNet-*
+etc/cili
 
 # Emacs backups
 *~
