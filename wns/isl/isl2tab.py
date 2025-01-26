@@ -10,7 +10,7 @@ import re
 import nltk
 from nltk.corpus import wordnet as wn
 
-wndata= "data"
+wndata= "."
 
 wnname = "IceWordNet" 
 wnurl = "http://www.malfong.is/index.php?lang=en&pg=icewordnet"
@@ -28,7 +28,7 @@ out.write("# %s\t%s\t%s\t%s \n" % (wnname, wnlang, wnurl, wnlicense))
 ## Data is in the file core-isl.txt
 ## pos [key] [lemma0] lemma1, lemma2, ...
 
-f = codecs.open(os.path.join(wndata, "core-isl.txt"),  "rb", "iso-8859-1")
+f = codecs.open(os.path.join(wndata, "core-isl-fixed.txt"),  "rb", "utf-8")
 log = codecs.open("log",  "w", "utf-8")
 
 pattern = re.compile(r'[avnr]\s+\[(.*?)\]\s+\[(.*?)\](.*)?')
@@ -40,12 +40,14 @@ for l in f:
     if m:
         lems = []
         key = m.group(1)
-        try:
-            ss = wn.lemma_from_key(key).synset #() for python 3
-            of = "{:08d}-{}".format(ss.offset, ss.pos).replace('-s','-a')
-        except:
-            keys = [l.key for l in wn.lemmas(key.split('%')[0])]
-            log.write("Can't find synset for '%s'\nTry: %s\n\n" % (key, keys))
+        ss = None
+        for lemma in wn.lemmas(key.split('%')[0]):
+            if lemma.key() == key:
+                ss = lemma.synset()
+                of = f"{ss.offset():08d}-{ss.pos().replace('s','a')}"
+                break
+        if not ss:
+            log.write(f"Can't find synset for '{key}'\n")
         lems.append(m.group(2))
         if m.group(3):
             for ll in m.group(3).split(','):
@@ -63,5 +65,5 @@ for l in f:
     else:
         log.write("Unknown '%s'\n\n" % l.strip())
 
-for (of, ll) in senses:
+for (of, ll) in sorted(senses):
     out.write("%s\t%s:lemma\t%s\n" % (of, wnlang,ll))
