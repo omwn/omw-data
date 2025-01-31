@@ -1,4 +1,5 @@
 import argparse
+import datetime
 import sys
 from contextlib import nullcontext
 from pathlib import Path
@@ -16,6 +17,7 @@ def main(args: argparse.Namespace) -> int:
     else:
         tabfile = nullcontext(sys.stdout)  # so we can use `with tabfile:`
 
+    date = datetime.date.today().isoformat()  # for the log
     logfile = nullcontext(sys.stderr)
 
     with tabfile as out, logfile as err:
@@ -31,11 +33,14 @@ def main(args: argparse.Namespace) -> int:
                 lemma = strip_quotes(lemma)
                 if lemma not in lemma_set:
                     if lemma != text:
-                        print("MODIFIED\t" + "\t".join(row[:3] + (lemma,)), file=err)
+                        print(
+                            "\t".join((date, "MODIFIED") + row[:3] + (lemma,)),
+                            file=err
+                        )
                     print(f"{offset_pos}\t{row_type}\t{lemma}", file=out)
                     lemma_set.add(lemma)
                 else:
-                    print("REMOVED\t" + "\t".join(row[:3]), file=err)
+                    print("\t".join((date, "REMOVED") + row[:3]), file=err)
 
             elif row_type.endswith((":def", "exe")):
                 print(f"{offset_pos}\t{row_type}\t{order}\t{text}", file=out)
@@ -50,9 +55,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Remove duplicate lemmas and strip quotes from TSV files.",
         epilog=(
-            "WARNING: This modifies the original TSVFILE! It is suggested that you "
-            "work with a file checked into version control so you can inspect the "
-            "diffs and revert if necessary."
+            "WARNING: --in-place modifies the original TSVFILE! It is suggested "
+            "that you work with a file checked into version control so you can "
+            "inspect the diffs and revert if necessary."
         ),
     )
     parser.add_argument("TSVFILE", type=Path, help="path to TSV file")
