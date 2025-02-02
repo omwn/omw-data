@@ -1,7 +1,11 @@
-
-from typing import Dict
+import csv
 import warnings
 from html.entities import codepoint2name
+from pathlib import Path
+from typing import NamedTuple, Union
+
+PathLike = Union[str, Path]
+
 
 _custom_char_escapes = {
     # HTML entities not included in codepoint2name
@@ -88,7 +92,7 @@ def format_lemma(word: str) -> str:
     return despace_word(word).lower()
 
 
-def load_ili_map(path) -> Dict[str, str]:
+def load_ili_map(path) -> dict[str, str]:
     ilimap = {}
     with open(path, 'rt') as ilifile:
         for line in ilifile:
@@ -97,3 +101,74 @@ def load_ili_map(path) -> Dict[str, str]:
             if ssid.endswith('-s'):
                 ilimap[ssid[:-2] + '-a'] = ili  # map as either -s or -a
     return ilimap
+
+
+class TSVRow(NamedTuple):
+    offset_pos: str
+    type: str
+    text: str
+    order: int = -1  # only used by def and exe
+
+    def is_lemma(self) -> bool:
+        """Return True if the row is a lemma row.
+
+        Usually the row type is of the form `xyz:lemma` where `xyz` is
+        the language code. There are variations like `xyz:lemma:root`
+        and `xyz:lemma:brokenplural` (currently only in the Arabic
+        wordnet) or just `lemma`.
+        """
+        return "lemma" in self.type
+
+
+def load_tsv(path: PathLike) -> tuple[str, list[TSVRow]]:
+    with Path(path).open(newline='') as csvfile:
+        reader = csv.reader(csvfile, dialect='excel-tab', quoting=csv.QUOTE_NONE)
+        header = "\t".join(next(reader))
+        rows: list[TSVRow] = []
+        for row in reader:
+            if not row or row[0].startswith('#'):
+                continue
+            if "lemma" in row[1]:
+                assert len(row) == 3, f"unexpected number of columns for lemma: {row}"
+                rows.append(TSVRow(*row[:3]))
+            elif row[1].endswith((":def", ":exe")):
+                assert len(row) == 4, f"unexpected number of columns for def/exe: {row}"
+                rows.append(TSVRow(*row[:2], row[3], order=row[2]))
+            else:
+                raise Exception(f"unexpected row: {row}")
+    return header, rows
+
+
+QUOTES = [
+    ('"', '"'),
+    ("'", "'"),
+    ("`", "'"),
+    ("``", "''"),
+    ("„", "“"),
+    ("„", "”"),
+    ("‚", "’"),
+    ("‚", "‘"),
+    ("»", "«"),
+    ("«", "»"),
+    ("’", "’"),
+    ("‚", "‚"),
+    ('“', '”'),
+    ("‘", "’"),
+    ("”", "”"),
+    ("»", "«"),
+    ("‹", "›"),
+    ("《", "》"),
+    ("【", "】"),
+    #("<", ">"),
+    ("「", "」"),
+    ("『", "』"),
+    ("〈", "〉"),
+    ("〖", "〗"),
+]
+
+
+def strip_quotes(lemma: str) -> str:
+    for start, end in QUOTES:
+        if lemma.startswith(start) and lemma.endswith(end):
+            return lemma.removeprefix(start).removesuffix(end).strip()
+    return lemma
