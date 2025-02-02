@@ -16002,7 +16002,6 @@
 00980339-v	fra:lemma	labialiser
 00980339-v	fra:lemma	rond
 00980394-n	fra:lemma	guerre sale
-00980394-n	fra:lemma	« guerre sale »
 00980453-v	fra:lemma	articuler
 00980453-v	fra:lemma	manifester
 00980453-v	fra:lemma	exprimer
@@ -16258,7 +16257,7 @@
 01000214-v	fra:lemma	inscrire
 01000276-n	fra:lemma	collimation
 01000442-a	fra:lemma	heureux
-01000610-n	fra:lemma	« tempérament égal »
+01000610-n	fra:lemma	tempérament égal
 01000610-n	fra:lemma	gamme tempérée
 01000878-v	fra:lemma	indiquer
 01000881-a	fra:lemma	inadéquat
@@ -16617,7 +16616,7 @@
 01025246-v	fra:lemma	soulever
 01025397-a	fra:lemma	fossile
 01025563-n	fra:lemma	bureaucratie
-01025563-n	fra:lemma	Impôt_papier
+01025563-n	fra:lemma	Impôt papier
 01025602-v	fra:lemma	insérer
 01025678-n	fra:lemma	objection
 01025913-a	fra:lemma	impitoyable
@@ -20596,7 +20595,7 @@
 01304716-v	fra:lemma	ancre
 01304802-a	fra:lemma	consultatif
 01304802-a	fra:lemma	facultatif
-01304820-n	fra:lemma	Guerre de Sept Ans#Le_th.C3.A9.C3.A2tre_d.E2.80.99op.C3.A9rations_am.C3.A9ricain
+01304820-n	fra:lemma	Guerre de Sept Ans#Le th.C3.A9.C3.A2tre d.E2.80.99op.C3.A9rations am.C3.A9ricain
 01304944-v	fra:lemma	ancrer
 01304944-v	fra:lemma	ancre
 01305007-n	fra:lemma	révolution française
@@ -25063,7 +25062,6 @@
 01624115-a	fra:lemma	libre
 01624115-n	fra:lemma	otus scops
 01624115-n	fra:lemma	petit-duc scops
-01624115-n	fra:lemma	petit-duc_scops
 01624169-v	fra:lemma	machine
 01624212-n	fra:lemma	otus sunia
 01624406-n	fra:lemma	surnia
@@ -25484,7 +25482,6 @@
 01646300-v	fra:lemma	rendre
 01646300-v	fra:lemma	aller
 01646300-v	fra:lemma	conduire
-01646388-n	fra:lemma	bufo_marinus
 01646388-n	fra:lemma	bufo marinus
 01646555-n	fra:lemma	crapaud commun
 01646555-n	fra:lemma	bufo bufo
@@ -26075,7 +26072,7 @@
 01687965-a	fra:lemma	nouveau
 01687965-a	fra:lemma	neuf
 01687978-n	fra:lemma	agama
-01687978-n	fra:lemma	agama_(reptile)
+01687978-n	fra:lemma	agama (reptile)
 01688106-n	fra:lemma	chlamydosaurus
 01688114-v	fra:lemma	carte
 01688256-v	fra:lemma	représenter
@@ -26957,7 +26954,7 @@
 01748389-n	fra:lemma	Cobra égyptien
 01748389-n	fra:lemma	cobra egyptien
 01748560-n	fra:lemma	ophiophagus
-01748560-n	fra:lemma	cobra_royal
+01748560-n	fra:lemma	cobra royal
 01748748-v	fra:lemma	empreinte digitale
 01748906-n	fra:lemma	cobra royal
 01748936-a	fra:lemma	indétectable
@@ -28615,7 +28612,6 @@
 01847672-a	fra:lemma	absent
 01847806-n	fra:lemma	colvert
 01847806-n	fra:lemma	canard colvert
-01847806-n	fra:lemma	canard_colvert
 01847806-n	fra:lemma	anas platyrhynchos
 01847806-n	fra:lemma	mallard
 01847806-n	fra:lemma	canard
@@ -28624,7 +28620,6 @@
 01847864-a	fra:lemma	loin
 01847978-n	fra:lemma	canard noir
 01847978-n	fra:lemma	anas rubripes
-01847978-n	fra:lemma	canard_noir
 01848058-v	fra:lemma	voler
 01848058-v	fra:lemma	mouche
 01848123-n	fra:lemma	bleu sarcelle
@@ -28636,7 +28631,6 @@
 01848323-n	fra:lemma	anas crecca
 01848323-n	fra:lemma	sarcelle à ailes vertes
 01848323-n	fra:lemma	green-winged teal
-01848323-n	fra:lemma	sarcelle_d'hiver
 01848355-a	fra:lemma	ostentatoire
 01848355-a	fra:lemma	prétentieux
 01848453-n	fra:lemma	sarcelle soucrourou
@@ -28649,12 +28643,10 @@
 01848465-v	fra:lemma	céder
 01848555-n	fra:lemma	garganey
 01848555-n	fra:lemma	sarcelle d'été
-01848555-n	fra:lemma	sarcelle_d'été
 01848555-n	fra:lemma	anas querquedula
 01848648-n	fra:lemma	anas penelope
 01848648-n	fra:lemma	canard
 01848648-n	fra:lemma	canard siffleur
-01848648-n	fra:lemma	canard_siffleur
 01848718-v	fra:lemma	passer
 01848718-v	fra:lemma	partir
 01848718-v	fra:lemma	aller
@@ -28665,15 +28657,13 @@
 01848718-v	fra:lemma	dire
 01848718-v	fra:lemma	go
 01848840-n	fra:lemma	anas americana
-01848840-n	fra:lemma	canard_d'amérique
+01848840-n	fra:lemma	canard d'amérique
 01848840-n	fra:lemma	canard à front blanc
 01848976-n	fra:lemma	canard souchet
-01848976-n	fra:lemma	canard_souchet
 01848976-n	fra:lemma	anas clypeata
 01849054-v	fra:lemma	souffler
-01849157-n	fra:lemma	canard_pilet
-01849157-n	fra:lemma	anas acuta
 01849157-n	fra:lemma	canard pilet
+01849157-n	fra:lemma	anas acuta
 01849170-a	fra:lemma	calme
 01849170-a	fra:lemma	silencieux
 01849221-v	fra:lemma	approcher
@@ -28707,18 +28697,14 @@
 01850873-n	fra:lemma	fuligule à dos blanc
 01850873-n	fra:lemma	canvasback
 01851038-n	fra:lemma	fuligule milouin
-01851038-n	fra:lemma	fuligule_milouin
 01851038-n	fra:lemma	aythya ferina
 01851038-n	fra:lemma	milouin
-01851207-n	fra:lemma	fuligule_à_tête_rouge
 01851207-n	fra:lemma	fuligule à tête rouge
 01851207-n	fra:lemma	aythya americana
 01851573-n	fra:lemma	aythya marila
-01851573-n	fra:lemma	fuligule_milouinan
-01851573-n	fra:lemma	greater scaup
 01851573-n	fra:lemma	fuligule milouinan
+01851573-n	fra:lemma	greater scaup
 01851731-n	fra:lemma	lesser scaup
-01851731-n	fra:lemma	fuligule_à_tête_noire
 01851731-n	fra:lemma	fuligule à tête noire
 01851731-n	fra:lemma	aythya affinis
 01851731-n	fra:lemma	petit fuligule
@@ -28726,14 +28712,12 @@
 01851996-n	fra:lemma	aix
 01852142-n	fra:lemma	canard carolin
 01852142-n	fra:lemma	aix sponsa
-01852142-n	fra:lemma	canard_branchu
 01852142-n	fra:lemma	canard branchu
 01852142-n	fra:lemma	wood duck
 01852174-a	fra:lemma	principal
 01852400-n	fra:lemma	canard mandarin
 01852400-n	fra:lemma	aix galericulata
 01852400-n	fra:lemma	mandarin duck
-01852400-n	fra:lemma	canard_mandarin
 01852468-v	fra:lemma	fonctionner
 01852468-v	fra:lemma	travailler
 01852468-v	fra:lemma	ouvrage
@@ -28743,7 +28727,6 @@
 01852671-n	fra:lemma	cairina moschata
 01852671-n	fra:lemma	canard de barbarie
 01852671-n	fra:lemma	musk duck
-01852671-n	fra:lemma	canard_de_barbarie
 01852671-n	fra:lemma	canard musqué
 01852701-v	fra:lemma	axer
 01852701-v	fra:lemma	centrer
@@ -28847,7 +28830,6 @@
 01857392-v	fra:lemma	séjourner
 01857512-n	fra:lemma	branta bernicla
 01857512-n	fra:lemma	bernache cravant
-01857512-n	fra:lemma	bernache_cravant
 01857632-n	fra:lemma	canada goose
 01857632-n	fra:lemma	outarde
 01857632-n	fra:lemma	Bernache du Canada
@@ -30915,7 +30897,7 @@
 02006573-v	fra:lemma	avoir
 02006656-n	fra:lemma	spatule blanche
 02006656-n	fra:lemma	spatule
-02006656-n	fra:lemma	spatule_(oiseau)
+02006656-n	fra:lemma	spatule (oiseau)
 02006709-v	fra:lemma	arriver
 02006709-v	fra:lemma	entrer
 02006709-v	fra:lemma	venir
@@ -31643,7 +31625,7 @@
 02048794-a	fra:lemma	équiangle
 02048891-v	fra:lemma	tourbillonner
 02048952-n	fra:lemma	gavia
-02048952-n	fra:lemma	plongeon_(oiseau)
+02048952-n	fra:lemma	plongeon (oiseau)
 02048977-a	fra:lemma	rectangulaire
 02049088-n	fra:lemma	plongeon
 02049088-n	fra:lemma	plongeur
@@ -32139,7 +32121,7 @@
 02072493-n	fra:lemma	licorne de mer
 02072501-v	fra:lemma	pouce
 02072665-n	fra:lemma	delphinapterus
-02072665-n	fra:lemma	béluga_(animal)|fr: béluga
+02072665-n	fra:lemma	béluga (animal)|fr: béluga
 02072798-n	fra:lemma	béluga
 02072798-n	fra:lemma	delphinapterus leucas
 02072849-v	fra:lemma	passer
@@ -33204,7 +33186,7 @@
 02135981-n	fra:lemma	binturong
 02136103-n	fra:lemma	binturong
 02136138-v	fra:lemma	rencontrer
-02136285-n	fra:lemma	fossa_(animal)|fr: fossa
+02136285-n	fra:lemma	fossa (animal)|fr: fossa
 02136285-n	fra:lemma	cryptoprocta
 02136452-n	fra:lemma	cryptoprocta ferox
 02136533-v	fra:lemma	réverbérer
@@ -33889,7 +33871,7 @@
 02185664-v	fra:lemma	tique
 02185861-v	fra:lemma	clic
 02185861-v	fra:lemma	cliquer
-02185973-n	fra:lemma	puce_%28insecte%29 | fr:puce
+02185973-n	fra:lemma	puce %28insecte%29 | fr:puce
 02185973-n	fra:lemma	siphonaptera
 02186132-a	fra:lemma	0
 02186132-a	fra:lemma	zéro
@@ -37668,7 +37650,6 @@
 02418341-n	fra:lemma	chévre de montagne
 02418421-v	fra:lemma	jouer
 02418421-v	fra:lemma	jeu
-02418465-n	fra:lemma	chèvre_des montagnes_rocheuses
 02418465-n	fra:lemma	chèvre des montagnes rocheuses
 02418465-n	fra:lemma	oreamnos americanus
 02418465-n	fra:lemma	Rocky Mountain goat
@@ -37713,9 +37694,8 @@
 02420675-n	fra:lemma	gazelle de waller
 02420828-n	fra:lemma	litocranius walleri
 02420828-n	fra:lemma	antilope girafe
-02420828-n	fra:lemma	gazelle_de_waller
-02420828-n	fra:lemma	gérénuk
 02420828-n	fra:lemma	gazelle de waller
+02420828-n	fra:lemma	gérénuk
 02420991-v	fra:lemma	mâle
 02420991-v	fra:lemma	homme
 02421136-n	fra:lemma	prédateurs
@@ -44336,8 +44316,8 @@
 02922461-n	fra:lemma	burin
 02922578-n	fra:lemma	burqa
 02922578-n	fra:lemma	bourka
-02922798-n	fra:lemma	jute#toile_de_jute
-02922798-n	fra:lemma	Jute#Toile_de_jute
+02922798-n	fra:lemma	jute#toile de jute
+02922798-n	fra:lemma	Jute#Toile de jute
 02922814-a	fra:lemma	évangélique
 02923005-a	fra:lemma	évangélique
 02923129-n	fra:lemma	graveur
@@ -45591,9 +45571,9 @@
 03066849-n	fra:lemma	passoire
 03066849-n	fra:lemma	Passoire
 03067329-a	fra:lemma	généalogique
-03067339-n	fra:lemma	Cérat_de_Galien
+03067339-n	fra:lemma	Cérat de Galien
 03067339-n	fra:lemma	cérat de Galien
-03067339-n	fra:lemma	cérat_de_galien
+03067339-n	fra:lemma	cérat de galien
 03067506-a	fra:lemma	Géorgien
 03067712-a	fra:lemma	Géorgien
 03067912-n	fra:lemma	collage
@@ -47614,16 +47594,16 @@
 03506880-n	fra:lemma	Corbillard
 03507048-n	fra:lemma	cur
 03507048-n	fra:lemma	cœur
-03507963-n	fra:lemma	moteur#moteur_thermique
-03507963-n	fra:lemma	Moteur#Moteur_thermique
+03507963-n	fra:lemma	moteur#moteur thermique
+03507963-n	fra:lemma	Moteur#Moteur thermique
 03508101-n	fra:lemma	chauffage
 03508101-n	fra:lemma	radiateur
 03508485-n	fra:lemma	échangeur de chaleur
 03508881-n	fra:lemma	chaufferette
 03509025-n	fra:lemma	chauffage
 03509608-n	fra:lemma	pompe à chaleur
-03510244-n	fra:lemma	Radiateur#.C3.89changeur_solide.2Fair
-03510244-n	fra:lemma	radiateur#.c3.89changeur_solide.2fair
+03510244-n	fra:lemma	Radiateur#.C3.89changeur solide.2Fair
+03510244-n	fra:lemma	radiateur#.c3.89changeur solide.2fair
 03510244-n	fra:lemma	radiateur
 03510866-n	fra:lemma	heckelphone
 03511175-n	fra:lemma	h
@@ -51651,8 +51631,7 @@
 04466613-n	fra:lemma	piste
 04467899-n	fra:lemma	bord de sortie
 04467899-n	fra:lemma	bord de fuite
-04467899-n	fra:lemma	bord_de_fuite
-04467899-n	fra:lemma	Bord_de_fuite
+04467899-n	fra:lemma	Bord de fuite
 04468005-n	fra:lemma	train
 04468476-n	fra:lemma	train
 04468847-n	fra:lemma	tram
@@ -51963,7 +51942,6 @@
 04539203-n	fra:lemma	vivarium
 04539203-n	fra:lemma	Terrarium
 04539203-n	fra:lemma	terrarium
-04539203-n	fra:lemma	« terrarium »
 04539407-n	fra:lemma	Viyella
 04540053-n	fra:lemma	volley-ball
 04540397-n	fra:lemma	régulateur de tension
@@ -52063,8 +52041,8 @@
 04562658-n	fra:lemma	eau minérale
 04562658-n	fra:lemma	eau
 04562935-n	fra:lemma	château d'eau
-04564413-n	fra:lemma	guide_d%27onde
-04564413-n	fra:lemma	Guide_d%27onde
+04564413-n	fra:lemma	guide d%27onde
+04564413-n	fra:lemma	Guide d%27onde
 04564698-n	fra:lemma	voie
 04564698-n	fra:lemma	chemin
 04564698-n	fra:lemma	trajet
@@ -62290,8 +62268,8 @@
 06859925-n	fra:lemma	sixième
 06860049-n	fra:lemma	septième
 06860323-n	fra:lemma	échelle diatonique
-06860826-n	fra:lemma	mode (musique tonale)#mode_majeur
-06861020-n	fra:lemma	mode (musique tonale)#mode_mineur
+06860826-n	fra:lemma	mode (musique tonale)#mode majeur
+06861020-n	fra:lemma	mode (musique tonale)#mode mineur
 06861196-n	fra:lemma	échelle chromatique
 06861435-n	fra:lemma	système pentatonique
 06861435-n	fra:lemma	Système pentatonique
@@ -67927,7 +67905,7 @@
 08018189-n	fra:lemma	êta
 08019523-n	fra:lemma	Front démocratique pour la libération de la Palestine
 08019913-n	fra:lemma	Mouvement islamique du Turkestan oriental
-08020242-n	fra:lemma	Septembre noir#Le_massacre_de_septembre_1970
+08020242-n	fra:lemma	Septembre noir#Le massacre de septembre 1970
 08020785-n	fra:lemma	Tanzim
 08021464-n	fra:lemma	Force 17
 08022087-n	fra:lemma	Greenpeace
@@ -68135,7 +68113,7 @@
 08085535-n	fra:lemma	Europa Universalis : Rome
 08085648-n	fra:lemma	Curie
 08085648-n	fra:lemma	curie
-08085824-n	fra:lemma	Cardinal (religion)#Le_Coll.C3.A8ge_cardinalice
+08085824-n	fra:lemma	Cardinal (religion)#Le Coll.C3.A8ge cardinalice
 08086050-n	fra:lemma	Union d'Utrecht
 08086050-n	fra:lemma	Église Vieille-Catholique
 08086356-n	fra:lemma	Église orthodoxe
@@ -68438,7 +68416,6 @@
 08168241-n	fra:lemma	presse
 08168531-n	fra:lemma	tribu
 08168737-n	fra:lemma	Monde libre
-08168737-n	fra:lemma	« Monde libre »
 08168831-n	fra:lemma	tiers monde
 08168831-n	fra:lemma	tiers-monde
 08168831-n	fra:lemma	Tiers monde
@@ -68867,7 +68844,6 @@
 08249459-n	fra:lemma	Musique militaire
 08249459-n	fra:lemma	musique militaire
 08249608-n	fra:lemma	jug band
-08250168-n	fra:lemma	« big band »
 08250168-n	fra:lemma	big band
 08250302-n	fra:lemma	combo
 08250409-n	fra:lemma	mariachi
@@ -72008,7 +71984,7 @@
 08905646-n	fra:lemma	Uttar Pradesh
 08905751-n	fra:lemma	Gujarat
 08905936-n	fra:lemma	Maharashtra
-08906053-n	fra:lemma	'Orissa''' ''
+08906053-n	fra:lemma	Orissa''' '
 08906053-n	fra:lemma	Orissa
 08906272-n	fra:lemma	Bengale-Occidental
 08906374-n	fra:lemma	Forum des droits du peuple madhesi
@@ -74009,7 +73985,7 @@
 09283193-n	fra:lemma	Fomite
 09283193-n	fra:lemma	fomite
 09283193-n	fra:lemma	véhicule
-09283193-n	fra:lemma	« fomites »
+09283193-n	fra:lemma	fomites
 09283405-n	fra:lemma	piémont
 09283623-n	fra:lemma	croisement
 09283623-n	fra:lemma	gué
@@ -75151,7 +75127,7 @@
 09496673-n	fra:lemma	Hypnos
 09496802-n	fra:lemma	léviathan
 09497163-n	fra:lemma	Persée
-09497364-n	fra:lemma	« Art »
+09497364-n	fra:lemma	Art
 09497364-n	fra:lemma	andromeda
 09497364-n	fra:lemma	Andromède
 09497364-n	fra:lemma	Hydre mâle
@@ -75583,7 +75559,7 @@
 09560061-n	fra:lemma	Amor
 09560061-n	fra:lemma	Cupidon
 09560196-n	fra:lemma	Dédale
-09560426-n	fra:lemma	Damon_et_Pythias
+09560426-n	fra:lemma	Damon et Pythias
 09560762-n	fra:lemma	Parti national républicain
 09560762-n	fra:lemma	Gaïa
 09560940-n	fra:lemma	Hébé
@@ -81621,7 +81597,7 @@
 10817935-n	fra:lemma	Sherwood Anderson
 10818088-n	fra:lemma	apôtre André
 10818088-n	fra:lemma	André
-10818088-n	fra:lemma	André#Sens_et_origine_du_nom
+10818088-n	fra:lemma	André#Sens et origine du nom
 10818312-n	fra:lemma	Andrews
 10818312-n	fra:lemma	andrews
 10818715-n	fra:lemma	Jean Anouilh
@@ -84827,7 +84803,7 @@
 11319413-n	fra:lemma	Isador Feinstein Stone
 11319704-n	fra:lemma	Oliver Stone
 11320044-n	fra:lemma	Marie Stopes
-11320245-n	fra:lemma	« Tom Straussler »
+11320245-n	fra:lemma	Tom Straussler
 11320245-n	fra:lemma	Tom Stoppard
 11320405-n	fra:lemma	Elizabeth Harriet Beecher Stowe
 11320405-n	fra:lemma	Harriet Beecher Stowe
@@ -86848,7 +86824,7 @@
 11735822-n	fra:lemma	isopyrum
 11736694-n	fra:lemma	nigelles
 11736694-n	fra:lemma	nigelle
-11736851-n	fra:lemma	Nigelle_de_Damas
+11736851-n	fra:lemma	Nigelle de Damas
 11736851-n	fra:lemma	nigelle de Damas
 11737125-n	fra:lemma	Nigella sativa
 11737316-n	fra:lemma	pulsatilla
@@ -88763,7 +88739,7 @@
 12173912-n	fra:lemma	alcea rosea
 12173912-n	fra:lemma	rose trémière
 12174311-n	fra:lemma	althaea
-12174311-n	fra:lemma	guimauve_officinale
+12174311-n	fra:lemma	guimauve officinale
 12174311-n	fra:lemma	rose trémière
 12174521-n	fra:lemma	guimauve
 12174742-n	fra:lemma	Callirrhoé
@@ -91173,7 +91149,7 @@
 12664897-n	fra:lemma	gaillets
 12664897-n	fra:lemma	galium
 12664897-n	fra:lemma	Gaillet
-12664897-n	fra:lemma	« caille-lait »
+12664897-n	fra:lemma	caille-lait
 12664897-n	fra:lemma	gaillet
 12665271-n	fra:lemma	galium odoratum
 12665271-n	fra:lemma	gaillet odorant
@@ -96176,8 +96152,8 @@
 13879634-n	fra:lemma	triangle
 13879816-n	fra:lemma	triangle acutangle
 13879947-n	fra:lemma	triangle équilatéral
-13879947-n	fra:lemma	triangle#triangle_.c3.a9quilat.c3.a9ral
-13879947-n	fra:lemma	Triangle#Triangle_.C3.A9quilat.C3.A9ral
+13879947-n	fra:lemma	triangle#triangle .c3.a9quilat.c3.a9ral
+13879947-n	fra:lemma	Triangle#Triangle .C3.A9quilat.C3.A9ral
 13880102-n	fra:lemma	delta
 13880415-n	fra:lemma	triangle obtusangle
 13880551-n	fra:lemma	triangle rectangle
@@ -97529,8 +97505,8 @@
 14186541-n	fra:lemma	arthrite
 14186738-n	fra:lemma	polyarthrite rhumatoïde
 14186738-n	fra:lemma	rhumatisme
-14187869-n	fra:lemma	psoriasis#arthrite_psoriatique
-14187869-n	fra:lemma	Psoriasis#Arthrite_psoriatique
+14187869-n	fra:lemma	psoriasis#arthrite psoriatique
+14187869-n	fra:lemma	Psoriasis#Arthrite psoriatique
 14188238-n	fra:lemma	arthrose
 14188702-n	fra:lemma	cystite
 14188804-n	fra:lemma	arthrite goutteuse
@@ -97677,8 +97653,8 @@
 14235793-n	fra:lemma	adénome
 14235928-n	fra:lemma	angiome
 14236226-n	fra:lemma	tumeur bénigne
-14236226-n	fra:lemma	Tumeur_b%C3%A9nigne
-14236226-n	fra:lemma	tumeur_b%c3%a9nigne
+14236226-n	fra:lemma	Tumeur b%C3%A9nigne
+14236226-n	fra:lemma	tumeur b%c3%a9nigne
 14236743-n	fra:lemma	Tumeur du cerveau
 14236743-n	fra:lemma	tumeur du cerveau
 14238528-n	fra:lemma	fibrome
@@ -100386,7 +100362,7 @@
 14838217-n	fra:lemma	dopamine
 14838677-n	fra:lemma	sang-dragon
 14839322-n	fra:lemma	duralumin
-14839322-n	fra:lemma	Alliages d'aluminium pour corroyage#S.C3.A9rie_2000_.28aluminium_cuivre.29
+14839322-n	fra:lemma	Alliages d'aluminium pour corroyage#S.C3.A9rie 2000 .28aluminium cuivre.29
 14839846-n	fra:lemma	poussière
 14840092-n	fra:lemma	poussière
 14840342-n	fra:lemma	acide élaïdique
