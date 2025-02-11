@@ -3217,8 +3217,6 @@
 08255109-n	ita:def	0	festa per inaugurare la casa nuova
 08256151-n	ita:lemma	GAP!
 08256151-n	ita:lemma	festa di sole donne
-07450549-n	ita:lemma	GAP!
-07450549-n	ita:lemma	torneo di whist
 08278707-n	ita:lemma	GAP!
 08278707-n	ita:def	0	istituto che prepara agli esami
 08372190-n	ita:lemma	GAP!
@@ -5860,7 +5858,6 @@
 02111277-n	ita:lemma	Terranova
 02111277-n	ita:lemma	terranova
 08825211-n	ita:lemma	Terranova
-08825211-n	ita:lemma	Terranova
 09593416-n	ita:lemma	Teseo
 01797020-n	ita:lemma	Tetrao urogallus
 01797020-n	ita:lemma	cedrone
@@ -7015,7 +7012,6 @@
 02649830-v	ita:lemma	risiedere
 02649830-v	ita:lemma	stare
 02649830-v	ita:lemma	vivere
-02649830-v	ita:lemma	abitare
 02649830-v	ita:lemma	occupare
 01311321-a	ita:lemma	abitato
 01053920-n	ita:lemma	abitazione
@@ -7612,20 +7608,14 @@
 01505254-v	ita:lemma	calamitare
 01505254-v	ita:lemma	polarizzare
 01505254-v	ita:lemma	tirare
-01505254-v	ita:lemma	accentrare
 01505254-v	ita:lemma	allettare
-01505254-v	ita:lemma	attirare
-01505254-v	ita:lemma	attrarre
 01505254-v	ita:lemma	richiamare
 01505254-v	ita:lemma	sedurre
 01013367-v	ita:lemma	accentuare
 01013367-v	ita:lemma	evidenziare
 01013367-v	ita:lemma	sottolineare
-01013367-v	ita:lemma	accentuare
 01013367-v	ita:lemma	enfatizzare
-01013367-v	ita:lemma	evidenziare
 01013367-v	ita:lemma	marcare
-01013367-v	ita:lemma	sottolineare
 01014609-v	ita:lemma	accentuare
 01014609-v	ita:lemma	enfatizzare
 01014609-v	ita:lemma	evidenziare
@@ -8099,7 +8089,6 @@
 00847340-n	ita:lemma	copula
 01292885-v	ita:lemma	accoppiare
 01292885-v	ita:lemma	appaiare
-01292885-v	ita:lemma	accoppiare
 01428853-v	ita:lemma	accoppiarsi
 02490430-v	ita:lemma	accoppiarsi
 03119510-n	ita:lemma	accoppiatore
@@ -8296,12 +8285,10 @@
 02281093-v	ita:lemma	accumulare
 02281093-v	ita:lemma	mettere da parte
 02281093-v	ita:exe	0	a breve il futuro dell'automobile è in motori misti o a metano, probabilmente quando si riuscirà ad accumulare energia elettrica in modo soddisfacente
-02304982-v	ita:lemma	accumulare
 02304982-v	ita:lemma	ammassare
 02304982-v	ita:lemma	ammucchiare
 02304982-v	ita:lemma	cumulare
 02304982-v	ita:lemma	immagazzinare
-02304982-v	ita:lemma	raccogliere
 00155869-v	ita:lemma	accumularsi
 00155869-v	ita:lemma	maturare
 00158804-v	ita:lemma	accumularsi
@@ -10024,9 +10011,7 @@
 03214253-n	ita:lemma	fosso
 00095502-n	ita:lemma	affrancamento
 00095502-n	ita:lemma	liberazione
-00095502-n	ita:lemma	affrancamento
 00095502-n	ita:lemma	emancipazione
-00095502-n	ita:lemma	liberazione
 01273814-v	ita:lemma	affrancare
 01273814-v	ita:lemma	bollare
 01273814-v	ita:lemma	stampigliare
@@ -11307,7 +11292,6 @@
 01474550-v	ita:lemma	allentare
 01474550-v	ita:lemma	mollare
 00419137-v	ita:lemma	allentarsi
-00419137-v	ita:lemma	allentarsi
 14584260-n	ita:lemma	allergene
 14532816-n	ita:lemma	allergia
 06046245-n	ita:lemma	allergologia
@@ -12345,7 +12329,6 @@
 02666943-n	ita:lemma	mattatoio
 02666943-n	ita:lemma	scannatoio
 00266806-n	ita:lemma	ammenda
-00266806-n	ita:lemma	riparazione
 13301328-n	ita:lemma	ammenda
 13301328-n	ita:lemma	contravvenzione
 13301328-n	ita:lemma	multa
@@ -13174,7 +13157,6 @@
 07081473-n	ita:lemma	anglismo
 07081473-n	ita:lemma	inglesismo
 00300317-v	ita:lemma	anglicizzare
-00300317-v	ita:lemma	anglicizzare
 06229240-n	ita:lemma	anglocattolicesimo
 06229240-n	ita:lemma	anglo-cattolicesimo
 07500957-n	ita:lemma	anglofilia
@@ -13274,7 +13256,6 @@
 01318894-n	ita:lemma	animale domestico
 05958549-n	ita:lemma	animalismo
 04623443-n	ita:lemma	animalità
-00192836-v	ita:lemma	animare
 00192836-v	ita:lemma	animare
 00192836-v	ita:lemma	animarsi
 00192836-v	ita:lemma	movimentare
@@ -14779,7 +14760,6 @@
 02379908-n	ita:lemma	arabo
 02379908-n	ita:lemma	cavallo arabo
 06988057-n	ita:lemma	arabo
-06988057-n	ita:lemma	arabo
 09729530-n	ita:lemma	arabo
 07737745-n	ita:lemma	arachide
 07737745-n	ita:lemma	nocciolina
@@ -14825,8 +14805,6 @@
 02637730-a	ita:lemma	arbitrale
 00760956-v	ita:lemma	arbitrare
 00760956-v	ita:lemma	comporre
-00760956-v	ita:lemma	mediare
-00760956-v	ita:lemma	arbitrare
 00760956-v	ita:lemma	mediare
 00760956-v	ita:lemma	risolvere
 01085237-v	ita:lemma	arbitrare
@@ -15268,12 +15246,10 @@
 04897762-n	ita:lemma	aria
 04897762-n	ita:lemma	comportamento
 04897762-n	ita:lemma	condotta
-04727214-n	ita:lemma	aria
 04727214-n	ita:lemma	atteggiamento
 07028373-n	ita:lemma	aria
 07028373-n	ita:lemma	canto
 07028373-n	ita:lemma	melodia
-07049514-n	ita:lemma	aria
 14521954-n	ita:lemma	aria viziata
 03074565-a	ita:lemma	ariano
 09635973-n	ita:lemma	ariano
@@ -16912,7 +16888,6 @@
 04876561-n	ita:lemma	furberia
 04876888-n	ita:lemma	astuzia
 04876888-n	ita:lemma	furberia
-05621178-n	ita:lemma	astuzia
 04904560-n	ita:lemma	atarassia
 14091254-n	ita:lemma	atassia
 02646952-a	ita:lemma	atassico
@@ -17644,8 +17619,6 @@
 05734477-n	ita:lemma	autocritica
 04800152-n	ita:lemma	autoctonia
 09620794-n	ita:lemma	nativo
-09620794-n	ita:lemma	autoctono
-09620794-n	ita:lemma	indigeno
 05199151-n	ita:lemma	autodecisione
 05199151-n	ita:lemma	autodeterminazione
 09825413-n	ita:lemma	autodidatta
@@ -17680,7 +17653,6 @@
 07229530-n	ita:lemma	vanteria
 13587525-n	ita:lemma	autoinduttanza
 13587525-n	ita:lemma	induttanza
-11468578-n	ita:lemma	autoinduzione
 11468578-n	ita:lemma	autoinduzione
 05895588-n	ita:lemma	autoinganno
 00667096-n	ita:lemma	autoinnesto
@@ -17782,7 +17754,6 @@
 08440630-n	ita:lemma	despotismo
 08440630-n	ita:lemma	dispotismo
 08440630-n	ita:lemma	dittatura
-05196582-n	ita:lemma	autorità
 05196582-n	ita:lemma	facoltà
 08050678-n	ita:lemma	autorità
 08050678-n	ita:lemma	governo
@@ -17853,10 +17824,7 @@
 10149527-n	ita:lemma	garante
 10149527-n	ita:lemma	mallevadore
 10149527-n	ita:lemma	mallevatore
-00665886-v	ita:lemma	avallare
-00665886-v	ita:lemma	avvalorare
 00665886-v	ita:lemma	certificare
-00665886-v	ita:lemma	comprovare
 00665886-v	ita:lemma	sostenere
 00889555-v	ita:lemma	avallare
 06405198-n	ita:lemma	avallo
@@ -18213,7 +18181,6 @@
 02439732-v	ita:def	0	indirizzare verso un determinato fine, fornendo diritture di comportamento
 02439732-v	ita:exe	0	guidare i figli durante la crescita
 02439732-v	ita:exe	1	guidare la nazione verso la pace
-01010684-n	ita:lemma	avvicendamento
 01010684-n	ita:lemma	intercambiabilità
 00280853-n	ita:lemma	avvicinamento
 00280853-n	ita:lemma	raccostamento
@@ -21129,7 +21096,6 @@
 00912490-a	ita:lemma	bitorzoluto
 00912490-a	ita:def	0	con numerosi bitorzoli
 02864593-n	ita:lemma	bitta
-02864593-n	ita:lemma	bitta
 00517240-v	ita:lemma	bitumare
 00517240-v	ita:lemma	imbitumare
 14911530-n	ita:lemma	bitume
@@ -21543,7 +21509,6 @@
 00978413-n	ita:lemma	bombardamento
 00987863-n	ita:lemma	bombardamento
 00987863-n	ita:lemma	sbarramento
-01131902-v	ita:lemma	bombardare
 02867715-n	ita:lemma	bombardiere
 09864252-n	ita:lemma	bombardiere
 03512030-n	ita:lemma	bombardone
@@ -23539,8 +23504,6 @@
 06719579-n	ita:lemma	calunnia
 06719579-n	ita:lemma	denigrazione
 06719579-n	ita:lemma	diffamazione
-06720600-n	ita:lemma	calunnia
-06720600-n	ita:lemma	maldicenza
 01219893-n	ita:lemma	calunniamento
 01219893-n	ita:lemma	denigrazione
 00846509-v	ita:lemma	calunniare
@@ -23566,7 +23529,6 @@
 04434932-n	ita:lemma	calzamaglia
 03885904-n	ita:lemma	calzamaglia
 03885904-n	ita:lemma	collant
-04434932-n	ita:lemma	calzamaglia
 04434932-n	ita:lemma	collant
 04200537-n	ita:lemma	calzante
 04200537-n	ita:lemma	calzascarpe
@@ -23790,7 +23752,6 @@
 13246662-n	ita:exe	0	ho ereditato un fondo condotto da mio fratello coltivatore diretto
 13246662-n	ita:exe	1	abbiamo preso la terra in eredità dai nostri padri
 00801724-n	ita:lemma	campagna di vendita
-00801450-n	ita:lemma	campagna diffamatoria
 00801450-n	ita:lemma	campagna diffamatoria
 00798959-n	ita:lemma	campagna pubblicitaria
 03594945-n	ita:lemma	campagnola
@@ -24244,7 +24205,6 @@
 02800497-n	ita:lemma	sotterraneo
 02800497-n	ita:lemma	sotto terra
 02800497-n	ita:lemma	sottoterra
-04108137-n	ita:lemma	cantina
 00545501-n	ita:lemma	canto
 06380726-n	ita:lemma	canto
 06380726-n	ita:lemma	lira
@@ -25075,13 +25035,7 @@
 10716005-n	ita:lemma	persecutore
 10716389-n	ita:lemma	carnefice
 10716389-n	ita:lemma	tormentatore
-00223983-n	ita:lemma	carneficina
-00223983-n	ita:lemma	ecatombe
-00223983-n	ita:lemma	eccidio
 00223983-n	ita:lemma	falcidia
-00223983-n	ita:lemma	macello
-00223983-n	ita:lemma	massacro
-00223983-n	ita:lemma	strage
 00223983-n	ita:def	0	uccissione di una gran quantità di persone o animali
 00511555-n	ita:lemma	carnevale
 03414029-n	ita:lemma	carniere
@@ -25244,7 +25198,6 @@
 01386433-v	ita:lemma	scartavetrare
 06623614-n	ita:lemma	carteggio
 06623614-n	ita:lemma	corrispondenza
-06623614-n	ita:lemma	carteggio
 08463063-n	ita:lemma	carteggio
 08463063-n	ita:lemma	corrispondenza
 03376279-n	ita:lemma	cartella
@@ -25294,7 +25247,6 @@
 03225238-n	ita:lemma	cartina
 03225238-n	ita:lemma	dose
 14812566-n	ita:lemma	cartina
-14941642-n	ita:lemma	cartina al tornasole
 14941642-n	ita:lemma	cartina al tornasole
 05956287-n	ita:lemma	cartismo
 13764639-n	ita:lemma	cartocciata
@@ -25413,7 +25365,6 @@
 03513137-n	ita:lemma	elmo
 03950899-n	ita:lemma	casco coloniale
 02853016-n	ita:lemma	caseggiato
-03128868-n	ita:lemma	caseificio
 03128868-n	ita:lemma	latteria
 14735347-n	ita:lemma	caseina
 03144365-n	ita:lemma	casella
@@ -25663,9 +25614,6 @@
 04244615-n	ita:lemma	chiavica
 04244615-n	ita:lemma	chiusa
 04244615-n	ita:lemma	paratoia
-04244615-n	ita:lemma	cataratta
-04244615-n	ita:lemma	cateratta
-04244615-n	ita:lemma	chiusa
 14254570-n	ita:lemma	cataratta
 14254570-n	ita:lemma	cateratta
 02683650-a	ita:lemma	catarrale
@@ -26133,9 +26081,7 @@
 02144835-v	ita:lemma	rimpiattare
 02145814-v	ita:lemma	celarsi
 02145814-v	ita:lemma	ficcarsi
-02145814-v	ita:lemma	imboscarsi
 02145814-v	ita:lemma	nascondere
-02145814-v	ita:lemma	nascondersi
 04130907-n	ita:lemma	celata
 09902851-n	ita:lemma	celebrante
 09902851-n	ita:lemma	officiante
@@ -26860,7 +26806,6 @@
 05018103-n	ita:lemma	nitore
 00939857-v	ita:lemma	chiarificare
 00939857-v	ita:lemma	chiarire
-00939857-v	ita:lemma	chiarificare
 00264192-n	ita:lemma	chiarificazione
 06738281-n	ita:lemma	chiarificazione
 06738281-n	ita:lemma	chiarimento
@@ -27204,8 +27149,6 @@
 07291312-n	ita:lemma	chiusura
 07291312-n	ita:lemma	conclusione
 07291312-n	ita:lemma	fine
-07291312-n	ita:lemma	chiusura
-07291312-n	ita:lemma	conclusione
 07291312-n	ita:lemma	finale
 15267536-n	ita:lemma	chiusura
 15267536-n	ita:lemma	epilogo
@@ -27332,7 +27275,6 @@
 00884466-n	ita:lemma	corso
 00884466-n	ita:def	0	serie di lezioni volta all'insegnamento di una disciplina e ordinata secondo un criterio di progressivo apprendimento
 00884466-n	ita:exe	0	corso di lingua inglese
-02834778-n	ita:lemma	ciclo
 13507827-n	ita:lemma	ciclo biologico
 13507827-n	ita:lemma	ciclo vitale
 13443120-n	ita:lemma	ciclo del carbonio
@@ -27682,7 +27624,6 @@
 00395654-n	ita:lemma	circoncisione
 01031194-n	ita:lemma	circoncisione
 01302854-v	ita:lemma	circondare
-01467370-v	ita:lemma	circondare
 08491826-n	ita:lemma	circondario
 08491826-n	ita:lemma	mandamento
 05101407-n	ita:lemma	circonferenza
@@ -28090,8 +28031,6 @@
 01792640-n	ita:lemma	cocca
 01792640-n	ita:lemma	gallina
 03060599-n	ita:lemma	coccarda
-04109899-n	ita:lemma	coccarda
-04109899-n	ita:lemma	rosetta
 04109899-n	ita:lemma	coccarda
 04109899-n	ita:lemma	rosetta
 04475749-n	ita:lemma	cocchia
@@ -28538,7 +28477,6 @@
 13667643-n	ita:lemma	colon di El Salvador
 13667643-n	ita:lemma	colon salvadoregno
 07996010-n	ita:lemma	colonia
-07996010-n	ita:lemma	colonia
 08374049-n	ita:lemma	colonia
 00426526-n	ita:lemma	colonialismo
 09937802-n	ita:lemma	colonialista
@@ -28689,7 +28627,6 @@
 04033995-n	ita:lemma	piumone
 04033995-n	ita:lemma	strapunto
 04033995-n	ita:lemma	trapunta
-00917759-n	ita:lemma	coltura
 00917759-n	ita:lemma	coltura
 01727646-n	ita:lemma	colubride
 01726692-n	ita:lemma	serpente
@@ -28897,7 +28834,6 @@
 07480068-n	ita:def	0	sentimento profondo
 01771390-v	ita:lemma	commuovere
 00139367-v	ita:lemma	commutare
-00139367-v	ita:lemma	commutare
 00140751-v	ita:lemma	commutare
 00161987-v	ita:lemma	commutare
 00115157-v	ita:lemma	commutare
@@ -29102,7 +29038,6 @@
 00211110-n	ita:lemma	compimento
 00211110-n	ita:lemma	completamento
 00211110-n	ita:lemma	ultimazione
-00211110-n	ita:lemma	compimento
 00211110-n	ita:lemma	coronamento
 00211110-n	ita:exe	0	compimento degli studi
 01700149-v	ita:lemma	compitare
@@ -29583,11 +29518,7 @@
 00861725-v	ita:lemma	conclamare
 00550282-a	ita:lemma	concludente
 00550282-a	ita:lemma	conclusivo
-00352826-v	ita:lemma	concludere
-00352826-v	ita:lemma	concludersi
-00352826-v	ita:lemma	finire
 00352826-v	ita:lemma	smettere
-00352826-v	ita:lemma	terminare
 00484166-v	ita:lemma	concludere
 00484166-v	ita:lemma	finire
 00484166-v	ita:lemma	terminare
@@ -30694,7 +30625,6 @@
 09633969-n	ita:lemma	rompitore
 09633969-n	ita:lemma	trasgreditore
 09633969-n	ita:lemma	trasgressore
-13301328-n	ita:lemma	contravvenzione
 00369802-n	ita:lemma	contrazione
 10694163-n	ita:lemma	contribuente
 00707624-v	ita:lemma	contribuire
@@ -31612,7 +31542,6 @@
 09878275-n	ita:lemma	fabbricatore
 10292316-n	ita:lemma	costruttore
 10292316-n	ita:lemma	fabbricatore
-10292316-n	ita:lemma	produttore
 00911048-n	ita:lemma	costruzione
 00911048-n	ita:lemma	edificazione
 00911048-n	ita:lemma	erezione
@@ -32965,7 +32894,6 @@
 00623151-v	ita:lemma	intendere
 00623151-v	ita:lemma	interpretare
 00626130-v	ita:lemma	decifrare
-00626130-v	ita:lemma	decifrare
 00626130-v	ita:lemma	decodificare
 00994454-v	ita:lemma	decifrare
 00994454-v	ita:lemma	decodificare
@@ -34203,7 +34131,6 @@
 00753786-a	ita:lemma	dicotiledone
 11666854-n	ita:lemma	dicotiledone
 07939880-n	ita:lemma	dicotomia
-07939880-n	ita:lemma	dicotomia
 03192543-n	ita:lemma	dictafono
 03192543-n	ita:lemma	dittafono
 06347588-n	ita:lemma	didascalia
@@ -34611,7 +34538,6 @@
 13669860-n	ita:lemma	dinaro del Kuwait
 13670281-n	ita:lemma	dinaro
 13670281-n	ita:lemma	dinaro libanese
-13669590-n	ita:lemma	dinaro
 13669590-n	ita:lemma	dinaro yemenita
 13670668-n	ita:lemma	dinaro
 13670668-n	ita:lemma	dinaro tunisino
@@ -34956,12 +34882,9 @@
 01158181-v	ita:lemma	dissipare
 01158181-v	ita:lemma	sperperare
 01158181-v	ita:lemma	sprecare
-01158181-v	ita:lemma	discipare
-01158181-v	ita:lemma	dissipare
 01158181-v	ita:lemma	divorare
 01158181-v	ita:lemma	profondere
 01158181-v	ita:lemma	scialacquare
-01158181-v	ita:lemma	sperperare
 04149968-n	ita:lemma	disciplina
 04149968-n	ita:lemma	flagello
 05662876-n	ita:lemma	disciplina
@@ -36382,8 +36305,6 @@
 02704928-v	ita:lemma	perdurare
 02704928-v	ita:lemma	permanere
 02704928-v	ita:lemma	reggere
-02704928-v	ita:lemma	durare
-02704928-v	ita:lemma	perdurare
 05051249-n	ita:lemma	durata
 05051249-n	ita:lemma	lunghezza
 05051249-n	ita:def	0	durata nel tempo
@@ -36571,8 +36492,6 @@
 02744280-v	ita:lemma	ecclissare
 02744280-v	ita:lemma	eclissare
 02744280-v	ita:lemma	oscurare
-02158340-v	ita:lemma	ecclissare
-02158340-v	ita:lemma	eclissare
 08565214-n	ita:lemma	ecclittica
 08565214-n	ita:lemma	eclittica
 02183787-v	ita:lemma	echeggiare
@@ -36636,7 +36555,6 @@
 02716739-a	ita:lemma	economico
 10043643-n	ita:lemma	economista
 02225492-v	ita:lemma	economizzare
-02225492-v	ita:lemma	risparmiare
 10553627-n	ita:lemma	economizzatore
 10553627-n	ita:lemma	risparmiatore
 02421158-a	ita:lemma	economo
@@ -36853,7 +36771,6 @@
 04812268-n	ita:lemma	signorilità
 04717552-n	ita:lemma	eleggibilità
 04717552-n	ita:lemma	elettività
-04717552-n	ita:lemma	eleggibilità
 06379568-n	ita:lemma	elegia
 02719244-a	ita:lemma	elegiaco
 02719395-a	ita:lemma	elementare
@@ -37468,7 +37385,6 @@
 15248564-n	ita:lemma	epoca
 15248564-n	ita:lemma	era
 15296687-n	ita:lemma	epoca
-15254028-n	ita:lemma	epoca
 15254028-n	ita:lemma	era
 15254028-n	ita:lemma	periodo
 15254028-n	ita:lemma	anno
@@ -37671,7 +37587,6 @@
 10744544-n	ita:lemma	errabondo
 10744544-n	ita:lemma	girovago
 10744544-n	ita:lemma	randagio
-10744544-n	ita:lemma	vagabondo
 06489847-n	ita:lemma	errata corrige
 06769578-n	ita:lemma	errata corrige
 00195542-r	ita:lemma	erratamente
@@ -37914,7 +37829,6 @@
 06891493-n	ita:lemma	spettacolo
 13477462-n	ita:lemma	esecuzione
 13477462-n	ita:def	0	fase in cui le istruzioni di un programma vengono eseguite dal computer
-07171940-n	ita:lemma	esegesi
 07171940-n	ita:lemma	esegesi
 01712704-v	ita:lemma	eseguire
 01712704-v	ita:lemma	fare
@@ -38215,7 +38129,6 @@
 07154330-n	ita:lemma	frase
 07154330-n	ita:lemma	locuzione
 07154330-n	ita:lemma	locuzione idiomatica
-08467258-n	ita:lemma	espressionismo
 08467258-n	ita:lemma	espressionismo
 02835145-a	ita:lemma	espressionista
 02835145-a	ita:lemma	espressionistico
@@ -39169,12 +39082,6 @@
 00350163-r	ita:lemma	sfarzosamente
 00350163-r	ita:lemma	splendidamente
 00350163-r	ita:lemma	superbamente
-00350163-r	ita:lemma	fastosamente
-00350163-r	ita:lemma	grandiosamente
-00350163-r	ita:lemma	magnificamente
-00350163-r	ita:lemma	sfarzosamente
-00350163-r	ita:lemma	splendidamente
-00350163-r	ita:lemma	superbamente
 04814238-n	ita:lemma	fastosità
 04814238-n	ita:lemma	grandiosità
 04814238-n	ita:lemma	magnificenza
@@ -39456,7 +39363,6 @@
 08656893-n	ita:lemma	fermata
 00458754-v	ita:lemma	fermentare
 13979503-n	ita:lemma	fermentazione
-13979503-n	ita:lemma	fermento
 13575433-n	ita:lemma	fermentazione alcolica
 13575433-n	ita:lemma	ribollimento
 04778401-n	ita:lemma	fermezza
@@ -39914,7 +39820,6 @@
 00362348-v	ita:lemma	finire
 00362348-v	ita:lemma	interrompere
 00362348-v	ita:lemma	sospendere
-02609764-v	ita:lemma	finire
 02609764-v	ita:lemma	sbucare
 02609764-v	ita:lemma	sboccare
 02609764-v	ita:lemma	andare
@@ -41165,7 +41070,6 @@
 10372373-n	ita:lemma	magistrato
 10372373-n	ita:lemma	ufficiale
 00577068-n	ita:lemma	funzione
-00577068-n	ita:lemma	operazione
 00577068-n	ita:lemma	procedimento
 00577068-n	ita:lemma	procedura
 00577068-n	ita:def	0	azione per lo più di carattere tecnico-pratico da eseguire secondo procedimenti determinati, per ottenere uno scopo
@@ -41849,7 +41753,6 @@
 03467068-n	ita:lemma	ghigliottina
 00032539-v	ita:lemma	ghignare
 00032539-v	ita:lemma	sghignazzare
-00032539-v	ita:lemma	ghignare
 00032539-v	ita:lemma	sogghignare
 07128060-n	ita:lemma	ghignata
 07128060-n	ita:lemma	risolino
@@ -42205,7 +42108,6 @@
 01195867-n	ita:lemma	giudizio
 01195867-n	ita:lemma	processo
 01195867-n	ita:exe	0	difendere qualcuno in giudizio
-01195867-n	ita:lemma	giudizio
 01195867-n	ita:lemma	sentenza
 01195867-n	ita:lemma	verdetto
 05837957-n	ita:lemma	giudizio
@@ -43198,7 +43100,6 @@
 02694933-v	ita:lemma	ubicare
 02694933-v	ita:lemma	collocare
 00152018-n	ita:lemma	identificazione
-00152018-n	ita:lemma	identificazione
 00152018-n	ita:lemma	immedesimazione
 04743024-n	ita:lemma	identità
 06362172-n	ita:lemma	ideografia
@@ -43302,7 +43203,6 @@
 00800930-v	ita:lemma	snobbare
 00800930-v	ita:lemma	trascurare
 00800930-v	ita:lemma	non far caso a
-00800930-v	ita:lemma	non curarsi di
 00800930-v	ita:lemma	non tener in nessun conto
 01376894-a	ita:lemma	ignoto
 01376894-a	ita:lemma	incognito
@@ -43829,7 +43729,6 @@
 02555954-a	ita:lemma	impiegatizio
 09925459-n	ita:lemma	impiegato statale
 00582388-n	ita:lemma	impiego
-00582388-n	ita:lemma	lavoro
 00582388-n	ita:lemma	mestiere
 00582388-n	ita:lemma	posto
 00582388-n	ita:lemma	posto di lavoro
@@ -44228,7 +44127,6 @@
 00062650-r	ita:lemma	inavvertitamente
 00062650-r	ita:lemma	involontariamente
 01608264-a	ita:lemma	inavvertito
-14010148-n	ita:lemma	inazione
 14010148-n	ita:lemma	inoperosità
 14010148-n	ita:lemma	ozio
 05209324-n	ita:lemma	incalcolabilità
@@ -45341,7 +45239,6 @@
 01058281-a	ita:lemma	inodore
 01058281-a	ita:lemma	inodoro
 01484982-v	ita:lemma	inoliare
-01484982-v	ita:lemma	lubrificare
 01484982-v	ita:lemma	oliare
 01484982-v	ita:lemma	ungere
 01955508-v	ita:lemma	inoltrare
@@ -45384,7 +45281,6 @@
 04790449-n	ita:lemma	insalubrità
 04791928-n	ita:lemma	insalubrità
 01962819-a	ita:lemma	insanabile
-00036932-v	ita:lemma	insaponare
 00036932-v	ita:lemma	insaponare
 02194138-v	ita:lemma	insaporire
 00213794-v	ita:lemma	inscatolare
@@ -46082,7 +45978,6 @@
 10150940-n	ita:lemma	invitato
 10150940-n	ita:lemma	ospite
 07186148-n	ita:lemma	invito
-07186148-n	ita:lemma	invito
 07186148-n	ita:def	0	una richiesta formale a partecipare o ad essere presente
 01024864-v	ita:lemma	invocare
 00097244-n	ita:lemma	invocazione
@@ -46410,8 +46305,6 @@
 08278324-n	ita:lemma	istituto universitario
 08278324-n	ita:lemma	college
 08278324-n	ita:lemma	istituto superiore
-08278324-n	ita:lemma	istituto universitario
-08278324-n	ita:lemma	college
 08407330-n	ita:lemma	istituto
 08281682-n	ita:lemma	istituto commerciale
 04131208-n	ita:lemma	istituto di bellezza
@@ -46554,7 +46447,6 @@
 14928729-n	ita:lemma	lacca
 14941407-n	ita:lemma	laccamuffa
 14941407-n	ita:lemma	tornasole
-01682761-v	ita:lemma	laccare
 01682761-v	ita:lemma	laccare
 03631811-n	ita:lemma	laccatura
 04200637-n	ita:lemma	laccio
@@ -46897,7 +46789,6 @@
 00252894-n	ita:lemma	purgazione
 03341606-n	ita:lemma	lavadita
 00255710-n	ita:lemma	lavaggio
-00255710-n	ita:lemma	lavatura
 00888960-n	ita:lemma	lavaggio del cervello
 02846511-n	ita:lemma	lavagna
 03864692-n	ita:lemma	lavagna luminosa
@@ -46930,7 +46821,6 @@
 10791221-n	ita:def	0	lavoratore che svolge una attività di tipo manuale, soprattutto nell'industria
 01945938-v	ita:lemma	lavorare
 01945938-v	ita:lemma	sbattere
-02413480-v	ita:lemma	lavorare
 01671039-v	ita:lemma	lavorare a maglia
 01531265-v	ita:lemma	sbalzare
 01531265-v	ita:lemma	lavorare a sbalzo
@@ -46952,7 +46842,6 @@
 00575741-n	ita:exe	0	l'intera biografia aveva bisogno di altro lavoro e altra ricerca storica
 00576877-n	ita:lemma	PSEUDOGAP!
 00576877-n	ita:def	0	prestazione lavorativa, sportiva o recitativa
-00795720-n	ita:lemma	compito
 00795720-n	ita:lemma	progetto
 04599396-n	ita:lemma	lavoro
 04599396-n	ita:lemma	opera
@@ -47851,7 +47740,6 @@
 05627222-n	ita:lemma	mondo dei sogni
 09358226-n	ita:lemma	luna
 09358226-n	ita:def	0	qualsiasi satellite naturale di un pianeta
-09358226-n	ita:lemma	luna
 09358226-n	ita:def	0	il satellite della terra
 15207872-n	ita:lemma	luna
 15207872-n	ita:lemma	lunazione
@@ -48485,7 +48373,6 @@
 10318293-n	ita:lemma	manifatturiere
 00944548-v	ita:lemma	manifestare
 00944548-v	ita:lemma	sfogare
-02143283-v	ita:lemma	manifestare
 02143283-v	ita:lemma	palesare
 02143283-v	ita:lemma	portare alla luce
 02143283-v	ita:lemma	scoprire
@@ -49734,7 +49621,6 @@
 12386462-n	ita:lemma	tamerisco
 11714382-n	ita:lemma	miristica
 12692875-n	ita:lemma	mirra
-12692875-n	ita:lemma	mirra
 07743224-n	ita:lemma	mirtillo
 12330469-n	ita:lemma	mirto
 12330469-n	ita:lemma	mortella
@@ -49971,7 +49857,6 @@
 03934042-n	ita:lemma	molo
 01688961-n	ita:lemma	moloc
 10462005-n	ita:lemma	moloc
-10462005-n	ita:lemma	moloc
 01545571-a	ita:lemma	moltilingue
 01545571-a	ita:lemma	multilingue
 13517843-n	ita:lemma	moltiplica
@@ -50106,7 +49991,6 @@
 09182524-n	ita:lemma	monomania
 09182524-n	ita:def	0	una mania limitata ad una cosa o idea
 14135277-n	ita:lemma	mononucleosi
-14135277-n	ita:lemma	mononucleosi
 04149374-n	ita:lemma	monopattino
 00794650-a	ita:lemma	monopetto
 01649876-a	ita:lemma	monopezzo
@@ -50188,7 +50072,6 @@
 12394638-n	ita:lemma	muraiola
 12394638-n	ita:lemma	parietaria
 12394638-n	ita:lemma	vetriola
-01548193-a	ita:lemma	morale
 14374273-n	ita:lemma	morale
 00828374-v	ita:lemma	moraleggiare
 00828374-v	ita:lemma	moralizzare
@@ -50780,7 +50663,6 @@
 03817191-n	ita:lemma	negativa
 03817191-n	ita:lemma	negativo
 05167618-n	ita:lemma	negativismo
-05167618-n	ita:lemma	negatività
 05167618-n	ita:lemma	negatività
 10003283-n	ita:lemma	negatore
 07206461-n	ita:lemma	negazione
@@ -52549,7 +52431,6 @@
 05220461-n	ita:def	0	qualsiasi parte di un organismo
 06317464-n	ita:lemma	parte del discorso
 13532501-n	ita:lemma	partenogenesi
-13532501-n	ita:lemma	partenogenesi
 00241699-n	ita:lemma	partenza
 03892273-n	ita:lemma	parterre
 03894217-n	ita:lemma	partesana
@@ -52838,7 +52719,6 @@
 03903424-n	ita:lemma	pedale
 02890804-n	ita:lemma	pedale del freno
 03379592-n	ita:lemma	pedana
-03379592-n	ita:lemma	pedana
 04288673-n	ita:lemma	pedana
 04288673-n	ita:lemma	trampolino
 10411356-n	ita:lemma	pedante
@@ -52945,8 +52825,6 @@
 00997604-a	ita:lemma	pennato
 00997604-a	ita:lemma	pennuto
 01915700-n	ita:lemma	pennatula
-01362736-v	ita:lemma	pennellare
-01362736-v	ita:lemma	spennellare
 03876231-n	ita:lemma	pennello
 04185946-n	ita:lemma	pennello da barba
 13688577-n	ita:lemma	penni
@@ -53141,7 +53019,6 @@
 15239579-n	ita:lemma	stagione
 15239579-n	ita:def	0	un periodo dell'anno caratterizzato da eventi od attività particolari
 15239579-n	ita:exe	0	la stagione lirica veronese
-15289779-n	ita:lemma	periodo
 15141894-n	ita:lemma	periodo di scadenza
 14080622-n	ita:lemma	periodontite
 05327373-n	ita:lemma	periostio
@@ -53909,7 +53786,6 @@
 03704038-n	ita:lemma	polveriera
 03994008-n	ita:lemma	polverina
 00332154-v	ita:lemma	polverizzare
-00332154-v	ita:lemma	polverizzare
 01373138-v	ita:lemma	polverizzare
 04962395-n	ita:lemma	pomellato
 15166191-n	ita:lemma	pomeriggio
@@ -54201,7 +54077,6 @@
 02712443-v	ita:lemma	precedere
 14997393-n	ita:lemma	precipitante
 00474994-v	ita:lemma	precipitare
-00474994-v	ita:lemma	precipitare
 01976841-v	ita:lemma	precipitare
 02061495-v	ita:lemma	precipitarsi
 14591635-n	ita:lemma	precipitato
@@ -54217,11 +54092,8 @@
 07256932-n	ita:lemma	preconoscenza
 03152577-a	ita:lemma	preconcetto
 06201908-n	ita:lemma	preconcetto
-06201908-n	ita:lemma	preconcetto
 06201908-n	ita:lemma	pregiudizio
 06201908-n	ita:lemma	prevenzione
-06201908-n	ita:lemma	preconcetto
-06201908-n	ita:lemma	pregiudizio
 00342640-v	ita:lemma	precorrere
 05776015-n	ita:lemma	precorrimento
 05776015-n	ita:lemma	prefigurazione
@@ -56260,7 +56132,6 @@
 05747582-n	ita:lemma	ridimensionamento
 01363174-v	ita:lemma	ridipingere
 01363174-v	ita:lemma	ripitturare
-01363174-v	ita:lemma	ridipingere
 01685797-v	ita:lemma	ridipingere
 00004413-a	ita:lemma	ridotto
 00881735-a	ita:lemma	ridotto
@@ -57104,7 +56975,6 @@
 00440509-n	ita:lemma	salto in alto
 07469476-n	ita:lemma	salto in alto
 07469609-n	ita:lemma	salto in lungo
-07469609-n	ita:lemma	salto in lungo
 00718907-v	ita:lemma	salutare
 00897125-v	ita:lemma	salutare
 00899956-v	ita:lemma	salutare
@@ -57621,9 +57491,7 @@
 14889371-n	ita:lemma	scisto
 09282724-n	ita:lemma	schiuma
 09282724-n	ita:lemma	spuma
-00519363-v	ita:lemma	schiumare
 00519363-v	ita:lemma	spumare
-00519363-v	ita:lemma	spumeggiare
 14398523-n	ita:lemma	schizofrenia
 03115277-a	ita:lemma	schizofrenico
 03115277-a	ita:lemma	schizoide
@@ -57806,7 +57674,6 @@
 01637982-v	ita:def	0	effettuare una scoperta di valore scientifico
 01637982-v	ita:exe	0	hanno trovato il vaccino contro il tifo
 02137710-v	ita:lemma	scoprire
-10090498-n	ita:lemma	scopritore
 00908099-v	ita:lemma	scoraggiare
 07537668-n	ita:lemma	scoramento
 14201520-n	ita:lemma	scorbuto
@@ -57834,7 +57701,6 @@
 01274657-v	ita:lemma	spellare
 01309478-v	ita:lemma	scorticarsi
 01309478-v	ita:lemma	urtare
-01309478-v	ita:lemma	scorticarsi
 01309478-v	ita:lemma	spellare
 12013035-n	ita:lemma	scorzonera
 00335988-n	ita:lemma	scossa
@@ -58108,7 +57974,6 @@
 01851916-a	ita:exe	3	vestire con abiti modesti
 02174896-a	ita:lemma	semplice
 02174896-a	ita:def	0	formato da un solo elemento
-02174896-a	ita:lemma	semplice
 02174896-a	ita:def	0	privo di difficolta', non complicato
 00004722-r	ita:lemma	semplicemente
 00004722-r	ita:lemma	solamente
@@ -58346,7 +58211,6 @@
 00868097-v	ita:lemma	sfidare
 02569630-v	ita:lemma	sfidare
 02707251-v	ita:lemma	sfidare
-02707251-v	ita:lemma	sfidare
 04274985-n	ita:lemma	sfigmomanometro
 00051370-v	ita:lemma	sfilare
 02521816-v	ita:lemma	sfilare
@@ -58384,7 +58248,6 @@
 00559390-v	ita:lemma	spiaccicarsi
 01468058-v	ita:lemma	sfrattare
 02069014-v	ita:lemma	sfrecciare
-01549905-v	ita:lemma	sfregiare
 00489195-r	ita:lemma	sfrenatamente
 00473322-v	ita:lemma	sfrondare
 00948206-n	ita:lemma	sfruttamento
@@ -58583,9 +58446,6 @@
 04763650-n	ita:lemma	unicità
 04797482-n	ita:lemma	singolarità
 04799344-n	ita:lemma	singolarità
-00437381-r	ita:lemma	singolarmente
-14359459-n	ita:lemma	singulto
-14359459-n	ita:lemma	stranguglione
 14359459-n	ita:lemma	singulto
 14359459-n	ita:lemma	stranguglione
 13565201-n	ita:lemma	sinizesi
@@ -58986,7 +58846,6 @@
 14550987-n	ita:lemma	sordità
 00681930-a	ita:lemma	sordo
 02286294-a	ita:lemma	sordo
-02286294-a	ita:lemma	sordo
 14551822-n	ita:lemma	sordomutismo
 10342367-n	ita:lemma	sordomuto
 10602258-n	ita:lemma	sorella
@@ -59055,7 +58914,6 @@
 00470354-r	ita:lemma	sottilmente
 00929839-v	ita:lemma	sottintendere
 00929839-v	ita:lemma	implicare
-00487623-r	ita:lemma	sotto
 00487623-r	ita:lemma	sotto
 00258468-r	ita:lemma	sotto costa
 00136088-r	ita:lemma	sotto cute
@@ -59981,7 +59839,6 @@
 15096783-n	ita:lemma	tensioattivo
 10679054-n	ita:lemma	surfista
 02138777-n	ita:lemma	suricata
-08470210-n	ita:lemma	surrealismo
 08470210-n	ita:lemma	surrealismo
 10679845-n	ita:lemma	surrealista
 05331171-n	ita:lemma	surrenale
@@ -62263,7 +62120,6 @@
 02288155-v	ita:exe	0	perdere un'occasione
 02288155-v	ita:exe	1	perdere un'opportunità
 02288155-v	ita:exe	2	perdere un affare
-01569965-a	ita:lemma	naturale
 01569965-a	ita:def	0	che ha per oggetto di studio la natura
 01569965-a	ita:exe	0	scienze naturali
 01577771-a	ita:lemma	naturale
@@ -62808,7 +62664,6 @@
 01618376-a	ita:lemma	evidente
 01618376-a	ita:exe	0	è chiaro che avete torto
 01618376-a	ita:exe	1	chiaro che nessuno osa opporsi!
-00907340-n	ita:lemma	esposizione
 00907340-n	ita:def	0	la quantità di luce che colpisce una pellicola
 07029819-n	ita:lemma	esposizione
 07029819-n	ita:def	0	parte iniziale di una composizione in cui vengono presentati i temi principali
@@ -62828,7 +62683,6 @@
 02340458-a	ita:exe	0	risultati modesti
 02340458-a	ita:exe	1	un romanzo modesto
 02340458-a	ita:exe	2	un incarico modesto
-01851916-a	ita:lemma	modesto
 01851916-a	ita:def	0	di persona che tiene abitualmente un contegno discreto e riservato
 01851916-a	ita:exe	0	persona dai modi modesti
 01851916-a	ita:exe	1	uno sguardo modesto
@@ -63262,16 +63116,13 @@
 09627462-n	ita:lemma	primitivo
 09627462-n	ita:def	0	appartanente a una popolazione preistorica
 09627462-n	ita:exe	0	ormai il computer è talmente famoso che lo sanno usare anche i primitivi!
-00413432-a	ita:lemma	primitivo
 00413432-a	ita:exe	0	il punto è un concetto geometrico primitivo
 00698586-a	ita:lemma	derivato
-02719395-a	ita:lemma	elementare
 02719395-a	ita:lemma	primitivo
 02719395-a	ita:def	0	simile a una forza della natura
 01727926-a	ita:lemma	passato
 01727926-a	ita:def	0	che è  accaduto in un tempo passato
 01727926-a	ita:exe	0	il ricordo degli avvenimenti passati
-01727926-a	ita:lemma	passato
 01727926-a	ita:exe	0	participio passato
 08620881-n	ita:lemma	polo
 08611836-n	ita:lemma	polo nord
@@ -63828,7 +63679,6 @@
 01041968-n	ita:lemma	preghiera
 01055360-n	ita:lemma	visita
 01076359-n	ita:lemma	complicazione
-01077350-n	ita:lemma	prevenzione
 01086945-n	ita:lemma	welfare
 01087939-n	ita:lemma	previdenza sociale
 01093666-n	ita:lemma	prestito
@@ -63844,7 +63694,6 @@
 01199697-n	ita:lemma	udienza
 01202029-n	ita:lemma	isolamento
 01232091-n	ita:lemma	sessione
-01233156-n	ita:lemma	visita
 01240210-n	ita:lemma	intervento
 01245318-n	ita:lemma	olocausto
 01264050-n	ita:lemma	consultazione
@@ -63892,7 +63741,6 @@
 02884225-n	ita:lemma	palco
 02899808-n	ita:lemma	ponte
 02954068-n	ita:lemma	tela
-02991555-n	ita:lemma	cella
 02994219-n	ita:lemma	centro
 03023415-n	ita:lemma	Aureomicina
 03078802-n	ita:lemma	pendolare
@@ -64010,7 +63858,6 @@
 04877530-n	ita:lemma	fedeltà
 04881623-n	ita:lemma	disciplina
 04882968-n	ita:lemma	controllo
-07508486-n	ita:lemma	orgoglio
 04892344-n	ita:lemma	oggettività
 04918767-n	ita:lemma	immediatezza
 04931428-n	ita:lemma	tocco
@@ -64368,7 +64215,6 @@
 08190482-n	ita:lemma	nemico
 08213205-n	ita:lemma	divisione
 08222293-n	ita:lemma	pubblico
-08223802-n	ita:lemma	comunità
 08225090-n	ita:lemma	vicinato
 08237863-n	ita:lemma	cast
 08287844-n	ita:lemma	cultura
@@ -64403,7 +64249,6 @@
 08513718-n	ita:lemma	posto
 08513718-n	ita:lemma	sito
 08518505-n	ita:lemma	capitale
-08524735-n	ita:lemma	città
 08551628-n	ita:lemma	campo
 08559508-n	ita:lemma	PSEUDOGAP!
 08562990-n	ita:lemma	Nord
@@ -64732,7 +64577,6 @@
 00299580-v	ita:lemma	adattare
 00334996-v	ita:lemma	rompere
 00350104-v	ita:lemma	riprendere
-00352558-v	ita:lemma	finire
 00360092-v	ita:lemma	lasciare
 00377002-v	ita:lemma	bruciare
 00387310-v	ita:lemma	ritornare
@@ -64881,7 +64725,6 @@
 00993014-v	ita:exe	1	perché continui a scrivere bugie?
 01001857-v	ita:lemma	presentare
 01007027-v	ita:lemma	PSEUDOGAP!
-01010118-v	ita:lemma	dichiarare
 01019643-v	ita:lemma	assicurare
 01026975-v	ita:lemma	aspirare
 01027174-v	ita:lemma	aggiungere
@@ -64922,7 +64765,6 @@
 01207951-v	ita:lemma	ricoprire
 01214265-v	ita:lemma	prendere
 01243982-v	ita:lemma	spazzolare
-01400044-v	ita:lemma	colpire
 01401115-v	ita:lemma	prendere
 01413173-v	ita:lemma	battere
 01433294-v	ita:lemma	portare
@@ -65117,7 +64959,6 @@
 02400037-v	ita:lemma	favorire
 02400760-v	ita:lemma	eleggere
 02407338-v	ita:lemma	lottare
-01158872-v	ita:lemma	applicare
 02410855-v	ita:lemma	lavorare
 02415039-v	ita:lemma	lavorare
 02418686-v	ita:lemma	giocare
@@ -65269,9 +65110,6 @@
 00048858-a	ita:lemma	altro
 00048858-a	ita:lemma	supplementare
 00048858-a	ita:lemma	ulteriore
-00048858-a	ita:lemma	altro
-00048858-a	ita:lemma	altro
-00048858-a	ita:lemma	altro
 00048858-a	ita:lemma	extra
 00048460-a	ita:lemma	cumulativo
 00051373-a	ita:lemma	adeguato
@@ -65340,7 +65178,6 @@
 00392812-a	ita:lemma	nero
 00393105-a	ita:lemma	bianco
 00394562-a	ita:lemma	colorato
-00395626-a	ita:lemma	rosso
 00408992-a	ita:lemma	pallido
 00413861-a	ita:lemma	classico
 00417413-a	ita:lemma	pulito
@@ -65398,7 +65235,6 @@
 00526062-a	ita:lemma	ampio
 00526062-a	ita:lemma	vasto
 00527188-a	ita:lemma	universale
-00529657-a	ita:lemma	calmo
 00533452-a	ita:lemma	comprensibile
 00540977-a	ita:lemma	disperso
 00543603-a	ita:lemma	interessato
@@ -65512,7 +65348,6 @@
 01012503-a	ita:lemma	originale
 01012503-a	ita:lemma	originario
 01012990-a	ita:lemma	principale
-01016436-a	ita:lemma	secondo
 01019283-a	ita:lemma	disabile
 01034457-a	ita:lemma	straniero
 01036874-a	ita:lemma	locale
@@ -65551,11 +65386,8 @@
 01104026-a	ita:lemma	particolare
 01104026-a	ita:lemma	peculiare
 01104026-a	ita:lemma	speciale
-01104460-a	ita:lemma	particolare
 01105840-a	ita:lemma	nazionale
 01106129-a	ita:lemma	federale
-01106405-a	ita:lemma	locale
-00329831-a	ita:lemma	centrale
 01106405-a	ita:lemma	locale
 01108716-a	ita:lemma	tecnico
 02119716-a	ita:lemma	vero
@@ -65623,7 +65455,6 @@
 01285376-a	ita:lemma	magnifico
 01294975-a	ita:lemma	prossimo
 01318741-a	ita:lemma	ferito
-00529266-a	ita:lemma	composto
 01335156-a	ita:lemma	brillante
 01337767-a	ita:lemma	consapevole
 01342949-a	ita:lemma	indifferente
@@ -65703,7 +65534,6 @@
 01553340-a	ita:lemma	qualche
 01553629-a	ita:lemma	molto
 01553629-a	ita:lemma	tanto
-01554230-a	ita:lemma	tale
 01554510-a	ita:lemma	poco
 01554510-a	ita:lemma	leggero
 01555133-a	ita:lemma	altro
@@ -65755,7 +65585,6 @@
 01676517-a	ita:lemma	fantastico
 01676517-a	ita:lemma	meraviglioso
 01676517-a	ita:lemma	tremendo
-01677433-a	ita:lemma	grande
 01678417-a	ita:lemma	notevole
 01678729-a	ita:lemma	speciale
 01679055-a	ita:lemma	organico
@@ -65827,14 +65656,12 @@
 01927279-a	ita:lemma	emotivo
 01932973-a	ita:lemma	reale
 01932973-a	ita:lemma	vero
-01936184-a	ita:lemma	mitologico
 01936528-a	ita:lemma	immaginario
 01937994-a	ita:lemma	reale
 01937994-a	ita:lemma	vero
 01939984-a	ita:lemma	realistico
 01941026-a	ita:lemma	vivido
 01959294-a	ita:lemma	regolare
-01968165-a	ita:lemma	quotidiano
 01966488-a	ita:lemma	uniforme
 01971237-a	ita:lemma	collegato
 01972820-a	ita:lemma	collegato
@@ -65858,8 +65685,6 @@
 02036397-a	ita:lemma	sbagliato
 02046199-a	ita:lemma	ovale
 02050452-a	ita:lemma	rurale
-02056265-a	ita:lemma	religioso
-02056265-a	ita:lemma	spirituale
 02057226-a	ita:lemma	laico
 02062670-a	ita:lemma	stesso
 02064127-a	ita:lemma	identico
@@ -65893,7 +65718,6 @@
 02103481-a	ita:lemma	sensibile
 02110447-a	ita:lemma	isolato
 02112701-a	ita:lemma	collettivo
-02119716-a	ita:lemma	vero
 02124253-a	ita:lemma	operativo
 02126430-a	ita:lemma	ubicato
 02132080-a	ita:lemma	erotico
@@ -65990,7 +65814,6 @@
 02238462-a	ita:lemma	ruvido
 02248349-a	ita:lemma	sociale
 02248693-a	ita:lemma	culturale
-02248693-a	ita:lemma	etnico
 02249766-a	ita:lemma	solo
 02251212-a	ita:lemma	solo
 02261386-a	ita:lemma	liquido
@@ -66051,7 +65874,6 @@
 02465115-a	ita:lemma	autentico
 02469407-a	ita:lemma	rappresentativo
 02477557-a	ita:lemma	unificato
-02745284-a	ita:lemma	ideale
 02499301-a	ita:lemma	logico
 02501534-a	ita:lemma	prezioso
 02506029-a	ita:lemma	costante
@@ -66062,7 +65884,6 @@
 02529945-a	ita:lemma	freddo
 02529945-a	ita:lemma	fresco
 02534877-a	ita:lemma	crescente
-03070879-a	ita:lemma	crescente
 02547317-a	ita:lemma	bagnato
 02547317-a	ita:lemma	umido
 02548066-a	ita:lemma	fangoso
@@ -66139,7 +65960,6 @@
 00017445-r	ita:lemma	persino
 00018302-r	ita:lemma	alquanto
 00018302-r	ita:lemma	piuttosto
-00035718-r	ita:lemma	piuttosto
 00020280-r	ita:lemma	costantemente
 00020280-r	ita:def	0	ripetutamente
 00020280-r	ita:exe	0	il pilota incontra costantemente sbalzi di quota e di temperatura
@@ -66268,7 +66088,6 @@
 00186142-r	ita:lemma	rigidamente
 00188057-r	ita:lemma	meglio
 00188137-r	ita:lemma	meglio
-00233413-r	ita:lemma	fuori
 00233413-r	ita:lemma	fuori
 00193194-r	ita:lemma	via
 00195024-r	ita:lemma	regolarmente
@@ -66454,7 +66273,6 @@
 15157041-n	ita:lemma	giorno civile
 15157041-n	ita:def	0	intervallo di ventiquattr'ore contate da una mezzanotte alla successiva
 15157041-n	ita:exe	0	i sette giorni della settimana
-15254028-n	ita:lemma	anno
 15254028-n	ita:lemma	giorno
 15254028-n	ita:def	0	periodo contraddistinto da qualche particolare avvenimento
 15254028-n	ita:exe	0	i giorni della contestazione
@@ -66525,7 +66343,6 @@
 02531199-v	ita:lemma	vedere
 02531199-v	ita:def	0	impiegare le proprie energie per il raggiungimento di un fine
 02531199-v	ita:exe	0	vedi di finire in tempo per l'inaugurazione
-02740745-v	ita:lemma	dovere
 02740745-v	ita:def	0	avere buone probabilità
 02740745-v	ita:exe	0	non deve essere qui da molto
 02740745-v	ita:exe	1	secondo le previsioni meteorologiche dovrebbe piovere
@@ -66631,7 +66448,6 @@
 15167349-n	ita:def	0	spazio di tempo compreso fra la cena, o il dopocena, e la mezzanotte
 15167906-n	ita:lemma	serata
 15167906-n	ita:def	0	la sera, con riferimento alla sua durata, al modo di trascorrerla o alle condizioni atmosferiche
-00020280-r	ita:lemma	costantemente
 00020280-r	ita:lemma	continuamente
 00020280-r	ita:lemma	incessantemente
 00020280-r	ita:lemma	in modo continuo

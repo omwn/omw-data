@@ -637,7 +637,6 @@
 00023271-n	zsm:lemma	pengetahuan
 00023271-n	zsm:lemma	ilmu
 00023271-n	zsm:lemma	ilmu pengetahuan
-00023271-n	zsm:lemma	kognisi
 00023271-n	zsm:lemma	makrifat
 00023271-n	zsm:lemma	mualamat
 00023473-v	zsm:lemma	mengarik
@@ -734,7 +733,6 @@
 00027167-n	zsm:lemma	kedudukan
 00027167-n	zsm:lemma	tempat
 00027167-n	zsm:lemma	lokasi
-00027167-n	zsm:lemma	tempat
 00027268-v	zsm:lemma	berlanjutan
 00027268-v	zsm:lemma	meluas
 00027268-v	zsm:lemma	melunjurkan
@@ -877,8 +875,6 @@
 00030358-n	zsm:lemma	tindak
 00030358-n	zsm:lemma	tindakan
 00030358-n	zsm:lemma	kelakuan
-00030358-n	zsm:lemma	perbuatan
-00030358-n	zsm:lemma	tindakan
 00030366-v	zsm:lemma	memberai-beraikan
 00030366-v	zsm:lemma	usai
 00030508-a	zsm:lemma	cemburu
@@ -896,7 +892,6 @@
 00031264-n	zsm:lemma	kumpulan
 00031264-n	zsm:lemma	rombongan
 00031264-n	zsm:lemma	kelompok
-00031264-n	zsm:lemma	rombongan
 00031304-r	zsm:lemma	masih
 00031304-r	zsm:lemma	tetap
 00031606-r	zsm:lemma	lagi
@@ -1000,7 +995,6 @@
 00034115-v	zsm:lemma	bertepuk
 00034115-v	zsm:lemma	menepam
 00034115-v	zsm:lemma	menepuk
-00034213-n	zsm:lemma	fenomena
 00034213-n	zsm:lemma	fenomena
 00034213-n	zsm:lemma	keajaiban
 00034213-n	zsm:lemma	fenomenon
@@ -1166,7 +1160,6 @@
 00039021-n	zsm:lemma	interaksi
 00039297-n	zsm:lemma	kontak
 00039297-n	zsm:lemma	berhubung
-00039297-n	zsm:lemma	kontak
 00039297-n	zsm:lemma	menghubungi
 00039318-r	zsm:lemma	jelas
 00039318-r	zsm:lemma	kuat
@@ -1325,7 +1318,6 @@
 00045817-v	zsm:lemma	menyusutkan
 00045817-v	zsm:lemma	merampingkan
 00045888-a	zsm:lemma	mematikan
-00045907-n	zsm:lemma	pemulihan
 00045907-n	zsm:lemma	pemulihan
 00046002-r	zsm:lemma	cuma
 00046002-r	zsm:lemma	hanya
@@ -1520,7 +1512,6 @@
 00051192-n	zsm:lemma	kepulangan
 00051192-n	zsm:lemma	balik
 00051192-n	zsm:lemma	kembali
-00051192-n	zsm:lemma	kepulangan
 00051373-a	zsm:lemma	cekap
 00051373-a	zsm:lemma	mahir
 00051385-n	zsm:lemma	pemulangan
@@ -1841,7 +1832,6 @@
 00063014-n	zsm:lemma	rekor
 00063014-n	zsm:lemma	mencatat
 00063014-n	zsm:lemma	mencatatkan
-00063014-n	zsm:lemma	rekor
 00063014-n	zsm:lemma	tercatat
 00063014-n	zsm:lemma	rekod
 00063095-v	zsm:lemma	menetas
@@ -2088,8 +2078,6 @@
 00070816-v	zsm:lemma	menghidap
 00070939-a	zsm:lemma	pura-pura
 00070965-n	zsm:lemma	kekeliruan
-00070965-n	zsm:lemma	kekhilafan
-00070965-n	zsm:lemma	kesalahan
 00070965-n	zsm:lemma	kekhilafan
 00070965-n	zsm:lemma	kesalahan
 00070965-n	zsm:lemma	khilaf
@@ -2648,8 +2636,6 @@
 00089351-n	zsm:lemma	kembali
 00089351-n	zsm:lemma	kepulangan
 00089351-n	zsm:lemma	pampas
-00089351-n	zsm:lemma	pemulihan
-00089351-n	zsm:lemma	pengembalian
 00089351-n	zsm:lemma	restorasi
 00089408-r	zsm:lemma	amat
 00089408-r	zsm:lemma	benar
@@ -2744,7 +2730,6 @@
 00092293-v	zsm:lemma	merosot
 00092293-v	zsm:lemma	mundur
 00092293-v	zsm:lemma	kemerosotan
-00092293-v	zsm:lemma	merosot
 00092293-v	zsm:lemma	menyangat
 00092366-n	zsm:lemma	jualan lelong
 00092366-n	zsm:lemma	lelong
@@ -2761,8 +2746,6 @@
 00092690-v	zsm:lemma	kesembuhan
 00092690-v	zsm:lemma	pemulihan
 00092690-v	zsm:lemma	penyembuhan
-00092690-v	zsm:lemma	pulih
-00092690-v	zsm:lemma	sembuh
 00092690-v	zsm:lemma	uras
 00092690-v	zsm:lemma	mengedih
 00093006-n	zsm:lemma	kapitalis
@@ -4587,7 +4570,6 @@
 00172710-n	zsm:lemma	kuasa
 00172710-n	zsm:lemma	minhaj
 00172710-n	zsm:lemma	tindakan
-00172710-n	zsm:lemma	cara
 00172710-n	zsm:lemma	jalan
 00172732-v	zsm:lemma	memiskinkan
 00173159-v	zsm:lemma	mencekik
@@ -5480,7 +5462,6 @@
 00212414-v	zsm:lemma	menjaga
 00212414-v	zsm:lemma	menyimpan
 00212414-v	zsm:lemma	menahan
-00212414-v	zsm:lemma	mengawetkan
 00212414-v	zsm:lemma	mengawet
 00212414-v	zsm:lemma	menjeruk
 00212604-r	zsm:lemma	jemah
@@ -5504,7 +5485,6 @@
 00213794-v	zsm:lemma	boleh
 00213794-v	zsm:lemma	dapat
 00213794-v	zsm:lemma	sanggup
-00213794-v	zsm:lemma	dapat
 00213794-v	zsm:lemma	mengetin
 00213794-v	zsm:lemma	mengetinkan
 00213903-n	zsm:lemma	pelepasan
@@ -6663,7 +6643,6 @@
 00258854-n	zsm:lemma	koreksi
 00258854-n	zsm:lemma	ralat
 00258854-n	zsm:lemma	teguran
-00258854-n	zsm:lemma	koreksi
 00258854-n	zsm:lemma	koreksian
 00258854-n	zsm:lemma	membetuli
 00258854-n	zsm:lemma	pembetulan
@@ -7129,7 +7108,6 @@
 00276883-v	zsm:lemma	susunan
 00276987-n	zsm:lemma	kontaminasi
 00276987-n	zsm:lemma	pencemaran
-00276987-n	zsm:lemma	pencemaran
 00276987-n	zsm:lemma	pengotoran
 00277550-a	zsm:lemma	bumbun
 00277569-n	zsm:lemma	penenggelaman
@@ -7396,7 +7374,6 @@
 00291873-v	zsm:lemma	menyunu
 00291873-v	zsm:lemma	bercahaya
 00291873-v	zsm:lemma	mencucuh
-00291873-v	zsm:lemma	menerangi
 00291873-v	zsm:lemma	menyalai
 00291873-v	zsm:lemma	menyalakan
 00291873-v	zsm:lemma	menyerikan
@@ -7527,7 +7504,6 @@
 00296178-v	zsm:lemma	membetulkan
 00296178-v	zsm:lemma	menepatkan
 00296178-v	zsm:lemma	menyelaraskan
-00296178-v	zsm:lemma	menyesuaikan
 00296585-n	zsm:lemma	pawai
 00296585-n	zsm:lemma	perarakan
 00297062-n	zsm:lemma	pengembaraan
@@ -8371,9 +8347,7 @@
 00331082-v	zsm:lemma	kisar
 00331082-v	zsm:lemma	melecek
 00331082-v	zsm:lemma	melumatkan
-00331082-v	zsm:lemma	memipis
 00331082-v	zsm:lemma	memirik
-00331082-v	zsm:lemma	menggiling
 00331082-v	zsm:lemma	menghancurkan
 00331082-v	zsm:lemma	mengisar
 00331082-v	zsm:lemma	menumbuk
@@ -8650,7 +8624,6 @@
 00339934-v	zsm:lemma	berlangsung
 00339934-v	zsm:lemma	jadi
 00339934-v	zsm:lemma	muncul
-00339934-v	zsm:lemma	terjadi
 00339934-v	zsm:lemma	terlintas
 00339934-v	zsm:lemma	timbul
 00339941-a	zsm:lemma	canggung
@@ -8757,7 +8730,6 @@
 00344174-v	zsm:lemma	terjadi
 00344174-v	zsm:lemma	wujud
 00344174-v	zsm:lemma	berhasil
-00344174-v	zsm:lemma	terjadi
 00344174-v	zsm:lemma	terlaksana
 00344174-v	zsm:lemma	terwujud
 00344259-n	zsm:lemma	duduk
@@ -8910,7 +8882,6 @@
 00350461-v	zsm:lemma	bertekun
 00350461-v	zsm:lemma	cekal
 00350461-v	zsm:lemma	tabah
-00350461-v	zsm:lemma	berkeras
 00350461-v	zsm:lemma	bersungguh-sungguh
 00350461-v	zsm:lemma	bertahan
 00350461-v	zsm:lemma	gigih
@@ -8954,9 +8925,6 @@
 00351638-n	zsm:lemma	penyusutan
 00351638-n	zsm:lemma	pemotongan
 00351638-n	zsm:lemma	pengecilan
-00351638-n	zsm:lemma	pengurangan
-00351638-n	zsm:lemma	penurunan
-00351638-n	zsm:lemma	penyusutan
 00351638-n	zsm:lemma	potongan
 00351638-n	zsm:lemma	reduksi
 00351638-n	zsm:lemma	usak
@@ -9549,7 +9517,6 @@
 00372448-n	zsm:lemma	simpanan
 00372476-a	zsm:lemma	kekuning-kuningan
 00372607-n	zsm:lemma	gudang
-00372607-n	zsm:lemma	penyimpanan
 00372607-n	zsm:lemma	penyimpanan
 00372607-n	zsm:lemma	storan
 00372665-v	zsm:lemma	memanasi
@@ -10363,7 +10330,6 @@
 00415676-n	zsm:lemma	jalan
 00415676-n	zsm:lemma	perangai
 00415676-n	zsm:lemma	gaya hidup
-00415676-n	zsm:lemma	jalan
 00415676-n	zsm:lemma	saluran
 00415828-v	zsm:lemma	menampung
 00415828-v	zsm:lemma	menetap
@@ -10776,8 +10742,6 @@
 00428000-n	zsm:lemma	pesta
 00428000-n	zsm:lemma	temasya
 00428000-n	zsm:lemma	keramaian
-00428000-n	zsm:lemma	perayaan
-00428000-n	zsm:lemma	pesta
 00428000-n	zsm:lemma	raya
 00428000-n	zsm:lemma	sambutan
 00428000-n	zsm:lemma	keraian
@@ -10822,7 +10786,6 @@
 00429949-n	zsm:lemma	kesenangan
 00429949-n	zsm:lemma	kesukaan
 00429949-n	zsm:lemma	seronok
-00429949-n	zsm:lemma	kegembiraan
 00429949-n	zsm:lemma	keseronokan
 00429968-v	zsm:lemma	mengurangi
 00429968-v	zsm:lemma	mengurangkan
@@ -10850,7 +10813,6 @@
 00431552-n	zsm:lemma	hobi
 00431552-n	zsm:lemma	kesukaan
 00431552-n	zsm:lemma	animo
-00431552-n	zsm:lemma	hobi
 00431552-n	zsm:lemma	kecenderungan
 00431552-n	zsm:lemma	kecondongan
 00431552-n	zsm:lemma	kegemaran
@@ -11382,7 +11344,6 @@
 00451648-v	zsm:lemma	menguras
 00451648-v	zsm:lemma	mengalirkan
 00451648-v	zsm:lemma	mengosongkan
-00451648-v	zsm:lemma	menguras
 00451648-v	zsm:lemma	mengetuskan
 00451838-v	zsm:lemma	membunting
 00451838-v	zsm:lemma	memenuhi
@@ -12637,7 +12598,6 @@
 00517529-v	zsm:lemma	menghidupkan
 00517728-n	zsm:lemma	festival
 00517728-n	zsm:lemma	hiburan
-00517728-n	zsm:lemma	festival
 00517728-n	zsm:lemma	kenduri
 00517728-n	zsm:lemma	keramaian
 00517728-n	zsm:lemma	perayaan
@@ -14080,14 +14040,10 @@
 00603298-v	zsm:lemma	mengembangkan
 00603298-v	zsm:lemma	latih
 00603298-v	zsm:lemma	melatih
-00603298-v	zsm:lemma	membentuk
-00603298-v	zsm:lemma	membimbing
 00603298-v	zsm:lemma	membina
 00603298-v	zsm:lemma	memupuk
 00603298-v	zsm:lemma	mencerdaskan
-00603298-v	zsm:lemma	mendidik
 00603298-v	zsm:lemma	menempa
-00603298-v	zsm:lemma	mengasuh
 00603298-v	zsm:lemma	menyediakan
 00603298-v	zsm:lemma	menyiapkan
 00603298-v	zsm:lemma	menggembleng
@@ -14514,7 +14470,6 @@
 00620731-a	zsm:lemma	selingkuh
 00620752-n	zsm:lemma	bausuku
 00620752-n	zsm:lemma	buruh
-00620752-n	zsm:lemma	kerja
 00620752-n	zsm:lemma	kerja
 00620752-n	zsm:lemma	pekerjaan
 00620752-n	zsm:lemma	perburuhan
@@ -15229,7 +15184,6 @@
 00652900-v	zsm:lemma	mencocokkan
 00652900-v	zsm:lemma	menolok
 00652900-v	zsm:lemma	banding
-00652900-v	zsm:lemma	membandingkan
 00652900-v	zsm:lemma	memperbandingkan
 00652900-v	zsm:lemma	mengibaratkan
 00652900-v	zsm:lemma	menandingkan
@@ -16662,11 +16616,8 @@
 00719494-n	zsm:lemma	darma
 00719494-n	zsm:lemma	kewajiban
 00719494-n	zsm:lemma	tugas
-00719494-n	zsm:lemma	darma
 00719494-n	zsm:lemma	kerja
-00719494-n	zsm:lemma	kewajiban
 00719494-n	zsm:lemma	pekerjaan
-00719494-n	zsm:lemma	tugas
 00719494-n	zsm:lemma	tanggungjawab
 00719494-n	zsm:lemma	ayahan
 00719590-v	zsm:lemma	keluar
@@ -16674,8 +16625,6 @@
 00719705-n	zsm:lemma	pekerjaan
 00719705-n	zsm:lemma	tugas
 00719705-n	zsm:lemma	kerja
-00719705-n	zsm:lemma	pekerjaan
-00719705-n	zsm:lemma	tugas
 00719705-n	zsm:lemma	urusan
 00719734-v	zsm:lemma	berharap
 00719734-v	zsm:lemma	bersangka
@@ -17188,7 +17137,6 @@
 00739270-n	zsm:lemma	kelalaian
 00739270-n	zsm:lemma	keteledoran
 00739270-n	zsm:lemma	pengabaian
-00739270-n	zsm:lemma	kelalaian
 00739270-n	zsm:lemma	kecuaian
 00739662-v	zsm:lemma	klasifikasi
 00739662-v	zsm:lemma	membagi
@@ -17658,7 +17606,6 @@
 00756897-a	zsm:lemma	hitam
 00756897-a	zsm:lemma	aswad
 00756897-a	zsm:lemma	bolong
-00756897-a	zsm:lemma	hitam
 00756898-v	zsm:lemma	atas-mengatasi
 00756898-v	zsm:lemma	bertengkar
 00756898-v	zsm:lemma	menegaskan
@@ -17995,7 +17942,6 @@
 00771341-v	zsm:lemma	membesarkan hati
 00771341-v	zsm:lemma	mendorong
 00771341-v	zsm:lemma	galak
-00771341-v	zsm:lemma	mendorong
 00771341-v	zsm:lemma	menggalakkan
 00771341-v	zsm:lemma	menggiatkan
 00771341-v	zsm:lemma	mengoja
@@ -18470,9 +18416,7 @@
 00786195-n	zsm:lemma	usaha
 00786195-n	zsm:lemma	anju
 00786195-n	zsm:lemma	daya upaya
-00786195-n	zsm:lemma	ikhtiar
 00786195-n	zsm:lemma	upaya
-00786195-n	zsm:lemma	usaha
 00786195-n	zsm:lemma	percubaan
 00786195-n	zsm:lemma	titik peluh
 00786195-n	zsm:lemma	cubaan
@@ -18685,7 +18629,6 @@
 00795720-n	zsm:lemma	usaha
 00795720-n	zsm:lemma	kerja
 00795720-n	zsm:lemma	perusahaan
-00795720-n	zsm:lemma	tugas
 00795720-n	zsm:lemma	projek
 00795863-v	zsm:lemma	melanggar
 00795863-v	zsm:lemma	mengharamkan
@@ -19290,7 +19233,6 @@
 00813978-v	zsm:lemma	berbincang
 00813978-v	zsm:lemma	bercakap
 00813978-v	zsm:lemma	berdiskusi
-00813978-v	zsm:lemma	berunding
 00813978-v	zsm:lemma	bicara
 00813978-v	zsm:lemma	bermuafakat
 00814458-n	zsm:lemma	kunci
@@ -21197,10 +21139,8 @@
 00893955-n	zsm:lemma	pelatihan
 00893955-n	zsm:lemma	penggemblengan
 00893955-n	zsm:lemma	persiapan
-00893955-n	zsm:lemma	latihan
 00893955-n	zsm:lemma	pendidikan
 00893955-n	zsm:lemma	persediaan
-00893955-n	zsm:lemma	persiapan
 00893955-n	zsm:lemma	gemblengan
 00894029-a	zsm:lemma	harmoni
 00894029-a	zsm:lemma	sebanding
@@ -21215,7 +21155,6 @@
 00894365-v	zsm:lemma	mengaku
 00894552-n	zsm:lemma	latihan
 00894552-n	zsm:lemma	amalan
-00894552-n	zsm:lemma	latihan
 00894552-n	zsm:lemma	praktik
 00894738-v	zsm:lemma	berkilah
 00894738-v	zsm:lemma	membenarkan
@@ -21437,7 +21376,6 @@
 00904046-v	zsm:lemma	membubarkan
 00904046-v	zsm:lemma	memperhentikan
 00904046-v	zsm:lemma	menguar
-00904046-v	zsm:lemma	membebaskan
 00904290-a	zsm:lemma	mengagumkan
 00904548-a	zsm:lemma	hina
 00904548-a	zsm:lemma	jahat
@@ -21797,7 +21735,6 @@
 00915830-v	zsm:lemma	berbisik
 00915830-v	zsm:lemma	berbisik-bisik
 00915830-v	zsm:lemma	membisikkan
-00915830-v	zsm:lemma	berbisik-bisik
 00915830-v	zsm:lemma	desas-desus
 00915976-a	zsm:lemma	agak-agak
 00915976-a	zsm:lemma	anggaran
@@ -21958,7 +21895,6 @@
 00920336-v	zsm:lemma	menyiasat
 00920336-v	zsm:lemma	menaruh mata
 00920510-n	zsm:lemma	kultur
-00920510-n	zsm:lemma	kultur
 00921014-a	zsm:lemma	menyeronokkan
 00921014-a	zsm:lemma	merangsang
 00921014-a	zsm:lemma	mengghairahkan
@@ -22061,7 +21997,6 @@
 00923793-v	zsm:lemma	menandakan
 00923793-v	zsm:lemma	mengarah
 00923793-v	zsm:lemma	menunjuk
-00923793-v	zsm:lemma	menunjukkan
 00923793-v	zsm:lemma	mempamerkan
 00923802-n	zsm:lemma	industrialisasi
 00923802-n	zsm:lemma	pengindustrian
@@ -22980,13 +22915,10 @@
 00963570-v	zsm:lemma	bicara
 00963570-v	zsm:lemma	mempercakapkan
 00963570-v	zsm:lemma	mengomong
-00963570-v	zsm:lemma	berbicara
-00963570-v	zsm:lemma	bercakap
 00963570-v	zsm:lemma	berkata-kata
 00963570-v	zsm:lemma	bermulut
 00963570-v	zsm:lemma	berperi
 00963570-v	zsm:lemma	bertutur
-00963570-v	zsm:lemma	bicara
 00963570-v	zsm:lemma	bual
 00963570-v	zsm:lemma	cakap
 00963570-v	zsm:lemma	kata
@@ -23048,7 +22980,6 @@
 00965404-n	zsm:lemma	desakan
 00965404-n	zsm:lemma	keganasan
 00965404-n	zsm:lemma	kekejaman
-00965404-n	zsm:lemma	kekerasan
 00965404-n	zsm:lemma	paksa
 00965404-n	zsm:lemma	paksaan
 00965404-n	zsm:lemma	pemaksaan
@@ -23572,7 +23503,6 @@
 00983824-v	zsm:lemma	melepaskan
 00983824-v	zsm:lemma	mengucapkan
 00983824-v	zsm:lemma	mengungkapkan
-00983824-v	zsm:lemma	menyuarakan
 00983824-v	zsm:lemma	melafazkan
 00983862-a	zsm:lemma	cerewet
 00984333-a	zsm:lemma	cerewet
@@ -23636,7 +23566,6 @@
 00987071-v	zsm:lemma	menggambarkan
 00987071-v	zsm:lemma	menguraikan
 00987071-v	zsm:lemma	mensyarahkan
-00987071-v	zsm:lemma	melukiskan
 00987071-v	zsm:lemma	menceritakan
 00987071-v	zsm:lemma	ukir
 00987071-v	zsm:lemma	memerihalkan
@@ -24415,7 +24344,6 @@
 01023574-v	zsm:lemma	menyitir
 01023636-n	zsm:lemma	cara
 01023636-n	zsm:lemma	prosedur
-01023636-n	zsm:lemma	prosedur
 01023706-a	zsm:lemma	keras
 01023706-a	zsm:lemma	tegar
 01023820-n	zsm:lemma	cara
@@ -24566,7 +24494,6 @@
 01027859-n	zsm:lemma	adat
 01027859-n	zsm:lemma	istiadat
 01027859-n	zsm:lemma	tradisi
-01027859-n	zsm:lemma	upacara
 01028079-v	zsm:lemma	membaptiskan
 01028079-v	zsm:lemma	mempermandikan
 01028079-v	zsm:lemma	menamakan
@@ -24579,7 +24506,6 @@
 01028655-n	zsm:lemma	pemujaan
 01028655-n	zsm:lemma	penyembahan
 01028655-n	zsm:lemma	sembah
-01028655-n	zsm:lemma	pemujaan
 01028748-v	zsm:lemma	berseru
 01028748-v	zsm:lemma	membahasakan
 01028748-v	zsm:lemma	menamai
@@ -24739,7 +24665,6 @@
 01036874-a	zsm:lemma	setempat
 01036874-a	zsm:lemma	tempatan
 01036996-n	zsm:lemma	nikah
-01036996-n	zsm:lemma	pernikahan
 01036996-n	zsm:lemma	pernikahan
 01036996-n	zsm:lemma	perkahwinan
 01037148-a	zsm:lemma	asal
@@ -24980,7 +24905,6 @@
 01047745-v	zsm:lemma	gonggong
 01047745-v	zsm:lemma	kuing
 01047745-v	zsm:lemma	kung
-01047745-v	zsm:lemma	menyalak
 01047745-v	zsm:lemma	salak
 01047874-a	zsm:lemma	asian
 01047874-a	zsm:lemma	bertuah
@@ -25968,7 +25892,6 @@
 01086945-n	zsm:lemma	kebajikan
 01087093-a	zsm:lemma	kosong
 01087093-a	zsm:lemma	bersih
-01087093-a	zsm:lemma	kosong
 01087093-a	zsm:lemma	putih
 01087197-v	zsm:lemma	berkubu
 01087197-v	zsm:lemma	bersiap-siap
@@ -26057,7 +25980,6 @@
 01090335-v	zsm:lemma	bergusti
 01090335-v	zsm:lemma	berkelahi
 01090335-v	zsm:lemma	berlawan
-01090335-v	zsm:lemma	berperang
 01090335-v	zsm:lemma	bersabung
 01090335-v	zsm:lemma	bertarung
 01090335-v	zsm:lemma	bertempur
@@ -26668,7 +26590,6 @@
 01116585-v	zsm:lemma	menyembulkan
 01116585-v	zsm:lemma	tahan uji
 01116585-v	zsm:lemma	bersangkal
-01116585-v	zsm:lemma	bertahan
 01116585-v	zsm:lemma	melawan
 01116585-v	zsm:lemma	menahan
 01116585-v	zsm:lemma	menentang
@@ -26816,7 +26737,6 @@
 01122906-v	zsm:lemma	senget
 01123095-n	zsm:lemma	migrasi
 01123095-n	zsm:lemma	emigrasi
-01123095-n	zsm:lemma	migrasi
 01123095-n	zsm:lemma	penghijrahan
 01123148-a	zsm:lemma	bagus
 01123148-a	zsm:lemma	baik
@@ -26946,7 +26866,6 @@
 01128193-v	zsm:lemma	mengamankan
 01128193-v	zsm:lemma	mengawal
 01128193-v	zsm:lemma	menyentosakan
-01128193-v	zsm:lemma	melindungi
 01128193-v	zsm:lemma	menaungi
 01128193-v	zsm:lemma	meneduhi
 01128193-v	zsm:lemma	menjaga
@@ -27862,7 +27781,6 @@
 01164273-v	zsm:lemma	menyadap
 01164273-v	zsm:lemma	memanfaatkan
 01164273-v	zsm:lemma	memeras
-01164273-v	zsm:lemma	mengeksploitasi
 01164273-v	zsm:lemma	menggunakan
 01164394-n	zsm:lemma	rejam
 01164618-n	zsm:lemma	pembakaran
@@ -27903,7 +27821,6 @@
 01166351-v	zsm:lemma	melahap
 01166351-v	zsm:lemma	menyantap
 01166351-v	zsm:lemma	bersantap
-01166351-v	zsm:lemma	makan
 01166413-a	zsm:lemma	berfaedah
 01166413-a	zsm:lemma	bermanfaat
 01166413-a	zsm:lemma	menyegarkan
@@ -28062,7 +27979,6 @@
 01172889-a	zsm:lemma	sakit
 01172969-v	zsm:lemma	kenyang
 01173038-n	zsm:lemma	pukulan
-01173038-n	zsm:lemma	pukulan
 01173038-n	zsm:lemma	tamparan
 01173038-n	zsm:lemma	hembusan
 01173038-n	zsm:lemma	hentaman
@@ -28141,7 +28057,6 @@
 01177033-n	zsm:lemma	bantahan
 01177033-n	zsm:lemma	pembantahan
 01177033-n	zsm:lemma	penentangan
-01177033-n	zsm:lemma	protes
 01177033-n	zsm:lemma	sanggahan
 01177033-n	zsm:lemma	tentangan
 01177033-n	zsm:lemma	bangkangan
@@ -28697,7 +28612,6 @@
 01201856-v	zsm:lemma	menenggak
 01201856-v	zsm:lemma	mereguk
 01201856-v	zsm:lemma	reguk
-01201856-v	zsm:lemma	menelan
 01201856-v	zsm:lemma	telan
 01201937-a	zsm:lemma	homoseksual
 01202029-n	zsm:lemma	kesepian
@@ -28878,9 +28792,7 @@
 01207546-a	zsm:lemma	di bawah
 01207609-n	zsm:lemma	bantuan
 01207609-n	zsm:lemma	pertolongan
-01207609-n	zsm:lemma	bantuan
 01207609-n	zsm:lemma	bimbingan
-01207609-n	zsm:lemma	pertolongan
 01207609-n	zsm:lemma	sokongan
 01207688-v	zsm:lemma	melanggar
 01207688-v	zsm:lemma	mencabuli
@@ -29056,7 +28968,6 @@
 01212572-v	zsm:lemma	mencekau
 01212572-v	zsm:lemma	menerkap
 01212572-v	zsm:lemma	mengambil
-01212572-v	zsm:lemma	merampas
 01212572-v	zsm:lemma	merenggut
 01212867-a	zsm:lemma	bawah
 01212867-a	zsm:lemma	meleset
@@ -29328,7 +29239,6 @@
 01220885-v	zsm:lemma	menekankan
 01220885-v	zsm:lemma	menempel
 01220885-v	zsm:lemma	menjelunut
-01220885-v	zsm:lemma	melekat
 01220885-v	zsm:lemma	mematuhi
 01220885-v	zsm:lemma	mengikut
 01220885-v	zsm:lemma	menepetkan
@@ -29538,7 +29448,6 @@
 01227675-v	zsm:lemma	masuk
 01227675-v	zsm:lemma	membobos
 01227675-v	zsm:lemma	menembusi
-01227675-v	zsm:lemma	menerobos
 01227675-v	zsm:lemma	menusuk
 01227675-v	zsm:lemma	tembus
 01227675-v	zsm:lemma	melantasi
@@ -29593,7 +29502,6 @@
 01229938-n	zsm:lemma	pemasangan
 01229938-n	zsm:lemma	pengumpulan
 01229938-n	zsm:lemma	perhimpunan
-01229938-n	zsm:lemma	perkumpulan
 01229976-v	zsm:lemma	cucuk
 01229976-v	zsm:lemma	memacak
 01229976-v	zsm:lemma	menambang
@@ -29994,7 +29902,6 @@
 01243674-n	zsm:lemma	pemogokan
 01243674-n	zsm:lemma	mogok
 01243674-n	zsm:lemma	pemberhentian
-01243674-n	zsm:lemma	pemogokan
 01243809-v	zsm:lemma	menyapu
 01243809-v	zsm:lemma	gosok
 01243809-v	zsm:lemma	memberus
@@ -32139,7 +32046,6 @@
 01348174-v	zsm:lemma	mengancingkan
 01348174-v	zsm:lemma	mengunci
 01348174-v	zsm:lemma	kunci
-01348174-v	zsm:lemma	mengunci
 01348174-v	zsm:lemma	selot
 01348258-a	zsm:lemma	intrinsik
 01348452-v	zsm:lemma	membenamkan
@@ -32353,7 +32259,6 @@
 01357027-a	zsm:lemma	menyegarkan
 01357027-a	zsm:lemma	segar
 01357027-a	zsm:lemma	tonik
-01357027-a	zsm:lemma	menyegarkan
 01357027-a	zsm:lemma	berubat
 01357429-v	zsm:lemma	memaku
 01357831-v	zsm:lemma	memaku
@@ -32595,8 +32500,6 @@
 01370561-v	zsm:lemma	menendang
 01370561-v	zsm:lemma	menyepak
 01370561-v	zsm:lemma	melejang
-01370561-v	zsm:lemma	menendang
-01370561-v	zsm:lemma	menyepak
 01370561-v	zsm:lemma	tendang
 01370561-v	zsm:lemma	menerajang
 01370561-v	zsm:lemma	merembat
@@ -34343,14 +34246,12 @@
 01449974-v	zsm:lemma	menyompoh
 01449974-v	zsm:lemma	jinjing
 01449974-v	zsm:lemma	membagul
-01449974-v	zsm:lemma	membawa
 01449974-v	zsm:lemma	membimbit
 01449974-v	zsm:lemma	memikul
 01449974-v	zsm:lemma	mendukung
 01449974-v	zsm:lemma	mengangkut
 01449974-v	zsm:lemma	menggendong
 01449974-v	zsm:lemma	mengusung
-01449974-v	zsm:lemma	menjinjing
 01449974-v	zsm:lemma	mengelek
 01450178-a	zsm:lemma	kekurangan
 01450178-a	zsm:lemma	kurang
@@ -34733,8 +34634,6 @@
 01467370-v	zsm:lemma	kepung
 01467370-v	zsm:lemma	melingkari
 01467370-v	zsm:lemma	memagar
-01467370-v	zsm:lemma	mengelilingi
-01467370-v	zsm:lemma	mengepung
 01467370-v	zsm:lemma	mengitari
 01467370-v	zsm:lemma	meningkar
 01467370-v	zsm:lemma	menutupi
@@ -36257,7 +36156,6 @@
 01535246-v	zsm:lemma	basuh
 01535246-v	zsm:lemma	cuci
 01535246-v	zsm:lemma	membasuh
-01535246-v	zsm:lemma	mencuci
 01535246-v	zsm:lemma	mendobi
 01535270-a	zsm:lemma	keterlaluan
 01535270-a	zsm:lemma	melampau
@@ -36404,7 +36302,6 @@
 01543123-v	zsm:lemma	melungguh
 01543123-v	zsm:lemma	mendudukkan
 01543123-v	zsm:lemma	menongkrong
-01543123-v	zsm:lemma	duduk
 01543123-v	zsm:lemma	menempatkan
 01543426-v	zsm:lemma	terbelingkang
 01543426-v	zsm:lemma	tergelimpang
@@ -36459,7 +36356,6 @@
 01546111-v	zsm:lemma	berdiri
 01546111-v	zsm:lemma	menahan
 01546111-v	zsm:lemma	bangun
-01546111-v	zsm:lemma	berdiri
 01546111-v	zsm:lemma	berserenjang
 01546111-v	zsm:lemma	diri
 01546768-v	zsm:lemma	menahan
@@ -39205,7 +39101,6 @@
 01684899-v	zsm:lemma	mengecat
 01684899-v	zsm:lemma	menggambar
 01684899-v	zsm:lemma	lukis
-01684899-v	zsm:lemma	melukis
 01684899-v	zsm:lemma	melukiskan
 01684899-v	zsm:lemma	menyungging
 01685313-v	zsm:lemma	berkarya
@@ -39264,7 +39159,6 @@
 01688757-a	zsm:lemma	biasa
 01688757-a	zsm:lemma	dangkal
 01688757-a	zsm:lemma	lapuk
-01688757-a	zsm:lemma	biasa
 01688771-v	zsm:lemma	melukiskan
 01688771-v	zsm:lemma	memaparkan
 01688771-v	zsm:lemma	membawakan
@@ -39337,7 +39231,6 @@
 01693881-v	zsm:lemma	menyontek
 01693881-v	zsm:lemma	mencontohkan
 01693881-v	zsm:lemma	meniru
-01693881-v	zsm:lemma	menyalin
 01693881-v	zsm:lemma	salin
 01693881-v	zsm:lemma	tiru
 01693881-v	zsm:lemma	tiru-tiruan
@@ -39497,7 +39390,6 @@
 01708676-v	zsm:lemma	berjoget
 01708676-v	zsm:lemma	bertandak
 01708676-v	zsm:lemma	igal
-01708676-v	zsm:lemma	menari
 01708676-v	zsm:lemma	mengigal
 01710260-a	zsm:lemma	gratis
 01710260-a	zsm:lemma	percuma
@@ -39704,7 +39596,6 @@
 01725051-v	zsm:lemma	memainkan
 01725051-v	zsm:lemma	bermain
 01725051-v	zsm:lemma	main
-01725051-v	zsm:lemma	memainkan
 01725712-a	zsm:lemma	asyik
 01725712-a	zsm:lemma	berapi-api
 01725712-a	zsm:lemma	beria-ia
@@ -40603,7 +40494,6 @@
 01770501-v	zsm:lemma	memilukan
 01770501-v	zsm:lemma	mengacau
 01770501-v	zsm:lemma	mengalutkan
-01770501-v	zsm:lemma	mengganggu
 01770501-v	zsm:lemma	menggerecok
 01770501-v	zsm:lemma	mengucar-ngacirkan
 01770501-v	zsm:lemma	menyedihkan
@@ -41065,7 +40955,6 @@
 01789514-v	zsm:lemma	tertekan
 01789514-v	zsm:lemma	mendesak
 01789514-v	zsm:lemma	mengacau
-01789514-v	zsm:lemma	mengganggu
 01789514-v	zsm:lemma	memprovokasi
 01789514-v	zsm:lemma	menyeksa
 01789740-n	zsm:lemma	ayam
@@ -41223,8 +41112,6 @@
 01796582-v	zsm:lemma	menyesali
 01796582-v	zsm:lemma	menyesalkan
 01796582-v	zsm:lemma	kesal
-01796582-v	zsm:lemma	menyesal
-01796582-v	zsm:lemma	menyesali
 01796582-v	zsm:lemma	taubat
 01796582-v	zsm:lemma	bertaubat
 01796800-v	zsm:lemma	menebus dosa
@@ -42707,7 +42594,6 @@
 01870275-v	zsm:lemma	luncur
 01870275-v	zsm:lemma	meluncur
 01870275-v	zsm:lemma	menggelangsar
-01870275-v	zsm:lemma	menggelincir
 01870275-v	zsm:lemma	tercelus
 01870275-v	zsm:lemma	tergelincir
 01870275-v	zsm:lemma	terluncur
@@ -43142,7 +43028,6 @@
 01885845-v	zsm:lemma	membuaya
 01885845-v	zsm:lemma	menjalari
 01885845-v	zsm:lemma	menyulur
-01885845-v	zsm:lemma	merangkak
 01885845-v	zsm:lemma	merangkang
 01885845-v	zsm:lemma	merayap
 01885845-v	zsm:lemma	rayap
@@ -43184,7 +43069,6 @@
 01887576-v	zsm:lemma	meluncurkan
 01887576-v	zsm:lemma	mengalir
 01887576-v	zsm:lemma	luncur
-01887576-v	zsm:lemma	meluncur
 01887638-a	zsm:lemma	hati-hati
 01887638-a	zsm:lemma	pencegahan
 01887787-n	zsm:lemma	lembu
@@ -43749,7 +43633,6 @@
 01907258-v	zsm:lemma	mengitar
 01907258-v	zsm:lemma	menukar
 01907258-v	zsm:lemma	berolak
-01907258-v	zsm:lemma	berpaling
 01907258-v	zsm:lemma	berpusing
 01907258-v	zsm:lemma	berputar
 01907258-v	zsm:lemma	memusing
@@ -44331,7 +44214,6 @@
 01940403-v	zsm:lemma	melayangkan
 01940403-v	zsm:lemma	terbang
 01940403-v	zsm:lemma	mengangkasa
-01940403-v	zsm:lemma	terbang
 01940472-a	zsm:lemma	sebenarnya
 01940488-n	zsm:lemma	Mollusca
 01940488-n	zsm:lemma	Mollusc
@@ -44572,7 +44454,6 @@
 01960779-v	zsm:lemma	berderap
 01960911-v	zsm:lemma	berenang
 01960911-v	zsm:lemma	menggayun
-01960911-v	zsm:lemma	berenang
 01960911-v	zsm:lemma	renang
 01961205-a	zsm:lemma	sambilan
 01961410-a	zsm:lemma	sumbang
@@ -44664,7 +44545,6 @@
 01968033-a	zsm:lemma	harian
 01968165-a	zsm:lemma	sehari-hari
 01968165-a	zsm:lemma	harian
-01968165-a	zsm:lemma	sehari-hari
 01968165-a	zsm:lemma	seharian
 01968275-v	zsm:lemma	melejit
 01968275-v	zsm:lemma	melonjak-lonjak
@@ -44689,7 +44569,6 @@
 01968569-v	zsm:lemma	rafak
 01968811-a	zsm:lemma	jam
 01969038-a	zsm:lemma	dwimingguan
-01969150-a	zsm:lemma	tahunan
 01969150-a	zsm:lemma	tahunan
 01969216-v	zsm:lemma	memanjat
 01969216-v	zsm:lemma	menaiki
@@ -44914,7 +44793,6 @@
 01977669-a	zsm:lemma	terkenang-kenang
 01977701-v	zsm:lemma	menjatuhkan
 01977701-v	zsm:lemma	jatuh
-01977701-v	zsm:lemma	menjatuhkan
 01977962-v	zsm:lemma	terkelepai
 01978436-v	zsm:lemma	beralun
 01978436-v	zsm:lemma	mengalun
@@ -46472,7 +46350,6 @@
 02041877-v	zsm:lemma	berkecai
 02041877-v	zsm:lemma	berpecah
 02041877-v	zsm:lemma	bobol
-02041877-v	zsm:lemma	hancur
 02041877-v	zsm:lemma	hancur lebur
 02041877-v	zsm:lemma	jatuh
 02041877-v	zsm:lemma	ketai
@@ -47408,7 +47285,6 @@
 02074929-a	zsm:lemma	gila
 02074929-a	zsm:lemma	pelik
 02074929-a	zsm:lemma	sasau
-02074929-a	zsm:lemma	gila
 02074929-a	zsm:lemma	sewel
 02075049-v	zsm:lemma	berlari
 02075049-v	zsm:lemma	buyar
@@ -49146,7 +49022,6 @@
 02151625-n	zsm:lemma	sayap
 02151625-n	zsm:lemma	kapak
 02151625-n	zsm:lemma	kepak
-02151625-n	zsm:lemma	sayap
 02151940-n	zsm:lemma	kepak
 02151940-n	zsm:lemma	sayap
 02151966-v	zsm:lemma	mengawasi
@@ -49171,7 +49046,6 @@
 02152881-n	zsm:lemma	mangsa
 02152881-n	zsm:lemma	umpan
 02152881-n	zsm:lemma	buruan
-02152881-n	zsm:lemma	mangsa
 02152881-n	zsm:lemma	perburuan
 02152881-n	zsm:lemma	binatang buruan
 02152985-a	zsm:lemma	eksklusif
@@ -49290,7 +49164,6 @@
 02157361-v	zsm:lemma	menawarkan
 02157415-n	zsm:lemma	perut
 02157519-v	zsm:lemma	bermunculan
-02157557-n	zsm:lemma	ekor
 02157557-n	zsm:lemma	ekor
 02157731-v	zsm:lemma	berkabut
 02157731-v	zsm:lemma	mengaburkan
@@ -50220,8 +50093,6 @@
 02206619-v	zsm:lemma	memenangi
 02206619-v	zsm:lemma	menawan
 02206619-v	zsm:lemma	merampas
-02206856-n	zsm:lemma	lebah
-02206856-n	zsm:lemma	madukara
 02206856-n	zsm:lemma	lebah
 02206856-n	zsm:lemma	madukara
 02206920-v	zsm:lemma	melindungi
@@ -53787,8 +53658,6 @@
 02399399-a	zsm:lemma	tawar
 02399595-a	zsm:lemma	hambar
 02399595-a	zsm:lemma	tawar
-02399595-a	zsm:lemma	hambar
-02399595-a	zsm:lemma	tawar
 02399888-v	zsm:lemma	kurang
 02399888-v	zsm:lemma	menawan
 02399888-v	zsm:lemma	mengurangkan
@@ -54054,7 +53923,6 @@
 02411621-v	zsm:lemma	melayan
 02411705-n	zsm:lemma	domba
 02411705-n	zsm:lemma	biri-biri
-02411705-n	zsm:lemma	domba
 02411705-n	zsm:lemma	kambing
 02411705-n	zsm:lemma	kibas
 02411950-v	zsm:lemma	memapas
@@ -56038,7 +55906,6 @@
 02511800-a	zsm:lemma	bergelora
 02511800-a	zsm:lemma	memarak
 02511800-a	zsm:lemma	membadai
-02512053-n	zsm:lemma	ikan
 02512053-n	zsm:lemma	ikan
 02512150-v	zsm:lemma	daerah
 02512305-v	zsm:lemma	melainkan
@@ -61616,8 +61483,6 @@
 02797692-n	zsm:lemma	pangkal
 02797692-n	zsm:lemma	tumpuan
 02797692-n	zsm:lemma	asas
-02797692-n	zsm:lemma	dasar
-02797692-n	zsm:lemma	landasan
 02797692-n	zsm:lemma	tapak
 02797881-n	zsm:lemma	alas
 02797881-n	zsm:lemma	asas
@@ -62081,7 +61946,6 @@
 02869737-n	zsm:lemma	bonggo
 02869823-a	zsm:lemma	optik
 02870092-n	zsm:lemma	buku
-02870092-n	zsm:lemma	buku
 02870092-n	zsm:lemma	jilid
 02870092-n	zsm:lemma	kitab
 02870092-n	zsm:lemma	isi padu
@@ -62343,7 +62207,6 @@
 02908217-n	zsm:lemma	berus
 02908217-n	zsm:lemma	sikat
 02908217-n	zsm:lemma	sugi
-02908217-n	zsm:lemma	berus
 02908235-a	zsm:lemma	geofizik
 02908605-n	zsm:lemma	kuas
 02908605-n	zsm:lemma	penyapu
@@ -62379,7 +62242,6 @@
 02912894-n	zsm:lemma	begol
 02913152-n	zsm:lemma	bangunan
 02913152-n	zsm:lemma	gedung
-02913152-n	zsm:lemma	bangunan
 02913152-n	zsm:lemma	perumahan
 02913152-n	zsm:lemma	binaan
 02914213-a	zsm:lemma	terapeutik
@@ -62467,7 +62329,6 @@
 02928608-n	zsm:lemma	butang
 02928608-n	zsm:lemma	kancing
 02928608-n	zsm:lemma	kenop
-02928608-n	zsm:lemma	butang
 02928930-n	zsm:lemma	lubang butang
 02929216-a	zsm:lemma	subtropika
 02929289-n	zsm:lemma	penopang
@@ -63001,7 +62862,6 @@
 03014705-n	zsm:lemma	peti
 03015254-n	zsm:lemma	almari
 03015254-n	zsm:lemma	lemari
-03015254-n	zsm:lemma	almari
 03015254-n	zsm:lemma	gerobok
 03015441-a	zsm:lemma	tembikar
 03015441-a	zsm:lemma	seramik
@@ -63048,10 +62908,8 @@
 03030035-n	zsm:lemma	cerut
 03030035-n	zsm:lemma	cerutu
 03030663-n	zsm:lemma	rokok
-03030663-n	zsm:lemma	rokok
 03030663-n	zsm:lemma	puntung rokok
 03031756-n	zsm:lemma	tali perut
-03032252-n	zsm:lemma	bioskop
 03032252-n	zsm:lemma	bioskop
 03032252-n	zsm:lemma	panggung wayang
 03032252-n	zsm:lemma	pawagam
@@ -63246,7 +63104,6 @@
 03081021-n	zsm:lemma	elemen
 03081021-n	zsm:lemma	komponen
 03081021-n	zsm:lemma	unsur
-03081021-n	zsm:lemma	komponen
 03081021-n	zsm:lemma	bahagian
 03081021-n	zsm:lemma	juzuk
 03081160-a	zsm:lemma	Libya
@@ -63592,7 +63449,6 @@
 03169390-n	zsm:lemma	dekorasi
 03169390-n	zsm:lemma	hiasan
 03169390-n	zsm:lemma	ornamen
-03169390-n	zsm:lemma	hiasan
 03169390-n	zsm:lemma	perhiasan
 03170635-n	zsm:lemma	peti sejuk
 03171356-n	zsm:lemma	pertahanan
@@ -63620,7 +63476,6 @@
 03178782-n	zsm:lemma	lukisan
 03178782-n	zsm:lemma	lakaran
 03179318-n	zsm:lemma	corak
-03179701-n	zsm:lemma	meja
 03179701-n	zsm:lemma	meja
 03180504-n	zsm:lemma	pemusnah
 03180504-n	zsm:lemma	kapal pembinasa
@@ -63715,7 +63570,6 @@
 03218545-n	zsm:lemma	benda
 03219135-n	zsm:lemma	anak-anak
 03219135-n	zsm:lemma	boneka
-03219135-n	zsm:lemma	boneka
 03219135-n	zsm:lemma	patung
 03219135-n	zsm:lemma	anak patung
 03219612-n	zsm:lemma	doli
@@ -63799,7 +63653,6 @@
 03257586-n	zsm:lemma	mesin pendua
 03259505-n	zsm:lemma	rumah
 03259505-n	zsm:lemma	kediaman
-03259505-n	zsm:lemma	rumah
 03259505-n	zsm:lemma	domisil
 03259505-n	zsm:lemma	tempat kediaman
 03260293-n	zsm:lemma	dinamit
@@ -63873,7 +63726,6 @@
 03286383-n	zsm:lemma	lebihan
 03287178-n	zsm:lemma	hasil
 03287178-n	zsm:lemma	keluaran
-03287178-n	zsm:lemma	hasil
 03287178-n	zsm:lemma	output
 03287733-n	zsm:lemma	mesin
 03287733-n	zsm:lemma	enjin
@@ -63922,7 +63774,6 @@
 03302121-n	zsm:lemma	penggalian
 03302487-n	zsm:lemma	bursa
 03302938-n	zsm:lemma	ekzos
-03303965-n	zsm:lemma	jalan keluar
 03303965-n	zsm:lemma	jalan keluar
 03304730-n	zsm:lemma	bahan peledak
 03304730-n	zsm:lemma	letupan
@@ -63990,7 +63841,6 @@
 03328201-n	zsm:lemma	penyangga
 03329302-n	zsm:lemma	Roda Ferris
 03329663-n	zsm:lemma	feri
-03329663-n	zsm:lemma	feri
 03330947-n	zsm:lemma	belenggu
 03331244-n	zsm:lemma	daging
 03331244-n	zsm:lemma	gentian
@@ -64000,7 +63850,6 @@
 03334912-n	zsm:lemma	ganti
 03335600-n	zsm:lemma	lembaga
 03335600-n	zsm:lemma	perawakan
-03335600-n	zsm:lemma	sosok
 03335600-n	zsm:lemma	sosok
 03336575-n	zsm:lemma	filamen
 03336839-n	zsm:lemma	kikir
@@ -64465,9 +64314,7 @@
 03520811-n	zsm:lemma	pencegah
 03520811-n	zsm:lemma	rintangan
 03520811-n	zsm:lemma	sangkutan
-03520811-n	zsm:lemma	halangan
 03520811-n	zsm:lemma	penghalang
-03520811-n	zsm:lemma	rintangan
 03520811-n	zsm:lemma	bebanan
 03521076-n	zsm:lemma	engsel
 03522634-n	zsm:lemma	belit
@@ -64542,7 +64389,6 @@
 03544360-n	zsm:lemma	isi rumah
 03544360-n	zsm:lemma	keluarga
 03544360-n	zsm:lemma	panti
-03544360-n	zsm:lemma	rumah
 03544360-n	zsm:lemma	rumah
 03544360-n	zsm:lemma	tempat kediaman
 03545150-n	zsm:lemma	rumah
@@ -64945,7 +64791,6 @@
 03682487-n	zsm:lemma	kunci
 03682487-n	zsm:lemma	mangga
 03682487-n	zsm:lemma	kancing
-03682487-n	zsm:lemma	kunci
 03683079-n	zsm:lemma	pintu air
 03684823-n	zsm:lemma	kepala kereta api
 03684823-n	zsm:lemma	lokomotif
@@ -64958,7 +64803,6 @@
 03686130-n	zsm:lemma	pagu
 03686130-n	zsm:lemma	para
 03686130-n	zsm:lemma	peran
-03686130-n	zsm:lemma	loteng
 03687137-n	zsm:lemma	balkon
 03688832-n	zsm:lemma	kaca muka
 03688832-n	zsm:lemma	cermin
@@ -64985,7 +64829,6 @@
 03699975-n	zsm:lemma	pesawat
 03699975-n	zsm:lemma	jentera
 03699975-n	zsm:lemma	loket
-03699975-n	zsm:lemma	mesin
 03699975-n	zsm:lemma	sistem
 03700963-n	zsm:lemma	jentera
 03700963-n	zsm:lemma	mesin
@@ -64996,7 +64839,6 @@
 03701640-n	zsm:lemma	mesin
 03703590-n	zsm:lemma	baju hujan
 03704038-n	zsm:lemma	gudang
-03704210-n	zsm:lemma	majalah
 03704210-n	zsm:lemma	majalah
 03704376-n	zsm:lemma	majalah
 03704376-n	zsm:lemma	kartrij
@@ -65102,7 +64944,6 @@
 03743902-n	zsm:lemma	monumen
 03743902-n	zsm:lemma	peringatan
 03743902-n	zsm:lemma	tugu peringatan
-03743902-n	zsm:lemma	monumen
 03744276-n	zsm:lemma	ingatan
 03744276-n	zsm:lemma	memori
 03744276-n	zsm:lemma	stor
@@ -65122,7 +64963,6 @@
 03748886-n	zsm:lemma	hasil
 03748886-n	zsm:lemma	jualan
 03748886-n	zsm:lemma	keluaran
-03748886-n	zsm:lemma	barang dagangan
 03748886-n	zsm:lemma	produk
 03748886-n	zsm:lemma	barang-barang
 03751065-n	zsm:lemma	mes
@@ -65345,9 +65185,7 @@
 03876231-n	zsm:lemma	kuas
 03876519-n	zsm:lemma	gambar
 03876519-n	zsm:lemma	lukisan
-03876519-n	zsm:lemma	gambar
 03876519-n	zsm:lemma	ilustrasi
-03876519-n	zsm:lemma	lukisan
 03877472-n	zsm:lemma	pijama
 03877674-n	zsm:lemma	pijama
 03877845-n	zsm:lemma	istana
@@ -65610,7 +65448,6 @@
 03972524-n	zsm:lemma	poket
 03972524-n	zsm:lemma	saku
 03972524-n	zsm:lemma	kocek
-03972524-n	zsm:lemma	saku
 03973839-n	zsm:lemma	jam saku
 03974215-n	zsm:lemma	hujung
 03974215-n	zsm:lemma	mata
@@ -65827,7 +65664,6 @@
 04059701-n	zsm:lemma	belakang
 04059701-n	zsm:lemma	buntut
 04059701-n	zsm:lemma	pangkal
-04059701-n	zsm:lemma	belakang
 04060904-n	zsm:lemma	bekas
 04060904-n	zsm:lemma	penyangga
 04060904-n	zsm:lemma	wadah
@@ -65891,7 +65727,6 @@
 04081044-n	zsm:lemma	sandaran
 04081281-n	zsm:lemma	restoran
 04081281-n	zsm:lemma	rumah makan
-04081281-n	zsm:lemma	restoran
 04081281-n	zsm:lemma	kedai makan
 04081844-n	zsm:lemma	batasan
 04081844-n	zsm:lemma	had
@@ -66113,7 +65948,6 @@
 04161981-n	zsm:lemma	bangku
 04161981-n	zsm:lemma	kursi
 04161981-n	zsm:lemma	sofa
-04161981-n	zsm:lemma	bangku
 04161981-n	zsm:lemma	kerusi
 04164868-n	zsm:lemma	setiausaha
 04164989-n	zsm:lemma	komponen
@@ -66626,7 +66460,6 @@
 04350905-n	zsm:lemma	setelan
 04350905-n	zsm:lemma	tuntutan
 04350905-n	zsm:lemma	kostum
-04350905-n	zsm:lemma	pakaian
 04350905-n	zsm:lemma	sut
 04353803-n	zsm:lemma	agregat
 04353803-n	zsm:lemma	gunggung
@@ -66758,7 +66591,6 @@
 04424418-n	zsm:lemma	barang
 04424418-n	zsm:lemma	benda
 04426788-n	zsm:lemma	benang
-04426788-n	zsm:lemma	benang
 04429376-n	zsm:lemma	takhta
 04429756-n	zsm:lemma	hasil
 04431745-n	zsm:lemma	paku payung
@@ -66821,7 +66653,6 @@
 04456472-n	zsm:lemma	torpedo
 04459362-n	zsm:lemma	handuk
 04459362-n	zsm:lemma	tuala
-04460130-n	zsm:lemma	menara
 04460130-n	zsm:lemma	menara
 04460634-n	zsm:lemma	Menara Babel
 04460947-n	zsm:lemma	Menara London
@@ -66913,7 +66744,6 @@
 04488530-n	zsm:lemma	seluar
 04490091-n	zsm:lemma	truk
 04490091-n	zsm:lemma	lori
-04490091-n	zsm:lemma	truk
 04490091-n	zsm:lemma	trak
 04491388-n	zsm:lemma	cota
 04491769-n	zsm:lemma	peti
@@ -67079,12 +66909,10 @@
 04572344-n	zsm:lemma	telaga minyak
 04574999-n	zsm:lemma	kemudi
 04574999-n	zsm:lemma	roda
-04574999-n	zsm:lemma	roda
 04575723-n	zsm:lemma	roda
 04576002-n	zsm:lemma	kerusi roda
 04577769-n	zsm:lemma	cambuk
 04577769-n	zsm:lemma	pecut
-04577769-n	zsm:lemma	cambuk
 04577769-n	zsm:lemma	cemeti
 04578801-n	zsm:lemma	berus
 04578934-n	zsm:lemma	pemukul
@@ -67173,7 +67001,6 @@
 04615456-n	zsm:lemma	zodiak
 04616059-n	zsm:lemma	ciri
 04616059-n	zsm:lemma	perangai
-04616059-n	zsm:lemma	ciri
 04616059-n	zsm:lemma	sifat
 04616059-n	zsm:lemma	kualiti
 04616916-n	zsm:lemma	sifat
@@ -67224,7 +67051,6 @@
 04623612-n	zsm:lemma	sifat
 04623612-n	zsm:lemma	tabiat
 04623612-n	zsm:lemma	temperamen
-04623612-n	zsm:lemma	perangai
 04623612-n	zsm:lemma	karakter
 04624826-n	zsm:lemma	hati
 04624826-n	zsm:lemma	jantung
@@ -67287,7 +67113,6 @@
 04634833-n	zsm:lemma	tenaga
 04635104-n	zsm:lemma	keaktifan
 04635104-n	zsm:lemma	bertenaga
-04635104-n	zsm:lemma	keaktifan
 04635104-n	zsm:lemma	kecergasan
 04635482-n	zsm:lemma	dinamisme
 04635482-n	zsm:lemma	kedinamikan
@@ -67412,7 +67237,6 @@
 04673668-n	zsm:lemma	pasport
 04673965-n	zsm:lemma	rupa
 04673965-n	zsm:lemma	muka
-04673965-n	zsm:lemma	rupa
 04673965-n	zsm:lemma	wajah
 04674715-n	zsm:lemma	kelihatan
 04674715-n	zsm:lemma	rupa
@@ -68767,7 +68591,6 @@
 04955160-n	zsm:lemma	kilauan
 04956594-n	zsm:lemma	pewarnaan
 04956594-n	zsm:lemma	warna
-04956594-n	zsm:lemma	warna
 04957176-n	zsm:lemma	warna primer
 04959230-n	zsm:lemma	warna
 04959567-n	zsm:lemma	sedikit
@@ -69030,7 +68853,6 @@
 05027529-n	zsm:lemma	kelembapan
 05028700-n	zsm:lemma	keringanan
 05029137-n	zsm:lemma	momentum
-05029706-n	zsm:lemma	kekuatan
 05029706-n	zsm:lemma	kekuatan
 05030418-n	zsm:lemma	kekuatan
 05030418-n	zsm:lemma	kuat
@@ -69387,7 +69209,6 @@
 05108740-n	zsm:lemma	kuantiti
 05108947-n	zsm:lemma	kenaikan
 05108947-n	zsm:lemma	pertambahan
-05108947-n	zsm:lemma	kenaikan
 05108947-n	zsm:lemma	tambah
 05109324-n	zsm:lemma	pertambahan
 05109511-n	zsm:lemma	pelengkap
@@ -69397,7 +69218,6 @@
 05110185-n	zsm:lemma	kenaikan
 05110185-n	zsm:lemma	menaikkan
 05110185-n	zsm:lemma	tambahan
-05110185-n	zsm:lemma	kenaikan
 05110185-n	zsm:lemma	peningkatan
 05110408-n	zsm:lemma	iklan
 05110408-n	zsm:lemma	kenaikan
@@ -69489,7 +69309,6 @@
 05128370-n	zsm:lemma	pelet
 05128519-n	zsm:lemma	bidang
 05128519-n	zsm:lemma	ruang
-05128519-n	zsm:lemma	bidang
 05128519-n	zsm:lemma	keluasan
 05129201-n	zsm:lemma	kepanjangan
 05129201-n	zsm:lemma	panjang
@@ -69586,7 +69405,6 @@
 05149325-n	zsm:lemma	fungsi
 05149325-n	zsm:lemma	guna
 05149325-n	zsm:lemma	tugas
-05149325-n	zsm:lemma	fungsi
 05149325-n	zsm:lemma	kegunaan
 05149325-n	zsm:lemma	peranan
 05149325-n	zsm:lemma	utk
@@ -69774,7 +69592,6 @@
 05194043-n	zsm:lemma	pengaruh
 05194151-n	zsm:lemma	pengaruh
 05194151-n	zsm:lemma	kuasa
-05194151-n	zsm:lemma	pengaruh
 05194151-n	zsm:lemma	wibawa
 05194578-n	zsm:lemma	kekuatan
 05194874-n	zsm:lemma	kawalan
@@ -70047,7 +69864,6 @@
 05288091-n	zsm:lemma	tulang rawan
 05288396-n	zsm:lemma	meniskus
 05289057-n	zsm:lemma	otot
-05289297-n	zsm:lemma	otot
 05289297-n	zsm:lemma	otot
 05289601-n	zsm:lemma	kontraktor
 05293420-n	zsm:lemma	antagonis
@@ -70345,14 +70161,12 @@
 05548840-n	zsm:lemma	bahu
 05548840-n	zsm:lemma	pundak
 05548840-n	zsm:lemma	tamparan nyamuk
-05548840-n	zsm:lemma	bahu
 05549061-n	zsm:lemma	bahu
 05549576-n	zsm:lemma	ketiak
 05549830-n	zsm:lemma	badan
 05549830-n	zsm:lemma	batang tubuh
 05549830-n	zsm:lemma	jasad
 05549830-n	zsm:lemma	tubuh
-05549830-n	zsm:lemma	badan
 05549830-n	zsm:lemma	torso
 05551318-n	zsm:lemma	rusuk
 05551494-n	zsm:lemma	dada
@@ -70379,7 +70193,6 @@
 05556595-n	zsm:lemma	pusar
 05556595-n	zsm:lemma	pusat
 05556943-n	zsm:lemma	abdomen
-05556943-n	zsm:lemma	perut
 05556943-n	zsm:lemma	perut
 05557839-n	zsm:lemma	serong
 05558345-n	zsm:lemma	abdomen
@@ -70441,7 +70254,6 @@
 05567727-n	zsm:lemma	jari kelengkeng
 05573602-n	zsm:lemma	dengkul
 05573602-n	zsm:lemma	lutut
-05573602-n	zsm:lemma	lutut
 05573895-n	zsm:lemma	femur
 05573895-n	zsm:lemma	tulang paha
 05574332-n	zsm:lemma	betis
@@ -70463,7 +70275,6 @@
 05582859-n	zsm:lemma	graf
 05582859-n	zsm:lemma	pindahan
 05584265-n	zsm:lemma	kuku
-05584928-n	zsm:lemma	pergelangan tangan
 05584928-n	zsm:lemma	pergelangan tangan
 05585383-n	zsm:lemma	kerangka
 05585383-n	zsm:lemma	rangka
@@ -70503,7 +70314,6 @@
 05599874-n	zsm:lemma	lesung pipi
 05600109-n	zsm:lemma	lubang hidung
 05600637-n	zsm:lemma	muka
-05600637-n	zsm:lemma	muka
 05600637-n	zsm:lemma	paras
 05600637-n	zsm:lemma	rupa
 05600637-n	zsm:lemma	wajah
@@ -70514,7 +70324,6 @@
 05602548-n	zsm:lemma	kening
 05602548-n	zsm:lemma	dahi
 05602683-n	zsm:lemma	pelipis
-05602835-n	zsm:lemma	pipi
 05602835-n	zsm:lemma	pipi
 05603160-n	zsm:lemma	mulut
 05603160-n	zsm:lemma	rahang
@@ -70823,7 +70632,6 @@
 05660268-n	zsm:lemma	cara
 05660268-n	zsm:lemma	metode
 05660268-n	zsm:lemma	sistematik
-05660268-n	zsm:lemma	cara
 05661400-n	zsm:lemma	kaedah
 05661400-n	zsm:lemma	metodologi
 05661400-n	zsm:lemma	cara
@@ -71038,9 +70846,6 @@
 05698247-n	zsm:lemma	kebimbangan
 05698247-n	zsm:lemma	keraguan
 05698247-n	zsm:lemma	kesangsian
-05698247-n	zsm:lemma	kebimbangan
-05698247-n	zsm:lemma	keraguan
-05698247-n	zsm:lemma	kesangsian
 05698247-n	zsm:lemma	ketidakpastian
 05698247-n	zsm:lemma	ketidaktentuan
 05698620-n	zsm:lemma	keraguan
@@ -71190,7 +70995,6 @@
 05717342-n	zsm:lemma	masin
 05718254-n	zsm:lemma	bunyi
 05718254-n	zsm:lemma	suara
-05718254-n	zsm:lemma	bunyi
 05718556-n	zsm:lemma	muzik
 05718935-n	zsm:lemma	muzik
 05721180-n	zsm:lemma	pendapat
@@ -71325,7 +71129,6 @@
 05757536-n	zsm:lemma	pelajaran
 05757536-n	zsm:lemma	pendidikan
 05757536-n	zsm:lemma	sekolah
-05758059-n	zsm:lemma	pengalaman
 05758059-n	zsm:lemma	pengalaman
 05760202-n	zsm:lemma	ingatan
 05760202-n	zsm:lemma	kenang-kenangan
@@ -71500,7 +71303,6 @@
 05792010-n	zsm:lemma	kemungkinan
 05792010-n	zsm:lemma	kesempatan
 05792010-n	zsm:lemma	peluang
-05792010-n	zsm:lemma	kemungkinan
 05792010-n	zsm:lemma	kebarangkalian
 05792192-n	zsm:lemma	daya
 05792192-n	zsm:lemma	kebolehan
@@ -71634,7 +71436,6 @@
 05809745-n	zsm:lemma	tradisi
 05809878-n	zsm:lemma	dunia
 05809878-n	zsm:lemma	alam semesta
-05809878-n	zsm:lemma	dunia
 05809878-n	zsm:lemma	duniawi
 05809878-n	zsm:lemma	hakikat
 05809878-n	zsm:lemma	kenyataan
@@ -71745,7 +71546,6 @@
 05823517-n	zsm:lemma	latar belakang
 05823932-n	zsm:lemma	bukti
 05824739-n	zsm:lemma	bukti
-05824739-n	zsm:lemma	bukti
 05825245-n	zsm:lemma	cek
 05825245-n	zsm:lemma	kepastian
 05825245-n	zsm:lemma	pembuktian
@@ -71850,7 +71650,6 @@
 05838765-n	zsm:lemma	kategori
 05838765-n	zsm:lemma	kelompok
 05838765-n	zsm:lemma	kumpulan
-05838765-n	zsm:lemma	kategori
 05839024-n	zsm:lemma	bagai
 05839024-n	zsm:lemma	jenis
 05839024-n	zsm:lemma	kelas
@@ -72409,7 +72208,6 @@
 05946687-n	zsm:lemma	kepercayaan
 05946687-n	zsm:lemma	religi
 05946687-n	zsm:lemma	agama
-05946687-n	zsm:lemma	kepercayaan
 05949603-n	zsm:lemma	penglihatan
 05949726-n	zsm:lemma	anggapan
 05950234-n	zsm:lemma	larangan
@@ -72481,7 +72279,6 @@
 05980412-n	zsm:lemma	bidaah
 05980750-n	zsm:lemma	ikonoklasme
 05980875-n	zsm:lemma	akhir
-05980875-n	zsm:lemma	akhir
 05980875-n	zsm:lemma	keakhiran
 05980875-n	zsm:lemma	matlamat
 05981230-n	zsm:lemma	maksud
@@ -72526,7 +72323,6 @@
 05984287-n	zsm:lemma	pengajaran
 05984287-n	zsm:lemma	pengasuhan
 05984287-n	zsm:lemma	pengetahuan
-05984584-n	zsm:lemma	pengalaman
 05984584-n	zsm:lemma	pengalaman
 05984936-n	zsm:lemma	budaya
 05984936-n	zsm:lemma	kebudayaan
@@ -72670,7 +72466,6 @@
 06080522-n	zsm:lemma	fisiologi
 06081602-n	zsm:lemma	neurofisiologi
 06083243-n	zsm:lemma	zoologi
-06084469-n	zsm:lemma	ilmu kimia
 06084469-n	zsm:lemma	ilmu kimia
 06084469-n	zsm:lemma	kimia
 06088995-n	zsm:lemma	kimia organik
@@ -72896,7 +72691,6 @@
 06208751-n	zsm:lemma	pendapat
 06208751-n	zsm:lemma	perspektif
 06208751-n	zsm:lemma	pemandangan
-06208751-n	zsm:lemma	perspektif
 06209419-n	zsm:lemma	barisan depan
 06209940-n	zsm:lemma	pemandangan
 06210363-n	zsm:lemma	pendapat
@@ -73001,7 +72795,6 @@
 06253690-n	zsm:lemma	perutusan
 06253690-n	zsm:lemma	pesan
 06253690-n	zsm:lemma	warta
-06253690-n	zsm:lemma	pesan
 06253690-n	zsm:lemma	pesanan
 06253690-n	zsm:lemma	mesej
 06253690-n	zsm:lemma	perkhabaran
@@ -73122,7 +72915,6 @@
 06281295-n	zsm:lemma	modulasi
 06282383-n	zsm:lemma	jangkitan
 06282651-n	zsm:lemma	bahasa
-06282651-n	zsm:lemma	bahasa
 06284225-n	zsm:lemma	unit
 06284777-n	zsm:lemma	syarahan
 06284777-n	zsm:lemma	huraian
@@ -73166,7 +72958,6 @@
 06304059-n	zsm:lemma	bahasa
 06304059-n	zsm:lemma	istilah
 06304059-n	zsm:lemma	tatanama
-06304671-n	zsm:lemma	suku kata
 06304671-n	zsm:lemma	suku kata
 06306034-n	zsm:lemma	leksem
 06306233-n	zsm:lemma	morfem
@@ -73252,7 +73043,6 @@
 06333285-n	zsm:lemma	akibat
 06333285-n	zsm:lemma	keputusan
 06333285-n	zsm:lemma	kesan
-06333653-n	zsm:lemma	nama
 06333653-n	zsm:lemma	nama
 06336904-n	zsm:lemma	marga
 06336904-n	zsm:lemma	nama keluarga
@@ -73739,7 +73529,6 @@
 06492188-n	zsm:lemma	utama
 06492664-n	zsm:lemma	inventori
 06492939-n	zsm:lemma	menu
-06492939-n	zsm:lemma	menu
 06493392-n	zsm:lemma	menu
 06494646-n	zsm:lemma	timbunan
 06495000-n	zsm:lemma	daftar
@@ -74132,7 +73921,6 @@
 06619065-n	zsm:lemma	pertunjukan
 06619428-n	zsm:lemma	acara
 06619428-n	zsm:lemma	siaran
-06619428-n	zsm:lemma	acara
 06619428-n	zsm:lemma	program
 06619428-n	zsm:lemma	rancangan
 06619850-n	zsm:lemma	berita
@@ -74380,7 +74168,6 @@
 06684572-n	zsm:lemma	sumpah
 06684798-n	zsm:lemma	ikrar
 06685456-n	zsm:lemma	jaminan
-06685456-n	zsm:lemma	jaminan
 06685456-n	zsm:lemma	gerenti
 06685456-n	zsm:lemma	waranti
 06685754-n	zsm:lemma	cagaran
@@ -74495,7 +74282,6 @@
 06706676-n	zsm:lemma	medali
 06706676-n	zsm:lemma	medalion
 06706676-n	zsm:lemma	lencana
-06706676-n	zsm:lemma	medali
 06706676-n	zsm:lemma	medal
 06706676-n	zsm:lemma	pingat
 06706676-n	zsm:lemma	reben
@@ -74588,7 +74374,6 @@
 06724763-n	zsm:lemma	penghuraian
 06725067-n	zsm:lemma	spesifikasi
 06725877-n	zsm:lemma	deklarasi
-06725877-n	zsm:lemma	deklarasi
 06725877-n	zsm:lemma	pengumuman
 06726158-n	zsm:lemma	pengumuman
 06726158-n	zsm:lemma	proklamasi
@@ -74649,7 +74434,6 @@
 06738281-n	zsm:lemma	penjelasan
 06738281-n	zsm:lemma	keterangan
 06738281-n	zsm:lemma	komentar
-06738281-n	zsm:lemma	penjelasan
 06738281-n	zsm:lemma	tafsiran
 06738281-n	zsm:lemma	huraian
 06739782-n	zsm:lemma	bantahan
@@ -75090,8 +74874,6 @@
 06806098-n	zsm:lemma	wisel
 06806469-n	zsm:lemma	lambang
 06806469-n	zsm:lemma	simbol
-06806469-n	zsm:lemma	lambang
-06806469-n	zsm:lemma	simbol
 06806469-n	zsm:lemma	tanda
 06807198-n	zsm:lemma	kata bilangan
 06807198-n	zsm:lemma	angka
@@ -75147,7 +74929,6 @@
 06828389-n	zsm:lemma	asterisk
 06828818-n	zsm:lemma	abjad
 06828818-n	zsm:lemma	aksara
-06828818-n	zsm:lemma	huruf
 06828818-n	zsm:lemma	huruf
 06830838-n	zsm:lemma	digraf
 06830838-n	zsm:lemma	dwihuruf
@@ -75270,8 +75051,6 @@
 06875094-n	zsm:lemma	bendera
 06875288-n	zsm:lemma	gada-gada
 06875697-n	zsm:lemma	bahasa isyarat
-06876144-n	zsm:lemma	isyarat
-06876144-n	zsm:lemma	tanda
 06876144-n	zsm:lemma	isyarat
 06876144-n	zsm:lemma	tanda
 06876309-n	zsm:lemma	gerak
@@ -75868,7 +75647,6 @@
 07133701-n	zsm:lemma	percakapan
 07133701-n	zsm:lemma	cakapan
 07133701-n	zsm:lemma	perbualan
-07133701-n	zsm:lemma	percakapan
 07133701-n	zsm:lemma	pertuturan
 07133701-n	zsm:lemma	sembang
 07134445-n	zsm:lemma	perhubungan
@@ -76181,7 +75959,6 @@
 07181935-n	zsm:lemma	pertentangan
 07181935-n	zsm:lemma	pertikaian
 07181935-n	zsm:lemma	selisih
-07181935-n	zsm:lemma	konflik
 07181935-n	zsm:lemma	menentang
 07181935-n	zsm:lemma	perbantahan
 07181935-n	zsm:lemma	perdebatan
@@ -76191,7 +75968,6 @@
 07181935-n	zsm:lemma	pertarungan
 07181935-n	zsm:lemma	pertempuran
 07181935-n	zsm:lemma	pertengkaran
-07181935-n	zsm:lemma	pertentangan
 07181935-n	zsm:lemma	tengkarah
 07181935-n	zsm:lemma	percanggahan
 07181935-n	zsm:lemma	pertelingkahan
@@ -76313,8 +76089,6 @@
 07197021-n	zsm:lemma	pemeriksaan
 07197021-n	zsm:lemma	pengujian
 07197021-n	zsm:lemma	pertanyaan
-07197021-n	zsm:lemma	tes
-07197021-n	zsm:lemma	ujian
 07197021-n	zsm:lemma	peperiksaan
 07197021-n	zsm:lemma	soalan
 07198276-n	zsm:lemma	peperiksaan
@@ -76580,7 +76354,6 @@
 07240278-n	zsm:lemma	dasar
 07240549-n	zsm:lemma	ceramah
 07240549-n	zsm:lemma	pidato
-07240549-n	zsm:lemma	ceramah
 07240549-n	zsm:lemma	syarahan
 07240763-n	zsm:lemma	rungutan
 07240763-n	zsm:lemma	leteran
@@ -76778,7 +76551,6 @@
 07289014-n	zsm:lemma	bencana
 07289014-n	zsm:lemma	kesulitan
 07289014-n	zsm:lemma	kesusahan
-07289014-n	zsm:lemma	bencana
 07289014-n	zsm:lemma	gangguan
 07289014-n	zsm:lemma	kekacauan
 07289014-n	zsm:lemma	kerisauan
@@ -76899,8 +76671,6 @@
 07307477-n	zsm:lemma	insiden
 07307477-n	zsm:lemma	kejadian
 07307477-n	zsm:lemma	peristiwa
-07307477-n	zsm:lemma	insiden
-07307477-n	zsm:lemma	kejadian
 07308042-n	zsm:lemma	impuls
 07308563-n	zsm:lemma	letusan
 07308563-n	zsm:lemma	letupan
@@ -76923,7 +76693,6 @@
 07309599-n	zsm:lemma	masa
 07309599-n	zsm:lemma	waktu
 07309599-n	zsm:lemma	zaman
-07309599-n	zsm:lemma	kali
 07309781-n	zsm:lemma	arus
 07309781-n	zsm:lemma	gerakan
 07309781-n	zsm:lemma	pemindahan
@@ -77212,7 +76981,6 @@
 07355491-n	zsm:lemma	maut
 07355491-n	zsm:lemma	meninggal dunia
 07355491-n	zsm:lemma	kelayuan
-07355491-n	zsm:lemma	kematian
 07355887-n	zsm:lemma	kejatuhan
 07355887-n	zsm:lemma	penurunan
 07355887-n	zsm:lemma	kesusutan
@@ -77563,7 +77331,6 @@
 07414922-n	zsm:lemma	perjumpaan
 07414922-n	zsm:lemma	pertemuan
 07414922-n	zsm:lemma	pertembungan
-07414922-n	zsm:lemma	pertemuan
 07415167-n	zsm:lemma	kata penghubung
 07415730-n	zsm:lemma	pengubahan
 07415730-n	zsm:lemma	penukaran
@@ -77792,7 +77559,6 @@
 07455007-n	zsm:lemma	peraturan
 07455007-n	zsm:lemma	keformalan
 07456188-n	zsm:lemma	kompetisi
-07456188-n	zsm:lemma	kompetisi
 07456188-n	zsm:lemma	kontes
 07456188-n	zsm:lemma	peraduan
 07456188-n	zsm:lemma	perlawanan
@@ -77828,7 +77594,6 @@
 07470420-n	zsm:lemma	lembing
 07470671-n	zsm:lemma	pertandingan
 07470671-n	zsm:lemma	perlawanan
-07470671-n	zsm:lemma	pertandingan
 07471371-n	zsm:lemma	jatuh
 07471371-n	zsm:lemma	tumbang
 07471972-n	zsm:lemma	lompat kijang
@@ -77873,7 +77638,6 @@
 07480068-n	zsm:lemma	emosi
 07480068-n	zsm:lemma	perasaan
 07480068-n	zsm:lemma	renjana
-07480068-n	zsm:lemma	emosi
 07480068-n	zsm:lemma	keragaman jiwa
 07480356-n	zsm:lemma	barang
 07480356-n	zsm:lemma	benda
@@ -78244,7 +78008,6 @@
 07516997-n	zsm:lemma	kemarahan
 07516997-n	zsm:lemma	keganasan
 07516997-n	zsm:lemma	kegeraman
-07516997-n	zsm:lemma	kemarahan
 07516997-n	zsm:lemma	keberangan
 07516997-n	zsm:lemma	keradangan
 07517550-n	zsm:lemma	tersinggung
@@ -78280,8 +78043,6 @@
 07520612-n	zsm:lemma	ketakutan
 07520612-n	zsm:lemma	cemas
 07520612-n	zsm:lemma	kecemasan
-07520612-n	zsm:lemma	kengerian
-07520612-n	zsm:lemma	ketakutan
 07520612-n	zsm:lemma	panik
 07521039-n	zsm:lemma	keseganan
 07521039-n	zsm:lemma	penghargaan
@@ -78329,7 +78090,6 @@
 07524529-n	zsm:lemma	kepedulian
 07524529-n	zsm:lemma	pengawasan
 07524529-n	zsm:lemma	perawatan
-07524529-n	zsm:lemma	kebimbangan
 07524529-n	zsm:lemma	kegelisahan
 07524529-n	zsm:lemma	keresahan
 07524529-n	zsm:lemma	kerisauan
@@ -78366,7 +78126,6 @@
 07527352-n	zsm:lemma	kegembiraan
 07527352-n	zsm:lemma	kegirangan
 07527352-n	zsm:lemma	kesukaan
-07527352-n	zsm:lemma	kegembiraan
 07527352-n	zsm:lemma	keriaan
 07527352-n	zsm:lemma	keriangan
 07527352-n	zsm:lemma	kemeriahan
@@ -78454,7 +78213,6 @@
 07535670-n	zsm:lemma	sesal
 07535670-n	zsm:lemma	kekesalan
 07535670-n	zsm:lemma	kenestapaan
-07535670-n	zsm:lemma	penyesalan
 07536074-n	zsm:lemma	belas kasihan
 07536074-n	zsm:lemma	penyesalan
 07536074-n	zsm:lemma	sesal
@@ -78575,7 +78333,6 @@
 07551052-n	zsm:lemma	angin
 07551052-n	zsm:lemma	perangai
 07551052-n	zsm:lemma	keadaan
-07551052-n	zsm:lemma	perangai
 07552252-n	zsm:lemma	kemuraman
 07552252-n	zsm:lemma	kemurungan
 07552549-n	zsm:lemma	kemarahan
@@ -78718,7 +78475,6 @@
 07581346-n	zsm:lemma	pembuka selera
 07582441-n	zsm:lemma	pembuka selera
 07582609-n	zsm:lemma	pencelup
-07583197-n	zsm:lemma	sup
 07583197-n	zsm:lemma	sup
 07584110-n	zsm:lemma	kaldu
 07584593-n	zsm:lemma	sup
@@ -79288,7 +79044,6 @@
 07850083-n	zsm:lemma	dadih
 07850083-n	zsm:lemma	tahu
 07850329-n	zsm:lemma	keju
-07850329-n	zsm:lemma	keju
 07851054-n	zsm:lemma	keratan
 07851054-n	zsm:lemma	kulit
 07852833-n	zsm:lemma	lembut
@@ -79306,7 +79061,6 @@
 07858978-n	zsm:lemma	manisan lebah
 07859284-n	zsm:lemma	gula
 07859284-n	zsm:lemma	sakar
-07859284-n	zsm:lemma	gula
 07859583-n	zsm:lemma	air gula
 07859583-n	zsm:lemma	serbat
 07859583-n	zsm:lemma	sirap
@@ -79427,7 +79181,6 @@
 07932039-n	zsm:lemma	krim
 07932841-n	zsm:lemma	teh
 07933274-n	zsm:lemma	teh
-07933274-n	zsm:lemma	teh
 07934800-n	zsm:lemma	Darjiling
 07935504-n	zsm:lemma	air
 07936015-n	zsm:lemma	mata air
@@ -79518,8 +79271,6 @@
 07963711-n	zsm:lemma	gabungan
 07963711-n	zsm:lemma	kombinasi
 07963711-n	zsm:lemma	perpaduan
-07963711-n	zsm:lemma	gabungan
-07963711-n	zsm:lemma	kombinasi
 07965085-n	zsm:lemma	badan
 07965085-n	zsm:lemma	isi
 07965085-n	zsm:lemma	kor
@@ -79553,8 +79304,6 @@
 07970721-n	zsm:lemma	keluarga
 07970721-n	zsm:lemma	kerabat
 07970721-n	zsm:lemma	sanak saudara
-07970721-n	zsm:lemma	famili
-07970721-n	zsm:lemma	keluarga
 07970721-n	zsm:lemma	kaum keluarga
 07970721-n	zsm:lemma	saudara-mara
 07971449-n	zsm:lemma	rumah
@@ -79610,7 +79359,6 @@
 07993109-n	zsm:lemma	biologi
 07993109-n	zsm:lemma	biota
 07993109-n	zsm:lemma	ilmu hayat
-07993109-n	zsm:lemma	biologi
 07993279-n	zsm:lemma	fauna
 07994752-n	zsm:lemma	gam
 07996010-n	zsm:lemma	koloni
@@ -79689,7 +79437,6 @@
 08038379-n	zsm:lemma	Barisan Pembebasan Rakyat Palestin
 08049401-n	zsm:lemma	asosiasi
 08049401-n	zsm:lemma	perkumpulan
-08049401-n	zsm:lemma	asosiasi
 08049401-n	zsm:lemma	persatuan
 08049989-n	zsm:lemma	Negara-Negara Komanwel
 08050678-n	zsm:lemma	kabinet
@@ -79798,7 +79545,6 @@
 08106934-n	zsm:lemma	tertib
 08107499-n	zsm:lemma	keluarga
 08110373-n	zsm:lemma	jenis
-08110373-n	zsm:lemma	spesies
 08110373-n	zsm:lemma	spesies
 08110648-n	zsm:lemma	subspesies
 08111419-n	zsm:lemma	genre
@@ -79911,7 +79657,6 @@
 08168531-n	zsm:lemma	suku
 08168978-n	zsm:lemma	bangsa
 08168978-n	zsm:lemma	negara
-08168978-n	zsm:lemma	negara
 08168978-n	zsm:lemma	negeri
 08168978-n	zsm:lemma	republik
 08169677-n	zsm:lemma	Empayar Suci Rom
@@ -79950,7 +79695,6 @@
 08179689-n	zsm:lemma	khalayak ramai
 08179689-n	zsm:lemma	massa
 08179689-n	zsm:lemma	rakyat
-08179689-n	zsm:lemma	khalayak ramai
 08179689-n	zsm:lemma	orang kebanyakan
 08179879-n	zsm:lemma	penduduk
 08180190-n	zsm:lemma	bongkah
@@ -80261,7 +80005,6 @@
 08303275-n	zsm:lemma	gabungan
 08303275-n	zsm:lemma	konfederasi
 08303275-n	zsm:lemma	persekutuan
-08303275-n	zsm:lemma	konfederasi
 08303275-n	zsm:lemma	persatuan
 08303504-n	zsm:lemma	gabungan
 08303504-n	zsm:lemma	persekutuan
@@ -80420,7 +80163,6 @@
 08369406-n	zsm:lemma	generasi
 08369406-n	zsm:lemma	keturunan
 08369406-n	zsm:lemma	sebaya
-08369406-n	zsm:lemma	generasi
 08372411-n	zsm:lemma	kabilah
 08372411-n	zsm:lemma	masyarakat
 08372411-n	zsm:lemma	orang
@@ -80522,7 +80264,6 @@
 08402442-n	zsm:lemma	komisi
 08402442-n	zsm:lemma	misi
 08402442-n	zsm:lemma	perutusan
-08402442-n	zsm:lemma	delegasi
 08402442-n	zsm:lemma	perwakilan
 08402442-n	zsm:lemma	suruhanjaya
 08403631-n	zsm:lemma	pekerjaan
@@ -80557,7 +80298,6 @@
 08409617-n	zsm:lemma	sekolah menengah
 08412136-n	zsm:lemma	tadika
 08413834-n	zsm:lemma	imigrasi
-08414119-n	zsm:lemma	juri
 08414119-n	zsm:lemma	juri
 08414807-n	zsm:lemma	juri
 08415774-n	zsm:lemma	kawanan
@@ -80601,9 +80341,7 @@
 08429167-n	zsm:lemma	rombongan
 08430203-n	zsm:lemma	barisan
 08430203-n	zsm:lemma	deretan
-08430203-n	zsm:lemma	barisan
 08430203-n	zsm:lemma	berderet
-08430203-n	zsm:lemma	deretan
 08430203-n	zsm:lemma	nirai
 08430568-n	zsm:lemma	baris
 08430568-n	zsm:lemma	barisan
@@ -80929,7 +80667,6 @@
 08510666-n	zsm:lemma	sebelah
 08510666-n	zsm:lemma	sisi
 08510666-n	zsm:lemma	tepi
-08510666-n	zsm:lemma	muka
 08510666-n	zsm:lemma	paras
 08510666-n	zsm:lemma	wajah
 08511241-n	zsm:lemma	dasar
@@ -81004,8 +80741,6 @@
 08521816-n	zsm:lemma	pusat
 08521816-n	zsm:lemma	sentrum
 08521816-n	zsm:lemma	tengah
-08521816-n	zsm:lemma	pusat
-08521816-n	zsm:lemma	tengah
 08523217-n	zsm:lemma	terpusat
 08523483-n	zsm:lemma	jantung
 08523483-n	zsm:lemma	pusat
@@ -81078,7 +80813,6 @@
 08550076-n	zsm:lemma	penggalian
 08550076-n	zsm:lemma	pengorekan
 08550966-n	zsm:lemma	keuskupan
-08550966-n	zsm:lemma	keuskupan
 08551628-n	zsm:lemma	bendang
 08551628-n	zsm:lemma	keahlian
 08551628-n	zsm:lemma	ladang
@@ -81089,9 +80823,6 @@
 08552138-n	zsm:lemma	dominion
 08552138-n	zsm:lemma	kawasan
 08552138-n	zsm:lemma	koloni
-08552138-n	zsm:lemma	wilayah
-08552138-n	zsm:lemma	daerah
-08552138-n	zsm:lemma	kawasan
 08552138-n	zsm:lemma	wilayah
 08552138-n	zsm:lemma	zon
 08553132-n	zsm:lemma	enklaf
@@ -81204,7 +80935,6 @@
 08570634-n	zsm:lemma	padang rumput
 08570634-n	zsm:lemma	pastura
 08570758-n	zsm:lemma	lapangan
-08570758-n	zsm:lemma	lapangan
 08570758-n	zsm:lemma	padang
 08571898-n	zsm:lemma	pasar borong
 08571898-n	zsm:lemma	pasar lambak
@@ -81251,7 +80981,6 @@
 08591592-n	zsm:lemma	rerumputan
 08591592-n	zsm:lemma	rumput
 08591592-n	zsm:lemma	padang
-08591680-n	zsm:lemma	lapisan
 08591680-n	zsm:lemma	lapisan
 08592656-n	zsm:lemma	batasan
 08592656-n	zsm:lemma	sempadan
@@ -81340,7 +81069,6 @@
 08615374-n	zsm:lemma	padang
 08615374-n	zsm:lemma	taman
 08615374-n	zsm:lemma	umum
-08615374-n	zsm:lemma	taman
 08615926-n	zsm:lemma	taman
 08616050-n	zsm:lemma	padang rumput
 08616050-n	zsm:lemma	perumputan
@@ -81392,7 +81120,6 @@
 08624385-n	zsm:lemma	pos
 08624385-n	zsm:lemma	tempat
 08625073-n	zsm:lemma	kanan
-08625073-n	zsm:lemma	kanan
 08625462-n	zsm:lemma	kiri
 08625846-n	zsm:lemma	belakang
 08625846-n	zsm:lemma	latar
@@ -81419,7 +81146,6 @@
 08630039-n	zsm:lemma	wilayah
 08630039-n	zsm:lemma	bahagian
 08630039-n	zsm:lemma	bhg
-08630985-n	zsm:lemma	daerah
 08630985-n	zsm:lemma	daerah
 08630985-n	zsm:lemma	kawasan
 08630985-n	zsm:lemma	rantau
@@ -81448,7 +81174,6 @@
 08642037-n	zsm:lemma	sebelah
 08642037-n	zsm:lemma	tempat
 08642037-n	zsm:lemma	bahagian
-08642145-n	zsm:lemma	blok
 08642145-n	zsm:lemma	blok
 08642145-n	zsm:lemma	deretan
 08642331-n	zsm:lemma	lingkungan
@@ -84913,7 +84638,6 @@
 09246883-n	zsm:lemma	gelang-gelang
 09247410-n	zsm:lemma	awan
 09247410-n	zsm:lemma	mega
-09247410-n	zsm:lemma	awan
 09249034-n	zsm:lemma	genting
 09250551-n	zsm:lemma	merpati dua sejoli
 09251002-n	zsm:lemma	koma
@@ -85154,7 +84878,6 @@
 09334396-n	zsm:lemma	tanah
 09334396-n	zsm:lemma	buana
 09334396-n	zsm:lemma	darat
-09334396-n	zsm:lemma	tanah
 09335240-n	zsm:lemma	bumi
 09335240-n	zsm:lemma	daerah
 09335240-n	zsm:lemma	tanah
@@ -85318,7 +85041,6 @@
 09385911-n	zsm:lemma	bhg
 09385911-n	zsm:lemma	cebisan
 09386422-n	zsm:lemma	partikel
-09386422-n	zsm:lemma	partikel
 09386422-n	zsm:lemma	zarah
 09386422-n	zsm:lemma	zarah subatom
 09386842-n	zsm:lemma	genting
@@ -85392,7 +85114,6 @@
 09403427-n	zsm:lemma	benang raja
 09403427-n	zsm:lemma	bianglala
 09403427-n	zsm:lemma	pelangi
-09403427-n	zsm:lemma	pelangi
 09403427-n	zsm:lemma	ular danu
 09403734-n	zsm:lemma	banjaran
 09403734-n	zsm:lemma	barisan
@@ -85445,7 +85166,6 @@
 09415938-n	zsm:lemma	anak sungai
 09416076-n	zsm:lemma	batu
 09416076-n	zsm:lemma	biji
-09416076-n	zsm:lemma	batu
 09416076-n	zsm:lemma	kelikir
 09416076-n	zsm:lemma	kerakal
 09416076-n	zsm:lemma	kerikil
@@ -85622,10 +85342,8 @@
 09466280-n	zsm:lemma	langit
 09466280-n	zsm:lemma	penciptaan
 09466280-n	zsm:lemma	alam
-09466280-n	zsm:lemma	alam semesta
 09466280-n	zsm:lemma	dunia
 09466280-n	zsm:lemma	kewujudan
-09466280-n	zsm:lemma	kosmos
 09467185-n	zsm:lemma	Pergunungan Ural
 09467417-n	zsm:lemma	Uranus
 09468237-n	zsm:lemma	gelandangan
@@ -86003,10 +85721,8 @@
 09617292-n	zsm:lemma	penggali
 09617867-n	zsm:lemma	ahli
 09617867-n	zsm:lemma	juru
-09617867-n	zsm:lemma	ahli
 09617867-n	zsm:lemma	berpengalaman
 09617867-n	zsm:lemma	handal
-09617867-n	zsm:lemma	juru
 09617867-n	zsm:lemma	pakar
 09618760-n	zsm:lemma	eksponen
 09618957-n	zsm:lemma	wajah
@@ -86072,8 +85788,6 @@
 09632518-n	zsm:lemma	buruh
 09632518-n	zsm:lemma	karyawan
 09632518-n	zsm:lemma	pegawai
-09632518-n	zsm:lemma	pekerja
-09632518-n	zsm:lemma	buruh
 09632518-n	zsm:lemma	pekerja
 09632518-n	zsm:lemma	kakitangan
 09633969-n	zsm:lemma	pelanggar
@@ -86321,7 +86035,6 @@
 09777012-n	zsm:lemma	pedagang perantara
 09777012-n	zsm:lemma	wakil
 09777353-n	zsm:lemma	agen
-09777353-n	zsm:lemma	agen
 09777353-n	zsm:lemma	wakil
 09777353-n	zsm:lemma	ejen
 09777870-n	zsm:lemma	sersan
@@ -86439,7 +86152,6 @@
 09812338-n	zsm:lemma	mahir
 09812338-n	zsm:lemma	seniwan
 09812338-n	zsm:lemma	seniwati
-09812338-n	zsm:lemma	artis
 09812338-n	zsm:lemma	seniman
 09813126-n	zsm:lemma	artis
 09813126-n	zsm:lemma	berseni
@@ -86485,7 +86197,6 @@
 09819477-n	zsm:lemma	ahli falak
 09820044-n	zsm:lemma	ateis
 09820263-n	zsm:lemma	atlet
-09820263-n	zsm:lemma	olahragawan
 09820263-n	zsm:lemma	olahragawan
 09820263-n	zsm:lemma	atlit
 09820263-n	zsm:lemma	olahragawati
@@ -86953,7 +86664,6 @@
 09917593-n	zsm:lemma	pemuda
 09917593-n	zsm:lemma	remeh-temeh
 09917593-n	zsm:lemma	budak-budak
-09918248-n	zsm:lemma	anak
 09918248-n	zsm:lemma	anak
 09918248-n	zsm:lemma	budak
 09918248-n	zsm:lemma	kanak-kanak
@@ -87463,14 +87173,12 @@
 10053004-n	zsm:lemma	maharaja
 10053439-n	zsm:lemma	maharani
 10053808-n	zsm:lemma	karyawan
-10053808-n	zsm:lemma	karyawan
 10053808-n	zsm:lemma	pekerja
 10053808-n	zsm:lemma	petugas
 10053808-n	zsm:lemma	kakitangan
 10054657-n	zsm:lemma	majikan
 10054657-n	zsm:lemma	tuan
 10054657-n	zsm:lemma	bos
-10054657-n	zsm:lemma	majikan
 10055410-n	zsm:lemma	pemikat
 10055410-n	zsm:lemma	penggoda
 10055847-n	zsm:lemma	lawan
@@ -87515,7 +87223,6 @@
 10069427-n	zsm:lemma	algojo
 10069427-n	zsm:lemma	pelebaya
 10069427-n	zsm:lemma	pertanda
-10069645-n	zsm:lemma	eksekutif
 10069645-n	zsm:lemma	eksekutif
 10070563-n	zsm:lemma	pempamer
 10070942-n	zsm:lemma	berlagak
@@ -87620,7 +87327,6 @@
 10102800-n	zsm:lemma	nenek moyang
 10102800-n	zsm:lemma	pengasas
 10103485-n	zsm:lemma	orang asing
-10103485-n	zsm:lemma	orang asing
 10103485-n	zsm:lemma	pendatang
 10103485-n	zsm:lemma	perantau
 10103485-n	zsm:lemma	orang perantauan
@@ -87640,7 +87346,6 @@
 10104209-n	zsm:lemma	penyelia
 10104209-n	zsm:lemma	tandil
 10104209-n	zsm:lemma	tauke
-10104209-n	zsm:lemma	bos
 10104209-n	zsm:lemma	ketua
 10104209-n	zsm:lemma	tuan besar
 10104209-n	zsm:lemma	fomen
@@ -87771,8 +87476,6 @@
 10150071-n	zsm:lemma	jaga
 10150071-n	zsm:lemma	pengawal
 10150071-n	zsm:lemma	pengawas
-10150071-n	zsm:lemma	penjaga
-10150071-n	zsm:lemma	pengawal
 10150071-n	zsm:lemma	penjaga
 10150071-n	zsm:lemma	gad
 10150556-n	zsm:lemma	pemberontak
@@ -87932,7 +87635,6 @@
 10201535-n	zsm:lemma	penipu
 10201535-n	zsm:lemma	penyamar
 10201956-n	zsm:lemma	impresionis
-10203839-n	zsm:lemma	individu
 10203839-n	zsm:lemma	individu
 10204177-n	zsm:lemma	usahawan
 10204177-n	zsm:lemma	industrialis
@@ -88371,7 +88073,6 @@
 10348989-n	zsm:lemma	obsesi
 10351625-n	zsm:lemma	lalai
 10351874-n	zsm:lemma	perunding
-10351874-n	zsm:lemma	perunding
 10352299-n	zsm:lemma	jiran
 10352299-n	zsm:lemma	orang sebelah
 10352299-n	zsm:lemma	orang setangga
@@ -88466,14 +88167,12 @@
 10388440-n	zsm:lemma	pemerintah
 10388440-n	zsm:lemma	raja
 10388440-n	zsm:lemma	tuan
-10388440-n	zsm:lemma	tuan
 10388732-n	zsm:lemma	mandur
 10388732-n	zsm:lemma	pengawas
 10388732-n	zsm:lemma	penyelia
 10388924-n	zsm:lemma	pemilik
 10388924-n	zsm:lemma	tuan
 10388924-n	zsm:lemma	empunya
-10388924-n	zsm:lemma	pemilik
 10388924-n	zsm:lemma	pemunya
 10388924-n	zsm:lemma	tuan punya
 10389398-n	zsm:lemma	empunya
@@ -88503,7 +88202,6 @@
 10398176-n	zsm:lemma	paramedik
 10399019-n	zsm:lemma	askar payung terjun
 10399491-n	zsm:lemma	asal
-10399491-n	zsm:lemma	orang tua
 10399491-n	zsm:lemma	orang tua
 10399491-n	zsm:lemma	ayah bonda
 10399491-n	zsm:lemma	ibu bapa
@@ -88642,7 +88340,6 @@
 10444194-n	zsm:lemma	penyair
 10444194-n	zsm:lemma	penyajak
 10444194-n	zsm:lemma	pujangga
-10444194-n	zsm:lemma	penyair
 10444194-n	zsm:lemma	pemuisi
 10448983-n	zsm:lemma	mata-mata
 10448983-n	zsm:lemma	pegawai
@@ -88660,8 +88357,6 @@
 10461424-n	zsm:lemma	kekuatan
 10461424-n	zsm:lemma	kuasa
 10461424-n	zsm:lemma	tenaga
-10461424-n	zsm:lemma	kekuasaan
-10461424-n	zsm:lemma	kekuatan
 10461424-n	zsm:lemma	keupayaan
 10461747-n	zsm:lemma	kuasa
 10461747-n	zsm:lemma	pengaruh
@@ -88680,7 +88375,6 @@
 10464711-n	zsm:lemma	pendahulu
 10466198-n	zsm:lemma	penaja
 10467052-n	zsm:lemma	tukang masak
-10467179-n	zsm:lemma	presiden
 10467179-n	zsm:lemma	presiden
 10467395-n	zsm:lemma	presiden
 10468559-n	zsm:lemma	presiden
@@ -88725,7 +88419,6 @@
 10480583-n	zsm:lemma	profesional
 10480730-n	zsm:lemma	guru besar
 10480730-n	zsm:lemma	mahaguru
-10480730-n	zsm:lemma	profesor
 10480730-n	zsm:lemma	profesor
 10480730-n	zsm:lemma	Prof
 10481268-n	zsm:lemma	pengatur cara
@@ -88881,7 +88574,6 @@
 10541229-n	zsm:lemma	pemerintah
 10541229-n	zsm:lemma	penguasa
 10541229-n	zsm:lemma	raja
-10541229-n	zsm:lemma	penguasa
 10542138-n	zsm:lemma	Rumpelstiltskin
 10542401-n	zsm:lemma	Shylock
 10542608-n	zsm:lemma	pesuruh
@@ -88948,7 +88640,6 @@
 10559288-n	zsm:lemma	pelajar
 10559288-n	zsm:lemma	anak murid
 10559288-n	zsm:lemma	murid
-10559288-n	zsm:lemma	pelajar
 10559840-n	zsm:lemma	guru
 10559840-n	zsm:lemma	cikgu
 10560352-n	zsm:lemma	guru
@@ -89145,7 +88836,6 @@
 10640620-n	zsm:lemma	jodoh
 10640620-n	zsm:lemma	orang tua
 10640620-n	zsm:lemma	pasangan
-10640620-n	zsm:lemma	pasangan
 10640620-n	zsm:lemma	suami
 10640620-n	zsm:lemma	teman hidup
 10640620-n	zsm:lemma	isteri
@@ -89210,7 +88900,6 @@
 10665698-n	zsm:lemma	siswa
 10665698-n	zsm:lemma	anak murid
 10665698-n	zsm:lemma	murid
-10665698-n	zsm:lemma	pelajar
 10668666-n	zsm:lemma	kes
 10669125-n	zsm:lemma	pemenang
 10669991-n	zsm:lemma	anak kalimat
@@ -89547,7 +89236,6 @@
 10794014-n	zsm:lemma	karyawan
 10794014-n	zsm:lemma	pencipta
 10794014-n	zsm:lemma	pengarang
-10794014-n	zsm:lemma	penulis
 10801291-n	zsm:lemma	pengarang
 10801291-n	zsm:lemma	penulis
 10801291-n	zsm:lemma	periwayat
@@ -97277,7 +96965,6 @@
 11414411-n	zsm:lemma	mendera
 11414608-n	zsm:lemma	pengaruh
 11414608-n	zsm:lemma	kuasa
-11414608-n	zsm:lemma	pengaruh
 11414608-n	zsm:lemma	wibawa
 11415084-n	zsm:lemma	variasi
 11415492-n	zsm:lemma	angin
@@ -97584,7 +97271,6 @@
 11499817-n	zsm:lemma	penyinaran
 11500968-n	zsm:lemma	jalur
 11501230-n	zsm:lemma	pengangkut
-11501381-n	zsm:lemma	hujan
 11501381-n	zsm:lemma	hujan
 11501649-n	zsm:lemma	hujan
 11502102-n	zsm:lemma	hujan lebat
@@ -98276,7 +97962,6 @@
 13149970-n	zsm:lemma	sirih
 13152742-n	zsm:lemma	daun
 13152742-n	zsm:lemma	dedaunan
-13152742-n	zsm:lemma	daun
 13152742-n	zsm:lemma	dedaun
 13153633-n	zsm:lemma	kehijauan
 13154494-n	zsm:lemma	pelepah
@@ -98285,8 +97970,6 @@
 13163250-n	zsm:lemma	cabang
 13163250-n	zsm:lemma	dahan
 13163250-n	zsm:lemma	jipang
-13163250-n	zsm:lemma	cabang
-13163250-n	zsm:lemma	dahan
 13163250-n	zsm:lemma	ranting
 13163991-n	zsm:lemma	ranting
 13163991-n	zsm:lemma	tangkai
@@ -98365,7 +98048,6 @@
 13255145-n	zsm:lemma	pemasukan
 13255145-n	zsm:lemma	penghasilan
 13255145-n	zsm:lemma	pendapatan
-13255145-n	zsm:lemma	penghasilan
 13255994-n	zsm:lemma	pajak
 13256691-n	zsm:lemma	gros
 13256691-n	zsm:lemma	pendapatan
@@ -98438,7 +98120,6 @@
 13268146-n	zsm:lemma	hadiah
 13268146-n	zsm:lemma	penghargaan
 13268146-n	zsm:lemma	anugerah
-13268146-n	zsm:lemma	hadiah
 13268146-n	zsm:lemma	pemberian
 13268146-n	zsm:lemma	kurnia
 13268842-n	zsm:lemma	ganjaran
@@ -98647,10 +98328,8 @@
 13326198-n	zsm:lemma	muatan
 13327231-n	zsm:lemma	kerugian
 13327231-n	zsm:lemma	rugi
-13327231-n	zsm:lemma	kerugian
 13327676-n	zsm:lemma	kehilangan
 13327676-n	zsm:lemma	kerugian
-13327676-n	zsm:lemma	kehilangan
 13328073-n	zsm:lemma	kerugian
 13328357-n	zsm:lemma	susut nilai
 13329489-n	zsm:lemma	keadaan
@@ -98740,8 +98419,6 @@
 13353280-n	zsm:lemma	kemewahan
 13353607-n	zsm:lemma	kapital
 13353607-n	zsm:lemma	modal
-13353607-n	zsm:lemma	kapital
-13353607-n	zsm:lemma	modal
 13353858-n	zsm:lemma	cara
 13353858-n	zsm:lemma	harta
 13353858-n	zsm:lemma	jalan
@@ -98828,7 +98505,6 @@
 13375891-n	zsm:lemma	deposit
 13376012-n	zsm:lemma	kad kredit
 13378518-n	zsm:lemma	kredit
-13378518-n	zsm:lemma	kredit
 13378518-n	zsm:lemma	pinjaman
 13380530-n	zsm:lemma	wesel
 13380820-n	zsm:lemma	wang pos
@@ -98895,7 +98571,6 @@
 13401013-n	zsm:lemma	lien
 13403331-n	zsm:lemma	dokumen
 13403643-n	zsm:lemma	catatan
-13403643-n	zsm:lemma	dokumen
 13403643-n	zsm:lemma	dokumen
 13403643-n	zsm:lemma	rekod
 13403964-n	zsm:lemma	neraca
@@ -99193,7 +98868,6 @@
 13489037-n	zsm:lemma	pertumbuhan
 13489037-n	zsm:lemma	evolusi
 13489037-n	zsm:lemma	perkembangan
-13489037-n	zsm:lemma	pertumbuhan
 13489037-n	zsm:lemma	tumbesaran
 13490343-n	zsm:lemma	kemajuan
 13490343-n	zsm:lemma	perkembangan
@@ -99224,7 +98898,6 @@
 13497135-n	zsm:lemma	kenaikan
 13497135-n	zsm:lemma	membanyakkan
 13497135-n	zsm:lemma	pertambahan
-13497135-n	zsm:lemma	pertumbuhan
 13497135-n	zsm:lemma	tambah
 13497135-n	zsm:lemma	tokokan
 13498404-n	zsm:lemma	infeksi
@@ -99233,7 +98906,6 @@
 13498666-n	zsm:lemma	infeksi
 13498828-n	zsm:lemma	inflasi
 13498828-n	zsm:lemma	penaikan
-13498828-n	zsm:lemma	inflasi
 13499165-n	zsm:lemma	debu
 13499165-n	zsm:lemma	deflasi
 13499782-n	zsm:lemma	kebanjiran
@@ -99866,7 +99538,6 @@
 13755957-n	zsm:lemma	pembetulan
 13757249-n	zsm:lemma	jejak
 13757249-n	zsm:lemma	tapak
-13757249-n	zsm:lemma	jejak
 13757249-n	zsm:lemma	langkah
 13758296-n	zsm:lemma	sempadan
 13758296-n	zsm:lemma	takat
@@ -100119,7 +99790,6 @@
 13809769-n	zsm:lemma	dasar
 13809920-n	zsm:lemma	keterangan
 13809920-n	zsm:lemma	perincian
-13809920-n	zsm:lemma	perincian
 13809920-n	zsm:lemma	butiran
 13810141-n	zsm:lemma	menonjolkan
 13810141-n	zsm:lemma	acara kemuncak
@@ -100318,7 +99988,6 @@
 13863771-n	zsm:lemma	talian
 13865298-n	zsm:lemma	silinder
 13865298-n	zsm:lemma	tabung
-13865298-n	zsm:lemma	silinder
 13865904-n	zsm:lemma	hati
 13866144-n	zsm:lemma	poligon
 13867276-n	zsm:lemma	putar belit
@@ -100557,7 +100226,6 @@
 13905792-n	zsm:lemma	kerut
 13905792-n	zsm:lemma	retak
 13905792-n	zsm:lemma	kedutan
-13905792-n	zsm:lemma	kerut
 13907272-n	zsm:lemma	celah
 13907272-n	zsm:lemma	retakan
 13907272-n	zsm:lemma	rekahan
@@ -101039,7 +100707,6 @@
 13970124-n	zsm:lemma	kestabilan
 13970236-n	zsm:lemma	damai
 13970236-n	zsm:lemma	perdamaian
-13970236-n	zsm:lemma	damai
 13970236-n	zsm:lemma	keamanan
 13970236-n	zsm:lemma	kedamaian
 13970236-n	zsm:lemma	keredaan
@@ -101151,7 +100818,6 @@
 13980845-n	zsm:lemma	konflik
 13980845-n	zsm:lemma	pertikaian
 13980845-n	zsm:lemma	berselisih
-13980845-n	zsm:lemma	konflik
 13980845-n	zsm:lemma	perselisihan
 13980845-n	zsm:lemma	persengketaan
 13980845-n	zsm:lemma	pertentangan
@@ -101253,7 +100919,6 @@
 13989051-n	zsm:lemma	kesedihan
 13989051-n	zsm:lemma	kesenduan
 13989051-n	zsm:lemma	duka
-13989051-n	zsm:lemma	kedukaan
 13989280-n	zsm:lemma	berkabung
 13989280-n	zsm:lemma	kedukaan
 13989280-n	zsm:lemma	kesedihan
@@ -101601,7 +101266,6 @@
 14061805-n	zsm:lemma	penyakit
 14061805-n	zsm:lemma	sakit
 14061805-n	zsm:lemma	kecacatan
-14061805-n	zsm:lemma	penyakit
 14061805-n	zsm:lemma	keuzuran
 14062332-n	zsm:lemma	introversi
 14062725-n	zsm:lemma	kecanduan
@@ -101625,7 +101289,6 @@
 14067076-n	zsm:lemma	terkejut
 14068894-n	zsm:lemma	botulisme
 14068894-n	zsm:lemma	keracunan makanan
-14070360-n	zsm:lemma	penyakit
 14070360-n	zsm:lemma	penyakit
 14074041-n	zsm:lemma	komplikasi
 14074394-n	zsm:lemma	endemik
@@ -101790,7 +101453,6 @@
 14174549-n	zsm:lemma	jangkitan
 14174549-n	zsm:lemma	penyakit
 14174549-n	zsm:lemma	sakit
-14174549-n	zsm:lemma	infeksi
 14176895-n	zsm:lemma	mikosis
 14178794-n	zsm:lemma	paronikia
 14179569-n	zsm:lemma	Demam Rift Valley
@@ -101911,7 +101573,6 @@
 14285662-n	zsm:lemma	kecelakaan
 14285662-n	zsm:lemma	luka
 14285662-n	zsm:lemma	cedera
-14285662-n	zsm:lemma	luka
 14285662-n	zsm:lemma	sakit
 14285662-n	zsm:lemma	trauma
 14286435-n	zsm:lemma	stigma
@@ -102432,7 +102093,6 @@
 14418822-n	zsm:lemma	ikatan
 14418822-n	zsm:lemma	konfederasi
 14418822-n	zsm:lemma	perikatan
-14418822-n	zsm:lemma	persekutuan
 14418822-n	zsm:lemma	persekutuan
 14419164-n	zsm:lemma	sambungan
 14419164-n	zsm:lemma	tautan
@@ -103059,7 +102719,6 @@
 14480420-n	zsm:lemma	cairan
 14480772-n	zsm:lemma	padatan
 14481080-n	zsm:lemma	gas
-14481080-n	zsm:lemma	gas
 14481511-n	zsm:lemma	plasma
 14481929-n	zsm:lemma	kemungkinan
 14481929-n	zsm:lemma	peluang
@@ -103083,7 +102742,6 @@
 14483917-n	zsm:lemma	peluang
 14483917-n	zsm:lemma	kemungkinan
 14483917-n	zsm:lemma	kesempatan
-14483917-n	zsm:lemma	peluang
 14483917-n	zsm:lemma	can
 14484516-n	zsm:lemma	hari
 14484516-n	zsm:lemma	petang hari
@@ -103919,7 +103577,6 @@
 14686585-n	zsm:lemma	minyak bakar
 14686585-n	zsm:lemma	bahan api
 14686913-n	zsm:lemma	gasolin
-14686913-n	zsm:lemma	gasolin
 14686913-n	zsm:lemma	petrol
 14686913-n	zsm:lemma	minyak petrol
 14687633-n	zsm:lemma	kerosin
@@ -104015,7 +103672,6 @@
 14727153-n	zsm:lemma	pengangkut
 14727508-n	zsm:lemma	air berat
 14727670-n	zsm:lemma	bahan organik
-14728724-n	zsm:lemma	protein
 14728724-n	zsm:lemma	protein
 14730553-n	zsm:lemma	gelatin
 14731509-n	zsm:lemma	albumin
@@ -104188,7 +103844,6 @@
 14844414-n	zsm:lemma	tanah
 14844693-n	zsm:lemma	tanah
 14844693-n	zsm:lemma	bumi
-14844693-n	zsm:lemma	tanah
 14844693-n	zsm:lemma	tanih
 14845743-n	zsm:lemma	air
 14846517-n	zsm:lemma	air suci
@@ -104441,7 +104096,6 @@
 14972807-n	zsm:lemma	ozon
 14973833-n	zsm:lemma	papain
 14974264-n	zsm:lemma	kertas
-14974264-n	zsm:lemma	kertas
 14975779-n	zsm:lemma	kertas kulit
 14978232-n	zsm:lemma	pektin
 14979410-n	zsm:lemma	permanganat
@@ -104674,7 +104328,6 @@
 15121625-n	zsm:lemma	futur
 15121625-n	zsm:lemma	kadim
 15121625-n	zsm:lemma	keakanan
-15121625-n	zsm:lemma	bakal
 15121625-n	zsm:lemma	masa datang
 15122231-n	zsm:lemma	era
 15122231-n	zsm:lemma	kala
@@ -104876,7 +104529,6 @@
 15164957-n	zsm:lemma	tengah hari
 15164957-n	zsm:lemma	pagi hari
 15165289-n	zsm:lemma	pagi
-15165289-n	zsm:lemma	pagi
 15165289-n	zsm:lemma	pagi hari
 15165490-n	zsm:lemma	siang
 15165490-n	zsm:lemma	siang hari
@@ -104988,7 +104640,6 @@
 15204485-n	zsm:lemma	semester
 15204983-n	zsm:lemma	dasawarsa
 15204983-n	zsm:lemma	dekade
-15204983-n	zsm:lemma	dasawarsa
 15204983-n	zsm:lemma	dekad
 15205532-n	zsm:lemma	abad
 15205532-n	zsm:lemma	berabad-abad
@@ -105072,7 +104723,6 @@
 15225797-n	zsm:lemma	semester
 15226046-n	zsm:lemma	kuartal
 15227846-n	zsm:lemma	jam
-15227846-n	zsm:lemma	jam
 15227846-n	zsm:lemma	satu jam
 15228378-n	zsm:lemma	masa
 15228378-n	zsm:lemma	jam
@@ -105093,7 +104743,6 @@
 15234942-n	zsm:lemma	kuartal
 15235126-n	zsm:lemma	detik
 15235126-n	zsm:lemma	ketika
-15235126-n	zsm:lemma	detik
 15235126-n	zsm:lemma	saat
 15236475-n	zsm:lemma	musim
 15236859-n	zsm:lemma	musim luruh
@@ -105168,7 +104817,6 @@
 15248269-n	zsm:lemma	jangka waktu
 15248564-n	zsm:lemma	era
 15248564-n	zsm:lemma	masa
-15248564-n	zsm:lemma	era
 15248564-n	zsm:lemma	tarikh
 15248564-n	zsm:lemma	zaman
 15248564-n	zsm:lemma	jangka waktu
@@ -105320,7 +104968,6 @@
 15281176-n	zsm:lemma	roi
 15281329-n	zsm:lemma	roi
 15281870-n	zsm:lemma	putaran
-15282696-n	zsm:lemma	kecepatan
 15282696-n	zsm:lemma	kecepatan
 15282696-n	zsm:lemma	kekencangan
 15282696-n	zsm:lemma	kelajuan

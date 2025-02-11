@@ -38,7 +38,6 @@
 00009147-v	als:lemma	ndërrim i puplave
 00009147-v	als:lemma	ndërron qimen
 00009147-v	als:lemma	lëkurë gjarpri
-00009147-v	als:lemma	ndërron qimen
 00009147-v	als:def	0	lloj floku , briri , lëkure, puple
 00009147-v	als:exe	0	Qenve të rrugës iu ndërrohet lëkura çdo pranverë
 00010054-v	als:lemma	lëvizje e pavullnetshme
@@ -939,8 +938,6 @@
 00173338-v	als:lemma	marr me vete
 00173338-v	als:lemma	heq nga qarkullimi
 00173338-v	als:lemma	marr mbrapsht
-00173338-v	als:lemma	heq nga qarkullimi
-00173338-v	als:lemma	heq nga qarkullimi
 00173338-v	als:def	0	tsh diçka konkrete duke e spostuar , shtyrë, ngritur etj. ose të lëvizë diçka abstrakte
 00173338-v	als:exe	0	heq një kërcënim
 00173338-v	als:exe	1	heq mbështjellësen
@@ -5703,7 +5700,6 @@
 01455732-a	als:def	0	një zë i mekur
 01455732-a	als:exe	0	një zë i mekur
 01448100-v	als:lemma	tërheqje
-01448100-v	als:lemma	tërheqje
 01448100-v	als:lemma	bëj me forcë
 01448100-v	als:def	0	arsyeja e lëvizjes ose spostimit nga tërheqja
 01448100-v	als:exe	0	tërheq vagonin
@@ -6151,7 +6147,6 @@
 01649024-v	als:def	0	shkaktoj
 01650610-v	als:lemma	fillim
 01650610-v	als:lemma	nisje
-01650610-v	als:lemma	fillim
 01650610-v	als:def	0	ndahem nga terreni
 01650610-v	als:exe	0	kush është nismëtar i kësaj kompanie
 01650610-v	als:exe	1	ata filluan semestrin tjetër
@@ -6513,7 +6508,6 @@
 01830403-a	als:lemma	i rëndësishëm
 01830403-a	als:def	0	të kesh autoritet ose pushtet ose influencë
 01830403-a	als:exe	0	një zyrtar i rëndësishëm
-01824339-v	als:lemma	dëshirë
 01824339-v	als:def	0	të shpresosh për ose të kesh dëshira
 01824339-v	als:exe	0	do të dëshiroja një shtëpi
 01824532-v	als:lemma	dëshiroj
@@ -8250,7 +8244,6 @@
 02486932-v	als:lemma	grumbulloj
 02486932-v	als:def	0	mblidhen sëbashku për qëllime të përbashkëta
 02488834-v	als:lemma	martohem
-02488834-v	als:lemma	martohem
 02488834-v	als:lemma	bashkoj
 02488834-v	als:lemma	lidh me
 02488834-v	als:def	0	arrin në martesë
@@ -8391,7 +8384,6 @@
 02546467-v	als:def	0	një demostrim miratimi ose njohje
 02546467-v	als:exe	0	projekti i miratua dhe nga studentët
 02547586-v	als:lemma	mbështetës
-02547586-v	als:lemma	ndihmoj
 02547586-v	als:lemma	ndihmoj
 02547586-v	als:def	0	jep një ndihmë ose asistoj për një ndihmë
 02547586-v	als:exe	0	shumë vullnetar ndihmuan pas rënies së tërmetit
@@ -8572,7 +8564,6 @@
 02634567-v	als:lemma	rrjedh
 02634567-v	als:lemma	vjen nga
 02634567-v	als:def	0	është rezultat i
-01752884-v	als:lemma	shkaktoj
 01752884-v	als:def	0	e bën të mundur
 01752884-v	als:exe	0	ata e bënë të mundur zbulimet tona
 02637938-v	als:lemma	pritje
@@ -8596,7 +8587,6 @@
 02642814-v	als:lemma	tryezë
 02642814-v	als:lemma	ve ne raft
 02642814-v	als:lemma	pengoj
-02642814-v	als:lemma	shtyj afatin
 02642814-v	als:lemma	mënjanë,bej mënjanë
 02642814-v	als:lemma	largoj,heq qafe
 02642814-v	als:def	0	frenoj me vonesë
@@ -9068,7 +9058,6 @@
 02796623-n	als:lemma	gardh
 02796623-n	als:def	0	Thurimë e bërë me purteka, me thupra a me driza rreth e përqark një kopshti, një are, një oborri etj. Gardh mbrojtës. Gardh i lartë (i ulët). Gardh i thatë gardh me ferra a me degë të prera. Gardh çift gardh me dy thurima, të mbushura në mes tyre me dhe, në një faqe të pjerrët për ta mbrojtur këtë nga gërryerjet; gardh i dyfishtë. Gardh tek gardh që bëhet vetëm nga një thurimë drizash, ferrash, telash etj.
 02796995-n	als:lemma	pijetore
-02796995-n	als:lemma	bar
 02796995-n	als:lemma	bar
 02796995-n	als:lemma	birrari
 02796995-n	als:def	0	lokal ku shitet dhe pihet birre,pije alkoolike
@@ -11946,7 +11935,6 @@
 06286395-n	als:def	0	bashkim shkronjash me kuptim
 06290637-n	als:lemma	forme
 06290637-n	als:lemma	forma e fjalës
-06290637-n	als:lemma	forma e fjalës
 06290637-n	als:lemma	nënshkrim
 06290637-n	als:def	0	paraqitje e fjalës qe shërben per te përshkruar diçka
 06304671-n	als:lemma	rrokje
@@ -13279,7 +13267,6 @@
 07570720-n	als:lemma	e ushqyeshme
 07570720-n	als:lemma	te ushqyerit
 07570720-n	als:lemma	mjete jetese
-07570720-n	als:lemma	ushqim
 07570720-n	als:lemma	rezerva ushqimore
 07570720-n	als:def	0	një sere materialesh qe sherbejne per te mbajt gjallë trupin
 07571324-n	als:lemma	kuzhinë
@@ -13530,7 +13517,6 @@
 07970721-n	als:lemma	prejardhje
 07970721-n	als:lemma	farefis
 07970721-n	als:lemma	fis
-07970721-n	als:lemma	familje
 07970721-n	als:lemma	klan
 07970721-n	als:lemma	vëllazëri
 07970721-n	als:def	0	njerëz qe kanë te njëjtin stërgjysh
@@ -14934,7 +14920,6 @@
 09505418-n	als:lemma	zot
 09505418-n	als:lemma	i pavdekshem
 09505418-n	als:def	0	një qenie supernatyrale qe ka kantrollin e një pjese te botes ose qe është personifikim i një force
-09505418-n	als:lemma	zot
 09505418-n	als:lemma	qenie supreme
 09505418-n	als:def	0	një qenie supernatyrore qe konsiderohet si perfekte dhe e ghithfuqishme dhe mbi te gjitha si krijuesi i universit
 09538915-n	als:lemma	engjëll
@@ -16333,7 +16318,6 @@
 14728724-n	als:exe	0	një dietë e fortë me proteina
 14755804-n	als:lemma	material shtazorë
 14755804-n	als:def	0	material i përftuar nga kafshët
-01895735-n	als:lemma	lëkurë
 01895735-n	als:def	0	lëkura e jashtme e fortë e (lëkura e jashtme e një fruti)
 14786479-n	als:lemma	material ndërtimi
 14786479-n	als:def	0	materiale të cilat përdoren për të ndërtuar ndërtesa
@@ -16564,7 +16548,6 @@
 15164957-n	als:def	0	koha ndërmjet lindjes së diellit deri në perëndim
 15164957-n	als:exe	0	kjo punë bëhet me ditë
 10372373-n	als:lemma	zyrtar
-10372373-n	als:lemma	funksionar
 10372373-n	als:def	0	një punonjës që mban një post ose është i lidhur me një zyrë
 10373801-n	als:lemma	agjent
 10373801-n	als:lemma	agjent policor
