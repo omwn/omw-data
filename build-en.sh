@@ -28,6 +28,7 @@ WNID="omw-${LGVER}"
 WNDIR="${TMPDIR}/${WN}"
 LABEL="OMW English Wordnet based on ${WN}"
 EMAIL='bond@ieee.org'
+URL='https://github.com/omwn/omw-data'
 
 MILLER95='George A. Miller (1995). WordNet: A Lexical Database for English. Communications of the ACM Vol. 38, No. 11: 39-41.'
 FELLBAUM98='Christiane Fellbaum (1998, ed.) *WordNet: An Electronic Lexical Database*. MIT Press.'
@@ -209,6 +210,7 @@ python -m scripts.wndb2lmf \
        --language='en' \
        --email="${EMAIL}" \
        --license="${LICENSE}" \
+       --url="${URL}" \
        --citation="${CITATION}" \
        --ili-map="${ILIMAP}"
 
