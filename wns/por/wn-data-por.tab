@@ -770,7 +770,6 @@
 00045704-r	lemma	para além
 00045817-v	lemma	emagrecer
 00045817-v	lemma	perder peso
-00045817-v	lemma	perder peso
 00045817-v	lemma	reduzir peso
 00045888-a	lemma	mortal
 00045907-n	lemma	recuperação
@@ -1004,7 +1003,6 @@
 00056729-r	lemma	quer que
 00056912-n	lemma	retirada
 00056930-v	lemma	dar a luz
-00056930-v	lemma	dar à luz
 00056930-v	lemma	dar à luz
 00056930-v	lemma	parir
 00056930-v	lemma	pôr no mundo
@@ -4686,7 +4684,6 @@
 00332154-v	lemma	esmiuçar
 00332375-a	lemma	centrífugo
 00332596-r	lemma	eternamente
-00332596-r	lemma	eternamente
 00332596-r	lemma	para sempre
 00332596-r	lemma	para todo o sempre
 00332596-r	lemma	perpetuamente
@@ -4942,7 +4939,6 @@
 00358290-n	lemma	pulverização
 00358290-n	lemma	trituração
 00358342-r	lemma	horizontalmente
-00358431-v	lemma	bater as botas
 00358431-v	lemma	bater as botas
 00358431-v	lemma	comer capim pela raiz
 00358431-v	lemma	falecer
@@ -5760,7 +5756,6 @@
 00430041-a	lemma	vivaz
 00430140-n	lemma	aposta
 00430140-n	lemma	jogo de azar
-00430140-n	lemma	jogo de azar
 00430191-a	lemma	confuso
 00430545-a	lemma	nublado
 00430606-n	lemma	hobby
@@ -6080,7 +6075,6 @@
 00458890-n	lemma	videojogo
 00458940-a	lemma	sem fundo
 00459013-n	lemma	realidade virtual
-00459013-n	lemma	realidade virtual
 00459284-n	lemma	Jogos de pinball
 00459284-n	lemma	pinball
 00459296-v	lemma	apressar
@@ -6170,7 +6164,6 @@
 00469382-v	lemma	Desgaste
 00469382-v	lemma	desgastar
 00469382-v	lemma	esmerilar
-00469651-n	lemma	futebol americano
 00469651-n	lemma	futebol americano
 00469904-v	lemma	neutralizar
 00470084-v	lemma	anular
@@ -6377,7 +6370,6 @@
 00488143-r	lemma	gramaticalmente
 00488187-a	lemma	especial
 00488187-a	lemma	excepcional
-00488225-n	lemma	jogo de cartas
 00488225-n	lemma	jogo de cartas
 00488301-v	lemma	aguar
 00488561-a	lemma	de pouca densidade
@@ -8362,7 +8354,6 @@
 00723349-v	lemma	acontecer
 00723349-v	lemma	terlugar
 00723545-v	lemma	admitir
-00723545-v	lemma	levar em conta
 00723545-v	lemma	levar em conta
 00723851-v	lemma	orçar
 00724029-v	lemma	fazer orçamento
@@ -10614,7 +10605,6 @@
 00955060-n	lemma	manobra
 00955060-n	lemma	operação
 00955148-v	lemma	indicar
-00955148-v	lemma	querer dizer
 00955148-v	lemma	querer dizer
 00955148-v	lemma	significar
 00955472-v	lemma	apontar
@@ -13860,7 +13850,6 @@
 01311520-n	lemma	Primeira guerra mundial
 01311605-a	lemma	colonizado
 01311896-v	lemma	limpar
-01312096-n	lemma	Segunda Guerra Mundial
 01312096-n	lemma	Segunda Guerra Mundial
 01312215-a	lemma	povoado
 01312376-a	lemma	populoso
@@ -33153,7 +33142,6 @@
 04538552-n	lemma	Morsa
 04538552-n	lemma	morsa
 04538552-n	lemma	torno
-04538552-n	lemma	torno
 04539203-n	lemma	viveiro
 04540053-n	lemma	voleibol
 04540397-n	lemma	regulador de tensão
@@ -36034,7 +36022,6 @@
 05461816-n	lemma	musculatura
 05461816-n	lemma	sistema muscular
 05462315-n	lemma	sistema nervoso
-05462315-n	lemma	sistema nervoso
 05464534-n	lemma	Nódulo de Ranvier
 05464534-n	lemma	Nódulo de ranvier
 05464939-n	lemma	Neurilema
@@ -36088,7 +36075,6 @@
 05480076-n	lemma	Nervo vago
 05480401-n	lemma	Nervo acessório
 05480607-n	lemma	nervo hipoglosso
-05480794-n	lemma	sistema nervoso central
 05480794-n	lemma	sistema nervoso central
 05481095-n	lemma	Encéfalo
 05481095-n	lemma	cérebro
@@ -36159,7 +36145,6 @@
 05503009-n	lemma	Terceiro ventrículo
 05503705-n	lemma	medula espinhal
 05503705-n	lemma	medula espinal
-05503705-n	lemma	medula espinhal
 05504107-n	lemma	Líquido Cefalorraquidiano
 05504107-n	lemma	Líquido cefalorraquidiano
 05504336-n	lemma	Sistema nervoso periférico
@@ -38301,7 +38286,6 @@
 06007046-n	lemma	Geometria hiperbólica
 06007381-n	lemma	Geometria de Riemann
 06007642-n	lemma	análise numérica
-06007642-n	lemma	análise numérica
 06007859-n	lemma	geometria esférica
 06008007-n	lemma	triângulo esférico
 06008148-n	lemma	Triangulação
@@ -38324,7 +38308,6 @@
 06012726-n	lemma	Álgebra
 06012726-n	lemma	álgebra
 06013126-n	lemma	álgebra linear
-06013126-n	lemma	álgebra linear
 06013741-n	lemma	Calculo
 06013741-n	lemma	Cálculo
 06013741-n	lemma	cálculo
@@ -38339,7 +38322,6 @@
 06015978-n	lemma	Cálculo das variações
 06015978-n	lemma	cálculo de variações
 06016121-n	lemma	teoria de conjuntos
-06016121-n	lemma	teoria dos conjuntos
 06016121-n	lemma	teoria dos conjuntos
 06016276-n	lemma	intervalo
 06016853-n	lemma	grupo
@@ -38508,7 +38490,6 @@
 06065208-n	lemma	Urologia
 06065208-n	lemma	urologia
 06065423-n	lemma	medicina veterinária
-06065423-n	lemma	medicina veterinária
 06065423-n	lemma	veterinária
 06065640-n	lemma	Virologia
 06065640-n	lemma	virologia
@@ -38594,8 +38575,6 @@
 06084469-n	lemma	Quimica
 06084469-n	lemma	química
 06088995-n	lemma	química orgânica
-06088995-n	lemma	química orgânica
-06089314-n	lemma	química inorgânica
 06089314-n	lemma	química inorgânica
 06089447-n	lemma	físico-química
 06089857-n	lemma	eletroquímica
@@ -38798,7 +38777,6 @@
 06126523-n	lemma	ergonomia
 06126761-n	lemma	biotecnologia
 06127209-n	lemma	engenharia genética
-06127209-n	lemma	engenharia genética
 06127460-n	lemma	engenharia química
 06127683-n	lemma	Engenharia Civil
 06127683-n	lemma	Engenharia civil
@@ -38826,7 +38804,6 @@
 06134271-n	lemma	Engenharia de Produção
 06134271-n	lemma	Engenharia de produção
 06134510-n	lemma	TI
-06134510-n	lemma	tecnologia da informação
 06134510-n	lemma	tecnologia da informação
 06134716-n	lemma	engenharia mecânica
 06134899-n	lemma	Nanotecnologia
@@ -41024,8 +41001,6 @@
 06637149-n	lemma	formatação de alto nível
 06637350-n	lemma	formatação de baixo nível
 06637824-n	lemma	banco de dados
-06637824-n	lemma	banco de dados
-06637824-n	lemma	base de dados
 06637824-n	lemma	base de dados
 06637973-n	lemma	banco de dados relacional
 06637973-n	lemma	base de dados relacional
@@ -49314,7 +49289,6 @@
 08709399-n	lemma	Ilhas cayman
 08709593-n	lemma	George Town
 08709704-n	lemma	Antígua e Barbuda
-08709704-n	lemma	Antígua e Barbuda
 08709704-n	lemma	Reino das Ilhas de Antígua e Barbuda
 08709945-n	lemma	Antígua
 08710113-n	lemma	Barbuda
@@ -49497,8 +49471,6 @@
 08735345-n	lemma	Lubumbashi
 08735564-n	lemma	Mesoamérica
 08735705-n	lemma	América Central
-08735705-n	lemma	América Central
-08736107-n	lemma	Costa Rica
 08736107-n	lemma	Costa Rica
 08736376-n	lemma	San José
 08736376-n	lemma	San josé
@@ -49620,7 +49592,6 @@
 08751494-n	lemma	República do Haiti
 08751885-n	lemma	Porto Príncipe
 08751885-n	lemma	Porto príncipe
-08752021-n	lemma	República Dominicana
 08752021-n	lemma	República Dominicana
 08752293-n	lemma	Santo Domingo
 08752293-n	lemma	Santo domingo
@@ -50976,7 +50947,6 @@
 08970611-n	lemma	Tanger
 08970611-n	lemma	Tânger
 08970833-n	lemma	Saara Ocidental
-08970833-n	lemma	Saara Ocidental
 08970833-n	lemma	Sahara Ocidental
 08971025-n	lemma	Mocambique
 08971025-n	lemma	Moçambique
@@ -50994,7 +50964,6 @@
 08972335-n	lemma	Ilha Sul
 08972335-n	lemma	Ilha do Sul
 08972335-n	lemma	Ilha sul
-08972521-n	lemma	Nova Zelândia
 08972521-n	lemma	Nova Zelândia
 08972920-n	lemma	Auckland
 08972920-n	lemma	Auclanda
@@ -51134,7 +51103,6 @@
 08993144-n	lemma	Ilha do Príncipe
 08993144-n	lemma	Ilha do príncipe
 08993288-n	lemma	Arábia Saudita
-08993288-n	lemma	Arábia Saudita
 08993871-n	lemma	Riade
 08994090-n	lemma	Makkah
 08994090-n	lemma	Meca
@@ -51168,7 +51136,6 @@
 08999154-n	lemma	Corno de África
 08999154-n	lemma	Corno de áfrica
 08999482-n	lemma	República da África do Sul
-08999482-n	lemma	África do Sul
 08999482-n	lemma	África do Sul
 09000272-n	lemma	Pretória
 09000462-n	lemma	Cidade do Cabo
@@ -51339,7 +51306,6 @@
 09022265-n	lemma	Uzbequistão
 09022538-n	lemma	Tashkent
 09022667-n	lemma	Samarcanda
-09022831-n	lemma	América Latina
 09022831-n	lemma	América Latina
 09023118-n	lemma	Andorra
 09023321-n	lemma	Espanha
@@ -52289,7 +52255,6 @@
 09223177-n	lemma	Buracos negros
 09223177-n	lemma	buraco negro
 09223325-n	lemma	Mar Negro
-09223325-n	lemma	Mar Negro
 09223325-n	lemma	Ponto Euxino
 09223911-n	lemma	Barreira hemato-encefálica
 09223911-n	lemma	Barreira hematoencefálica
@@ -52394,7 +52359,6 @@
 09237076-n	lemma	Cordilheira das Cascatas
 09237076-n	lemma	Cordilheira das cascatas
 09237404-n	lemma	Cáspio
-09237404-n	lemma	Mar Cáspio
 09237404-n	lemma	Mar Cáspio
 09237627-n	lemma	Cassiopeia
 09237627-n	lemma	Cassiopéia
@@ -52872,7 +52836,6 @@
 09310162-n	lemma	Illimani
 09311067-n	lemma	fóssil de idade
 09311259-n	lemma	Oceano Índico
-09311259-n	lemma	Oceano Índico
 09311259-n	lemma	Índico
 09311710-n	lemma	Rio Indigirka
 09312231-n	lemma	Rio indo
@@ -53020,7 +52983,6 @@
 09333171-n	lemma	Lago superior
 09333334-n	lemma	Lago Tana
 09333334-n	lemma	Lago tana
-09333512-n	lemma	Lago Tanganica
 09333512-n	lemma	Lago Tanganica
 09333512-n	lemma	Lago Tanganyika
 09333512-n	lemma	Tanganyika
@@ -56634,7 +56596,6 @@
 10129825-n	lemma	moça
 10129825-n	lemma	mulher
 10129825-n	lemma	rapariga
-10129825-n	lemma	senhorita
 10129825-n	lemma	senhorita
 10130447-n	lemma	garota
 10130447-n	lemma	moça
@@ -67179,7 +67140,6 @@
 13563139-n	lemma	somatório
 13563522-n	lemma	fornecimento
 13563746-n	lemma	seleção natural
-13563746-n	lemma	seleção natural
 13564045-n	lemma	Synapsis
 13564215-n	lemma	sincretismo
 13564795-n	lemma	sinérese
@@ -70853,7 +70813,7 @@
 14567812-n	lemma	estase
 14567956-n	lemma	Esteatorreia
 14567956-n	lemma	Esteatorréia
-14568359-n	lemma	'tinnitus'
+14568359-n	lemma	tinnitus
 14568359-n	lemma	acúfeno
 14568359-n	lemma	zumbido
 14568516-n	lemma	clímax
@@ -74002,10 +73962,8 @@
 15283097-n	lemma	ritmo
 15283097-n	lemma	taxas
 15283554-n	lemma	velocidade de escape
-15283554-n	lemma	velocidade de escape
 15283780-n	lemma	hipervelocidade
 15284158-n	lemma	velocidade radial
-15284285-n	lemma	velocidade da luz
 15284285-n	lemma	velocidade da luz
 15284704-n	lemma	velocidade terminal
 15285622-n	lemma	mortalidade infantil

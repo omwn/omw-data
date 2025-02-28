@@ -2521,7 +2521,7 @@
 00163406-n	slv:lemma	popoln obrat
 00163406-n	slv:lemma	popolna sprememba v mišljenju
 00163406-n	slv:lemma	preobrat
-00163406-n	slv:lemma	preobrat v mišljenju 
+00163406-n	slv:lemma	preobrat v mišljenju
 00163441-v	slv:lemma	obnoviti
 00163441-v	slv:lemma	renovirati
 00163592-a	slv:lemma	pazljiv
@@ -3112,7 +3112,6 @@
 00203753-n	slv:lemma	izmikanje
 00203753-n	slv:lemma	izogib
 00203753-n	slv:lemma	izogibanje
-00203753-n	slv:lemma	izogibanje 
 00203753-n	slv:lemma	izognitev
 00203866-v	slv:lemma	nazadovati
 00203866-v	slv:lemma	poslabšati se
@@ -5777,7 +5776,7 @@
 00398349-v	slv:lemma	obnoviti
 00398349-v	slv:lemma	reintegrirati
 00398427-n	slv:lemma	pododdelek
-00398704-n	slv:lemma	transformacija 
+00398704-n	slv:lemma	transformacija
 00398741-v	slv:lemma	izčrpati se
 00398741-v	slv:lemma	omehčati se
 00398741-v	slv:lemma	razmehčati se
@@ -11513,7 +11512,7 @@
 00845352-n	slv:lemma	umetna oploditev
 00845523-n	slv:lemma	spolni akt
 00845523-n	slv:lemma	koitus
-00845523-n	slv:lemma	spolni odnos 
+00845523-n	slv:lemma	spolni odnos
 00845528-a	slv:lemma	neelastičen
 00845528-a	slv:lemma	neprožen
 00845737-a	slv:lemma	mrtev
@@ -20969,7 +20968,6 @@
 01624115-a	slv:lemma	svoboden
 01624115-n	slv:lemma	otus scops
 01624115-n	slv:lemma	veliki skovik
-01624115-n	slv:lemma	veliki_skovik
 01624212-n	slv:lemma	otus sunia
 01624406-n	slv:lemma	surnia
 01624449-v	slv:lemma	mučiti se
@@ -22475,7 +22473,7 @@
 01748318-a	slv:lemma	neopazen
 01748318-a	slv:lemma	neopazljiv
 01748318-a	slv:lemma	nezaznaven
-01748560-n	slv:lemma	kraljeva_kobra
+01748560-n	slv:lemma	kraljeva kobra
 01748560-n	slv:lemma	ophiophagus
 01748906-n	slv:lemma	kobra
 01748906-n	slv:lemma	kraljeva kobra
@@ -26570,7 +26568,6 @@
 02055900-a	slv:lemma	neoskrunljiv
 02056091-n	slv:lemma	pygoscelis
 02056228-n	slv:lemma	adelijski pingvin
-02056228-n	slv:lemma	adelijski_pingvin
 02056228-n	slv:lemma	pygoscelis adeliae
 02056265-a	slv:lemma	verski
 02056421-n	slv:lemma	aptenodytes
@@ -35619,7 +35616,7 @@
 02767701-a	slv:lemma	morski
 02767701-a	slv:lemma	pomorski
 02768433-n	slv:lemma	backbone povezava
-02768433-n	slv:lemma	 širokopasovna internetna povezava
+02768433-n	slv:lemma	širokopasovna internetna povezava
 02768433-n	slv:lemma	hrbtenično omrežje
 02768744-n	slv:lemma	stranska vrata
 02768864-n	slv:lemma	ozadje
@@ -39397,7 +39394,7 @@
 03745712-n	slv:lemma	zakrivljena gladina tekočine v cevki
 03745864-n	slv:lemma	meniskus
 03745864-n	slv:lemma	leča meniskus
-03745864-n	slv:lemma	konveksno-konkavna leča 
+03745864-n	slv:lemma	konveksno-konkavna leča
 03746574-n	slv:lemma	psihiatrična bolnišnica
 03746861-n	slv:lemma	mentol
 03748162-n	slv:lemma	prodajalna na drobno
@@ -43713,7 +43710,7 @@
 04965179-n	slv:lemma	oranžna barva
 04965371-n	slv:lemma	barva lososa
 04965661-n	slv:lemma	rumen ton
-04966240-n	slv:lemma	jantarna barva 
+04966240-n	slv:lemma	jantarna barva
 04966717-n	slv:lemma	žafran
 04966941-n	slv:lemma	pšenica
 04967191-n	slv:lemma	neizkušenost
@@ -46212,7 +46209,7 @@
 05697363-n	slv:lemma	sigurnost
 05697363-n	slv:lemma	prepričanost
 05697789-n	slv:lemma	prevelika gotovost
-05697976-n	slv:lemma	zanašanje 
+05697976-n	slv:lemma	zanašanje
 05697976-n	slv:lemma	zaupanje
 05698247-n	slv:lemma	dvom
 05698247-n	slv:lemma	negotovost
@@ -49218,7 +49215,6 @@
 06496862-n	slv:lemma	lajna
 06496862-n	slv:lemma	rota
 06497459-n	slv:lemma	abeceda
-06497459-n	slv:lemma	abeceda 
 06497459-n	slv:lemma	alfabet
 06497872-n	slv:lemma	latinica
 06497872-n	slv:def	0	bila pisava starih Rimljanov in je vsaka pisava, ki se je razvila iz nje
@@ -49324,7 +49320,7 @@
 06528783-n	slv:lemma	ocena
 06528992-n	slv:lemma	precenjenost
 06529219-n	slv:lemma	naročilnica
-06530789-n	slv:lemma	  splošno notársko overjeno pooblastilo
+06530789-n	slv:lemma	splošno notársko overjeno pooblastilo
 06531141-n	slv:lemma	pooblastilo
 06531908-n	slv:lemma	dovoljenje za delo
 06532095-n	slv:lemma	akt
@@ -54146,7 +54142,7 @@
 07947255-n	slv:lemma	ljudstvo
 07947675-n	slv:lemma	dobro vzgojeni ljudje
 07948314-n	slv:lemma	brezdomci
-07948314-n	slv:lemma	ljudje s ceste 
+07948314-n	slv:lemma	ljudje s ceste
 07948314-n	slv:exe	0	Pot do novega izdelka ali le do izboljšave je dolga vsaj leto dni in terja delo različnih strokovnjakov, raziskovalcev trga, razvojnih konstruktorjev, oblikovalcev, psihologov, strokovnjakov z določenega področja raziskav in razvoja (če gre za gospodinjstvo, sodelujejo tudi kuharji, pri osebni negi pa ne gre brez medicincev) in tudi ljudi s ceste.
 07949463-n	slv:lemma	nacionalnost
 07949463-n	slv:lemma	narodnost
@@ -63362,7 +63358,7 @@
 10474064-n	slv:lemma	kraljična
 10474064-n	slv:lemma	princesa
 10474645-n	slv:lemma	predstojnik
-10474645-n	slv:lemma	ravnatelj 
+10474645-n	slv:lemma	ravnatelj
 10474645-n	slv:lemma	vodja
 10475297-n	slv:lemma	novinar
 10475297-n	slv:lemma	tiskar
@@ -65200,7 +65196,7 @@
 10976256-n	slv:def	0	bil francoski mislec, ki ga uvrščamo med predstavnike utopičnega socializma
 10976708-n	slv:lemma	fowler
 10977368-n	slv:lemma	Francija
-10977368-n	slv:lemma	France, Jacques Anatole Francois Thibault 
+10977368-n	slv:lemma	France, Jacques Anatole Francois Thibault
 10978098-n	slv:lemma	Sveti Frančišek Asiški
 10978098-n	slv:def	0	italijanski spokornik in svetnik, zavetnik živali in trgovcev, * 1181 ali 1182 Assisi, † 3. oktober 1226
 10978422-n	slv:lemma	James Franck
@@ -65450,7 +65446,7 @@
 11058633-n	slv:lemma	Herbert Clark Hoover
 11058633-n	slv:lemma	Herbert Hoover
 11058633-n	slv:def	0	ameriški inženir in politik, * 10. avgust 1874, West Branch, Iowa, † 20. oktober 1964, New York City, New York
-11059263-n	slv:lemma	 Bob Hope
+11059263-n	slv:lemma	Bob Hope
 11059263-n	slv:lemma	Hope
 11059263-n	slv:lemma	Leslie Townes Hope
 11060416-n	slv:lemma	Horacij
@@ -66019,7 +66015,7 @@
 11246040-n	slv:def	0	Image
 11246408-n	slv:lemma	Leontyne Price,
 11246408-n	slv:lemma	Mary Leontyne Price
-11246408-n	slv:lemma	Price 
+11246408-n	slv:lemma	Price
 11247298-n	slv:lemma	Marcel Proust
 11247298-n	slv:lemma	Valentin Louis Georges Eugene Marcel Proust
 11247298-n	slv:def	0	francoski intelektualec, pisatelj, esejist in kritik, * 10. julij 1871, Auteuil, † 18. november 1922, Pariz
@@ -68394,7 +68390,7 @@
 12154228-n	slv:lemma	pandanales
 12154426-n	slv:lemma	pandanaceae
 12155259-n	slv:lemma	typhaceae
-12155773-n	slv:lemma	Širokolistni_rogoz
+12155773-n	slv:lemma	Širokolistni rogoz
 12156308-n	slv:lemma	sparganiaceae
 12156819-n	slv:lemma	zrno
 12157179-n	slv:lemma	rž
@@ -72099,7 +72095,7 @@
 13564910-n	slv:lemma	sinergija
 13564910-n	slv:def	0	se nanaša na pojav, ko dva ali več povzročiteljev oziroma vplivov, ki delujejo skupaj, ustvari efekt, ki je večji od efekta, ki bi ga napovedali, če poznamo samo efekte posameznih povzročiteljev ali vplivov
 13565781-n	slv:lemma	zobljenje
-13566212-n	slv:lemma	Temperaturna sprememba 
+13566212-n	slv:lemma	Temperaturna sprememba
 13566212-n	slv:lemma	temperaturne spremembe
 13566535-n	slv:lemma	tajanje
 13566535-n	slv:lemma	taljenje
@@ -72796,7 +72792,7 @@
 13802920-n	slv:lemma	glagolski način
 13803158-n	slv:lemma	aktiv
 13803158-n	slv:lemma	aktivni glagolski način
-13803158-n	slv:lemma	tvorni glagolski način 
+13803158-n	slv:lemma	tvorni glagolski način
 13803158-n	slv:lemma	tvornik
 13803431-n	slv:lemma	pasiv
 13803431-n	slv:lemma	pasivni glagolski način
@@ -76948,7 +76944,7 @@
 15135822-n	slv:lemma	čas
 15135996-n	slv:lemma	delovni teden
 15135996-n	slv:lemma	teden
-15136147-n	slv:lemma	koledarski teden 
+15136147-n	slv:lemma	koledarski teden
 15136147-n	slv:lemma	teden
 15136453-n	slv:lemma	dan
 15136453-n	slv:exe	0	Ona je lahko spala največ pet ur, tako, da je revica bila večino dneva sama.
