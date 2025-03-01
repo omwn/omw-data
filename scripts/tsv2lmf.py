@@ -196,13 +196,13 @@ def _check_header(
             print(f'UNKNOWN LANGUAGE: {lang}', file=logfile)
         elif bcp47[lang] != lex['language']:
             print('INDEX INCONSISTENT WITH SOURCE: '
-                  f'{bcp47[lang]} != {lex['language']}',
+                  f"{bcp47[lang]} != {lex['language']}",
                   file=logfile)
         if license not in open_license:
             print(f'UNKNOWN LICENSE: {license}', file=logfile)
         elif open_license[license] != lex['license']:
             print('INDEX INCONSISTENT WITH SOURCE: '
-                  f'{open_license[license]} != {lex['license']}',
+                  f"{open_license[license]} != {lex['license']}",
                   file=logfile)
     return label, lang, url, license
 
