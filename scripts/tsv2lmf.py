@@ -14,7 +14,10 @@ from wn.lmf import (
     Metadata,
     LexicalEntry,
     Lemma,
+    Pronunciation,
+    Form,
     Sense,
+    Count,
     Example,
     Synset,
     Definition,
@@ -148,7 +151,7 @@ def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
         for line in tabfile:
             if not line.strip() or line.startswith('#'):
                 continue
-            offset_pos, type_, *content = line.split('\t')
+            offset_pos, type_, *content = line.strip().split('\t')
             offset_pos = offset_pos.strip()
 
             ili = ilimap.get(offset_pos, '')
@@ -168,9 +171,24 @@ def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
                     entries[eid] = {'lemma': lemma, 'pos': pos, 'senses': []}
                 sid = sense_id(lex['id'], lemma, offset_pos[:-2], pos)
                 entries[eid]['senses'].append(sid)
-                senses[sid] = ssid
+                senses[sid] =  {'id': ssid}
                 ss['members'].append(sid)
+            elif type_ == 'count':
+                ### it always comes after the sense
+                lemma, count = content
+                lemma = _clean_lemma(content[0], logfile)
+                sid = sense_id(lex['id'], lemma, offset_pos[:-2], pos)
+                senses[sid]['count'] = int(count.strip())
+            elif type_ == 'pron':
+                if len(content) < 2:
+                    print(f'No Pronunciation: {line.strip()}', file=logfile)
+                    continue
+                lemma = _clean_lemma(content[0], logfile)
+                eid = entry_id(lex['id'], lemma, pos)
+                ### we could have multiple pronunciations
+                entries.setdefault(eid, {}).setdefault('pron', set()).add(tuple(content[1:]))
 
+                        
             elif type_ in ('def', 'exe'):
                 order, text = content
                 ss[type_].append((int(order), text.strip()))
@@ -236,15 +254,47 @@ def build(
         for sid, count in (sense_counts - Counter(sids)).items():
             print(f'REDUNDANT SENSE: {sid} ({count + 1} occurrences)',
                   file=logfile)
+        sns = []
+        for sid in sids:
+            if 'count' in senses[sid]:
+                sns.append(Sense(id = sid,
+                                 counts = [ Count(value = senses[sid]['count']) ],
+                                 synset = senses[sid]['id']))
+            else:
+                sns.append(Sense(id = sid,
+                                 synset = senses[sid]['id']))
 
-        lex['entries'].append(
-            LexicalEntry(
-                id=eid,
-                lemma=Lemma(writtenForm=entry['lemma'], partOfSpeech=entry['pos']),
-                senses=[Sense(id=sid, synset=senses[sid]) for sid in sids]
+
+        if 'pron' in entry:
+            prons = []
+            for p in entry['pron']:
+                prons.append(Pronunciation(
+                    text = p[0],
+                    variety = p[1] if len(p) > 1 else '',
+                    audio = p[2] if len(p) > 2 else '',
+                    notation = p[3] if len(p) > 3 else '',
+                    ))
+            lex['entries'].append(
+                LexicalEntry(
+                    id = eid,
+                    lemma = Lemma(writtenForm = entry['lemma'],
+                                  partOfSpeech = entry['pos'],
+                                  pronunciations = prons),
+                    senses = sns
+                )
             )
-        )
+        
+        else:
+            lex['entries'].append(
+                LexicalEntry(                
+                    id = eid,
+                    lemma = Lemma(writtenForm = entry['lemma'],
+                                  partOfSpeech = entry['pos']),
+                    senses = sns
+                )
+            )
 
+        
     for ssid, synset in synsets.items():
         if len(synset['members']) == 0:
             print(f'EMPTY SYNSET: {ssid}', file=logfile)
