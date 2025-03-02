@@ -166,13 +166,16 @@ def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
             type_ = type_.removeprefix(prefix)  # only match for current language
             if type_ == 'lemma':
                 lemma = _clean_lemma(content[0], logfile)
-                eid = entry_id(lex['id'], lemma, pos)
-                if eid not in entries:
-                    entries[eid] = {'lemma': lemma, 'pos': pos, 'senses': []}
-                sid = sense_id(lex['id'], lemma, offset_pos[:-2], pos)
-                entries[eid]['senses'].append(sid)
-                senses[sid] =  {'id': ssid}
-                ss['members'].append(sid)
+                if lemma in ('GAP!', 'PSEUDOGAP!'):
+                    synsets[ssid]['lexicalized'] = False
+                else:
+                    eid = entry_id(lex['id'], lemma, pos)
+                    if eid not in entries:
+                        entries[eid] = {'lemma': lemma, 'pos': pos, 'senses': []}
+                    sid = sense_id(lex['id'], lemma, offset_pos[:-2], pos)
+                    entries[eid]['senses'].append(sid)
+                    senses[sid] =  {'id': ssid}
+                    ss['members'].append(sid)
             elif type_ == 'count':
                 ### it always comes after the sense
                 lemma, count = content
