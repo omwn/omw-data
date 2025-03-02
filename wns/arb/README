@@ -24,7 +24,7 @@ I read in the roots and broken plurals, although we won't show them by default.
 I couldn't get prettyprint to work with lxml; but it does with xmlstarlet
 mv arb2-lmf.xml arb2-lmf-ugly.xml; xmlstarlet  format --indent-spaces 2 --encode utf-8  arb2-lmf-ugly.xml > arb2-lmf.xml
 
-
+I removed any rows with empty lemmas
 
 there is also an out of date version without diacritics, produced by Motaz SAAD:
 wn-data-ara.tab
