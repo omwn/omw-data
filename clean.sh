@@ -6,7 +6,7 @@ clean() {
     echo "Cleaning ${1} ${2}" >&2
     tab="wns/${1}/wn-data-${2:-$1}.tab"
     err="wns/${1}/${2:-$1}-changes.tab"
-    python -m scripts.clean-tsv --in-place "$tab" 2>"$err"
+    python -m scripts.clean-tsv --in-place "$tab" 2>>"$err"
 }
 
 # clean DIR [LG]
@@ -45,3 +45,6 @@ clean slk
 clean slv
 clean swe
 clean tha
+
+# don't make empty files
+find wns/ -name "*-changes.tab" -empty -delete
