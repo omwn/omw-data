@@ -109,7 +109,7 @@ def _link(text, url):
 
 def _identifier(lex: lmf.Lexicon) -> str:
     """ID:ver|------"""
-    return f"{lex["id"]}:{lex["version"]}"
+    return f"{lex['id']}:{lex['version']}"
 
 
 def _language(lex: lmf.Lexicon) -> str:
