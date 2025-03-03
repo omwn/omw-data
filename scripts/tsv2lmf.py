@@ -190,8 +190,6 @@ def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
                 eid = entry_id(lex['id'], lemma, pos)
                 ### we could have multiple pronunciations
                 entries.setdefault(eid, {}).setdefault('pron', set()).add(tuple(content[1:]))
-
-                        
             elif type_ in ('def', 'exe'):
                 order, text = content
                 ss[type_].append((int(order), text.strip()))
@@ -267,7 +265,6 @@ def build(
                 sns.append(Sense(id = sid,
                                  synset = senses[sid]['id']))
 
-
         if 'pron' in entry:
             prons = []
             for p in entry['pron']:
@@ -286,10 +283,10 @@ def build(
                     senses = sns
                 )
             )
-        
+
         else:
             lex['entries'].append(
-                LexicalEntry(                
+                LexicalEntry(
                     id = eid,
                     lemma = Lemma(writtenForm = entry['lemma'],
                                   partOfSpeech = entry['pos']),
@@ -297,9 +294,8 @@ def build(
                 )
             )
 
-        
     for ssid, synset in synsets.items():
-        if len(synset['members']) == 0:
+        if len(synset['members']) == 0 and synset.get('lexicalized', True):
             print(f'EMPTY SYNSET: {ssid}', file=logfile)
             continue
 
@@ -312,6 +308,7 @@ def build(
                              for _, text in sorted(synset['def'])],
                 examples=[Example(text=text)
                           for _, text in sorted(synset['exe'])],
+                lexicalized=synset.get('lexicalized', True),
                 members=synset['members'],
             )
         )
