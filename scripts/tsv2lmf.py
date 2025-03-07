@@ -3,6 +3,7 @@
 #
 
 from typing import Optional, Tuple, Dict, TextIO
+import logging
 import sys
 from pathlib import Path
 from collections import Counter
@@ -24,12 +25,15 @@ from wn.lmf import (
 )
 
 if __name__ == '__main__':
-    from util import escape_lemma, load_ili_map
+    from util import escape_lemma, load_ili_map, PathLike
 else:
-    from .util import escape_lemma, load_ili_map
+    from .util import escape_lemma, load_ili_map, PathLike
 
 
 LMF_VERSION = '1.3'
+
+log = logging.getLogger("tsv2lmf")
+log.setLevel(logging.INFO)  # not configurable at the moment
 
 
 # CONSTANTS ############################################################
@@ -105,10 +109,12 @@ def convert(
     requires: Optional[dict] = None,
     meta: Optional[dict] = None,
     ilimap: Optional[Dict[str, str]] = None,
-    logfile: Optional[TextIO] = None,
+    logfile: PathLike = "",
 ):
     if logfile is None:
-        logfile = sys.stderr
+        logging.basicConfig(filename=str(logfile), filemode="w")
+    else:
+        logging.basicConfig()
 
     lex = Lexicon(
         id=lexid,
@@ -131,8 +137,8 @@ def convert(
     if ilimap is None:
         ilimap = {}
 
-    entries, senses, synsets = load(source, lex, ilimap, logfile)
-    build(lex, entries, senses, synsets, logfile)
+    entries, senses, synsets = load(source, lex, ilimap)
+    build(lex, entries, senses, synsets)
 
     resource = LexicalResource(lmf_version=LMF_VERSION, lexicons=[lex])
     dump(resource, outfile)
@@ -140,13 +146,13 @@ def convert(
 
 # DATA LOADING AND VALIDATION ##########################################
 
-def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
+def load(source: str, lex: Lexicon, ilimap: Dict[str, str]):
     entries = {}
     senses = {}
     synsets = {}
 
     with open(source, 'rt') as tabfile:
-        label, lang, url, license = _check_header(tabfile, lex, logfile)
+        label, lang, url, license = _check_header(tabfile, lex)
         prefix = f'{lang}:'
         for line in tabfile:
             if not line.strip() or line.startswith('#'):
@@ -165,7 +171,7 @@ def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
 
             type_ = type_.removeprefix(prefix)  # only match for current language
             if type_ == 'lemma':
-                lemma = _clean_lemma(content[0], logfile)
+                lemma = _clean_lemma(content[0])
                 if lemma in ('GAP!', 'PSEUDOGAP!'):
                     synsets[ssid]['lexicalized'] = False
                 else:
@@ -179,14 +185,14 @@ def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
             elif type_ == 'count':
                 ### it always comes after the sense
                 lemma, count = content
-                lemma = _clean_lemma(content[0], logfile)
+                lemma = _clean_lemma(content[0])
                 sid = sense_id(lex['id'], lemma, offset_pos[:-2], pos)
                 senses[sid]['count'] = int(count.strip())
             elif type_ == 'pron':
                 if len(content) < 2:
-                    print(f'No Pronunciation: {line.strip()}', file=logfile)
+                    log.warning('No Pronunciation: %s', line.strip())
                     continue
-                lemma = _clean_lemma(content[0], logfile)
+                lemma = _clean_lemma(content[0])
                 eid = entry_id(lex['id'], lemma, pos)
                 ### we could have multiple pronunciations
                 entries.setdefault(eid, {}).setdefault('pron', set()).add(tuple(content[1:]))
@@ -195,7 +201,7 @@ def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
                 ss[type_].append((int(order), text.strip()))
 
             else:
-                print(f'IGNORING: {line.strip()}', file=logfile)
+                log.warning('IGNORING: %s', line.strip())
 
     return entries, senses, synsets
 
@@ -203,38 +209,39 @@ def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
 def _check_header(
     tabfile: TextIO,
     lex: Lexicon,
-    logfile: TextIO
 ) -> Tuple[str, str, str, str]:
     if not tabfile.buffer.peek(1).startswith(b'#'):
-        print('NO META DATA', file=logfile)
+        log.warning('NO META DATA')
         label = lang = url = license = 'n/a'
     else:
         header = next(tabfile).lstrip('#').strip()
         label, lang, url, license = header.split('\t')
         if lang not in bcp47:
-            print(f'UNKNOWN LANGUAGE: {lang}', file=logfile)
+            log.warn('UNKNOWN LANGUAGE: %s', lang)
         elif bcp47[lang] != lex['language']:
-            print('INDEX INCONSISTENT WITH SOURCE: '
-                  f"{bcp47[lang]} != {lex['language']}",
-                  file=logfile)
+            log.warning(
+                'INDEX INCONSISTENT WITH SOURCE: %s != %s',
+                bcp47[lang],
+                lex['language'],
+            )
         if license not in open_license:
-            print(f'UNKNOWN LICENSE: {license}', file=logfile)
+            log.warning('UNKNOWN LICENSE: %s', license)
         elif open_license[license] != lex['license']:
-            print('INDEX INCONSISTENT WITH SOURCE: '
-                  f"{open_license[license]} != {lex['license']}",
-                  file=logfile)
+            log.warning(
+                'INDEX INCONSISTENT WITH SOURCE: %s != %s',
+                open_license[license],
+                lex['license'],
+            )
     return label, lang, url, license
 
 
-def _clean_lemma(lemma: str, logfile: TextIO) -> str:
+def _clean_lemma(lemma: str) -> str:
     lemma = lemma.strip()
     if lemma.startswith('"') and lemma.endswith('"'):
         lemma = lemma[1:-1]
-        print('CLEANED: {} (removed start and end double quote)'.format(lemma),
-              file=logfile)
+        log.info('CLEANED: %s (removed start and end double quote)', lemma)
     if '"' in lemma:
-        print('WARNING: {} (contains a double quote)'.format(lemma),
-              file=logfile)
+        log.warning("%s (contains a double quote)", lemma)
     lemma = lemma.replace('_', ' ')
     return lemma
 
@@ -246,15 +253,13 @@ def build(
     entries: dict,
     senses: dict,
     synsets: dict,
-    logfile: TextIO
 ) -> None:
     for eid, entry in entries.items():
         sids = set(entry['senses'])
         # validate senses
         sense_counts = Counter(entry['senses'])
         for sid, count in (sense_counts - Counter(sids)).items():
-            print(f'REDUNDANT SENSE: {sid} ({count + 1} occurrences)',
-                  file=logfile)
+            log.warning('REDUNDANT SENSE: %s (%d occurrences)', sid, count + 1)
         sns = []
         for sid in sids:
             if 'count' in senses[sid]:
@@ -296,7 +301,7 @@ def build(
 
     for ssid, synset in synsets.items():
         if len(synset['members']) == 0 and synset.get('lexicalized', True):
-            print(f'EMPTY SYNSET: {ssid}', file=logfile)
+            log.warning('EMPTY SYNSET: %s', ssid)
             continue
 
         lex['synsets'].append(

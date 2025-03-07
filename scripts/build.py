@@ -69,23 +69,22 @@ for lexid, project in packages.items():
         continue
     print(f'{lexid}: converting')
     if not args.dry_run:
-        with (LOGDIR / f'tsv2lmf_{lexid}-{VERSION}.log').open('w') as logfile:
-            tsv2lmf.convert(
-                project['source'],
-                str(outfile),
-                lexid,
-                get('label'),
-                get('language'),
-                get('email'),
-                get('license'),
-                VERSION,
-                url=get('url'),
-                citation=get('citation'),
-                logo=get('logo'),
-                requires=get('requires'),
-                ilimap=ilimap,
-                logfile=logfile,
-            )
+        tsv2lmf.convert(
+            project['source'],
+            str(outfile),
+            lexid,
+            get('label'),
+            get('language'),
+            get('email'),
+            get('license'),
+            VERSION,
+            url=get('url'),
+            citation=get('citation'),
+            logo=get('logo'),
+            requires=get('requires'),
+            ilimap=ilimap,
+            logfile=LOGDIR / f'tsv2lmf_{lexid}-{VERSION}.log',
+        )
 
     # copy extra files if available
     sourcedir = Path(project['source']).parent
