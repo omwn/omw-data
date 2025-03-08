@@ -27,13 +27,13 @@ from wn.lmf import (
     Dependency,
 )
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from util import escape_lemma, load_ili_map, PathLike
 else:
     from .util import escape_lemma, load_ili_map, PathLike
 
 
-LMF_VERSION = '1.3'
+LMF_VERSION = "1.3"
 
 log = logging.getLogger("tsv2lmf")
 log.setLevel(logging.INFO)  # not configurable at the moment
@@ -42,56 +42,56 @@ log.setLevel(logging.INFO)  # not configurable at the moment
 # CONSTANTS ############################################################
 
 BCP47 = {
-    "als": "sq",        # Albanian
-    "arb": "arb",       # Arabic
-    "bul": "bg",        # Bulgarian
+    "als": "sq",  # Albanian
+    "arb": "arb",  # Arabic
+    "bul": "bg",  # Bulgarian
     "cmn": "cmn-Hans",  # Mandarin Chinese (Simplified)
     "qcn": "cmn-Hant",  # Mandarin Chinese (Traditional)
-    "dan": "da",        # Danish
-    "ell": "el",        # Greek
-    "eng": "en",        # English
-    "fas": "fa",        # Farsi
-    "fin": "fi",        # Finnish
-    "fra": "fr",        # French
-    "heb": "he",        # Hebrew
-    "hrv": "hr",        # Croation
-    "isl": "is",        # Icelandic
-    "ita": "it",        # Italian
-    "jpn": "ja",        # Japanese
-    "cat": "ca",        # Catalan
-    "eus": "eu",        # Basque
-    "glg": "gl",        # Galician
-    "spa": "es",        # Spanish
-    "ind": "id",        # Indonesian
-    "zsm": "zsm",       # Standard Malay
-    "nld": "nl",        # Dutch
-    "nno": "nn",        # Norwegian (Norsk)
-    "nob": "nb",        # Norwegian (Bokmal)
-    "pol": "pl",        # Polish
-    "por": "pt",        # Portuguese
-    "ron": "ro",        # Romanian
-    "lit": "lt",        # Lithuanian
-    "slk": "sk",        # Slovak
-    "slv": "sl",        # Slovene
-    "swe": "sv",        # Swedish
-    "tha": "th",        # Thai
-    "vie": "vi",        # Vietnamese
+    "dan": "da",  # Danish
+    "ell": "el",  # Greek
+    "eng": "en",  # English
+    "fas": "fa",  # Farsi
+    "fin": "fi",  # Finnish
+    "fra": "fr",  # French
+    "heb": "he",  # Hebrew
+    "hrv": "hr",  # Croation
+    "isl": "is",  # Icelandic
+    "ita": "it",  # Italian
+    "jpn": "ja",  # Japanese
+    "cat": "ca",  # Catalan
+    "eus": "eu",  # Basque
+    "glg": "gl",  # Galician
+    "spa": "es",  # Spanish
+    "ind": "id",  # Indonesian
+    "zsm": "zsm",  # Standard Malay
+    "nld": "nl",  # Dutch
+    "nno": "nn",  # Norwegian (Norsk)
+    "nob": "nb",  # Norwegian (Bokmal)
+    "pol": "pl",  # Polish
+    "por": "pt",  # Portuguese
+    "ron": "ro",  # Romanian
+    "lit": "lt",  # Lithuanian
+    "slk": "sk",  # Slovak
+    "slv": "sl",  # Slovene
+    "swe": "sv",  # Swedish
+    "tha": "th",  # Thai
+    "vie": "vi",  # Vietnamese
 }
 
 OPEN_LICENSES = {
-    'CC BY 3.0': 'https://creativecommons.org/licenses/by/3.0/',
-    'CC-BY 3.0': 'https://creativecommons.org/licenses/by/3.0/',
-    'CC BY 4.0': 'https://creativecommons.org/licenses/by/4.0/',
-    'CC BY SA 3.0': 'https://creativecommons.org/licenses/by-sa/3.0/',
-    'CC BY-SA': 'https://creativecommons.org/licenses/by-sa/',
-    'CC BY SA': 'https://creativecommons.org/licenses/by-sa/',
-    'CC BY SA 4.0': 'https://creativecommons.org/licenses/by-sa/4.0/',
-    'Apache 2.0': 'https://opensource.org/licenses/Apache-2.0',
-    'CeCILL-C': 'http://www.cecill.info/licenses/Licence_CeCILL-C_V1-en.html',
-    'MIT': 'https://opensource.org/licenses/MIT/',
-    'wordnet': 'wordnet',
-    'unicode': 'https://www.unicode.org/license.html',
-    'ODC-BY 1.0': 'http://opendefinition.org/licenses/odc-by/'
+    "CC BY 3.0": "https://creativecommons.org/licenses/by/3.0/",
+    "CC-BY 3.0": "https://creativecommons.org/licenses/by/3.0/",
+    "CC BY 4.0": "https://creativecommons.org/licenses/by/4.0/",
+    "CC BY SA 3.0": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "CC BY-SA": "https://creativecommons.org/licenses/by-sa/",
+    "CC BY SA": "https://creativecommons.org/licenses/by-sa/",
+    "CC BY SA 4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "Apache 2.0": "https://opensource.org/licenses/Apache-2.0",
+    "CeCILL-C": "http://www.cecill.info/licenses/Licence_CeCILL-C_V1-en.html",
+    "MIT": "https://opensource.org/licenses/MIT/",
+    "wordnet": "wordnet",
+    "unicode": "https://www.unicode.org/license.html",
+    "ODC-BY 1.0": "http://opendefinition.org/licenses/odc-by/",
 }
 
 
@@ -132,26 +132,28 @@ class TSVData:
 
 # EXCEPTIONS ###########################################################
 
+
 class TSV2LMFError(Exception):
     """Raised on unexpected input in a TSV file."""
 
 
 # MAIN FUNCTION ########################################################
 
+
 def main(args: argparse.Namespace) -> int:
     source = Path(args.SOURCE)
     if not source.is_file():
-        raise ValueError('source file not found')
+        raise ValueError("source file not found")
     destination = Path(args.DESTINATION)
 
     if args.requires:
-        id, _, ver = args.requires.partition(':')
+        id, _, ver = args.requires.partition(":")
         requires = Dependency(id=id, version=ver)
     else:
         requires = None
 
     if args.meta:
-        meta = Metadata(**dict(kv.split('=', 1) for kv in args.meta))
+        meta = Metadata(**dict(kv.split("=", 1) for kv in args.meta))
     else:
         meta = None
 
@@ -221,7 +223,7 @@ def convert(
         meta=meta,
     )
     if requires:
-        lex['requires'].append(requires)
+        lex["requires"].append(requires)
 
     if ilimap is None:
         ilimap = {}
@@ -236,10 +238,11 @@ def convert(
 
 # DATA LOADING AND VALIDATION ##########################################
 
+
 def _load_header(data: TSVData, line: str) -> None:
-    header = line.lstrip('#').strip()
+    header = line.lstrip("#").strip()
     try:
-        data.label, data.language, data.url, data.license = header.split('\t')
+        data.label, data.language, data.url, data.license = header.split("\t")
     except ValueError as exc:
         raise TSV2LMFError(f"Invalid header: {line}") from exc
 
@@ -255,9 +258,7 @@ def _load_lemma(data: TSVData, pwn_id: str, args: list[str]) -> None:
         data.entries[eid] = EntryData(
             eid,
             pos,
-            forms=[
-                Form(writtenForm=lemma, pronunciations=[], tags=[])
-            ],
+            forms=[Form(writtenForm=lemma, pronunciations=[], tags=[])],
         )
     # establish sense with entry and synset
     sense = Sense(
@@ -321,7 +322,7 @@ def load(
             if not line or line.startswith("#"):
                 continue
 
-            pwn_id, type_, *args = line.split('\t')
+            pwn_id, type_, *args = line.split("\t")
             pwn_id = pwn_id.strip()
             # only match for current language
             type_ = type_.strip().removeprefix(prefix)
@@ -350,10 +351,10 @@ def _clean_lemma(lemma: str) -> str:
     lemma = lemma.strip()
     if lemma.startswith('"') and lemma.endswith('"'):
         lemma = lemma[1:-1]
-        log.info('CLEANED: %s (removed start and end double quote)', lemma)
+        log.info("CLEANED: %s (removed start and end double quote)", lemma)
     if '"' in lemma:
-        log.warning('%s (contains a double quote)', lemma)
-    lemma = lemma.replace('_', ' ')
+        log.warning("%s (contains a double quote)", lemma)
+    lemma = lemma.replace("_", " ")
     return lemma
 
 
@@ -395,6 +396,7 @@ def _get_exe_or_def(args: list[str]) -> tuple[int, str]:
 
 # VALIDATION ###########################################################
 
+
 def validate(lex: Lexicon, data: TSVData) -> None:
     if data.language not in BCP47:
         log.warning("UNKNOWN LANGUAGE: %s", data.language)
@@ -415,9 +417,7 @@ def validate(lex: Lexicon, data: TSVData) -> None:
 
     redundant_senses = data.sense_counts - Counter(set(data.sense_counts))
     for sid, count in redundant_senses.items():
-        log.warning(
-            "REDUNDANT SENSES SUPPRESSED: %s (%d occurrences)", sid, count
-        )
+        log.warning("REDUNDANT SENSES SUPPRESSED: %s (%d occurrences)", sid, count)
 
     for sd in data.synsets.values():
         if len(sd.members) == 0 and sd.lexicalized:
@@ -425,6 +425,7 @@ def validate(lex: Lexicon, data: TSVData) -> None:
 
 
 # LEXICON BUILDING #####################################################
+
 
 def build(
     lex: Lexicon,
@@ -455,9 +456,7 @@ def build(
                 definitions=[
                     Definition(text=defn) for _, defn in sorted(sd.definitions)
                 ],
-                examples=[
-                    Example(text=ex) for _, ex in sorted(sd.examples)
-                ],
+                examples=[Example(text=ex) for _, ex in sorted(sd.examples)],
                 lexicalized=sd.lexicalized,
                 members=[sense["id"] for sense in sd.members.values()],
             )
@@ -466,42 +465,49 @@ def build(
 
 # ID FORMATTERS ########################################################
 
+
 def synset_id(lexid: str, offset: str, pos: str) -> str:
     return f"{lexid}-{offset}-{pos}"
 
 
 def entry_id(lexid: str, lemma: str, pos: str) -> str:
-    return f'{lexid}-{escape_lemma(lemma)}-{pos}'
+    return f"{lexid}-{escape_lemma(lemma)}-{pos}"
 
 
 def sense_id(lexid: str, lemma: str, offset: str, pos: str) -> str:
-    return f'{lexid}-{escape_lemma(lemma)}-{offset}-{pos}'
+    return f"{lexid}-{escape_lemma(lemma)}-{offset}-{pos}"
 
 
 # COMMAND-LINE INTERFACE ###############################################
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('SOURCE', help='source TSV file')
-    parser.add_argument('DESTINATION', help='output XML file path')
-    parser.add_argument('--id', required=True, help='lexicon ID')
-    parser.add_argument('--label', required=True, help='name or description')
-    parser.add_argument('--language', required=True, help='language (BCP-47)')
-    parser.add_argument('--email', required=True, help='project email address')
-    parser.add_argument('--license', required=True, help='license name or URL')
-    parser.add_argument('--version', required=True, help='lexicon version')
-    parser.add_argument('--url', help='project url')
-    parser.add_argument('--citation', help='readable citation')
-    parser.add_argument('--logo', help='url of project logo')
-    parser.add_argument('--requires', metavar='ID:VERSION',
-                        help='lexicon dependency')
-    parser.add_argument('--meta', action='append', metavar='KEY=VALUE',
-                        help='lexicon metadata; may be repeated')
-    parser.add_argument('--ili-map', metavar='PATH',
-                        help='synset to ILI mapping file')
-    parser.add_argument('--log', type=argparse.FileType('w'),
-                        default=sys.stderr, metavar='PATH',
-                        help='file for logging output (default: stderr)')
+    parser.add_argument("SOURCE", help="source TSV file")
+    parser.add_argument("DESTINATION", help="output XML file path")
+    parser.add_argument("--id", required=True, help="lexicon ID")
+    parser.add_argument("--label", required=True, help="name or description")
+    parser.add_argument("--language", required=True, help="language (BCP-47)")
+    parser.add_argument("--email", required=True, help="project email address")
+    parser.add_argument("--license", required=True, help="license name or URL")
+    parser.add_argument("--version", required=True, help="lexicon version")
+    parser.add_argument("--url", help="project url")
+    parser.add_argument("--citation", help="readable citation")
+    parser.add_argument("--logo", help="url of project logo")
+    parser.add_argument("--requires", metavar="ID:VERSION", help="lexicon dependency")
+    parser.add_argument(
+        "--meta",
+        action="append",
+        metavar="KEY=VALUE",
+        help="lexicon metadata; may be repeated",
+    )
+    parser.add_argument("--ili-map", metavar="PATH", help="synset to ILI mapping file")
+    parser.add_argument(
+        "--log",
+        type=argparse.FileType("w"),
+        default=sys.stderr,
+        metavar="PATH",
+        help="file for logging output (default: stderr)",
+    )
     args = parser.parse_args()
 
     sys.exit(main(args))
