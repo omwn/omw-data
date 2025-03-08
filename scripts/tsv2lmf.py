@@ -503,8 +503,7 @@ if __name__ == "__main__":
     parser.add_argument("--ili-map", metavar="PATH", help="synset to ILI mapping file")
     parser.add_argument(
         "--log",
-        type=argparse.FileType("w"),
-        default=sys.stderr,
+        type=Path,
         metavar="PATH",
         help="file for logging output (default: stderr)",
     )
