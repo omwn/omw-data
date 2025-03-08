@@ -1,5 +1,5 @@
 
-from typing import Optional
+from typing import Optional, Any
 from pathlib import Path
 import argparse
 
@@ -60,32 +60,36 @@ for lexid, project in packages.items():
     packagedir.mkdir(exist_ok=True)
     outfile = packagedir / f'{lexid}.xml'
 
-    def get(key: str) -> Optional[str]:
+    def get(key: str) -> Any:
         return project.get(key, defaults.get(key))
 
     if any(get(attr) is None for attr in REQUIRED_ATTRIBUTES):
         print(f'{lexid}: missing one or more required attributes '
               f'({" ".join(REQUIRED_ATTRIBUTES)})')
         continue
+
+    requires: Optional[dict[str, str]] = None
+    if req := get('requires'):
+        requires = {'id': req['id'], 'version': req['version']}
+
     print(f'{lexid}: converting')
     if not args.dry_run:
-        with (LOGDIR / f'tsv2lmf_{lexid}-{VERSION}.log').open('w') as logfile:
-            tsv2lmf.convert(
-                project['source'],
-                str(outfile),
-                lexid,
-                get('label'),
-                get('language'),
-                get('email'),
-                get('license'),
-                VERSION,
-                url=get('url'),
-                citation=get('citation'),
-                logo=get('logo'),
-                requires=get('requires'),
-                ilimap=ilimap,
-                logfile=logfile,
-            )
+        tsv2lmf.convert(
+            project['source'],
+            str(outfile),
+            lexid,
+            str(get('label') or ""),
+            str(get('language') or ""),
+            str(get('email') or ""),
+            str(get('license') or ""),
+            VERSION,
+            url=get('url'),
+            citation=get('citation'),
+            logo=get('logo'),
+            requires=requires,
+            ilimap=ilimap,
+            logfile=LOGDIR / f'tsv2lmf_{lexid}-{VERSION}.log',
+        )
 
     # copy extra files if available
     sourcedir = Path(project['source']).parent

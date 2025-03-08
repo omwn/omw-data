@@ -2,10 +2,13 @@
 # Take an OMW 1.0 wordnet TSV and convert to WN-LMF 1.3
 #
 
-from typing import Optional, Tuple, Dict, TextIO
+import argparse
+import logging
 import sys
-from pathlib import Path
 from collections import Counter
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Optional
 
 from wn.lmf import (
     dump,
@@ -14,82 +17,175 @@ from wn.lmf import (
     Metadata,
     LexicalEntry,
     Lemma,
+    Pronunciation,
+    Form,
     Sense,
+    Count,
     Example,
     Synset,
     Definition,
+    Dependency,
 )
 
-if __name__ == '__main__':
-    from util import escape_lemma, load_ili_map
+if __name__ == "__main__":
+    from util import escape_lemma, load_ili_map, PathLike
 else:
-    from .util import escape_lemma, load_ili_map
+    from .util import escape_lemma, load_ili_map, PathLike
 
 
-LMF_VERSION = '1.3'
+LMF_VERSION = "1.3"
+
+log = logging.getLogger("tsv2lmf")
+log.setLevel(logging.INFO)  # not configurable at the moment
 
 
 # CONSTANTS ############################################################
 
-bcp47 = {
-    "als": "sq",        # Albanian
-    "arb": "arb",       # Arabic
-    "bul": "bg",        # Bulgarian
+BCP47 = {
+    "als": "sq",  # Albanian
+    "arb": "arb",  # Arabic
+    "bul": "bg",  # Bulgarian
     "cmn": "cmn-Hans",  # Mandarin Chinese (Simplified)
     "qcn": "cmn-Hant",  # Mandarin Chinese (Traditional)
-    "dan": "da",        # Danish
-    "ell": "el",        # Greek
-    "eng": "en",        # English
-    "fas": "fa",        # Farsi
-    "fin": "fi",        # Finnish
-    "fra": "fr",        # French
-    "heb": "he",        # Hebrew
-    "hrv": "hr",        # Croation
-    "isl": "is",        # Icelandic
-    "ita": "it",        # Italian
-    "jpn": "ja",        # Japanese
-    "cat": "ca",        # Catalan
-    "eus": "eu",        # Basque
-    "glg": "gl",        # Galician
-    "spa": "es",        # Spanish
-    "ind": "id",        # Indonesian
-    "zsm": "zsm",       # Standard Malay
-    "nld": "nl",        # Dutch
-    "nno": "nn",        # Norwegian (Norsk)
-    "nob": "nb",        # Norwegian (Bokmal)
-    "pol": "pl",        # Polish
-    "por": "pt",        # Portuguese
-    "ron": "ro",        # Romanian
-    "lit": "lt",        # Lithuanian
-    "slk": "sk",        # Slovak
-    "slv": "sl",        # Slovene
-    "swe": "sv",        # Swedish
-    "tha": "th",        # Thai
-    "vie": "vi",        # Vietnamese
+    "dan": "da",  # Danish
+    "ell": "el",  # Greek
+    "eng": "en",  # English
+    "fas": "fa",  # Farsi
+    "fin": "fi",  # Finnish
+    "fra": "fr",  # French
+    "heb": "he",  # Hebrew
+    "hrv": "hr",  # Croation
+    "isl": "is",  # Icelandic
+    "ita": "it",  # Italian
+    "jpn": "ja",  # Japanese
+    "cat": "ca",  # Catalan
+    "eus": "eu",  # Basque
+    "glg": "gl",  # Galician
+    "spa": "es",  # Spanish
+    "ind": "id",  # Indonesian
+    "zsm": "zsm",  # Standard Malay
+    "nld": "nl",  # Dutch
+    "nno": "nn",  # Norwegian (Norsk)
+    "nob": "nb",  # Norwegian (Bokmal)
+    "pol": "pl",  # Polish
+    "por": "pt",  # Portuguese
+    "ron": "ro",  # Romanian
+    "lit": "lt",  # Lithuanian
+    "slk": "sk",  # Slovak
+    "slv": "sl",  # Slovene
+    "swe": "sv",  # Swedish
+    "tha": "th",  # Thai
+    "vie": "vi",  # Vietnamese
 }
 
-open_license = {
-    'CC BY 3.0': 'https://creativecommons.org/licenses/by/3.0/',
-    'CC-BY 3.0': 'https://creativecommons.org/licenses/by/3.0/',
-    'CC BY 4.0': 'https://creativecommons.org/licenses/by/4.0/',
-    'CC BY SA 3.0': 'https://creativecommons.org/licenses/by-sa/3.0/',
-    'CC BY-SA': 'https://creativecommons.org/licenses/by-sa/',
-    'CC BY SA': 'https://creativecommons.org/licenses/by-sa/',
-    'CC BY SA 4.0': 'https://creativecommons.org/licenses/by-sa/4.0/',
-    'Apache 2.0': 'https://opensource.org/licenses/Apache-2.0',
-    'CeCILL-C': 'http://www.cecill.info/licenses/Licence_CeCILL-C_V1-en.html',
-    'MIT': 'https://opensource.org/licenses/MIT/',
-    'wordnet': 'wordnet',
-    'unicode': 'https://www.unicode.org/license.html',
-    'ODC-BY 1.0': 'http://opendefinition.org/licenses/odc-by/'
+OPEN_LICENSES = {
+    "CC BY 3.0": "https://creativecommons.org/licenses/by/3.0/",
+    "CC-BY 3.0": "https://creativecommons.org/licenses/by/3.0/",
+    "CC BY 4.0": "https://creativecommons.org/licenses/by/4.0/",
+    "CC BY SA 3.0": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "CC BY-SA": "https://creativecommons.org/licenses/by-sa/",
+    "CC BY SA": "https://creativecommons.org/licenses/by-sa/",
+    "CC BY SA 4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "Apache 2.0": "https://opensource.org/licenses/Apache-2.0",
+    "CeCILL-C": "http://www.cecill.info/licenses/Licence_CeCILL-C_V1-en.html",
+    "MIT": "https://opensource.org/licenses/MIT/",
+    "wordnet": "wordnet",
+    "unicode": "https://www.unicode.org/license.html",
+    "ODC-BY 1.0": "http://opendefinition.org/licenses/odc-by/",
 }
+
+
+# INTERMEDIATE DATA STRUCTURES #########################################
+
+
+@dataclass
+class EntryData:
+    id: str
+    pos: str
+    forms: list[Form] = field(default_factory=list)
+    senses: dict[str, Sense] = field(default_factory=dict)
+
+
+@dataclass
+class SynsetData:
+    id: str
+    pos: str
+    members: dict[str, Sense] = field(default_factory=dict)
+    definitions: list[tuple[int, str]] = field(default_factory=list)
+    examples: list[tuple[int, str]] = field(default_factory=list)
+    lexicalized: bool = True
+
+
+@dataclass
+class TSVData:
+    lex_id: str
+    label: str = ""
+    language: str = ""
+    url: str = ""
+    license: str = ""
+    synsets: dict[str, SynsetData] = field(default_factory=dict)
+    entries: dict[str, EntryData] = field(default_factory=dict)
+    # for bookkeeping
+    prev_lemma: str = ""
+    sense_counts: Counter = field(default_factory=Counter)
+
+
+# EXCEPTIONS ###########################################################
+
+
+class TSV2LMFError(Exception):
+    """Raised on unexpected input in a TSV file."""
 
 
 # MAIN FUNCTION ########################################################
 
+
+def main(args: argparse.Namespace) -> int:
+    source = Path(args.SOURCE)
+    if not source.is_file():
+        raise ValueError("source file not found")
+    destination = Path(args.DESTINATION)
+
+    if args.requires:
+        id, _, ver = args.requires.partition(":")
+        requires = Dependency(id=id, version=ver)
+    else:
+        requires = None
+
+    if args.meta:
+        meta = Metadata(**dict(kv.split("=", 1) for kv in args.meta))
+    else:
+        meta = None
+
+    if args.ili_map:
+        ilimap = load_ili_map(args.ili_map)
+    else:
+        ilimap = None
+
+    convert(
+        source,
+        destination,
+        args.id,
+        args.label,
+        args.language,
+        args.email,
+        args.license,
+        args.version,
+        url=args.url,
+        citation=args.citation,
+        logo=args.logo,
+        requires=requires,
+        meta=meta,
+        ilimap=ilimap,
+        logfile=args.log,
+    )
+
+    return 0
+
+
 def convert(
-    source: str,
-    outfile: str,
+    source: PathLike,
+    outfile: PathLike,
     lexid: str,
     label: str,
     language: str,
@@ -99,18 +195,22 @@ def convert(
     url: Optional[str] = None,
     citation: Optional[str] = None,
     logo: Optional[str] = None,
-    requires: Optional[dict] = None,
-    meta: Optional[dict] = None,
-    ilimap: Optional[Dict[str, str]] = None,
-    logfile: Optional[TextIO] = None,
-):
-    if logfile is None:
-        logfile = sys.stderr
+    requires: Optional[Dependency] = None,
+    meta: Optional[Metadata] = None,
+    ilimap: Optional[dict[str, str]] = None,
+    logfile: PathLike = "",
+) -> None:
+    if logfile:
+        logging.basicConfig(filename=str(logfile), filemode="w", force=True)
+    else:
+        logging.basicConfig()
+
+    log.info("Converting %s:%s [%s]: %s", lexid, version, language, source)
 
     lex = Lexicon(
         id=lexid,
         label=label,
-        language=bcp47.get(language, language),
+        language=BCP47.get(language, language),
         email=email,
         license=license,
         version=version,
@@ -123,13 +223,14 @@ def convert(
         meta=meta,
     )
     if requires:
-        lex['requires'].append(requires)
+        lex["requires"].append(requires)
 
     if ilimap is None:
         ilimap = {}
 
-    entries, senses, synsets = load(source, lex, ilimap, logfile)
-    build(lex, entries, senses, synsets, logfile)
+    data = load(Path(source), lex["id"])
+    validate(lex, data)
+    build(lex, data, ilimap)
 
     resource = LexicalResource(lmf_version=LMF_VERSION, lexicons=[lex])
     dump(resource, outfile)
@@ -137,209 +238,275 @@ def convert(
 
 # DATA LOADING AND VALIDATION ##########################################
 
-def load(source: str, lex: Lexicon, ilimap: Dict[str, str], logfile: TextIO):
-    entries = {}
-    senses = {}
-    synsets = {}
 
-    with open(source, 'rt') as tabfile:
-        label, lang, url, license = _check_header(tabfile, lex, logfile)
-        prefix = f'{lang}:'
-        for line in tabfile:
-            if not line.strip() or line.startswith('#'):
+def _load_header(data: TSVData, line: str) -> None:
+    header = line.lstrip("#").strip()
+    try:
+        data.label, data.language, data.url, data.license = header.split("\t")
+    except ValueError as exc:
+        raise TSV2LMFError(f"Invalid header: {line}") from exc
+
+
+def _load_lemma(data: TSVData, pwn_id: str, args: list[str]) -> None:
+    offset, pos = _split_offset_pos(pwn_id)
+    lemma = _clean_lemma(args[0])
+    eid = entry_id(data.lex_id, lemma, pos)
+    sid = sense_id(data.lex_id, lemma, offset, pos)
+    ssid = synset_id(data.lex_id, offset, pos)
+    # create entry if necessary
+    if eid not in data.entries:
+        data.entries[eid] = EntryData(
+            eid,
+            pos,
+            forms=[Form(writtenForm=lemma, pronunciations=[], tags=[])],
+        )
+    # establish sense with entry and synset
+    sense = Sense(
+        id=sid,
+        synset=ssid,
+        counts=[],
+        lexicalized=True,
+    )
+    data.synsets[pwn_id].members[lemma] = sense
+    data.entries[eid].senses[pwn_id] = sense
+
+    data.prev_lemma = lemma  # for checking count or pron lemmas
+    data.sense_counts[sid] += 1  # for validation
+
+
+def _load_count(data: TSVData, pwn_id: str, args: list[str]) -> None:
+    lemma = _clean_lemma(args[0])
+    _check_lemma(lemma, data.prev_lemma)
+    sd = data.synsets[pwn_id]
+    sd.members[lemma]["counts"].append(_get_count(args))
+
+
+def _load_pron(data: TSVData, pwn_id: str, args: list[str]) -> None:
+    lemma = _clean_lemma(args[0])
+    _check_lemma(lemma, data.prev_lemma)
+    eid = entry_id(data.lex_id, lemma, _split_offset_pos(pwn_id)[1])
+    last_form = data.entries[eid].forms[-1]
+    last_form["pronunciations"].append(_get_pronunciation(args))
+
+
+def _load_exe(data: TSVData, pwn_id: str, args: list[str]) -> None:
+    sd = data.synsets[pwn_id]
+    sd.examples.append(_get_exe_or_def(args))
+
+
+def _load_def(data: TSVData, pwn_id: str, args: list[str]) -> None:
+    sd = data.synsets[pwn_id]
+    sd.definitions.append(_get_exe_or_def(args))
+
+
+FUNCTIONS = {
+    "lemma": _load_lemma,
+    "count": _load_count,
+    "pron": _load_pron,
+    "exe": _load_exe,
+    "def": _load_def,
+}
+
+
+def load(
+    source: Path,
+    lex_id: str,
+) -> TSVData:
+    data = TSVData(lex_id)
+    with source.open("rt") as tabfile:
+        _load_header(data, next(tabfile))  # reads line 1
+        prefix = f"{data.language}:"
+
+        for lineno, line in enumerate(tabfile, 2):
+            line = line.strip()
+            if not line or line.startswith("#"):
                 continue
-            offset_pos, type_, *content = line.split('\t')
-            offset_pos = offset_pos.strip()
 
-            ili = ilimap.get(offset_pos, '')
+            pwn_id, type_, *args = line.split("\t")
+            pwn_id = pwn_id.strip()
+            # only match for current language
+            type_ = type_.strip().removeprefix(prefix)
 
-            ssid = synset_id(lex['id'], offset_pos)
-            pos = ssid[-1]
-            if ssid not in synsets:
-                synsets[ssid] = {'pos': pos, 'ili': ili,
-                                 'members': [], 'def': [], 'exe': []}
-            ss = synsets[ssid]
+            if pwn_id not in data.synsets:
+                offset, pos = _split_offset_pos(pwn_id)
+                ssid = synset_id(lex_id, offset, pos)
+                data.synsets[pwn_id] = SynsetData(ssid, pos)
 
-            type_ = type_.removeprefix(prefix)  # only match for current language
-            if type_ == 'lemma':
-                lemma = _clean_lemma(content[0], logfile)
-                eid = entry_id(lex['id'], lemma, pos)
-                if eid not in entries:
-                    entries[eid] = {'lemma': lemma, 'pos': pos, 'senses': []}
-                sid = sense_id(lex['id'], lemma, offset_pos[:-2], pos)
-                entries[eid]['senses'].append(sid)
-                senses[sid] = ssid
-                ss['members'].append(sid)
+            try:
+                FUNCTIONS[type_](data, pwn_id, args)
+            except KeyError:
+                log.warning("Ignoring line with unknown type: %s", type_)
 
-            elif type_ in ('def', 'exe'):
-                order, text = content
-                ss[type_].append((int(order), text.strip()))
-
-            else:
-                print(f'IGNORING: {line.strip()}', file=logfile)
-
-    return entries, senses, synsets
+    return data
 
 
-def _check_header(
-    tabfile: TextIO,
-    lex: Lexicon,
-    logfile: TextIO
-) -> Tuple[str, str, str, str]:
-    if not tabfile.buffer.peek(1).startswith(b'#'):
-        print('NO META DATA', file=logfile)
-        label = lang = url = license = 'n/a'
-    else:
-        header = next(tabfile).lstrip('#').strip()
-        label, lang, url, license = header.split('\t')
-        if lang not in bcp47:
-            print(f'UNKNOWN LANGUAGE: {lang}', file=logfile)
-        elif bcp47[lang] != lex['language']:
-            print('INDEX INCONSISTENT WITH SOURCE: '
-                  f"{bcp47[lang]} != {lex['language']}",
-                  file=logfile)
-        if license not in open_license:
-            print(f'UNKNOWN LICENSE: {license}', file=logfile)
-        elif open_license[license] != lex['license']:
-            print('INDEX INCONSISTENT WITH SOURCE: '
-                  f"{open_license[license]} != {lex['license']}",
-                  file=logfile)
-    return label, lang, url, license
+def _split_offset_pos(offset_pos: str) -> tuple[str, str]:
+    offset, _, pos = offset_pos.rpartition("-")
+    if pos == "s":
+        pos = "a"  # no satellite adjectives in OMW
+    return offset, pos
 
 
-def _clean_lemma(lemma: str, logfile: TextIO) -> str:
+def _clean_lemma(lemma: str) -> str:
     lemma = lemma.strip()
     if lemma.startswith('"') and lemma.endswith('"'):
         lemma = lemma[1:-1]
-        print('CLEANED: {} (removed start and end double quote)'.format(lemma),
-              file=logfile)
+        log.info("CLEANED: %s (removed start and end double quote)", lemma)
     if '"' in lemma:
-        print('WARNING: {} (contains a double quote)'.format(lemma),
-              file=logfile)
-    lemma = lemma.replace('_', ' ')
+        log.warning("%s (contains a double quote)", lemma)
+    lemma = lemma.replace("_", " ")
     return lemma
 
 
-# LEXICON BUILDING AND VALIDATION ######################################
+def _check_lemma(current: str, previous: str) -> None:
+    if current != previous:
+        raise TSV2LMFError(f"Lemma doesn't match previous: {current} != {previous}")
+
+
+def _get_count(args: list[str]) -> Count:
+    try:
+        value = int(args[1].strip())
+    except (IndexError, ValueError) as exc:
+        raise TSV2LMFError(f"Missing or invalid count: {args}") from exc
+    return Count(value=value)
+
+
+def _get_pronunciation(args: list[str]) -> Pronunciation:
+    padding = [""] * 3  # in case missing values were stripped
+    try:
+        text, variety, audio, notation, *_ = *args[1:], *padding
+    except ValueError as exc:
+        raise TSV2LMFError(f"Missing pronunciation: {args}") from exc
+    return Pronunciation(
+        text=text.strip(),
+        variety=variety.strip(),
+        notation=notation.strip(),
+        audio=audio.strip(),
+    )
+
+
+def _get_exe_or_def(args: list[str]) -> tuple[int, str]:
+    try:
+        order_, text = args
+        order = int(order_)
+    except ValueError as exc:
+        raise TSV2LMFError(f"Invalid example/definition: {args}") from exc
+    return order, text.strip()
+
+
+# VALIDATION ###########################################################
+
+
+def validate(lex: Lexicon, data: TSVData) -> None:
+    if data.language not in BCP47:
+        log.warning("UNKNOWN LANGUAGE: %s", data.language)
+    elif BCP47[data.language] != lex["language"]:
+        log.warning(
+            "INDEX INCONSISTENT WITH SOURCE: %s != %s",
+            BCP47[data.language],
+            lex["language"],
+        )
+    if data.license not in OPEN_LICENSES:
+        log.warning("UNKNOWN LICENSE: %s", data.license)
+    elif OPEN_LICENSES[data.license] != lex["license"]:
+        log.warning(
+            "INDEX INCONSISTENT WITH SOURCE: %s != %s",
+            OPEN_LICENSES[data.license],
+            lex["license"],
+        )
+
+    redundant_senses = data.sense_counts - Counter(set(data.sense_counts))
+    for sid, count in redundant_senses.items():
+        log.warning("REDUNDANT SENSES SUPPRESSED: %s (%d occurrences)", sid, count)
+
+    for sd in data.synsets.values():
+        if len(sd.members) == 0 and sd.lexicalized:
+            log.warning("EMPTY SYNSET: %s", sd.id)
+
+
+# LEXICON BUILDING #####################################################
+
 
 def build(
     lex: Lexicon,
-    entries: dict,
-    senses: dict,
-    synsets: dict,
-    logfile: TextIO
+    data: TSVData,
+    ilimap: dict[str, str],
 ) -> None:
-    for eid, entry in entries.items():
-        sids = set(entry['senses'])
-        # validate senses
-        sense_counts = Counter(entry['senses'])
-        for sid, count in (sense_counts - Counter(sids)).items():
-            print(f'REDUNDANT SENSE: {sid} ({count + 1} occurrences)',
-                  file=logfile)
-
-        lex['entries'].append(
+    for ed in data.entries.values():
+        lemma_form = ed.forms[0]
+        lex["entries"].append(
             LexicalEntry(
-                id=eid,
-                lemma=Lemma(writtenForm=entry['lemma'], partOfSpeech=entry['pos']),
-                senses=[Sense(id=sid, synset=senses[sid]) for sid in sids]
+                id=ed.id,
+                lemma=Lemma(
+                    writtenForm=lemma_form["writtenForm"],
+                    partOfSpeech=ed.pos,
+                    pronunciations=lemma_form["pronunciations"],
+                    tags=lemma_form["tags"],
+                ),
+                forms=ed.forms[1:],
+                senses=list(ed.senses.values()),
             )
         )
-
-    for ssid, synset in synsets.items():
-        if len(synset['members']) == 0:
-            print(f'EMPTY SYNSET: {ssid}', file=logfile)
-            continue
-
-        lex['synsets'].append(
+    for pwn_id, sd in data.synsets.items():
+        lex["synsets"].append(
             Synset(
-                id=ssid,
-                ili=synset['ili'],
-                partOfSpeech=synset['pos'],
-                definitions=[Definition(text=text)
-                             for _, text in sorted(synset['def'])],
-                examples=[Example(text=text)
-                          for _, text in sorted(synset['exe'])],
-                members=synset['members'],
+                id=sd.id,
+                ili=ilimap.get(pwn_id, ""),
+                partOfSpeech=sd.pos,
+                definitions=[
+                    Definition(text=defn) for _, defn in sorted(sd.definitions)
+                ],
+                examples=[Example(text=ex) for _, ex in sorted(sd.examples)],
+                lexicalized=sd.lexicalized,
+                members=[sense["id"] for sense in sd.members.values()],
             )
         )
 
 
 # ID FORMATTERS ########################################################
 
-def synset_id(lexid: str, ssid: str) -> str:
-    if ssid.endswith('-s'):
-        ssid = ssid[:-2] + '-a'
-    return f'{lexid}-{ssid}'
+
+def synset_id(lexid: str, offset: str, pos: str) -> str:
+    return f"{lexid}-{offset}-{pos}"
 
 
 def entry_id(lexid: str, lemma: str, pos: str) -> str:
-    return f'{lexid}-{escape_lemma(lemma)}-{pos}'
+    return f"{lexid}-{escape_lemma(lemma)}-{pos}"
 
 
-def sense_id(lexid: str, lemma: str, ssid: str, pos: str) -> str:
-    return f'{lexid}-{escape_lemma(lemma)}-{ssid}-{pos}'
+def sense_id(lexid: str, lemma: str, offset: str, pos: str) -> str:
+    return f"{lexid}-{escape_lemma(lemma)}-{offset}-{pos}"
 
 
 # COMMAND-LINE INTERFACE ###############################################
 
-if __name__ == '__main__':
-    import argparse
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('SOURCE', help='source TSV file')
-    parser.add_argument('DESTINATION', help='output XML file path')
-    parser.add_argument('--id', required=True, help='lexicon ID')
-    parser.add_argument('--label', required=True, help='name or description')
-    parser.add_argument('--language', required=True, help='language (BCP-47)')
-    parser.add_argument('--email', required=True, help='project email address')
-    parser.add_argument('--license', required=True, help='license name or URL')
-    parser.add_argument('--version', required=True, help='lexicon version')
-    parser.add_argument('--url', help='project url')
-    parser.add_argument('--citation', help='readable citation')
-    parser.add_argument('--logo', help='url of project logo')
-    parser.add_argument('--requires', metavar='ID:VERSION',
-                        help='lexicon dependency')
-    parser.add_argument('--meta', action='append', metavar='KEY=VALUE',
-                        help='lexicon metadata; may be repeated')
-    parser.add_argument('--ili-map', metavar='PATH',
-                        help='synset to ILI mapping file')
-    parser.add_argument('--log', type=argparse.FileType('w'),
-                        default=sys.stderr, metavar='PATH',
-                        help='file for logging output (default: stderr)')
+    parser.add_argument("SOURCE", help="source TSV file")
+    parser.add_argument("DESTINATION", help="output XML file path")
+    parser.add_argument("--id", required=True, help="lexicon ID")
+    parser.add_argument("--label", required=True, help="name or description")
+    parser.add_argument("--language", required=True, help="language (BCP-47)")
+    parser.add_argument("--email", required=True, help="project email address")
+    parser.add_argument("--license", required=True, help="license name or URL")
+    parser.add_argument("--version", required=True, help="lexicon version")
+    parser.add_argument("--url", help="project url")
+    parser.add_argument("--citation", help="readable citation")
+    parser.add_argument("--logo", help="url of project logo")
+    parser.add_argument("--requires", metavar="ID:VERSION", help="lexicon dependency")
+    parser.add_argument(
+        "--meta",
+        action="append",
+        metavar="KEY=VALUE",
+        help="lexicon metadata; may be repeated",
+    )
+    parser.add_argument("--ili-map", metavar="PATH", help="synset to ILI mapping file")
+    parser.add_argument(
+        "--log",
+        type=Path,
+        metavar="PATH",
+        help="file for logging output (default: stderr)",
+    )
     args = parser.parse_args()
 
-    source = Path(args.SOURCE)
-    if not source.is_file():
-        raise ValueError('source file not found')
-    destination = Path(args.DESTINATION)
-
-    if args.requires:
-        id, _, ver = args.requires.partition(':')
-        requires = {'id': id, 'version': ver}
-    else:
-        requires = None
-
-    if args.meta:
-        meta = Metadata(**dict(kv.split('=', 1) for kv in args.meta))
-    else:
-        meta = None
-
-    if args.ili_map:
-        ilimap = load_ili_map(args.ili_map)
-    else:
-        ilimap = None
-
-    convert(source,
-            destination,
-            args.id,
-            args.label,
-            args.language,
-            args.email,
-            args.license,
-            args.version,
-            url=args.url,
-            citation=args.citation,
-            logo=args.logo,
-            requires=requires,
-            meta=meta,
-            ilimap=ilimap,
-            logfile=args.log)
+    sys.exit(main(args))
