@@ -43,7 +43,7 @@ def check_duplicates(
         if len(dupes) > 1:
             if verbose:
                 lemmas = [lem for _, lem in dupes]
-                print(f"\t{offset_pos}\texact\t{'; '.join(lemmas)}")
+                print(f"\t{offset_pos}\t{label}\t{'; '.join(lemmas)}")
             count += len(dupes) - 1
     return count
 
