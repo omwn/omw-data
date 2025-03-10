@@ -70,3 +70,37 @@ def test_load_wordforms(datadir):
     assert kitab_n_2["writtenForm"] == "kutub"
     assert kitab_n_2["tags"][0]["category"] == "number"
     assert kitab_n_2["tags"][0]["text"] == "plural"
+
+
+def test_load_gap(datadir):
+    data = tsv2lmf.load(datadir / "test-gap.tab", "omw-tst")
+
+    n_00001234 = data.synsets["00001234-n"]
+    n_00002345 = data.synsets["00002345-n"]
+    s_00003456 = data.synsets["00003456-s"]
+
+    assert all(sd.lexicalized for sd in [n_00001234, n_00002345, s_00003456])
+
+    assert all(sense.get("lexicalized", True) for sense in n_00001234.members.values())
+    assert all(sense.get("lexicalized", True) for sense in n_00002345.members.values())
+    assert all(sense.get("lexicalized", True) for sense in s_00003456.members.values())
+
+    assert "GAP!" in n_00001234.members
+    assert "GAP!" in n_00002345.members
+    assert "PSEUDOGAP!" in s_00003456.members
+
+    tsv2lmf.process_lexical_gaps(data)
+
+    assert n_00001234.lexicalized
+    assert not n_00002345.lexicalized
+    assert not s_00003456.lexicalized
+
+    assert n_00001234.members["foo"].get("lexicalized", True)
+    assert not n_00001234.members["a bar that foos"]["lexicalized"]
+    assert len(n_00002345.members) == 0
+    assert not s_00003456.members["very fooey"]["lexicalized"]
+    assert not s_00003456.members["very barlike"]["lexicalized"]
+
+    assert "GAP!" not in n_00001234.members
+    assert "GAP!" not in n_00002345.members
+    assert "PSEUDOGAP!" not in s_00003456.members
