@@ -1,0 +1,4 @@
+# Test Wordnet	arb	http://www.globalwordnet.org/test/	CC BY 4.0
+00001234-n	arb:lemma	kitab
+00001234-n	arb:lemma:root	ktb
+00001234-n	arb:lemma:brokenplural	kutub

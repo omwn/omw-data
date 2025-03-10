@@ -6,6 +6,7 @@ import argparse
 import logging
 import sys
 from collections import Counter
+from collections.abc import Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -17,6 +18,7 @@ from wn.lmf import (
     Metadata,
     LexicalEntry,
     Lemma,
+    Tag,
     Pronunciation,
     Form,
     Sense,
@@ -126,6 +128,7 @@ class TSVData:
     synsets: dict[str, SynsetData] = field(default_factory=dict)
     entries: dict[str, EntryData] = field(default_factory=dict)
     # for bookkeeping
+    prev_pwn_id: str = ""
     prev_lemma: str = ""
     sense_counts: Counter = field(default_factory=Counter)
 
@@ -178,6 +181,7 @@ def main(args: argparse.Namespace) -> int:
         meta=meta,
         ilimap=ilimap,
         logfile=args.log,
+        abort_on_errors=args.abort_on_errors,
     )
 
     return 0
@@ -199,6 +203,7 @@ def convert(
     meta: Optional[Metadata] = None,
     ilimap: Optional[dict[str, str]] = None,
     logfile: PathLike = "",
+    abort_on_errors: bool = False,
 ) -> None:
     if logfile:
         logging.basicConfig(filename=str(logfile), filemode="w", force=True)
@@ -228,7 +233,7 @@ def convert(
     if ilimap is None:
         ilimap = {}
 
-    data = load(Path(source), lex["id"])
+    data = load(Path(source), lex["id"], abort_on_errors=abort_on_errors)
     validate(lex, data)
     build(lex, data, ilimap)
 
@@ -274,6 +279,45 @@ def _load_lemma(data: TSVData, pwn_id: str, args: list[str]) -> None:
     data.sense_counts[sid] += 1  # for validation
 
 
+def _load_lemma_root(data: TSVData, pwn_id: str, args: list[str]) -> None:
+    lemma = _clean_lemma(args[0])
+    # skip if the same as the primary lemma
+    if lemma != data.prev_lemma:
+        tags = [Tag(text="root", category="form")]
+        _load_wordform_helper(data, pwn_id, lemma, tags=tags)
+    else:
+        raise TSV2LMFError(
+            f"Ignoring root {lemma} ({pwn_id}) which matches the primary lemma"
+        )
+
+
+def _load_lemma_brokenplural(data: TSVData, pwn_id: str, args: list[str]) -> None:
+    lemma = _clean_lemma(args[0])
+    tags = [Tag(text="plural", category="number")]
+    _load_wordform_helper(data, pwn_id, lemma, tags=tags)
+
+
+def _load_wordform_helper(
+    data: TSVData,
+    pwn_id: str,
+    lemma: str,
+    tags: Sequence[Tag] = (),
+) -> None:
+    _, pos = _split_offset_pos(pwn_id)
+    eid = entry_id(data.lex_id, data.prev_lemma, pos)
+    if pwn_id != data.prev_pwn_id:
+        raise TSV2LMFError(
+            f"Wordform {lemma} is not grouped with its synset: "
+            f"{pwn_id} != {data.prev_pwn_id}"
+        )
+    elif eid not in data.entries:
+        raise TSV2LMFError(
+            f"Cannot add wordform {lemma}; "
+            f"lemma is not yet defined for {pwn_id}"
+        )
+    data.entries[eid].forms.append(Form(writtenForm=lemma, tags=list(tags)))
+
+
 def _load_count(data: TSVData, pwn_id: str, args: list[str]) -> None:
     lemma = _clean_lemma(args[0])
     _check_lemma(lemma, data.prev_lemma)
@@ -301,6 +345,8 @@ def _load_def(data: TSVData, pwn_id: str, args: list[str]) -> None:
 
 FUNCTIONS = {
     "lemma": _load_lemma,
+    "lemma:root": _load_lemma_root,
+    "lemma:brokenplural": _load_lemma_brokenplural,
     "count": _load_count,
     "pron": _load_pron,
     "exe": _load_exe,
@@ -311,6 +357,7 @@ FUNCTIONS = {
 def load(
     source: Path,
     lex_id: str,
+    abort_on_errors: bool = False
 ) -> TSVData:
     data = TSVData(lex_id)
     with source.open("rt") as tabfile:
@@ -333,9 +380,18 @@ def load(
                 data.synsets[pwn_id] = SynsetData(ssid, pos)
 
             try:
-                FUNCTIONS[type_](data, pwn_id, args)
+                func = FUNCTIONS[type_]
             except KeyError:
-                log.warning("Ignoring line with unknown type: %s", type_)
+                log.warning("Ignoring line %d with unknown type: %s", lineno, line)
+            else:
+                try:
+                    func(data, pwn_id, args)
+                except TSV2LMFError as exc:
+                    log.error("%s\n  at line %d: %s", str(exc), lineno, line)
+                    if abort_on_errors:
+                        raise
+                else:
+                    data.prev_pwn_id = pwn_id
 
     return data
 
@@ -506,6 +562,11 @@ if __name__ == "__main__":
         type=Path,
         metavar="PATH",
         help="file for logging output (default: stderr)",
+    )
+    parser.add_argument(
+        "--abort-on-errors",
+        action="store_true",
+        help="reraise TSV2LMFErrors and stop immediately",
     )
     args = parser.parse_args()
 

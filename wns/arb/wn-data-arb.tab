@@ -139,7 +139,7 @@
 01033184-n	arb:lemma:root	شعر
 01033184-n	arb:lemma:brokenplural	شعائر
 01027859-n	arb:lemma	شعِيرة
-01027859-n	arb:lemma:brokenPlural	شَعَاْئِرُ
+01027859-n	arb:lemma:brokenplural	شَعَاْئِرُ
 01027859-n	arb:lemma:root	شعر
 01027859-n	arb:lemma:brokenplural	شعائر
 01027859-n	arb:lemma	شعِيرة دِينِيّة
@@ -430,7 +430,7 @@
 02936410-a	arb:lemma	شكْلِيّ
 02936410-a	arb:lemma:root	شكل
 14055408-n	arb:lemma	شكْوى
-14055408-n	arb:lemma:brokenPlural	شكاوى
+14055408-n	arb:lemma:brokenplural	شكاوى
 14055408-n	arb:lemma:root	شكو
 14055408-n	arb:lemma:brokenplural	شكاوى
 07208708-n	arb:lemma	شكْوى
@@ -932,7 +932,7 @@
 00719705-n	arb:lemma:root	شغل
 00719705-n	arb:lemma:brokenplural	أشغال
 00795720-n	arb:lemma	شُغْل
-00795720-n	arb:lemma:brokenPlural	أَشْغَال
+00795720-n	arb:lemma:brokenplural	أَشْغَال
 00795720-n	arb:lemma:root	شغل
 00795720-n	arb:lemma:brokenplural	أشغال
 00582388-n	arb:lemma	شُغْل
@@ -1890,11 +1890,11 @@
 00333829-n	arb:lemma	إِقْلاق
 00333829-n	arb:lemma:root	قلق
 08630039-n	arb:lemma	إِقْلِيم
-08630039-n	arb:lemma:brokenPlural	أَقَالِيم
+08630039-n	arb:lemma:brokenplural	أَقَالِيم
 08630039-n	arb:lemma:root	قلم
 08688247-n	arb:lemma	إِقْلِيْم
 08688247-n	arb:lemma:root	قلم
-08688247-n	arb:lemma:brokenPlural	أَقَاْلِيْمُ
+08688247-n	arb:lemma:brokenplural	أَقَاْلِيْمُ
 08552138-n	arb:lemma	إِقْلِيْم
 08552138-n	arb:lemma:root	قلم
 01093666-n	arb:lemma	إِقْراض
@@ -2181,7 +2181,7 @@
 02356230-v	arb:lemma	إِئْتمن
 02356230-v	arb:lemma:root	أمن
 01184814-n	arb:lemma	إجْراءات
-01184814-n	arb:lemma:brokenPlural	إجْرَاءَات
+01184814-n	arb:lemma:brokenplural	إجْرَاءَات
 08245172-n	arb:lemma	إجْرام
 08245172-n	arb:lemma:root	جرم
 01229938-n	arb:lemma	إجْتِماع
@@ -2616,7 +2616,7 @@
 01189113-v	arb:lemma	أعْوز
 01189113-v	arb:lemma:root	عوز
 08386555-n	arb:lemma	أعْيان
-08386555-n	arb:lemma:brokenPlural	أَعْيان
+08386555-n	arb:lemma:brokenplural	أَعْيان
 08386555-n	arb:lemma:root	عين
 00075021-v	arb:lemma	أعْيا
 00075021-v	arb:lemma:root	عيا
@@ -3103,7 +3103,7 @@
 02255462-v	arb:lemma	أجاز
 02255462-v	arb:lemma:root	جوز
 15180082-n	arb:lemma	أجل
-15180082-n	arb:lemma:brokenPlural	آجَال
+15180082-n	arb:lemma:brokenplural	آجَال
 15180082-n	arb:lemma:root	اجل
 15180082-n	arb:lemma:brokenplural	آجال
 15143276-n	arb:lemma	أجل
@@ -7911,7 +7911,7 @@
 01424456-v	arb:lemma	عانق
 01424456-v	arb:lemma:root	عنق
 09632518-n	arb:lemma	عاْمِل
-09632518-n	arb:lemma:brokenPlural	عُمَّال
+09632518-n	arb:lemma:brokenplural	عُمَّال
 09632518-n	arb:lemma:root	عمل
 09632518-n	arb:lemma:brokenplural	عمال
 00908099-v	arb:lemma	عاق
@@ -7956,7 +7956,7 @@
 01092366-v	arb:lemma	عارك
 01092366-v	arb:lemma:root	عرك
 05602835-n	arb:lemma	عارِض
-05602835-n	arb:lemma:brokenPlural	عَوَارِض
+05602835-n	arb:lemma:brokenplural	عَوَارِض
 05602835-n	arb:lemma:root	عرض
 05602835-n	arb:lemma:brokenplural	عوارض
 02789271-n	arb:lemma	عارِضة
@@ -8108,7 +8108,7 @@
 10609325-n	arb:lemma:root	عبد
 10609325-n	arb:lemma:brokenplural	عبيد
 10582154-n	arb:lemma	عبْد
-10582154-n	arb:lemma:brokenPlural	عَبَدَة
+10582154-n	arb:lemma:brokenplural	عَبَدَة
 10582154-n	arb:lemma:root	عبد
 10582154-n	arb:lemma:brokenplural	عبيد
 01488956-v	arb:lemma	عبّأ
@@ -8840,7 +8840,7 @@
 06513366-n	arb:lemma:root	عرض
 06513366-n	arb:lemma:brokenplural	عرائض
 10162991-n	arb:lemma	عرِيْف
-10162991-n	arb:lemma:brokenPlural	عُرَفَآءُ
+10162991-n	arb:lemma:brokenplural	عُرَفَآءُ
 10162991-n	arb:lemma:root	عرف
 10162991-n	arb:lemma:brokenplural	عرفاء
 00520257-n	arb:lemma	عرْض
@@ -9361,7 +9361,7 @@
 03430959-n	arb:lemma:brokenplural	عدد
 02738031-n	arb:lemma	عُدّة حرْب
 05559727-n	arb:lemma	عُجْز
-05559727-n	arb:lemma:brokenPlural	أَعْجَاز
+05559727-n	arb:lemma:brokenplural	أَعْجَاز
 05559727-n	arb:lemma:root	عجز
 05559727-n	arb:lemma:brokenplural	أعجاز
 02946921-n	arb:lemma	عُلْبة
@@ -9585,7 +9585,7 @@
 03264136-n	arb:lemma:root	حشو
 03264136-n	arb:lemma:brokenplural	حواش
 03264542-n	arb:lemma	حاشِية
-03264542-n	arb:lemma:brokenPlural	حَوَاشٍ
+03264542-n	arb:lemma:brokenplural	حَوَاشٍ
 03264542-n	arb:lemma:root	حشو
 03264542-n	arb:lemma:brokenplural	حواش
 00830761-v	arb:lemma	حاضر
@@ -9671,7 +9671,7 @@
 02501278-v	arb:lemma	حاكم
 02501278-v	arb:lemma:root	حكم
 10541229-n	arb:lemma	حاكِم
-10541229-n	arb:lemma:brokenPlural	حُكَّام
+10541229-n	arb:lemma:brokenplural	حُكَّام
 10541229-n	arb:lemma:root	حكم
 10541229-n	arb:lemma:brokenplural	حكام
 00033421-r	arb:lemma	حالاً
@@ -10168,7 +10168,7 @@
 02587375-v	arb:lemma:root	حكم
 00670261-v	arb:lemma	حكم على
 10423589-n	arb:lemma	حكِيم
-10423589-n	arb:lemma:brokenPlural	حُكَمَآءُ
+10423589-n	arb:lemma:brokenplural	حُكَمَآءُ
 10423589-n	arb:lemma:root	حكم
 10423589-n	arb:lemma:brokenplural	حكماء
 01249724-v	arb:lemma	حكّ
@@ -10383,7 +10383,7 @@
 01818235-v	arb:lemma:root	حمس
 01726692-n	arb:lemma	حنش
 01726692-n	arb:lemma:root	حنش
-01726692-n	arb:lemma:brokenPlural	حِنْشَاْن
+01726692-n	arb:lemma:brokenplural	حِنْشَاْن
 01726692-n	arb:lemma:brokenplural	أحناش
 01727646-n	arb:lemma	حنش
 01727646-n	arb:lemma:root	حنش
@@ -10851,7 +10851,7 @@
 02374451-n	arb:lemma:root	حَصَنَ
 02374451-n	arb:lemma:brokenplural	حصن
 02377181-n	arb:lemma	حِصان
-02377181-n	arb:lemma:brokenPlural	حُصُن
+02377181-n	arb:lemma:brokenplural	حُصُن
 02377181-n	arb:lemma:root	حصن
 02377181-n	arb:lemma:brokenplural	حصن
 01317391-n	arb:lemma	حِصان التّحْمِيل
@@ -10912,7 +10912,7 @@
 07220586-n	arb:lemma	حِكاية
 07220586-n	arb:lemma:root	حكي
 04890112-n	arb:lemma	حِكْمة
-04890112-n	arb:lemma:brokenPlural	حِكَم
+04890112-n	arb:lemma:brokenplural	حِكَم
 04890112-n	arb:lemma:root	حكم
 04890112-n	arb:lemma:brokenplural	حكم
 08293982-n	arb:lemma	حِلْف
@@ -11110,7 +11110,7 @@
 06759776-n	arb:lemma:root	حجج
 06759776-n	arb:lemma:brokenplural	حجج
 09824361-n	arb:lemma	حُجّة
-09824361-n	arb:lemma:brokenPlural	حُجَج
+09824361-n	arb:lemma:brokenplural	حُجَج
 09824361-n	arb:lemma:root	حج
 09824361-n	arb:lemma:brokenplural	حجج
 05824739-n	arb:lemma	حُجّة
@@ -11341,7 +11341,7 @@
 09945905-n	arb:lemma:root	صحب
 09945905-n	arb:lemma:brokenplural	صحب
 09614315-n	arb:lemma	صاْنِع
-09614315-n	arb:lemma:brokenPlural	صُنَّاْع
+09614315-n	arb:lemma:brokenplural	صُنَّاْع
 09614315-n	arb:lemma:root	صنع
 09614315-n	arb:lemma:brokenplural	صناع
 09614315-n	arb:lemma:brokenplural	صوانع
@@ -11401,7 +11401,7 @@
 02034828-a	arb:lemma	صحِيح
 02034828-a	arb:lemma:root	صحح
 02460502-a	arb:lemma	صحِيح
-02460502-a	arb:lemma:brokenPlural	صِحاح
+02460502-a	arb:lemma:brokenplural	صِحاح
 02460502-a	arb:lemma:root	صح
 03822171-n	arb:lemma	صحِيفة
 03822171-n	arb:lemma:root	صحف
@@ -12066,7 +12066,7 @@
 04930478-n	arb:lemma	صُورة
 04930478-n	arb:lemma:root	صور
 03925226-n	arb:lemma	صُورة
-03925226-n	arb:lemma:brokenPlural	صُوَر
+03925226-n	arb:lemma:brokenplural	صُوَر
 03925226-n	arb:lemma:root	صور
 04677716-n	arb:lemma	صُورة
 04677716-n	arb:lemma:root	صور
@@ -12079,10 +12079,10 @@
 05928118-n	arb:lemma	صُورة
 05928118-n	arb:lemma:root	صور
 04677514-n	arb:lemma	صُورة
-04677514-n	arb:lemma:brokenPlural	صُوَر
+04677514-n	arb:lemma:brokenplural	صُوَر
 04677514-n	arb:lemma:root	صور
 05064037-n	arb:lemma	صُورة
-05064037-n	arb:lemma:brokenPlural	صُوَر
+05064037-n	arb:lemma:brokenplural	صُوَر
 05064037-n	arb:lemma:root	صور
 05930736-n	arb:lemma	صُورة
 05930736-n	arb:lemma:root	صور
@@ -12279,7 +12279,7 @@
 03365991-n	arb:lemma	طبقة
 03365991-n	arb:lemma:brokenplural	طبق
 03650173-n	arb:lemma	طبقة
-03650173-n	arb:lemma:brokenPlural	طَبَقَات
+03650173-n	arb:lemma:brokenplural	طَبَقَات
 03650173-n	arb:lemma:root	طبق
 03650173-n	arb:lemma:brokenplural	طبق
 05838765-n	arb:lemma	طبقة
@@ -12657,7 +12657,7 @@
 04045397-n	arb:lemma:root	طوف
 04045397-n	arb:lemma:brokenplural	أطواف
 03533972-n	arb:lemma	طوْق
-03533972-n	arb:lemma:brokenPlural	أَطْوَاق
+03533972-n	arb:lemma:brokenplural	أَطْوَاق
 03533972-n	arb:lemma:root	طوق
 03533972-n	arb:lemma:brokenplural	أطواق
 13907415-n	arb:lemma	طوْية
@@ -12715,7 +12715,7 @@
 09917593-n	arb:lemma:brokenplural	طفول
 09917593-n	arb:lemma:brokenplural	أطفال
 09827683-n	arb:lemma	طِفْل
-09827683-n	arb:lemma:brokenPlural	أَطْفَال
+09827683-n	arb:lemma:brokenplural	أَطْفَال
 09827683-n	arb:lemma:root	طفل
 09827683-n	arb:lemma:brokenplural	طفول
 09827683-n	arb:lemma:brokenplural	أطفال
@@ -12879,7 +12879,7 @@
 13942875-n	arb:lemma:root	ظرف
 13942875-n	arb:lemma:brokenplural	ظروف
 14473222-n	arb:lemma	ظرْف
-14473222-n	arb:lemma:brokenPlural	ظُرُوف
+14473222-n	arb:lemma:brokenplural	ظُرُوف
 14473222-n	arb:lemma:root	ظرف
 14473222-n	arb:lemma:brokenplural	ظروف
 03291819-n	arb:lemma	ظرْف
@@ -12914,16 +12914,16 @@
 00420477-n	arb:lemma:brokenplural	ظلوم
 13983515-n	arb:lemma	ظُلْمة
 14473222-n	arb:lemma	ظُرُوف
-00232604-n	arb:lemma:brokenPlural	بعد
+00232604-n	arb:lemma:brokenplural	بعد
 00232604-n	arb:lemma:root	اِسْتِب�
 00059854-r	arb:lemma:root	أكْثَر ف
-00059854-r	arb:lemma:brokenPlural	كثر
+00059854-r	arb:lemma:brokenplural	كثر
 00299580-v	arb:lemma:root	لائَمَ
-00299580-v	arb:lemma:brokenPlural	لئم
+00299580-v	arb:lemma:brokenplural	لئم
 00299580-v	arb:lemma:root	وائَمَ
-00299580-v	arb:lemma:brokenPlural	وئم
+00299580-v	arb:lemma:brokenplural	وئم
 00411171-r	arb:lemma:root	بالعَدَ�
-00411171-r	arb:lemma:brokenPlural	عدد
+00411171-r	arb:lemma:brokenplural	عدد
 13905792-n	arb:lemma	ثنْية
 13905792-n	arb:lemma:root	ثني
 00405868-r	arb:lemma	فِي مُقابِل
@@ -13225,7 +13225,7 @@
 00637354-n	arb:lemma:root	بحث
 00637354-n	arb:lemma:brokenplural	بحوث
 05770058-n	arb:lemma	بحْث
-05770058-n	arb:lemma:brokenPlural	أبحاث
+05770058-n	arb:lemma:brokenplural	أبحاث
 05770058-n	arb:lemma:root	بحث
 05770058-n	arb:lemma:brokenplural	بحوث
 00641820-n	arb:lemma	بحْث عِلْمِي
@@ -13597,7 +13597,7 @@
 01625747-n	arb:lemma	برْمائِيات
 02831979-a	arb:lemma	برْمائِيّ
 01627424-n	arb:lemma	برْمائِيّ
-01627424-n	arb:lemma:brokenPlural	بَرْمَائِيَّات
+01627424-n	arb:lemma:brokenplural	بَرْمَائِيَّات
 00125319-a	arb:lemma	برْمائِيّ
 00795264-v	arb:lemma	برْمج
 00795264-v	arb:lemma:root	برمج
@@ -13879,7 +13879,7 @@
 00073546-r	arb:lemma	بِلا تزاوُج
 00073546-r	arb:lemma:root	زوج
 08497294-n	arb:lemma	بِلاد
-08497294-n	arb:lemma:brokenPlural	بُلدَان
+08497294-n	arb:lemma:brokenplural	بُلدَان
 08497294-n	arb:lemma:root	بلد
 08737521-n	arb:lemma	بِلِيزِ
 14883206-n	arb:lemma	بِلّوْر
@@ -14055,7 +14055,7 @@
 00072261-n	arb:lemma:root	بقع
 00072261-n	arb:lemma:brokenplural	بقع
 08664443-n	arb:lemma	بُقْعة
-08664443-n	arb:lemma:brokenPlural	بِقَاع
+08664443-n	arb:lemma:brokenplural	بِقَاع
 08664443-n	arb:lemma:root	بقع
 08664443-n	arb:lemma:brokenplural	بقع
 07802417-n	arb:lemma	بُقُول
@@ -14073,7 +14073,7 @@
 06648724-n	arb:lemma	بُرْهان
 06648724-n	arb:lemma:root	برهن
 05824739-n	arb:lemma	بُرْهان
-05824739-n	arb:lemma:brokenPlural	بَرَاهِين
+05824739-n	arb:lemma:brokenplural	بَرَاهِين
 05824739-n	arb:lemma:root	برهن
 04460130-n	arb:lemma	بُرْج
 04460130-n	arb:lemma:root	برج
@@ -14603,7 +14603,7 @@
 02153387-v	arb:lemma	دقّق
 02153387-v	arb:lemma:root	دقق
 13385216-n	arb:lemma	دراهِم
-13385216-n	arb:lemma:brokenPlural	دَرَاهِم
+13385216-n	arb:lemma:brokenplural	دَرَاهِم
 13385216-n	arb:lemma:root	درهم
 03363059-n	arb:lemma	درج
 03363059-n	arb:lemma:root	درج
@@ -15081,7 +15081,7 @@
 00746033-n	arb:lemma:root	فحش
 00746033-n	arb:lemma:brokenplural	فواحش
 00745637-n	arb:lemma	فاْحِشة
-00745637-n	arb:lemma:brokenPlural	فَوَاْحِشُ
+00745637-n	arb:lemma:brokenplural	فَوَاْحِشُ
 00745637-n	arb:lemma:root	فحش
 00745637-n	arb:lemma:brokenplural	فواحش
 00235435-n	arb:lemma	فاْتِحة
@@ -15666,7 +15666,7 @@
 00938247-v	arb:lemma	فسّر
 00938247-v	arb:lemma:root	فسر
 09772029-n	arb:lemma	فتًى
-09772029-n	arb:lemma:brokenPlural	فِتْيَة
+09772029-n	arb:lemma:brokenplural	فِتْيَة
 09772029-n	arb:lemma:root	فتي
 09772029-n	arb:lemma:brokenplural	فتيان
 10129825-n	arb:lemma	فتاة
@@ -15886,7 +15886,7 @@
 08219226-n	arb:lemma:root	فرق
 08264897-n	arb:lemma	فِرْقة
 08208560-n	arb:lemma	فِرْقة
-08208560-n	arb:lemma:brokenPlural	فِرَق
+08208560-n	arb:lemma:brokenplural	فِرَق
 08389438-n	arb:lemma	فِرْقة البنادِق
 08219226-n	arb:lemma	فِرْقة بحْرِيّة
 08219330-n	arb:lemma	فِرْقة جوْيّة
@@ -16279,12 +16279,12 @@
 05143077-n	arb:lemma:brokenplural	غرضان
 05143077-n	arb:lemma:brokenplural	أغراض
 05981230-n	arb:lemma	غرض
-05981230-n	arb:lemma:brokenPlural	أَغْرَاض
+05981230-n	arb:lemma:brokenplural	أَغْرَاض
 05981230-n	arb:lemma:root	غرض
 05981230-n	arb:lemma:brokenplural	غرضان
 05981230-n	arb:lemma:brokenplural	أغراض
 05982152-n	arb:lemma	غرض
-05982152-n	arb:lemma:brokenPlural	أَغْرَاض
+05982152-n	arb:lemma:brokenplural	أَغْرَاض
 05982152-n	arb:lemma:root	غرض
 05982152-n	arb:lemma:brokenplural	غرضان
 05982152-n	arb:lemma:brokenplural	أغراض
@@ -16456,7 +16456,7 @@
 09849598-n	arb:lemma	غزِيز
 09849598-n	arb:lemma:root	غزز
 04426788-n	arb:lemma	غزْل
-04426788-n	arb:lemma:brokenPlural	غُزُوْل
+04426788-n	arb:lemma:brokenplural	غُزُوْل
 04426788-n	arb:lemma:root	غزل
 04426788-n	arb:lemma:brokenplural	غزول
 00976531-n	arb:lemma	غزْو
@@ -16515,7 +16515,7 @@
 09257949-n	arb:lemma:root	غلف
 09257949-n	arb:lemma:brokenplural	غلف
 03291819-n	arb:lemma	غِلاف
-03291819-n	arb:lemma:brokenPlural	غُلْف
+03291819-n	arb:lemma:brokenplural	غُلْف
 03291819-n	arb:lemma:root	غلف
 03291819-n	arb:lemma:brokenplural	غلف
 01224031-n	arb:lemma	غِلْظ
@@ -16529,11 +16529,11 @@
 00038262-n	arb:lemma:root	غرر
 00038262-n	arb:lemma:brokenplural	أغرة
 00410247-n	arb:lemma	غِرار
-00410247-n	arb:lemma:brokenPlural	أَغْرِِرَة
+00410247-n	arb:lemma:brokenplural	أَغْرِِرَة
 00410247-n	arb:lemma:root	غرر
 00410247-n	arb:lemma:brokenplural	أغرة
 04664964-n	arb:lemma	غِرّة
-04664964-n	arb:lemma:brokenPlural	غِرَر
+04664964-n	arb:lemma:brokenplural	غِرَر
 04664964-n	arb:lemma:root	غرر
 04664964-n	arb:lemma:brokenplural	غرر
 01234090-n	arb:lemma	غِياب
@@ -16857,7 +16857,7 @@
 05225602-n	arb:lemma	هيْكل
 05225602-n	arb:lemma:root	هيكل
 05217168-n	arb:lemma	هيْكل
-05217168-n	arb:lemma:brokenPlural	هَيَاكِل
+05217168-n	arb:lemma:brokenplural	هَيَاكِل
 05217168-n	arb:lemma:root	هيكل
 03391770-n	arb:lemma	هيْكل
 03391770-n	arb:lemma:root	هيكل
@@ -17677,10 +17677,10 @@
 01605119-n	arb:lemma	جوارِح
 01605119-n	arb:lemma:root	جرح
 06746005-n	arb:lemma	جواب
-06746005-n	arb:lemma:brokenPlural	أجْوِبَة
+06746005-n	arb:lemma:brokenplural	أجْوِبَة
 06746005-n	arb:lemma:brokenplural	أجوبة
 07199565-n	arb:lemma	جواب
-07199565-n	arb:lemma:brokenPlural	أجْوِبَة
+07199565-n	arb:lemma:brokenplural	أجْوِبَة
 07199565-n	arb:lemma:brokenplural	أجوبة
 02374451-n	arb:lemma	جواد
 02374451-n	arb:lemma:root	جَوَدَ
@@ -17704,7 +17704,7 @@
 05556943-n	arb:lemma:root	جوف
 05556943-n	arb:lemma:brokenplural	أجواف
 08588152-n	arb:lemma	جوْف
-08588152-n	arb:lemma:brokenPlural	أَجْوَاْف
+08588152-n	arb:lemma:brokenplural	أَجْوَاْف
 08588152-n	arb:lemma:root	جوف
 08588152-n	arb:lemma:brokenplural	أجواف
 05548726-n	arb:lemma	جوْف أُنْبُوبِيّ
@@ -17723,7 +17723,7 @@
 07773238-n	arb:lemma:root	جوز
 11524662-n	arb:lemma	جوّ
 14524849-n	arb:lemma	جوّ
-14524849-n	arb:lemma:brokenPlural	أجواء
+14524849-n	arb:lemma:brokenplural	أجواء
 14524849-n	arb:lemma:root	جو
 09629752-n	arb:lemma	جوّال
 09629752-n	arb:lemma:root	جول
@@ -18291,7 +18291,7 @@
 15210045-n	arb:lemma	كانُون الثّانِي
 15213774-n	arb:lemma	كانُون الأوّل
 10569744-n	arb:lemma	كاْتِب
-10569744-n	arb:lemma:brokenPlural	كَتَبَة
+10569744-n	arb:lemma:brokenplural	كَتَبَة
 10569744-n	arb:lemma:root	كتب
 10569744-n	arb:lemma:brokenplural	كتاب
 03416489-n	arb:lemma	كاراج
@@ -19363,7 +19363,7 @@
 01446901-v	arb:lemma:root	لوح
 01696648-v	arb:lemma	لوّن
 01696648-v	arb:lemma:root	لون
-01696648-v	arb:lemma:brokenPlural	لون
+01696648-v	arb:lemma:brokenplural	لون
 01534147-v	arb:lemma	لوّث
 01534147-v	arb:lemma:root	لوث
 15155747-n	arb:lemma	ليْل
@@ -19399,7 +19399,7 @@
 14702416-n	arb:lemma:root	لصق
 10707804-n	arb:lemma	لِصّ
 10707804-n	arb:lemma:root	لصص
-10707804-n	arb:lemma:brokenPlural	لُصُوْص
+10707804-n	arb:lemma:brokenplural	لُصُوْص
 10707804-n	arb:lemma:brokenplural	لصوص
 03051540-n	arb:lemma	لِباس
 03051540-n	arb:lemma:root	لبس
@@ -19417,7 +19417,7 @@
 02756098-n	arb:lemma:root	لبس
 02756098-n	arb:lemma:brokenplural	ألبسة
 03419014-n	arb:lemma	لِباس
-03419014-n	arb:lemma:brokenPlural	لُبُس
+03419014-n	arb:lemma:brokenplural	لُبُس
 03419014-n	arb:lemma:root	لبس
 03419014-n	arb:lemma:brokenplural	ألبسة
 03380867-n	arb:lemma	لِباس القدم
@@ -19439,10 +19439,10 @@
 09008454-n	arb:lemma	لِنينجراد
 01230965-n	arb:lemma	لِقاء
 01230965-n	arb:lemma:root	لقي
-01230965-n	arb:lemma:brokenPlural	-ات
+01230965-n	arb:lemma:brokenplural	-ات
 07414922-n	arb:lemma	لِقاء
 08310389-n	arb:lemma	لِقاء
-08310389-n	arb:lemma:brokenPlural	-ات
+08310389-n	arb:lemma:brokenplural	-ات
 05301072-n	arb:lemma	لِسان
 05301072-n	arb:lemma:root	لسن
 06904171-n	arb:lemma	لِسان
@@ -19493,7 +19493,7 @@
 00455599-n	arb:lemma:root	لعب
 00455599-n	arb:lemma:brokenplural	لعب
 03413828-n	arb:lemma	لُعْبة
-03413828-n	arb:lemma:brokenPlural	أَلْعَاب
+03413828-n	arb:lemma:brokenplural	أَلْعَاب
 03413828-n	arb:lemma:root	لعب
 03413828-n	arb:lemma:brokenplural	لعب
 00503237-n	arb:lemma	لُعْبة الشّطْرنْج
@@ -19992,15 +19992,15 @@
 05618849-n	arb:lemma:root	عرف
 05618849-n	arb:lemma:brokenplural	معارف
 09763784-n	arb:lemma	معْرِفة
-09763784-n	arb:lemma:brokenPlural	مَعَارِف
+09763784-n	arb:lemma:brokenplural	مَعَارِف
 09763784-n	arb:lemma:root	عرف
 09763784-n	arb:lemma:brokenplural	معارف
 05984584-n	arb:lemma	معْرِفة
-05984584-n	arb:lemma:brokenPlural	مَعَارِف
+05984584-n	arb:lemma:brokenplural	مَعَارِف
 05984584-n	arb:lemma:root	عرف
 05984584-n	arb:lemma:brokenplural	معارف
 05758059-n	arb:lemma	معْرِفة
-05758059-n	arb:lemma:brokenPlural	مَعَارِفُ
+05758059-n	arb:lemma:brokenplural	مَعَارِفُ
 05758059-n	arb:lemma:root	عرف
 05758059-n	arb:lemma:brokenplural	معارف
 05804793-n	arb:lemma	معْرِفة
@@ -20074,10 +20074,10 @@
 07323922-n	arb:lemma	مصْدر
 07323922-n	arb:lemma:root	صدر
 04263614-n	arb:lemma	مصْدر
-04263614-n	arb:lemma:brokenPlural	مَصَادِرُ
+04263614-n	arb:lemma:brokenplural	مَصَادِرُ
 04263614-n	arb:lemma:root	صدر
 08507558-n	arb:lemma	مصْدر
-08507558-n	arb:lemma:brokenPlural	مَصَادِرُ
+08507558-n	arb:lemma:brokenplural	مَصَادِرُ
 08507558-n	arb:lemma:root	صدر
 07258664-n	arb:lemma	مصْدر
 07258664-n	arb:lemma:root	صدر
@@ -20197,7 +20197,7 @@
 00033615-n	arb:lemma:root	بلغ
 13331198-n	arb:lemma	مبْلغ
 13331198-n	arb:lemma:root	بلغ
-13331198-n	arb:lemma:brokenPlural	مَبَاْلِغُ
+13331198-n	arb:lemma:brokenplural	مَبَاْلِغُ
 13331198-n	arb:lemma	مبْلغ مالِي
 13308864-n	arb:lemma	مبْلغ مفْرُوض
 13331198-n	arb:lemma	مبْلغ مِن المال
@@ -20336,7 +20336,7 @@
 13396054-n	arb:lemma:root	غرم
 13396054-n	arb:lemma:brokenplural	مغارم
 05161436-n	arb:lemma	مغْرم
-05161436-n	arb:lemma:brokenPlural	مَغَارِمُ
+05161436-n	arb:lemma:brokenplural	مَغَارِمُ
 05161436-n	arb:lemma:root	غرم
 05161436-n	arb:lemma:brokenplural	مغارم
 06601327-n	arb:lemma	مغْزى
@@ -20372,7 +20372,7 @@
 00731222-n	arb:lemma	مهمّة
 00731222-n	arb:lemma:root	همم
 05149325-n	arb:lemma	مهمّة
-05149325-n	arb:lemma:brokenPlural	مَهَامُ
+05149325-n	arb:lemma:brokenplural	مَهَامُ
 05149325-n	arb:lemma:root	هم
 00970645-n	arb:lemma	مهمّة
 00970645-n	arb:lemma:root	همم
@@ -20415,7 +20415,7 @@
 14513259-n	arb:lemma	مجال
 14513259-n	arb:lemma:root	مجل
 06389553-n	arb:lemma	مجال
-06389553-n	arb:lemma:brokenPlural	-ات
+06389553-n	arb:lemma:brokenplural	-ات
 06389553-n	arb:lemma:root	جول
 14514039-n	arb:lemma	مجال
 14514039-n	arb:lemma:root	جول
@@ -20564,7 +20564,7 @@
 02652494-v	arb:lemma	مكث
 02652494-v	arb:lemma:root	مكث
 00752431-n	arb:lemma	مكِيْدة
-00752431-n	arb:lemma:brokenPlural	مَكَاْيِدُ
+00752431-n	arb:lemma:brokenplural	مَكَاْيِدُ
 00752431-n	arb:lemma:root	كيد
 00752431-n	arb:lemma:brokenplural	مكائد
 01316222-a	arb:lemma	مكْبُوح
@@ -20837,7 +20837,7 @@
 10522035-n	arb:lemma	منْدُوب
 10522035-n	arb:lemma:root	ندب
 03303965-n	arb:lemma	منْفذ
-03303965-n	arb:lemma:brokenPlural	مَنَافِذُ
+03303965-n	arb:lemma:brokenplural	مَنَافِذُ
 03303965-n	arb:lemma:root	نفذ
 03303965-n	arb:lemma:brokenplural	منافذ
 05148699-n	arb:lemma	منْفعة
@@ -20853,7 +20853,7 @@
 03768346-n	arb:lemma:brokenplural	مناجم
 01077190-n	arb:lemma	منْجم مُضاد
 05548840-n	arb:lemma	منْكب
-05548840-n	arb:lemma:brokenPlural	مَنَاكِب
+05548840-n	arb:lemma:brokenplural	مَنَاكِب
 05548840-n	arb:lemma:root	نكب
 05548840-n	arb:lemma:brokenplural	مناكب
 00036762-n	arb:lemma	منْقبة
@@ -20879,11 +20879,11 @@
 03259505-n	arb:lemma:root	نزل
 03259505-n	arb:lemma:brokenplural	منازل
 08558963-n	arb:lemma	منْزِل
-08558963-n	arb:lemma:brokenPlural	مَنَازِل
+08558963-n	arb:lemma:brokenplural	مَنَازِل
 08558963-n	arb:lemma:root	نزل
 08558963-n	arb:lemma:brokenplural	منازل
 03546340-n	arb:lemma	منْزِل
-03546340-n	arb:lemma:brokenPlural	مَنَازِلُ
+03546340-n	arb:lemma:brokenplural	مَنَازِلُ
 03546340-n	arb:lemma:root	نزل
 03546340-n	arb:lemma:brokenplural	منازل
 05093890-n	arb:lemma	منْزِلة
@@ -21112,7 +21112,7 @@
 02993546-n	arb:lemma	مرْكز
 02993546-n	arb:lemma:root	ركز
 08624385-n	arb:lemma	مرْكز
-08624385-n	arb:lemma:brokenPlural	مَرَاْكِز
+08624385-n	arb:lemma:brokenplural	مَرَاْكِز
 08624385-n	arb:lemma:root	ركز
 13947415-n	arb:lemma	مرْكز اِجْتِماعِي
 08539072-n	arb:lemma	مرْكز المدِينة
@@ -21178,15 +21178,15 @@
 05083328-n	arb:lemma:root	مسف
 05083328-n	arb:lemma:brokenplural	مساوف
 05084201-n	arb:lemma	مسافة
-05084201-n	arb:lemma:brokenPlural	مَساوِف ات
+05084201-n	arb:lemma:brokenplural	مَساوِف ات
 05084201-n	arb:lemma:root	سوف
 05084201-n	arb:lemma:brokenplural	مساوف
 05129565-n	arb:lemma	مسافة
-05129565-n	arb:lemma:brokenPlural	مَسَافَات
+05129565-n	arb:lemma:brokenplural	مَسَافَات
 05129565-n	arb:lemma:root	سوف
 05129565-n	arb:lemma:brokenplural	مساوف
 07505871-n	arb:lemma	مسافة
-07505871-n	arb:lemma:brokenPlural	مَسَافَات
+07505871-n	arb:lemma:brokenplural	مَسَافَات
 07505871-n	arb:lemma:root	سوف
 07505871-n	arb:lemma:brokenplural	مساوف
 05131194-n	arb:lemma	مسافة باِلأمْيال
@@ -21484,11 +21484,11 @@
 08622586-n	arb:lemma:root	وقع
 08622586-n	arb:lemma:brokenplural	مواقع
 08621598-n	arb:lemma	موْقِع
-08621598-n	arb:lemma:brokenPlural	مَوَاقِع
+08621598-n	arb:lemma:brokenplural	مَوَاقِع
 08621598-n	arb:lemma:root	وقع
 08621598-n	arb:lemma:brokenplural	مواقع
 05074774-n	arb:lemma	موْقِع
-05074774-n	arb:lemma:brokenPlural	مَوَاقِع
+05074774-n	arb:lemma:brokenplural	مَوَاقِع
 05074774-n	arb:lemma:root	وقع
 05074774-n	arb:lemma:brokenplural	مواقع
 08622586-n	arb:lemma	موْقِع عسْكرِيّ
@@ -21526,7 +21526,7 @@
 00042541-n	arb:lemma:root	مخض
 02860919-a	arb:lemma	مخاضِي
 00802238-n	arb:lemma	مخافة
-00802238-n	arb:lemma:brokenPlural	مَخَاوِفُ
+00802238-n	arb:lemma:brokenplural	مَخَاوِفُ
 00802238-n	arb:lemma:root	خوف
 02284578-a	arb:lemma	مخْطُوط
 02284578-a	arb:lemma:root	خطط
@@ -21562,7 +21562,7 @@
 04329190-n	arb:lemma	مخْزن
 04329190-n	arb:lemma:root	خزن
 03177349-n	arb:lemma	مخْزن
-03177349-n	arb:lemma:brokenPlural	مَخَازِنُ
+03177349-n	arb:lemma:brokenplural	مَخَازِنُ
 03177349-n	arb:lemma:root	خزن
 02793495-n	arb:lemma	مخْزن حُبُوب
 04321534-n	arb:lemma	مخْزُون
@@ -21733,7 +21733,7 @@
 04298308-n	arb:lemma	مِعْراج
 04298308-n	arb:lemma:root	عرج
 04298308-n	arb:lemma	مِعْرج
-04298308-n	arb:lemma:brokenPlural	مَعَاْرِجُ
+04298308-n	arb:lemma:brokenplural	مَعَاْرِجُ
 07260623-n	arb:lemma	مِعْيار
 07260623-n	arb:lemma:root	عير
 07260623-n	arb:lemma:brokenplural	معايير
@@ -22016,7 +22016,7 @@
 03804744-n	arb:lemma:root	سمر
 03804744-n	arb:lemma:brokenplural	مسامير
 03151500-n	arb:lemma	مِسْند
-03151500-n	arb:lemma:brokenPlural	مَسَانِدُ
+03151500-n	arb:lemma:brokenplural	مَسَانِدُ
 03151500-n	arb:lemma:root	سند
 03151500-n	arb:lemma:brokenplural	مساند
 13659162-n	arb:lemma	مِتْر
@@ -22039,7 +22039,7 @@
 04744814-n	arb:lemma:root	مثل
 04744814-n	arb:lemma:brokenplural	أمثال
 04743605-n	arb:lemma	مِثْل
-04743605-n	arb:lemma:brokenPlural	أَمْثَاْل
+04743605-n	arb:lemma:brokenplural	أَمْثَاْل
 04743605-n	arb:lemma:root	مثل
 04743605-n	arb:lemma:brokenplural	أمثال
 03239726-n	arb:lemma	مِثْقاب
@@ -22263,7 +22263,7 @@
 01505991-a	arb:lemma:root	ذوب
 01505991-a	arb:lemma	مُذوّب
 10521662-n	arb:lemma	مُذِيع
-10521662-n	arb:lemma:brokenPlural	-ون
+10521662-n	arb:lemma:brokenplural	-ون
 10521662-n	arb:lemma:root	ذيع
 01320988-a	arb:lemma	مُذْنِب
 01320988-a	arb:lemma:root	ذنب
@@ -22374,7 +22374,7 @@
 07594406-n	arb:lemma	مُعلّبات
 07594406-n	arb:lemma:root	علب
 07572957-n	arb:lemma	مُعلّبات
-07572957-n	arb:lemma:brokenPlural	مثعَلَّبَات
+07572957-n	arb:lemma:brokenplural	مثعَلَّبَات
 07572957-n	arb:lemma:root	علب
 10694258-n	arb:lemma	مُعلِّم
 10694258-n	arb:lemma:root	علم
@@ -23200,7 +23200,7 @@
 10066732-n	arb:lemma	مُقيِّم
 10066732-n	arb:lemma:root	قيم
 09620078-n	arb:lemma	مُقِيم
-09620078-n	arb:lemma:brokenPlural	مُقِيمُون
+09620078-n	arb:lemma:brokenplural	مُقِيمُون
 09620078-n	arb:lemma:root	قوم
 06750804-n	arb:lemma	مُقْترح
 07161429-n	arb:lemma	مُقْترح
@@ -23781,7 +23781,7 @@
 13810818-n	arb:lemma	مُخلّف
 13810818-n	arb:lemma:root	خلف
 15004501-n	arb:lemma	مُخلّفات
-15004501-n	arb:lemma:brokenPlural	مُخَلَّفَات
+15004501-n	arb:lemma:brokenplural	مُخَلَّفَات
 02945161-n	arb:lemma	مُخيّم
 02945161-n	arb:lemma:root	خيم
 08478018-n	arb:lemma	مُخيّم
@@ -23871,7 +23871,7 @@
 14006945-n	arb:lemma	نشاط
 14006945-n	arb:lemma:root	نشط
 04635104-n	arb:lemma	نشاط
-04635104-n	arb:lemma:brokenPlural	أَنْشِطة
+04635104-n	arb:lemma:brokenplural	أَنْشِطة
 04635104-n	arb:lemma:root	نشط
 05030806-n	arb:lemma	نشاط
 05030806-n	arb:lemma:root	نشط
@@ -24150,7 +24150,7 @@
 04157320-n	arb:lemma	نحْت
 04157320-n	arb:lemma:root	نحت
 08630039-n	arb:lemma	نحْو
-08630039-n	arb:lemma:brokenPlural	أَنْحَاء
+08630039-n	arb:lemma:brokenplural	أَنْحَاء
 08630039-n	arb:lemma:root	نحو
 08630039-n	arb:lemma:brokenplural	أنحاء
 00244043-r	arb:lemma	نحْو الشّمال
@@ -24265,7 +24265,7 @@
 09626238-n	arb:lemma	نظِير
 09626238-n	arb:lemma:brokenplural	نظراء
 10379620-n	arb:lemma	نظِير
-10379620-n	arb:lemma:brokenPlural	نُظَرَآءُ
+10379620-n	arb:lemma:brokenplural	نُظَرَآءُ
 10379620-n	arb:lemma:root	نظر
 10379620-n	arb:lemma:brokenplural	نظراء
 14619658-n	arb:lemma	نظِير
@@ -24436,10 +24436,10 @@
 13275495-n	arb:lemma	نفقات
 13275495-n	arb:lemma:root	نفق
 01122601-n	arb:lemma	نفقة
-01122601-n	arb:lemma:brokenPlural	نَفَقَات
+01122601-n	arb:lemma:brokenplural	نَفَقَات
 01122601-n	arb:lemma:brokenplural	نفقات
 13275495-n	arb:lemma	نفقة
-13275495-n	arb:lemma:brokenPlural	نَفَقَات
+13275495-n	arb:lemma:brokenplural	نَفَقَات
 13275495-n	arb:lemma:brokenplural	نفقات
 13275288-n	arb:lemma	نفقة
 13275288-n	arb:lemma:root	نفق
@@ -24832,7 +24832,7 @@
 04922787-n	arb:lemma:root	نسل
 04922787-n	arb:lemma:brokenplural	أنسال
 10373998-n	arb:lemma	نسْل
-10373998-n	arb:lemma:brokenPlural	أَنْسَاْل
+10373998-n	arb:lemma:brokenplural	أَنْسَاْل
 10373998-n	arb:lemma:root	نسل
 10373998-n	arb:lemma:brokenplural	أنسال
 02539788-v	arb:lemma	نسّأ
@@ -24893,11 +24893,11 @@
 04746262-n	arb:lemma:root	نوع
 04746262-n	arb:lemma:brokenplural	أنواع
 07997703-n	arb:lemma	نوْع
-07997703-n	arb:lemma:brokenPlural	أَنْوَاع
+07997703-n	arb:lemma:brokenplural	أَنْوَاع
 07997703-n	arb:lemma:root	نوع
 07997703-n	arb:lemma:brokenplural	أنواع
 05838765-n	arb:lemma	نوْع
-05838765-n	arb:lemma:brokenPlural	أَنْوَاع
+05838765-n	arb:lemma:brokenplural	أَنْوَاع
 05838765-n	arb:lemma:root	نوع
 05838765-n	arb:lemma:brokenplural	أنواع
 07092158-n	arb:lemma	نوْع أدبِي
@@ -25783,7 +25783,7 @@
 05565064-n	arb:lemma	قبْضة
 05565064-n	arb:lemma:root	قبض
 03047690-n	arb:lemma	قبْقاب
-03047690-n	arb:lemma:brokenPlural	قَبَاْقِيْبُ
+03047690-n	arb:lemma:brokenplural	قَبَاْقِيْبُ
 03047690-n	arb:lemma:root	قبقب
 03047690-n	arb:lemma:brokenplural	قباقيب
 03455033-n	arb:lemma	قبْر
@@ -26056,11 +26056,11 @@
 13793330-n	arb:lemma:root	قنطر
 13793330-n	arb:lemma:brokenplural	قناطر
 04523525-n	arb:lemma	قنْطرة
-04523525-n	arb:lemma:brokenPlural	قَنَاطِر
+04523525-n	arb:lemma:brokenplural	قَنَاطِر
 04523525-n	arb:lemma:root	قنطر
 04523525-n	arb:lemma:brokenplural	قناطر
 05599203-n	arb:lemma	قنْطرة
-05599203-n	arb:lemma:brokenPlural	قَنَاطِر
+05599203-n	arb:lemma:brokenplural	قَنَاطِر
 05599203-n	arb:lemma:root	قنطر
 05599203-n	arb:lemma:brokenplural	قناطر
 13641534-n	arb:lemma	قنْدِيلة
@@ -26122,7 +26122,7 @@
 01328302-n	arb:lemma:root	قرب
 01328302-n	arb:lemma:brokenplural	أقرباء
 09945905-n	arb:lemma	قرِيْن
-09945905-n	arb:lemma:brokenPlural	قُرَنَآءُ
+09945905-n	arb:lemma:brokenplural	قُرَنَآءُ
 09945905-n	arb:lemma:root	قرن
 09945905-n	arb:lemma:brokenplural	قرناء
 13398953-n	arb:lemma	قرْض
@@ -26500,7 +26500,7 @@
 08220891-n	arb:lemma:root	قسم
 08220891-n	arb:lemma:brokenplural	أقسام
 13285176-n	arb:lemma	قِسْم
-13285176-n	arb:lemma:brokenPlural	أقسام
+13285176-n	arb:lemma:brokenplural	أقسام
 13285176-n	arb:lemma:root	قسم
 13285176-n	arb:lemma:brokenplural	أقسام
 08120910-n	arb:lemma	قِسْم الأمْن
@@ -26564,7 +26564,7 @@
 00996969-n	arb:lemma	قِياس
 00996969-n	arb:lemma:root	قيس
 05093581-n	arb:lemma	قِياس
-05093581-n	arb:lemma:brokenPlural	أقْيِسَة
+05093581-n	arb:lemma:brokenplural	أقْيِسَة
 05093581-n	arb:lemma:root	قيس
 01593649-a	arb:lemma	قِياسِيّ
 01593649-a	arb:lemma:root	قيس
@@ -27147,7 +27147,7 @@
 08008017-n	arb:lemma	ربْطة
 08008017-n	arb:lemma:root	ربط
 10388924-n	arb:lemma	ربّ
-10388924-n	arb:lemma:brokenPlural	رُبُوْب
+10388924-n	arb:lemma:brokenplural	رُبُوْب
 10388924-n	arb:lemma:root	ربب
 10388924-n	arb:lemma:brokenplural	أرباب
 10388924-n	arb:lemma:brokenplural	ربوب
@@ -27570,7 +27570,7 @@
 03876519-n	arb:lemma	رسْم
 03876519-n	arb:lemma:root	رسم
 04702957-n	arb:lemma	رسْم
-04702957-n	arb:lemma:brokenPlural	رُسُوم
+04702957-n	arb:lemma:brokenplural	رُسُوم
 04702957-n	arb:lemma:root	رسم
 03178782-n	arb:lemma	رسْم
 03178782-n	arb:lemma:root	رسم
@@ -28436,7 +28436,7 @@
 00562280-n	arb:lemma:root	سدد
 00562280-n	arb:lemma:brokenplural	سدود
 09214581-n	arb:lemma	سدّ
-09214581-n	arb:lemma:brokenPlural	سُدُوْد
+09214581-n	arb:lemma:brokenplural	سُدُوْد
 09214581-n	arb:lemma:root	سدد
 09214581-n	arb:lemma:brokenplural	سدود
 02557199-v	arb:lemma	سدّ
@@ -28901,7 +28901,7 @@
 15043763-n	arb:lemma:root	سقط
 15043763-n	arb:lemma:brokenplural	أسقاط
 04105068-n	arb:lemma	سقْف
-04105068-n	arb:lemma:brokenPlural	سُقْف
+04105068-n	arb:lemma:brokenplural	سُقْف
 04105068-n	arb:lemma:root	سقف
 04105068-n	arb:lemma:brokenplural	سقوف
 01057631-n	arb:lemma	سقْي
@@ -29106,7 +29106,7 @@
 05145118-n	arb:lemma:brokenplural	أسعار
 05145118-n	arb:lemma:brokenplural	سعرى
 13325010-n	arb:lemma	سِعْر
-13325010-n	arb:lemma:brokenPlural	أَسْعَاْر
+13325010-n	arb:lemma:brokenplural	أَسْعَاْر
 13325010-n	arb:lemma:root	سعر
 13325010-n	arb:lemma:brokenplural	أسعار
 13325010-n	arb:lemma:brokenplural	سعرى
@@ -29164,7 +29164,7 @@
 02738031-n	arb:lemma:root	سلح
 02738031-n	arb:lemma:brokenplural	أسلحة
 04566257-n	arb:lemma	سِلاح
-04566257-n	arb:lemma:brokenPlural	أَسْلِحَة
+04566257-n	arb:lemma:brokenplural	أَسْلِحَة
 03076708-n	arb:lemma	سِلْعة
 03076708-n	arb:lemma:root	سلع
 03076708-n	arb:lemma:brokenplural	سلاع
@@ -29248,7 +29248,7 @@
 02881888-a	arb:lemma	سِنّوْرِيّ
 02881888-a	arb:lemma:root	سنر
 03636649-n	arb:lemma	سِراج
-03636649-n	arb:lemma:brokenPlural	سُرُج
+03636649-n	arb:lemma:brokenplural	سُرُج
 03636649-n	arb:lemma:root	سرج
 03636649-n	arb:lemma:brokenplural	سرج
 03636248-n	arb:lemma	سِراْج
@@ -29274,7 +29274,7 @@
 06672953-n	arb:lemma:root	سرر
 06672953-n	arb:lemma:brokenplural	أسرار
 01034925-n	arb:lemma	سِرّ
-01034925-n	arb:lemma:brokenPlural	أَسْرَاْر
+01034925-n	arb:lemma:brokenplural	أَسْرَاْر
 01034925-n	arb:lemma:root	سرر
 01034925-n	arb:lemma:brokenplural	أسرار
 04651784-n	arb:lemma	سِرِّيّة
@@ -29301,7 +29301,7 @@
 03058107-n	arb:lemma:root	ستر
 03058107-n	arb:lemma:brokenplural	أستار
 03151077-n	arb:lemma	سِتْر
-03151077-n	arb:lemma:brokenPlural	سُتُوْر
+03151077-n	arb:lemma:brokenplural	سُتُوْر
 03151077-n	arb:lemma:brokenplural	أستار
 00298161-n	arb:lemma	سِياحة
 00298161-n	arb:lemma:root	سوح
@@ -29348,11 +29348,11 @@
 02696795-a	arb:lemma:root	سنم
 09730824-n	arb:lemma	سِينِغالِيّ
 04897762-n	arb:lemma	سِيْرة
-04897762-n	arb:lemma:brokenPlural	سِيَر
+04897762-n	arb:lemma:brokenplural	سِيَر
 04897762-n	arb:lemma:root	سير
 04897762-n	arb:lemma:brokenplural	سير
 06515827-n	arb:lemma	سِيرة
-06515827-n	arb:lemma:brokenPlural	سِيَر
+06515827-n	arb:lemma:brokenplural	سِيَر
 06515827-n	arb:lemma:root	سير
 06515827-n	arb:lemma:brokenplural	سير
 04937043-n	arb:lemma	سِيُولة
@@ -29517,7 +29517,7 @@
 07491038-n	arb:lemma	سُرُور
 07491038-n	arb:lemma:root	سرر
 05556595-n	arb:lemma	سُرّة
-05556595-n	arb:lemma:brokenPlural	سُرَر
+05556595-n	arb:lemma:brokenplural	سُرَر
 05556595-n	arb:lemma:root	سرر
 05556595-n	arb:lemma:brokenplural	سرر
 03589791-n	arb:lemma	سُتْرة
@@ -30117,7 +30117,7 @@
 13475538-n	arb:lemma	تعْرِية
 13475538-n	arb:lemma:root	عري
 06744396-n	arb:lemma	تعْرِيف
-06744396-n	arb:lemma:brokenPlural	تَعَارِيف
+06744396-n	arb:lemma:brokenplural	تَعَارِيف
 06744396-n	arb:lemma:root	عرف
 13325010-n	arb:lemma	تعْرِيفة
 13325010-n	arb:lemma:root	عرف
@@ -30587,7 +30587,7 @@
 04714440-n	arb:lemma	تبايُن
 04714440-n	arb:lemma:root	بين
 10099375-n	arb:lemma	تبع
-10099375-n	arb:lemma:brokenPlural	أَتْبَاْع
+10099375-n	arb:lemma:brokenplural	أَتْبَاْع
 10099375-n	arb:lemma:brokenplural	أتباع
 10099375-n	arb:lemma:brokenplural	تبابع
 10099375-n	arb:lemma:brokenplural	تبابعة
@@ -31147,7 +31147,7 @@
 05984584-n	arb:lemma:root	جرب
 05984584-n	arb:lemma:brokenplural	تجارب
 07285403-n	arb:lemma	تجْرِبة
-07285403-n	arb:lemma:brokenPlural	تَجَارِب
+07285403-n	arb:lemma:brokenplural	تَجَارِب
 07285403-n	arb:lemma:root	جرب
 07285403-n	arb:lemma:brokenplural	تجارب
 05758059-n	arb:lemma	تجْرِبة
@@ -31371,7 +31371,7 @@
 13557766-n	arb:lemma	تلْيِين
 13557766-n	arb:lemma:root	لين
 03792048-n	arb:lemma	تلّ
-03792048-n	arb:lemma:brokenPlural	تِلَاْل
+03792048-n	arb:lemma:brokenplural	تِلَاْل
 03792048-n	arb:lemma:root	تلل
 03792048-n	arb:lemma:brokenplural	تلال
 03792048-n	arb:lemma	تلّة
@@ -31987,7 +31987,7 @@
 01204803-v	arb:lemma	ترِف
 01204803-v	arb:lemma:root	ترف
 00083585-n	arb:lemma	ترِكة
-00083585-n	arb:lemma:brokenPlural	تَرَاْئِكُ
+00083585-n	arb:lemma:brokenplural	تَرَاْئِكُ
 00083585-n	arb:lemma:root	ترك
 00083585-n	arb:lemma:brokenplural	ترك
 01150938-n	arb:lemma	ترْضِية
@@ -49092,7 +49092,7 @@
 15210870-n	arb:lemma	شهر المَرِّيخ - في ليبيا
 06377442-n	arb:lemma	شِعْر
 06377442-n	arb:lemma:root	شعر
-06377442-n	arb:lemma:brokenPlural	أَشْعَاْر
+06377442-n	arb:lemma:brokenplural	أَشْعَاْر
 06316048-n	arb:lemma	شِبْه جُمْلَة
 06317247-n	arb:lemma	شِبْه جُمْلَة جار و مَجْرُور
 07336763-n	arb:lemma	شِدَّة
@@ -49370,7 +49370,7 @@
 06552814-n	arb:lemma	اِطْلاق سَرَاح
 07302542-n	arb:lemma	اَِصْطِدَام
 07302542-n	arb:lemma:root	صدم
-07302542-n	arb:lemma:brokenPlural	ات
+07302542-n	arb:lemma:brokenplural	ات
 06552814-n	arb:lemma	اِبْرَاء
 06552814-n	arb:lemma:root	برأ
 07325990-n	arb:lemma	اِبْتِدَاء
@@ -49704,7 +49704,7 @@
 03538634-n	arb:lemma	عَرَبَة يَجُرُّهَا حِصَان
 08053121-n	arb:lemma	عَرْش
 08053121-n	arb:lemma:root	عرش
-08053121-n	arb:lemma:brokenPlural	عِرَشَة
+08053121-n	arb:lemma:brokenplural	عِرَشَة
 06891022-n	arb:lemma	عَرْض
 06891022-n	arb:lemma:root	عرض
 07164546-n	arb:lemma	عَرْض
@@ -49784,7 +49784,7 @@
 08183290-n	arb:lemma:root	حشد
 08565701-n	arb:lemma	حَاشِيَة
 08565701-n	arb:lemma:root	حشو
-08565701-n	arb:lemma:brokenPlural	حَوَاشٍ
+08565701-n	arb:lemma:brokenplural	حَوَاشٍ
 07314427-n	arb:lemma	حَادِث مُؤْسِف
 02679899-v	arb:lemma	حَافَظَ عَلَى
 03430959-n	arb:lemma	حَاجِيَات
@@ -49873,7 +49873,7 @@
 06371413-n	arb:lemma	حِكَايَة رَمْزِيَّة
 05926236-n	arb:lemma	حِكْمَة
 05926236-n	arb:lemma:root	حكم
-05926236-n	arb:lemma:brokenPlural	حِكَم
+05926236-n	arb:lemma:brokenplural	حِكَم
 08236438-n	arb:lemma	حِلْف
 08236438-n	arb:lemma:root	حلف
 10298482-n	arb:lemma	حِرَفِيّ
@@ -49984,10 +49984,10 @@
 08184861-n	arb:lemma:root	صحب
 05936704-n	arb:lemma	صُورَة
 05936704-n	arb:lemma:root	صور
-05936704-n	arb:lemma:brokenPlural	صُوَر
+05936704-n	arb:lemma:brokenplural	صُوَر
 07201804-n	arb:lemma	صُورَة
 07201804-n	arb:lemma:root	صور
-07201804-n	arb:lemma:brokenPlural	صُوَر
+07201804-n	arb:lemma:brokenplural	صُوَر
 05936704-n	arb:lemma	صُورَة ذِهْنِيَّة
 02332627-v	arb:lemma	طابَقَ
 02332627-v	arb:lemma:root	طبق
@@ -50016,7 +50016,7 @@
 07809368-n	arb:lemma:root	طعم
 08591680-n	arb:lemma	طَبَقَة
 08591680-n	arb:lemma:root	طبق
-08591680-n	arb:lemma:brokenPlural	طَبَقَات
+08591680-n	arb:lemma:brokenplural	طَبَقَات
 08357784-n	arb:lemma	طَبَقَة المُوَظَّفِين
 10305635-n	arb:lemma	طَبِيب عَسْكَرِيّ
 06590210-n	arb:lemma	طَبْع
@@ -50129,7 +50129,7 @@
 07941945-n	arb:lemma:root	بيوم
 07993109-n	arb:lemma	بَيُوتا
 07993109-n	arb:lemma:root	بيوتا
-07993109-n	arb:lemma:brokenPlural	بيوتا
+07993109-n	arb:lemma:brokenplural	بيوتا
 06037666-n	arb:lemma	بَيولوجْيا
 10592152-n	arb:lemma	بَيَّاع
 06647614-n	arb:lemma	بَيِّنَة
@@ -50166,14 +50166,14 @@
 06312966-n	arb:lemma	بُنْيَة نَحْوِيَّة
 08651247-n	arb:lemma	بُقْعَة
 08651247-n	arb:lemma:root	بقع
-08651247-n	arb:lemma:brokenPlural	بِقَاع
+08651247-n	arb:lemma:brokenplural	بِقَاع
 11747468-n	arb:lemma	بُقُول
 06643408-n	arb:lemma	بُرْهَان
 06643408-n	arb:lemma:root	برهن
-06643408-n	arb:lemma:brokenPlural	بَرَاْهِيْنُ
+06643408-n	arb:lemma:brokenplural	بَرَاْهِيْنُ
 06647614-n	arb:lemma	بُرْهَان
 06647614-n	arb:lemma:root	برهن
-06647614-n	arb:lemma:brokenPlural	بَرَاْهِيْنُ
+06647614-n	arb:lemma:brokenplural	بَرَاْهِيْنُ
 04008947-n	arb:lemma	بُرُوز
 04008947-n	arb:lemma:root	برز
 12405209-n	arb:lemma	بوقيصاء
@@ -50243,7 +50243,7 @@
 03260293-n	arb:lemma	دِينامِيت
 03260293-n	arb:lemma:root	ديناميت
 08081668-n	arb:lemma	دِين
-08081668-n	arb:lemma:brokenPlural	أديان
+08081668-n	arb:lemma:brokenplural	أديان
 03461385-n	arb:lemma	دكان البقال
 02131653-n	arb:lemma:root	دَبَبَ
 02984328-n	arb:lemma	دُولاب النَّار
@@ -50264,7 +50264,7 @@
 07314838-n	arb:lemma	فَاجِعَة
 07314838-n	arb:lemma:root	فجع
 07304852-n	arb:lemma	فَاْجِعَة
-07304852-n	arb:lemma:brokenPlural	فَوَاْجِع
+07304852-n	arb:lemma:brokenplural	فَوَاْجِع
 06516955-n	arb:lemma	فَاتُورَة
 06516955-n	arb:lemma:root	فاتورة
 07190941-n	arb:lemma	فَاتُورَة
@@ -50335,7 +50335,7 @@
 07340725-n	arb:lemma:root	فقد
 08187033-n	arb:lemma	فِرْقَة
 08187033-n	arb:lemma:root	فرق
-08187033-n	arb:lemma:brokenPlural	فِرَق
+08187033-n	arb:lemma:brokenplural	فِرَق
 08249038-n	arb:lemma	فِرْقَة
 08249038-n	arb:lemma:root	فرق
 08249960-n	arb:lemma	فِرْقَة
@@ -50464,7 +50464,7 @@
 08187033-n	arb:lemma	جَمْع
 07951464-n	arb:lemma	جَمْع
 07951464-n	arb:lemma:root	جمع
-07951464-n	arb:lemma:brokenPlural	جُمُوْع
+07951464-n	arb:lemma:brokenplural	جُمُوْع
 08183290-n	arb:lemma	جَمْع غَفِير
 08163792-n	arb:lemma	جَمْعِيَّة
 08406486-n	arb:lemma	جَمْعِيَّة
@@ -50474,14 +50474,14 @@
 08219493-n	arb:lemma:root	جنح
 07451463-n	arb:lemma	جَنَازَة
 07451463-n	arb:lemma:root	جنز
-07451463-n	arb:lemma:brokenPlural	جَنَاْئِزُ
+07451463-n	arb:lemma:brokenplural	جَنَاْئِزُ
 08641113-n	arb:lemma	جَنْب
 08641113-n	arb:lemma:root	جنب
 07200527-n	arb:lemma	جَوَاب
 03597469-n	arb:lemma	جَوَاهِر
 05919866-n	arb:lemma	جَوْهَر
 05919866-n	arb:lemma:root	جوهر
-05919866-n	arb:lemma:brokenPlural	جَوَاِهِر
+05919866-n	arb:lemma:brokenplural	جَوَاِهِر
 05921123-n	arb:lemma	جَوْهَر
 05921123-n	arb:lemma:root	جوهر
 14699752-n	arb:lemma	جَوْهَر
@@ -50624,7 +50624,7 @@
 08704409-n	arb:lemma	کندهار
 07959269-n	arb:lemma	كُبَّة
 07959269-n	arb:lemma:root	كبب
-07959269-n	arb:lemma:brokenPlural	كُبَب
+07959269-n	arb:lemma:brokenplural	كُبَب
 05869584-n	arb:lemma	كُل
 05869584-n	arb:lemma:root	كل
 05869584-n	arb:lemma	كُلّ تام
@@ -50692,7 +50692,7 @@
 08213978-n	arb:lemma:root	لوي
 05921123-n	arb:lemma	لُبّ
 05921123-n	arb:lemma:root	لبب
-05921123-n	arb:lemma:brokenPlural	أَلْبَاب
+05921123-n	arb:lemma:brokenplural	أَلْبَاب
 06894544-n	arb:lemma	لُغَة صُنْعِيَّة
 06349220-n	arb:lemma	لُغَة مَكْتُوبَة
 06894544-n	arb:lemma	لُغَة اِصْطِناعِيَّة
@@ -50736,18 +50736,18 @@
 10296176-n	arb:lemma	مَارْشال
 10296176-n	arb:lemma:root	مارشال
 07570720-n	arb:lemma	مَعَاش
-07570720-n	arb:lemma:brokenPlural	مَعَاْيِش
+07570720-n	arb:lemma:brokenplural	مَعَاْيِش
 07572353-n	arb:lemma	مَعَاش
 07572353-n	arb:lemma:root	عيش
-07572353-n	arb:lemma:brokenPlural	مَعَاْيِش
+07572353-n	arb:lemma:brokenplural	مَعَاْيِش
 07570720-n	arb:lemma	مَعِيشَة
 07572353-n	arb:lemma	مَعِيشَة
 08184861-n	arb:lemma	مَعْشَر
-08184861-n	arb:lemma:brokenPlural	مَعَاشِرُ
+08184861-n	arb:lemma:brokenplural	مَعَاشِرُ
 08407330-n	arb:lemma	مَعْهَد
 08407330-n	arb:lemma:root	عهد
 03316406-n	arb:lemma	مَعْمَل
-03316406-n	arb:lemma:brokenPlural	مَعَامِلُ
+03316406-n	arb:lemma:brokenplural	مَعَامِلُ
 05919866-n	arb:lemma	مَعْنَى
 05919866-n	arb:lemma:root	عني
 04340935-n	arb:lemma	مَعْقِل
@@ -50781,7 +50781,7 @@
 05963494-n	arb:lemma	مَبْدَأ الدُّوَلِيَّة
 05861067-n	arb:lemma	مَبْلَغ
 05861067-n	arb:lemma:root	بلغ
-05861067-n	arb:lemma:brokenPlural	مَبَاْلِغُ
+05861067-n	arb:lemma:brokenplural	مَبَاْلِغُ
 05861067-n	arb:lemma	مَبْلَغ كُلِّي
 03380867-n	arb:lemma	مَدَاس
 03380867-n	arb:lemma:root	مدس
@@ -50799,7 +50799,7 @@
 05999134-n	arb:lemma:root	جول
 08652970-n	arb:lemma	مَجَال
 08652970-n	arb:lemma:root	جول
-08652970-n	arb:lemma:brokenPlural	-ات
+08652970-n	arb:lemma:brokenplural	-ات
 06595351-n	arb:lemma	مَجَلَّة
 07965085-n	arb:lemma	مَجْلِس
 07965085-n	arb:lemma:root	جلس
@@ -50807,10 +50807,10 @@
 08163025-n	arb:lemma:root	جلس
 08221897-n	arb:lemma	مَجْلِس
 08221897-n	arb:lemma:root	جلس
-08221897-n	arb:lemma:brokenPlural	مَجَالِس
+08221897-n	arb:lemma:brokenplural	مَجَالِس
 08222293-n	arb:lemma	مَجْلِس
 08222293-n	arb:lemma:root	جلس
-08222293-n	arb:lemma:brokenPlural	مَجَالِس
+08222293-n	arb:lemma:brokenplural	مَجَالِس
 08329453-n	arb:lemma	مَجْلِس القَضاء
 05861067-n	arb:lemma	مَجْمُوع
 05861067-n	arb:lemma:root	جمع
@@ -50951,7 +50951,7 @@
 03430959-n	arb:lemma:root	متع
 06880664-n	arb:lemma	مَثَل
 06880664-n	arb:lemma:root	مثل
-06880664-n	arb:lemma:brokenPlural	أَمْثَال
+06880664-n	arb:lemma:brokenplural	أَمْثَال
 07308889-n	arb:lemma	مَثَل
 08581503-n	arb:lemma	مَثْوى
 10566072-n	arb:lemma	مَثَّال
@@ -50963,7 +50963,7 @@
 08208016-n	arb:lemma:root	وظف
 08641113-n	arb:lemma	مَوْضَع
 08641113-n	arb:lemma:root	وضع
-08641113-n	arb:lemma:brokenPlural	مَوَاْضِعُ
+08641113-n	arb:lemma:brokenplural	مَوَاْضِعُ
 08624196-n	arb:lemma	مَوْضِع
 08624196-n	arb:lemma:root	وضع
 06268096-n	arb:lemma	مَوْضُوع
@@ -51202,7 +51202,7 @@
 14996020-n	arb:lemma	مُلَمِّع
 14996020-n	arb:lemma:root	لمع
 07968354-n	arb:lemma	مُلَوَّنُون
-07968354-n	arb:lemma:brokenPlural	لون
+07968354-n	arb:lemma:brokenplural	لون
 06467007-n	arb:lemma	مُلَخَّص
 06467007-n	arb:lemma:root	لخص
 10316360-n	arb:lemma	مُلْحَق عَسْكَرِيّ
@@ -51368,7 +51368,7 @@
 10638385-n	arb:lemma:root	نطق
 08227214-n	arb:lemma	نَادٍ
 08227214-n	arb:lemma:root	ندي
-08227214-n	arb:lemma:brokenPlural	نَوَادٍ
+08227214-n	arb:lemma:brokenplural	نَوَادٍ
 02300060-v	arb:lemma	نَادَى
 08057633-n	arb:lemma	نَاقِل
 08057633-n	arb:lemma:root	نقل
@@ -51385,7 +51385,7 @@
 07304852-n	arb:lemma:root	نحس
 06671484-n	arb:lemma	نَصِيْحَة
 06671484-n	arb:lemma:root	نصح
-06671484-n	arb:lemma:brokenPlural	نَصَاْئِحُ
+06671484-n	arb:lemma:brokenplural	نَصَاْئِحُ
 09774783-n	arb:lemma	نَصِير
 09774783-n	arb:lemma:root	نصر
 10677713-n	arb:lemma	نَصِير
@@ -51455,7 +51455,7 @@
 06545528-n	arb:lemma	نَقْل مِلْكِيَّة
 08102402-n	arb:lemma	نَسَب
 08102402-n	arb:lemma:root	نسب
-08102402-n	arb:lemma:brokenPlural	أَنْسَاْب
+08102402-n	arb:lemma:brokenplural	أَنْسَاْب
 08102402-n	arb:lemma	نَسَب العائِلَة
 07013549-n	arb:lemma	نَسَق
 07013549-n	arb:lemma:root	نسق
@@ -51472,7 +51472,7 @@
 07071942-n	arb:lemma:root	نوع
 08110373-n	arb:lemma	نَوْع
 08110373-n	arb:lemma:root	نوع
-08110373-n	arb:lemma:brokenPlural	أَنْوَاع
+08110373-n	arb:lemma:brokenplural	أَنْوَاع
 06317464-n	arb:lemma	نَوْع كَلام
 06317672-n	arb:lemma	نَوْع كَلام رَئِيسِيّ
 07071942-n	arb:lemma	نَوْع مُوسِيقِيّ
@@ -51611,7 +51611,7 @@
 06727616-n	arb:lemma	قَوْل فَصْل
 07970721-n	arb:lemma	قَوْم
 07970721-n	arb:lemma:root	قوم
-07970721-n	arb:lemma:brokenPlural	أَقْوَام
+07970721-n	arb:lemma:brokenplural	أَقْوَام
 02879718-n	arb:lemma	قَوْس
 02879718-n	arb:lemma:root	قوس
 03520811-n	arb:lemma	قَيْد
@@ -51621,13 +51621,13 @@
 10516294-n	arb:lemma:root	قيم
 06369829-n	arb:lemma	قِصَّة
 06369829-n	arb:lemma:root	قص
-06369829-n	arb:lemma:brokenPlural	قِصَص
+06369829-n	arb:lemma:brokenplural	قِصَص
 06514093-n	arb:lemma	قِصَّة
 06514093-n	arb:lemma:root	قصص
-06514093-n	arb:lemma:brokenPlural	قِصَص
+06514093-n	arb:lemma:brokenplural	قِصَص
 07221094-n	arb:lemma	قِصَّة
 07221094-n	arb:lemma:root	قص
-07221094-n	arb:lemma:brokenPlural	قِصَص
+07221094-n	arb:lemma:brokenplural	قِصَص
 06367107-n	arb:lemma	قِصَّة خَيالِيَّة
 06255777-n	arb:lemma	قِطْعَة وَرَق
 03932203-n	arb:lemma	قِطْعَة
@@ -51778,7 +51778,7 @@
 06624161-n	arb:lemma	رِسالَة خَطِيَّة
 06624161-n	arb:lemma	رِسَالَة
 06624161-n	arb:lemma:root	رسل
-06624161-n	arb:lemma:brokenPlural	رِسَائل
+06624161-n	arb:lemma:brokenplural	رِسَائل
 07221094-n	arb:lemma	رِوايَة
 07221094-n	arb:lemma:root	روي
 06367107-n	arb:lemma	رِوَايَة
@@ -51801,7 +51801,7 @@
 08544275-n	arb:lemma:root	ركن
 08544419-n	arb:lemma	رُكْن
 08544419-n	arb:lemma:root	ركن
-08544419-n	arb:lemma:brokenPlural	أَرْكَان
+08544419-n	arb:lemma:brokenplural	أَرْكَان
 03935450-n	arb:lemma	رُمْح
 03458271-n	arb:lemma	رُمَّانَة يَدَوِيَّة
 03781055-n	arb:lemma	رُمَّانَة مُحْرِقَة
@@ -51909,7 +51909,7 @@
 13066129-n	arb:lemma:root	سنج
 07990956-n	arb:lemma	سِرْب
 07990956-n	arb:lemma:root	سرب
-07990956-n	arb:lemma:brokenPlural	أسراب
+07990956-n	arb:lemma:brokenplural	أسراب
 06658994-n	arb:lemma	سِيَاسَة اِجْتِمَاعِيَّة
 10450303-n	arb:lemma	سِيَاسِيّ
 10450303-n	arb:lemma:root	سوس
@@ -52104,7 +52104,7 @@
 05905802-n	arb:lemma:root	لفق
 07961480-n	arb:lemma	تَلّ
 07961480-n	arb:lemma:root	تلل
-07961480-n	arb:lemma:brokenPlural	تِلَاْل
+07961480-n	arb:lemma:brokenplural	تِلَاْل
 04941325-n	arb:lemma	تَماسُك
 04941325-n	arb:lemma:root	مسك
 01920932-v	arb:lemma	تَمَشَّى
@@ -52191,7 +52191,7 @@
 07230502-n	arb:lemma:root	سمي
 08218212-n	arb:lemma	تَتُمَّة
 08218212-n	arb:lemma:root	تمم
-08218212-n	arb:lemma:brokenPlural	تمم
+08218212-n	arb:lemma:brokenplural	تمم
 03354613-n	arb:lemma	تَثْبِيتَة
 03354613-n	arb:lemma:root	تبث
 06528783-n	arb:lemma	تَثْمِين
@@ -52298,10 +52298,10 @@
 01726692-n	arb:lemma	ثُعْبَان
 01726692-n	arb:lemma:root	ثعب
 09379111-n	arb:lemma	ثُغْرَة
-09379111-n	arb:lemma:brokenPlural	ثُغَر
+09379111-n	arb:lemma:brokenplural	ثُغَر
 09379111-n	arb:lemma:root	ثغر
 03848729-n	arb:lemma	ثُغْرَة
-03848729-n	arb:lemma:brokenPlural	ثُغَر
+03848729-n	arb:lemma:brokenplural	ثُغَر
 03848729-n	arb:lemma:root	ثغر
 05249636-n	arb:lemma	ثُغْرَة
 05249636-n	arb:lemma:root	ثغر
@@ -52372,7 +52372,7 @@
 02485844-v	arb:lemma	وَاعَدَ
 02485844-v	arb:lemma:root	وعد
 02486232-v	arb:lemma	وَاعَدَ
-02486232-v	arb:lemma:brokenPlural	وعد
+02486232-v	arb:lemma:brokenplural	وعد
 05870055-n	arb:lemma	وَاحِد
 13742573-n	arb:lemma	وَاحِد
 13742573-n	arb:lemma:root	وحد
@@ -52462,7 +52462,7 @@
 10332385-n	arb:lemma	وَالِدَة
 10332385-n	arb:lemma:root	ولد
 07283608-n	arb:lemma	وَاْقِع
-07283608-n	arb:lemma:brokenPlural	وُقَّع
+07283608-n	arb:lemma:brokenplural	وُقَّع
 07283608-n	arb:lemma:root	وقع
 07326557-n	arb:lemma	وَاْسِطَة
 07326557-n	arb:lemma:root	وسط
@@ -52575,7 +52575,7 @@
 13920835-n	arb:lemma	وَضْع
 13920835-n	arb:lemma:root	وضع
 05079866-n	arb:lemma	وَضْع
-05079866-n	arb:lemma:brokenPlural	أَوْضَاع
+05079866-n	arb:lemma:brokenplural	أَوْضَاع
 05079866-n	arb:lemma:root	وضع
 13952601-n	arb:lemma	وَضْع قَانُونِي
 14488317-n	arb:lemma	وَضْع ماليّ
@@ -52780,9 +52780,9 @@
 07201365-n	arb:lemma	وَصْف
 07201365-n	arb:lemma:root	وصف
 04916342-n	arb:lemma	وَصْف
-04916342-n	arb:lemma:brokenPlural	أَوْصَاف
+04916342-n	arb:lemma:brokenplural	أَوْصَاف
 05849040-n	arb:lemma	وَصْف
-05849040-n	arb:lemma:brokenPlural	أَوْصَاف
+05849040-n	arb:lemma:brokenplural	أَوْصَاف
 06724763-n	arb:lemma	وَصْف
 06724763-n	arb:lemma:root	وصف
 06681551-n	arb:lemma	وَصْف إٍخْبَارِي
@@ -52990,7 +52990,7 @@
 09777353-n	arb:lemma	وَكِيل
 09777353-n	arb:lemma:root	وكل
 10249950-n	arb:lemma	وَكِيل
-10249950-n	arb:lemma:brokenPlural	وُكَلَآءُ
+10249950-n	arb:lemma:brokenplural	وُكَلَآءُ
 10249950-n	arb:lemma:root	وكل
 10373801-n	arb:lemma	وَكِيل
 10373801-n	arb:lemma:root	وكل
@@ -53187,7 +53187,7 @@
 03733547-n	arb:lemma	وَسِيلَة
 03733547-n	arb:lemma:root	وسل
 06254669-n	arb:lemma	وَسِيلَة
-06254669-n	arb:lemma:brokenPlural	وَسَائِلُ
+06254669-n	arb:lemma:brokenplural	وَسَائِلُ
 06254669-n	arb:lemma:root	وسل
 05150458-n	arb:lemma	وَسِيلَة
 05150458-n	arb:lemma:root	وسل
@@ -53973,7 +53973,7 @@
 02383440-v	arb:lemma	خَرَجَ
 02383440-v	arb:lemma:root	خرج
 02486232-v	arb:lemma	خَرَجَ مَعَ
-02486232-v	arb:lemma:brokenPlural	خرج
+02486232-v	arb:lemma:brokenplural	خرج
 02486232-v	arb:lemma:root	خرج
 00358431-v	arb:lemma	خَرَجَ من الدُّنْيَا
 02635659-v	arb:lemma	خَرَجَ بـ
@@ -54103,7 +54103,7 @@
 05142180-n	arb:lemma	خَيْر
 05142180-n	arb:lemma:root	خير
 10529965-n	arb:lemma	خَيَّال
-10529965-n	arb:lemma:brokenPlural	خَيَّاْلَة
+10529965-n	arb:lemma:brokenplural	خَيَّاْلَة
 10529965-n	arb:lemma:root	خيل
 09902353-n	arb:lemma	خَيَّال
 09902353-n	arb:lemma:root	خيل
@@ -54208,7 +54208,7 @@
 06398401-n	arb:lemma	خِتَام
 07291312-n	arb:lemma	خِتَام
 15267536-n	arb:lemma	خِتَام
-15267536-n	arb:lemma:brokenPlural	خُتُم
+15267536-n	arb:lemma:brokenplural	خُتُم
 00749767-n	arb:lemma	خِيَانَة
 00749767-n	arb:lemma:root	خون
 04874672-n	arb:lemma	خِيَانَة
@@ -54555,7 +54555,7 @@
 00271711-v	arb:lemma:root	زعزع
 07298982-n	arb:lemma	زَعْزَعَة
 07298982-n	arb:lemma:root	زعزع
-07298982-n	arb:lemma:brokenPlural	زَعَازِع
+07298982-n	arb:lemma:brokenplural	زَعَازِع
 01885845-v	arb:lemma	زَحَفَ
 01885845-v	arb:lemma:root	زحف
 02090990-v	arb:lemma	زَحْلَقَ
@@ -54573,7 +54573,7 @@
 08401554-n	arb:lemma	زَبُون
 08401554-n	arb:lemma:root	زبن
 09984659-n	arb:lemma	زَبُون
-09984659-n	arb:lemma:brokenPlural	زَبَائِن
+09984659-n	arb:lemma:brokenplural	زَبَائِن
 09984659-n	arb:lemma:root	زبن
 10407726-n	arb:lemma	زَبُون
 10407726-n	arb:lemma:root	زبن
@@ -54843,7 +54843,7 @@
 08240633-n	arb:lemma	زُمْرَة
 08240633-n	arb:lemma:root	زمر
 03640589-n	arb:lemma	زُقَاق
-03640589-n	arb:lemma:brokenPlural	أَزْقِقَة
+03640589-n	arb:lemma:brokenplural	أَزْقِقَة
 03640589-n	arb:lemma:root	زقق
 06756407-n	arb:lemma	زُور
 06756407-n	arb:lemma:root	زور
