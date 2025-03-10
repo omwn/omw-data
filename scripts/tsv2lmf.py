@@ -229,6 +229,7 @@ def convert(
         ilimap = {}
 
     data = load(Path(source), lex["id"])
+    process_lexical_gaps(data)
     validate(lex, data)
     build(lex, data, ilimap)
 
@@ -392,6 +393,48 @@ def _get_exe_or_def(args: list[str]) -> tuple[int, str]:
     except ValueError as exc:
         raise TSV2LMFError(f"Invalid example/definition: {args}") from exc
     return order, text.strip()
+
+
+# TRANSFORMATION #######################################################
+
+LEXICAL_GAP_INDICATORS = [
+    "GAP!",
+    "PSEUDOGAP!",
+]
+
+
+def process_lexical_gaps(data: TSVData) -> None:
+    for pwn_id, sd in data.synsets.items():
+        for indicator in LEXICAL_GAP_INDICATORS:
+            if indicator in sd.members:
+                log.info("Updating lexicalized status on %s senses", pwn_id)
+                del sd.members[indicator]
+                for lemma, sense in sd.members.items():
+                    _update_lexicalized(sense, lemma, data.language)
+        # if all senses are lexicalized or there are no senses, then
+        # the synset gets marked with lexicalized=False
+        if all(not sense["lexicalized"] for sense in sd.members.values()):
+            sd.lexicalized = False
+    # finally remove the lexical entries for the gap indicators
+    for pos in "nvar":
+        for indicator in LEXICAL_GAP_INDICATORS:
+            eid = entry_id(data.lex_id, indicator, pos)
+            if eid in data.entries:
+                del data.entries[eid]
+
+
+def _update_lexicalized(sense: Sense, lemma: str, lang: str) -> None:
+    # currently assuming 2 things:
+    #  * the language uses spaces to delimit words (plus ' for italian)
+    #  * multiple words implies a lexical gap
+    if lang == "ita":
+        if " " in lemma or "'" in lemma:
+            sense["lexicalized"] = False
+    elif lang == "heb":
+        if " " in lemma:
+            sense["lexicalized"] = False
+    else:
+        log.warning("No lexicalization rules encoded for [%s]", lang)
 
 
 # VALIDATION ###########################################################
