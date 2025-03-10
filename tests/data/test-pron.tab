@@ -1,0 +1,4 @@
+# Test Wordnet	tst	http://www.globalwordnet.org/test/	CC BY 4.0
+00001234-n	tst:lemma	foo
+00001234-n	tst:lemma	bar
+00001234-n	tst:pron	bar			https://example.com/bar.mp3	
