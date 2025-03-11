@@ -3,7 +3,19 @@
 ###
 ### Validate wordnets built by build.sh.
 ###
+### Usage: validate.sh [BLDDIR]
+###
+### The BLDDIR argument is the directory of the built WN-LMF packages.
+### If it is not given as an argument, a BLDDIR environment variable
+### should be set instead. Arguments override environment variables.
 
+
+: "${BLDDIR:=$1}"
+
+if [ -z "$BLDDIR" ]; then
+    echo "BLDDIR must be provided as an argument or environment variable."
+    exit 1
+fi
 
 if [ ! -d "$BLDDIR" ]; then
     echo "Build directory not found: $BLDDIR"

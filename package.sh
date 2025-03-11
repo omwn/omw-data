@@ -12,9 +12,20 @@
 ### the packages will be uploaded to the GitHub release given by
 ### TAGNAME.
 ###
+### The following environment variables may be set to use non-OMW sources:
+###
+###     BLDDIR - the location of the built WN-LMF packages
+###     BASEURL - the URL prefix of the upload destination
+###     WNBASE - the lexicon identifier prefix
+###
+### If these environment variables are unset, they default to:
+###
+###     BLDDIR="build/omw-${VER}"
+###     BASEURL="https://github.com/omwn/omw-data/releases/download/${TAG}"
+###     WNBASE="omw"
 
 
-if [ $1 == --publish ]; then
+if [ "$1" == --publish ]; then
     shift
     publish=true
 fi
@@ -25,6 +36,11 @@ fi
 
 VER=$1
 TAG=$2
+
+# if unset, assign default values to BLDDIR and BASEURL
+: "${BLDDIR:=build/omw-${VER}}"
+: "${BASEURL:=https://github.com/omwn/omw-data/releases/download/${TAG}}"
+: "${WNBASE:=omw}"
 
 TAROPTS="--checkpoint=.100 -c -J"
 
