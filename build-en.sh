@@ -5,8 +5,8 @@
 # Configuration ########################################################
 
 if [ $# -ne 2 ]; then
-    echo "usage: build-en171.sh OMWVERSION WNVERSION"
-    echo "  OMWVERSION: Version of the OMW release (e.g., 1.5)"
+    echo "usage: build-en.sh OMWVERSION WNVERSION"
+    echo "  OMWVERSION: Version of the OMW release (e.g., 2.0)"
     echo "  WNVERSION: Version of the Princeton WordNet (e.g., 3.0)"
     exit 1
 fi
@@ -157,7 +157,7 @@ elif [ "$VER" = "3.0" ]; then
     ILIMAP="${CILIDIR}/ili-map-pwn${SHORTVER}.tab"
     if [ ! -d "${WNDIR}" ]; then
         pushd "${TMPDIR}"
-        #wget http://wordnetcode.princeton.edu/3.0/WordNet-3.0.tar.gz
+        wget http://wordnetcode.princeton.edu/3.0/WordNet-3.0.tar.gz
         tar -xf WordNet-3.0.tar.gz
         chmod -R u+w WordNet-3.0  # cannot delete files otherwise
         # LICENSE file is missing, but COPYING is the same thing

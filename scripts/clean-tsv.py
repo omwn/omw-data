@@ -35,19 +35,21 @@ def main(args: argparse.Namespace) -> int:
                 lemma_type = "" if args.ignore_lemma_type else row_type
 
                 key = (lemma, lemma_type)
-                if key not in lemma_set:
+                original = "\t".join(row[:3])
+                if lemma and key not in lemma_set:
                     if lemma != text:
-                        print(
-                            "\t".join((date, "MODIFIED") + row[:3] + (lemma,)),
-                            file=err
-                        )
+                        print(f"{date}\tMODIFIED\t{original}\t{lemma}", file=err)
                     print(f"{offset_pos}\t{row_type}\t{lemma}", file=out)
                     lemma_set.add(key)
                 else:
-                    print("\t".join((date, "REMOVED") + row[:3]), file=err)
+                    print(f"{date}\tREMOVED\t{original}", file=err)
 
             elif row_type.endswith((":def", "exe")):
-                print(f"{offset_pos}\t{row_type}\t{order}\t{text}", file=out)
+                entry = f"{offset_pos}\t{row_type}\t{order}\t{text}"
+                if text.strip():
+                    print(entry, file=out)
+                else:
+                    print(f"{date}\tREMOVED\t{entry}", file=err)
 
             else:
                 raise Exception(f"unexpected row type: {row_type}")

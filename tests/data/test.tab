@@ -1,0 +1,10 @@
+# Test Wordnet	tst	http://www.globalwordnet.org/test/	CC BY 4.0
+00001234-n	tst:lemma	foo
+00001234-n	tst:lemma	bar
+00001234-n	tst:def	0	a bar that foos
+00002345-n	tst:lemma	foo
+00002345-n	tst:lemma	baz
+00002345-n	tst:exe	1	I have a baz
+00002345-n	tst:exe	0	I have a foo
+00003456-s	tst:lemma	fooey
+00004567-v	tst:lemma	baz

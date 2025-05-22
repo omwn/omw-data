@@ -1,0 +1,9 @@
+# Test Wordnet	ita	http://www.globalwordnet.org/test/	CC BY 4.0
+00001234-n	ita:lemma	GAP!
+00001234-n	ita:lemma	foo
+00001234-n	ita:lemma	a bar that foos
+00002345-n	ita:lemma	GAP!
+00002345-n	ita:def	0	a foo baz
+00003456-s	ita:lemma	PSEUDOGAP!
+00003456-s	ita:lemma	very fooey
+00003456-s	ita:lemma	very barlike

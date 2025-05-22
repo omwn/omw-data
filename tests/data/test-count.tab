@@ -1,0 +1,6 @@
+# Test Wordnet	tst	http://www.globalwordnet.org/test/	CC BY 4.0
+00001234-n	tst:lemma	foo
+00001234-n	tst:count	foo	2
+00001234-n	tst:lemma	bar
+00001234-n	tst:def	0	a bar that foos
+00001234-n	tst:count	bar	4
