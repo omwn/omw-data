@@ -65,4 +65,6 @@ for l in f:
         log.write("Unknown '%s'\n\n" % l.strip())
 
 for (of, ll) in senses:
+    if not of:
+        continue
     out.write("%s\t%s:lemma\t%s\n" % (of, wnlang,ll))
