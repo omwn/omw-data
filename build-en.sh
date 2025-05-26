@@ -153,6 +153,7 @@ elif [ "$VER" = "2.1" ]; then
     fi
 
 elif [ "$VER" = "3.0" ]; then
+    WNID="omw-en"  # override omw-en30
     LICENSE="https://wordnet.princeton.edu/license-and-commercial-use"
     ILIMAP="${CILIDIR}/ili-map-pwn${SHORTVER}.tab"
     if [ ! -d "${WNDIR}" ]; then
