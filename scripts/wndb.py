@@ -6,7 +6,6 @@ from collections.abc import Iterator
 from pathlib import Path
 from typing import NamedTuple, TextIO
 
-
 # see: https://wordnet.princeton.edu/documentation/wninput5wn
 POINTER_MAP = {
     "!": "antonym",
@@ -229,7 +228,7 @@ def read_data_file(path: Path) -> Iterator[DataRecord]:
 
     After the header, the fields are:
 
-        synset_offset  lex_filenum  ss_type
+        offset  lex_filenum  ss_type
         w_cnt  word  lex_id  [word  lex_id...]
         p_cnt  [ptr...]
         [frames...]  |  gloss
@@ -237,7 +236,7 @@ def read_data_file(path: Path) -> Iterator[DataRecord]:
     with path.open("rt") as datafile:
         for line in _non_header_lines(datafile):
             nongloss, _, gloss = line.partition("|")
-            synset_offset, lex_filenum, ss_type, _w_cnt, *rest = nongloss.strip().split(" ")
+            offset, lex_filenum, ss_type, _w_cnt, *rest = nongloss.strip().split(" ")
 
             w_cnt = int(_w_cnt, 16)  # word count is hexadecimal
             w_idx = w_cnt * 2  # each w is 2 columns: word, lex_id
@@ -249,7 +248,7 @@ def read_data_file(path: Path) -> Iterator[DataRecord]:
                 f_cnt = 0
 
             yield DataRecord(
-                int(synset_offset),
+                int(offset),
                 int(lex_filenum),
                 ss_type,
                 _parse_data_words(ss_type, rest[:w_idx], w_cnt),
@@ -269,7 +268,7 @@ def read_index_file(path: Path) -> Iterator[IndexRecord]:
     """
     with path.open("rt") as indexfile:
         for line in _non_header_lines(indexfile):
-            lemma, pos, synset_cnt, _p_cnt, *rest = line.split()
+            lemma, pos, _, _p_cnt, *rest = line.split()
             p_cnt = int(_p_cnt)
             p_symbols = rest[:p_cnt]
             _sense_cnt, *end = rest[p_cnt:]
@@ -281,7 +280,7 @@ def read_index_file(path: Path) -> Iterator[IndexRecord]:
             else:
                 raise WNDBError(
                     f"Index entry {lemma!r} ({pos}) "
-                    f"has {len(offsets)} offsets, "
+                    f"has {end_cnt} offsets, "
                     f"expected {sense_cnt}"
                 )
             yield IndexRecord(
