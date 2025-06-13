@@ -38,6 +38,7 @@ BIBFILE="fellbaum-1998.bib"
 CITATION="${FELLBAUM98}"
 LICENSE="https://wordnetcode.princeton.edu/${VER}/LICENSE"
 ILIMAP="${CILIDIR}/older-wn-mappings/ili-map-pwn${SHORTVER}.tab"
+ENTRY_INDEX="all"  # all | partial | none
 
 
 # Data Preparation #####################################################
@@ -213,7 +214,8 @@ python -m scripts.wndb2lmf \
        --license="${LICENSE}" \
        --url="${URL}" \
        --citation="${CITATION}" \
-       --ili-map="${ILIMAP}"
+       --ili-map="${ILIMAP}" \
+       --entry-indexes="${ENTRY_INDEX}"
 
 # below: cat instead of cp to reset permissions
 cat "${WNDIR}/LICENSE" > "${BLDDIR}/${WNID}/LICENSE"

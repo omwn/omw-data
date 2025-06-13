@@ -136,7 +136,7 @@ def main(args):
 
     progress.set(total=sum(map(len, data.values())))
     _build_lexicon(lexicon, data, senseidx, exceptions, ilimap, progress)
-    _prune_unnecessary_indexes(lexicon)
+    _prune_unnecessary_indexes(lexicon, args.entry_indexes)
 
     progress.flash(f"Writing to WN-LMF {LMF_VERSION}")
     resource = LexicalResource(
@@ -408,13 +408,24 @@ def _load_ili_map(path: AnyPath, threshold: float) -> dict[str, str]:
 
 # Post-build cleanup functions #########################################
 
-def _prune_unnecessary_indexes(lexicon: Lexicon) -> None:
-    # only keep index and n on entries/senses that share an index
-    index_counts = Counter(
-        (e["index"], e["lemma"]["partOfSpeech"]) for e in lexicon["entries"]
-    )
-    for e in lexicon["entries"]:
-        if index_counts[(e["index"], e["lemma"]["partOfSpeech"])] == 1:
+def _prune_unnecessary_indexes(lexicon: Lexicon, keep: str) -> None:
+    if keep == "all":
+        return
+
+    elif keep == "partial":
+        # only keep index and n on entries/senses that share an index
+        index_counts = Counter(
+            (e["index"], e["lemma"]["partOfSpeech"]) for e in lexicon["entries"]
+        )
+        for e in lexicon["entries"]:
+            count = index_counts[(e["index"], e["lemma"]["partOfSpeech"])]
+            if count < 2:
+                e["index"] = ""
+                for s in e["senses"]:
+                    s["n"] = 0
+
+    elif keep == "none":
+        for e in lexicon["entries"]:
             e["index"] = ""
             for s in e["senses"]:
                 s["n"] = 0
@@ -493,6 +504,15 @@ if __name__ == "__main__":
         metavar="THRESHOLD",
         help="ignore ILI mappings below the confidence threshold (default: 0.0)",
         default=0.0,
+    )
+    parser.add_argument(
+        "--entry-indexes",
+        choices=("all", "partial", "none"),
+        help=(
+            "add 'index' on entries and 'n' on senses for cross-entry sense-ordering; "
+            "--entry-indexes=partial only adds it when 2+ entries share an index"
+        ),
+        default="all",
     )
     args = parser.parse_args()
 
