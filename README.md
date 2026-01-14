@@ -35,11 +35,10 @@ with the following exceptions:
 
  * ItalWordnet will be `omw-iwn` not `omw-it` (used by multiwordnet)
  * COW will just be `omw-cmn` not `omw-cmn-Hans`
- * WN derived from PWN 3.0 will be `omw-en`
- * WN derived from PWN 3.1 will be `omw-en31`
+ * WN derived from the Princeton WordNet 3.0 will be `omw-en`
+ * WN derived from other versions of the Princeton WordNet will be `omw-enXY` (e.g., PWN 3.1 becomes `omw-en31`)
 
-We thanks the developers of all of the wordnets!  More recent versions
-are available for many of these.
+We thank the developers of all of the wordnets!  More recent versions are available for many of these.
 
 Francis Bond and Ryan Foster (2013)
 [Linking and extending an open multilingual wordnet](https://aclanthology.org/P13-1133/)</a>.
