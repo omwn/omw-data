@@ -35,35 +35,37 @@ License: MIT
 import argparse
 import csv
 import logging
+from collections import Counter
 from pathlib import Path
 
 # import wn
 from wn._types import AnyPath
 from wn.constants import LEXICOGRAPHER_FILES
-from wn.util import ProgressHandler, ProgressBar, synset_id_formatter
 from wn.lmf import (
-    dump,
+    Count,
+    Definition,
+    Example,
+    Form,
+    Lemma,
+    LexicalEntry,
+    LexicalResource,
     Lexicon,
     Metadata,
-    LexicalEntry,
-    Lemma,
-    Form,
-    Sense,
-    Count,
     Relation,
-    Example,
+    Sense,
     Synset,
-    Definition,
     SyntacticBehaviour,
+    dump,
 )
+from wn.util import ProgressBar, ProgressHandler, synset_id_formatter
 
 from . import wndb
 from .glossparser import gloss_parser
 from .util import escape_lemma, respace_word
 
-log = logging.getLogger('wndb2lmf')
+log = logging.getLogger("wndb2lmf")
 
-LMF_VERSION = "1.3"
+LMF_VERSION = "1.4"
 REQUIRED_FILES = [
     "data.noun",
     "data.verb",
@@ -134,12 +136,14 @@ def main(args):
 
     progress.set(total=sum(map(len, data.values())))
     _build_lexicon(lexicon, data, senseidx, exceptions, ilimap, progress)
+    _prune_unnecessary_indexes(lexicon, args.entry_indexes)
 
     progress.flash(f"Writing to WN-LMF {LMF_VERSION}")
-    dump(
-        {"lmf_version": LMF_VERSION, "lexicons": [lexicon]},
-        args.DEST,
+    resource = LexicalResource(
+        lmf_version=LMF_VERSION,
+        lexicons=[lexicon],
     )
+    dump(resource, args.DEST)
 
     progress.flash(f"Built {args.id}:{args.version}")
     progress.close()
@@ -195,13 +199,15 @@ def _build_lexicon(
                 word_w_num_map[w] = w_num
                 entry_id = _make_entry_id(lex_id, w.respaced, pos)
                 if entry_id not in entries:
-                    entry = _build_entry(d, entry_id, w, pos, exceptions)
+                    entry = _build_entry(entry_id, w, pos, exceptions)
                     entries[entry_id] = entry
                     lex["entries"].append(entry)
 
                 sense_key, _, sense_num, count = senseidx[w.lemma][offset]
                 sense_id = _make_sense_id(lex_id, w.respaced, offset, d.ss_type)
-                sense = _build_sense(d, sense_id, ssid, count, w.adjposition, sense_key)
+                sense = _build_sense(
+                    sense_id, ssid, count, w.adjposition, sense_key, sense_num
+                )
 
                 synset["members"].append(sense_id)
                 entries[entry_id]["senses"].append(sense)
@@ -287,7 +293,6 @@ def _build_synset(
 
 
 def _build_entry(
-    d: wndb.DataRecord,
     entry_id: str,
     w: wndb.Word,
     pos: str,
@@ -299,17 +304,18 @@ def _build_entry(
         lemma=Lemma(writtenForm=w.respaced, partOfSpeech=pos),
         forms=[Form(writtenForm=respace_word(form)) for form in exceptional_forms],
         senses=[],
+        index=w.lemma,
         meta=None,
     )
 
 
 def _build_sense(
-    d: wndb.DataRecord,
     sense_id: str,
     ssid: str,
     count: int,
     adjposition: str,
     sense_key: str,
+    n: int,
 ) -> Sense:
     return Sense(
         id=sense_id,
@@ -319,6 +325,7 @@ def _build_sense(
         counts=[Count(value=count)] if count else [],
         lexicalized=True,
         adjposition=adjposition if adjposition else "",
+        n=n,
         meta=Metadata(identifier=sense_key),
     )
 
@@ -399,6 +406,31 @@ def _load_ili_map(path: AnyPath, threshold: float) -> dict[str, str]:
     return ili_map
 
 
+# Post-build cleanup functions #########################################
+
+def _prune_unnecessary_indexes(lexicon: Lexicon, keep: str) -> None:
+    if keep == "all":
+        return
+
+    elif keep == "partial":
+        # only keep index and n on entries/senses that share an index
+        index_counts = Counter(
+            (e["index"], e["lemma"]["partOfSpeech"]) for e in lexicon["entries"]
+        )
+        for e in lexicon["entries"]:
+            count = index_counts[(e["index"], e["lemma"]["partOfSpeech"])]
+            if count < 2:
+                e["index"] = ""
+                for s in e["senses"]:
+                    s["n"] = 0
+
+    elif keep == "none":
+        for e in lexicon["entries"]:
+            e["index"] = ""
+            for s in e["senses"]:
+                s["n"] = 0
+
+
 # Helper functions #####################################################
 
 def _parse_data_gloss(gloss: str) -> tuple[list[str], list[str]]:
@@ -472,6 +504,15 @@ if __name__ == "__main__":
         metavar="THRESHOLD",
         help="ignore ILI mappings below the confidence threshold (default: 0.0)",
         default=0.0,
+    )
+    parser.add_argument(
+        "--entry-indexes",
+        choices=("all", "partial", "none"),
+        help=(
+            "add 'index' on entries and 'n' on senses for cross-entry sense-ordering; "
+            "--entry-indexes=partial only adds it when 2+ entries share an index"
+        ),
+        default="all",
     )
     args = parser.parse_args()
 

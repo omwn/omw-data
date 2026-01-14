@@ -21,7 +21,7 @@ when building the lexicons.
   - `cili/ili-map-pwn31.tab`
 * Retrieved from <https://github.com/globalwordnet/schemas> for
   validating the generated XML files:
-  - `WN-LMF-1.3.dtd`
+  - `WN-LMF-1.4.dtd`
 * Retrieved from <http://wordnetcode.princeton.edu/> for creating
   WN-LMF lexicons from WNDB files:
   - `WordNet-1.5`

@@ -22,7 +22,7 @@ if [ ! -d "$BLDDIR" ]; then
     exit 1
 fi
 
-DTD="WN-LMF-1.3.dtd"
+DTD="WN-LMF-1.4.dtd"
 mkdir -p etc
 if [ ! -f etc/"${DTD}" ]; then
     wget "https://globalwordnet.github.io/schemas/${DTD}" -O etc/"$DTD"
