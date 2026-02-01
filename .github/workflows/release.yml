@@ -38,7 +38,7 @@ jobs:
 
     - name: Validate
       run: |
-        ./validate.sh "$VERSION"
+        ./validate.sh "build/omw-$VERSION"
 
     - name: Package and Publish
       env:

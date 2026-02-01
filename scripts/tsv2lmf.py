@@ -35,7 +35,7 @@ else:
     from .util import escape_lemma, load_ili_map, PathLike
 
 
-LMF_VERSION = "1.3"
+LMF_VERSION = "1.4"
 
 log = logging.getLogger("tsv2lmf")
 log.setLevel(logging.INFO)  # not configurable at the moment
