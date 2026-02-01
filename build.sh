@@ -5,7 +5,7 @@
 ### other OMW wordnets.
 ###
 ### WordNet 3.0 has a loop in the verb taxonomy that is patched here.
-### The build wordnets should not be tracked by Git.
+### The built wordnets should not be tracked by Git.
 ###
 
 # Configuration ########################################################
