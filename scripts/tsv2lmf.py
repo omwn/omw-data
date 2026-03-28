@@ -266,6 +266,16 @@ def _load_lemma(data: TSVData, pwn_id: str, args: list[str]) -> None:
             pos,
             forms=[Form(writtenForm=lemma, pronunciations=[], tags=[])],
         )
+    # optional 4th column: comma-separated variant forms
+    if len(args) > 1 and args[1].strip():
+        existing = {f["writtenForm"] for f in data.entries[eid].forms}
+        for variant in args[1].split(","):
+            variant = _clean_lemma(variant)
+            if variant and variant not in existing:
+                data.entries[eid].forms.append(
+                    Form(writtenForm=variant, tags=[])
+                )
+                existing.add(variant)
     # establish sense with entry and synset
     sense = Sense(
         id=sid,
